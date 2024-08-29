@@ -20,14 +20,13 @@ const config: Config = {
       },
       colors: {
         accent: {
-          0: "",
-          1: "",
-          2: "",
-          3: "",
-          4: "",
-          5: "",
+          0: "#DFC9FF",
+          1: "#6F2FCE",
+          2: "#27104A",
+          3: "#FFA9A9",
+          4: "#9AF6C1",
+          5: "#F6F4E5",
         },
-        // Trading graphs
         graph: {
           red: "#FF6A6A",
           green: "#1AC069",

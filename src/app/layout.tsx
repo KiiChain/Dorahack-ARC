@@ -1,4 +1,5 @@
 import React from "react"
+
 import { Metadata } from "next"
 
 import "@/styles/globals.css"
@@ -23,7 +24,7 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="en">
-      <body className="min-h-screen">
+      <body className="min-h-screen bg-dark-3 font-satoshi text-light-0">
         <>{children}</>
       </body>
     </html>
