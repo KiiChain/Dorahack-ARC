@@ -15,3 +15,5 @@ declare type IErrorBoundary = {
 declare type IProvider<P = Record> = P & IChildren
 
 declare type FCC<P = Record> = FunctionComponent<P & { children?: ReactNode }>
+
+declare type StringOrNumber = string | number

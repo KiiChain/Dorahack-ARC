@@ -1,15 +1,17 @@
+import governanceVoteERC20 from "./governance/VoteERC20"
+
 const ContractStore: IContractStore[] = [
   {
-    identifier: "nft",
-    name: "NFT",
-    description: "Contracts for managing, creating, and distributing various types of NFTs",
+    identifier: "governance",
+    name: "Governance",
+    description: "Contracts for managing voting and governance",
     contracts: [
       {
-        identifier: "arc/DropERC721",
-        name: "Drop ERC721",
+        identifier: "arc/VoteERC20",
+        name: "Vote ERC20",
         version: "0.0.1",
-        description: "A robust contract for distributing ERC721 tokens through drops with preset conditions",
-        source: "",
+        description: "A contract for managing voting with ERC20 tokens",
+        source: governanceVoteERC20,
       },
     ],
   },
