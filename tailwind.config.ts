@@ -11,12 +11,29 @@ const config: Config = {
   theme: {
     extend: {
       animation: {
+        "meteor-effect": "meteor 5s linear infinite",
         fadeIn: "fadeIn 0.3s forwards",
         fadeOut: "fadeOut 2s forwards",
+        scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+      keyframes: {
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
+        meteor: {
+          "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
+          "70%": { opacity: "1" },
+          "100%": {
+            transform: "rotate(215deg) translateX(-500px)",
+            opacity: "0",
+          },
+        },
       },
       colors: {
         accent: {
@@ -27,6 +44,8 @@ const config: Config = {
           4: "#9AF6C1",
           5: "#F6F4E5",
         },
+        primary: "#06b6d4",
+        secondary: "#020617",
         graph: {
           red: "#FF6A6A",
           green: "#1AC069",
@@ -65,6 +84,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
 }
+
 export default config

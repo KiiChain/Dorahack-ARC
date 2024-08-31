@@ -2,10 +2,15 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["ipfs.io", "google.com", "unsplash.com"],
     remotePatterns: [
       {
         hostname: process.env.NEXT_IMAGE_DOMAIN ?? "http://localhost:3000",
+      },
+      {
+        hostname: "images.unsplash.com",
+      },
+      {
+        hostname: "assets.aceternity.com",
       },
     ],
   },
