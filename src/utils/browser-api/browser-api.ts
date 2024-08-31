@@ -23,7 +23,7 @@ class BrowserApiUtils {
     const decodedCookie = decodeURIComponent(document.cookie)
     const ca = decodedCookie.split(";")
     for (let i = 0; i < ca.length; i++) {
-      let c = ca[i].trim()
+      const c = ca[i].trim()
       if (c.indexOf(name) === 0) {
         return c.substring(name.length, c.length)
       }
@@ -61,10 +61,7 @@ class BrowserApiUtils {
    * @param {'local' | 'session' | 'cookie'} [storage='local'] - The type of storage to read from.
    * @returns {string | null} - The value associated with the key, or null if not found.
    */
-  static readStorage(
-    key: string,
-    storage: "local" | "session" | "cookie" = "local"
-  ): string | null {
+  static readStorage(key: string, storage: "local" | "session" | "cookie" = "local"): string | null {
     switch (storage) {
       case "local":
         return localStorage.getItem(key)
@@ -83,11 +80,7 @@ class BrowserApiUtils {
    * @param {string} value - The value to write.
    * @param {'local' | 'session' | 'cookie'} [storage='local'] - The type of storage to write to.
    */
-  static writeStorage(
-    key: string,
-    value: string,
-    storage: "local" | "session" | "cookie" = "local"
-  ): void {
+  static writeStorage(key: string, value: string, storage: "local" | "session" | "cookie" = "local"): void {
     switch (storage) {
       case "local":
         localStorage.setItem(key, value)
@@ -107,10 +100,7 @@ class BrowserApiUtils {
    * @param {'local' | 'session' | 'cookie'} [storage='local'] - The type of storage to check in.
    * @returns {boolean} - True if the key exists, false otherwise.
    */
-  static keyExistsInStorage(
-    key: string,
-    storage: "local" | "session" | "cookie" = "local"
-  ): boolean {
+  static keyExistsInStorage(key: string, storage: "local" | "session" | "cookie" = "local"): boolean {
     switch (storage) {
       case "local":
         return localStorage.getItem(key) !== null
@@ -128,10 +118,7 @@ class BrowserApiUtils {
    * @param {string} key - The key to delete.
    * @param {'local' | 'session' | 'cookie'} [storage='local'] - The type of storage to delete from.
    */
-  static deleteKeyFromStorage(
-    key: string,
-    storage: "local" | "session" | "cookie" = "local"
-  ): void {
+  static deleteKeyFromStorage(key: string, storage: "local" | "session" | "cookie" = "local"): void {
     switch (storage) {
       case "local":
         localStorage.removeItem(key)
