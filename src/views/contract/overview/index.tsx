@@ -23,7 +23,9 @@ const ContractOverviewView: React.FC<IContractOverviewViewProps> = ({ contract }
             </div>
           </div>
           {/* Actions */}
-          <div className=""></div>
+          <div className="flex gap-2">
+            
+          </div>
         </div>
       </div>
 
