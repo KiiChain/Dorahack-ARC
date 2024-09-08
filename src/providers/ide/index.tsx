@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react"
 
 import { init } from "@/data/sample"
-import { Directory, File } from "@/interface/folder-tree/folder-tree"
+import { Directory, File } from "@/interface/custom/folder-tree/folder-tree"
 
 interface IIDEContext {
   rootDir: Directory

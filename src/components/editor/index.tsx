@@ -1,6 +1,6 @@
 import React from "react"
 
-import { File } from "@/interface/folder-tree/folder-tree"
+import { File } from "@/interface/custom/folder-tree/folder-tree"
 import Editor from "@monaco-editor/react"
 
 export const MonacoEditor = ({ selectedFile }: { selectedFile: File | undefined }) => {

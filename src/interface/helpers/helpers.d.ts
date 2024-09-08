@@ -1,3 +1,8 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+declare type ITemporaryVariable = any
+
+declare type IError = ITemporaryVariable
+
 declare type ICallback<T = unknown, E = Error | null> = (error?: E, data?: T) => void
 
 declare type IIterable<T = unknown> = Array<T>

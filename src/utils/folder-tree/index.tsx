@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-import { Directory, File as CustomFile, FileTreeProps, SubTreeProps } from "@/interface/folder-tree/folder-tree"
+import { Directory, File as CustomFile, FileTreeProps, SubTreeProps } from "@/interface/custom/folder-tree/folder-tree"
 
 import { cn } from "@/lib/utils"
 import { sortDir, sortFile } from "@/ui/file-tree/file-utils"

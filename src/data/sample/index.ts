@@ -1,4 +1,4 @@
-import { Directory } from "@/interface/folder-tree/folder-tree"
+import { Directory } from "@/interface/custom/folder-tree/folder-tree"
 
 export const init: Directory = {
   id: "0",

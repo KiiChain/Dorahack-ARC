@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Directory, File } from "@/interface/folder-tree/folder-tree"
+import { Directory, File } from "@/interface/custom/folder-tree/folder-tree"
 
 import { FileTree } from "@/utils/folder-tree"
 

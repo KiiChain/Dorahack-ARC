@@ -1,4 +1,4 @@
-import { Directory, File } from "@/interface/folder-tree/folder-tree"
+import { Directory, File } from "@/interface/custom/folder-tree/folder-tree"
 
 export enum Type {
   FILE,
