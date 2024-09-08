@@ -24,11 +24,14 @@ class EIP6963Provider implements WalletConnector {
 
   // Public properties
   address: `0x${string}` | undefined
+  isConnected: boolean
 
   // ### Constructor ###
   constructor(properties: WalletMetadata) {
     this.name = properties.name
     this.config = properties.uiProperties
+
+    this.isConnected = false
 
     // Listen for the EIP-6963 event
     window.addEventListener("eip6963:announceProvider", (event: CustomEvent) => {
@@ -95,6 +98,8 @@ class EIP6963Provider implements WalletConnector {
 
       // Step 4: Get the signer's address
       this.address = signer.address as `0x${string}`
+
+      this.isConnected = true
     } catch {
       throw new Errors.WalletConnectorError("Failed to connect", this.name)
     }
@@ -106,6 +111,7 @@ class EIP6963Provider implements WalletConnector {
     }
 
     try {
+      this.isConnected = false
       await this.provider.send("wallet_requestPermissions", [{ eth_accounts: {} }])
     } catch {
       throw new Errors.WalletConnectorError("Failed to disconnect", this.name)

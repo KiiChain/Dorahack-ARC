@@ -1,7 +1,9 @@
+import React from "react"
+
+import Link from "next/link"
+
 import { RichText } from "@/components"
 import Tabs from "@/components/misc/Tabs"
-import Link from "next/link"
-import React from "react"
 
 interface IContractOverviewViewProps {
   contract: IContracts
@@ -23,9 +25,7 @@ const ContractOverviewView: React.FC<IContractOverviewViewProps> = ({ contract }
             </div>
           </div>
           {/* Actions */}
-          <div className="flex gap-2">
-            
-          </div>
+          <div className="flex gap-2"></div>
         </div>
       </div>
 
