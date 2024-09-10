@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react"
 
 import { WagmiProvider } from "@/lib"
 
+import { AuthProvider } from "./auth"
 import { ModalProvider } from "./modal"
 import { UserProvider } from "./user"
 
@@ -26,7 +27,9 @@ const Providers: React.FC<ProvidersProps> = ({ children }) => {
     <WagmiProvider>
       <ModalProvider>
         <UserProvider>
-          <>{children}</>
+          <AuthProvider>
+            <>{children}</>
+          </AuthProvider>
         </UserProvider>
       </ModalProvider>
     </WagmiProvider>

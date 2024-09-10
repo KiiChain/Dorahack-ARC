@@ -5,9 +5,16 @@ import Cookies from "js-cookie"
 
 import { constructWalletConnector, EIP6963Provider, WalletConnector } from "@/lib"
 
-const AuthContext = React.createContext({})
+interface IAuthContext {
+  walletConnectors: WalletConnector[]
+  handleConnectCancellation: (wallet: WalletConnector) => Promise<boolean>
+  clearSession: (wallet: WalletConnector) => Promise<boolean>
+  login: (wallet: EIP6963Provider) => Promise<void>
+}
 
-const AuthProvider: IProvider = ({ children }: IProvider) => {
+const AuthContext = React.createContext<IAuthContext>({} as IAuthContext)
+
+export const AuthProvider: IProvider = ({ children }: IProvider) => {
   const [walletConnectors, setWalletConnectors] = useState<WalletConnector[]>([])
 
   // ### Effects ###
@@ -142,4 +149,12 @@ const AuthProvider: IProvider = ({ children }: IProvider) => {
   )
 }
 
-export default AuthProvider
+export const useAuth = () => {
+  const context = React.useContext(AuthContext)
+
+  if (context === undefined) {
+    throw new Error("useAuth must be used within a AuthProvider")
+  }
+
+  return context
+}

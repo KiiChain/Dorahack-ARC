@@ -1,5 +1,6 @@
 import React from "react"
 
+import { ConnectKitProvider } from "connectkit"
 import { WagmiProvider as Provider } from "wagmi"
 
 import { QueryClientProvider } from "@tanstack/react-query"
@@ -10,7 +11,9 @@ import config from "./config"
 const WagmiProvider: React.FC<IChildren> = ({ children }) => {
   return (
     <Provider config={config}>
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        <ConnectKitProvider>{children}</ConnectKitProvider>
+      </QueryClientProvider>
     </Provider>
   )
 }

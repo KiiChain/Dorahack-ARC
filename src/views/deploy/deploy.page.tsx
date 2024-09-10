@@ -2,7 +2,8 @@
 
 import React from "react"
 
-import { useDeployContract } from "wagmi"
+import { ConnectKitButton } from "connectkit"
+import { useAccount, useDeployContract } from "wagmi"
 
 import { Provider } from "@/providers"
 
@@ -18,19 +19,26 @@ export default DeployView
 
 const Deploy = () => {
   const { deployContract } = useDeployContract()
+  const { isConnected } = useAccount()
 
   return (
-    <button
-      onClick={() => {
-        console.log("Initiating contract deployment")
-        deployContract({
-          abi: [],
-          args: [],
-          bytecode: "0x",
-        })
-      }}
-    >
-      Deploy Contract
-    </button>
+    <>
+      <ConnectKitButton />
+
+      {isConnected && (
+        <button
+          onClick={() => {
+            console.log("Initiating contract deployment")
+            deployContract({
+              abi: [],
+              args: [],
+              bytecode: "0x",
+            })
+          }}
+        >
+          Deploy Contract
+        </button>
+      )}
+    </>
   )
 }
