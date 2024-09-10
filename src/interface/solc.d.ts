@@ -1,5 +1,3 @@
-import { Abi } from "viem"
-
 declare module "solc" {
   // You can declare any functions and types used by solc here
   export function compile(input: string): string
@@ -22,7 +20,7 @@ declare module "solc" {
     contracts: {
       [fileName: string]: {
         [contractName: string]: {
-          abi: Abi[]
+          abi: ITemporaryVariable[]
           evm: {
             bytecode: {
               object: string
