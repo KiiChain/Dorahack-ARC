@@ -33,7 +33,7 @@ const generateZip = async (projectPath: string): Promise<string> => {
 }
 
 const handleStandalone = async (contracts: Contracts): Promise<string> => {
-  const projectPath = path.resolve("temp/standalone-project")
+  const projectPath = path.resolve(".temp/standalone-project")
   fs.mkdirSync(projectPath, { recursive: true })
 
   Object.keys(contracts).forEach((fileName) => {
@@ -45,7 +45,7 @@ const handleStandalone = async (contracts: Contracts): Promise<string> => {
 }
 
 // const handleFoundry = async (contracts: Contracts): Promise<string> => {
-//   const projectPath = path.resolve("temp/foundry-project")
+//   const projectPath = path.resolve(".temp/foundry-project")
 //   const srcPath = path.join(projectPath, "src")
 //   const contractsPath = path.join(projectPath, "contracts")
 
@@ -63,7 +63,7 @@ const handleStandalone = async (contracts: Contracts): Promise<string> => {
 // }
 
 // const handleHardhat = async (contracts: Contracts): Promise<string> => {
-//   const projectPath = path.resolve("temp/hardhat-project")
+//   const projectPath = path.resolve(".temp/hardhat-project")
 //   const contractsPath = path.join(projectPath, "contracts")
 
 //   fs.mkdirSync(contractsPath, { recursive: true })
@@ -79,7 +79,7 @@ const handleStandalone = async (contracts: Contracts): Promise<string> => {
 // }
 
 const handleFoundry = async (contracts: Contracts): Promise<string> => {
-  const projectPath = path.resolve("temp/foundry-project")
+  const projectPath = path.resolve(".temp/foundry-project")
   const srcPath = path.join(projectPath, "src")
   const libPath = path.join(projectPath, "lib")
 
@@ -107,7 +107,7 @@ const handleFoundry = async (contracts: Contracts): Promise<string> => {
 }
 
 const handleHardhat = async (contracts: Contracts): Promise<string> => {
-  const projectPath = path.resolve("temp/hardhat-project")
+  const projectPath = path.resolve(".temp/hardhat-project")
   const contractsPath = path.join(projectPath, "contracts")
 
   // Create Hardhat project structure
