@@ -3,8 +3,8 @@ import React, { useState } from "react"
 import { Directory, File as CustomFile, FileTreeProps, SubTreeProps } from "@/interface/custom/folder-tree/folder-tree"
 
 import { cn } from "@/lib/utils"
-import { sortDir, sortFile } from "@/ui/file-tree/file-utils"
-import { getIcon } from "@/ui/icons"
+import { FileIcon, sortDir, sortFile } from "@/ui/file-tree/file-utils"
+import { ExtensionTypes } from "@/ui/icons"
 
 export const FileTree = (props: FileTreeProps) => {
   return (
@@ -80,15 +80,16 @@ const FileDiv = ({
   return (
     <div
       onClick={onClick}
-      style={{ paddingLeft: `${depth * 16}px` }}
+      style={{ paddingLeft: `${depth * 10}px`}}
+      
       className={cn(
-        "flex items-center hover:cursor-pointer hover:bg-[#242424]",
+        "flex items-center hover:cursor-pointer hover:bg-[#242424] gap-2 group/item",
         isSelected ? "bg-[#242424]" : "bg-transparent"
       )}
     >
       <FileIcon
         name={icon}
-        extension={file.name.split(".").pop() || ""}
+        extension={file.name.split(".").pop() as unknown as ExtensionTypes}
       />
       {isEditing ? (
         <input
@@ -103,28 +104,34 @@ const FileDiv = ({
       ) : (
         <span style={{ marginLeft: 1 }}>{file.name}</span>
       )}
-      {file.type == 1 && (
-        <div className="hidden group-hover:block">
-          <button onClick={() => onAddFile(file as Directory)}>Add CustomFile</button>
-          <button onClick={() => onAddFolder(file as Directory)}>Add Folder</button>
-        </div>
-      )}
-      <button
-        onClick={(e) => {
-          e.stopPropagation()
-          setIsEditing(true)
-        }}
-      >
-        Edit
-      </button>
-      <button
-        onClick={(e) => {
-          e.stopPropagation()
-          onDelete()
-        }}
-      >
-        Delete
-      </button>
+      <div className="flex ml-auto !invisible !group-hover/item:visible"> 
+        {file.type === "directory" && (
+          <>
+            <button onClick={(e) => { e.stopPropagation(); onAddFile(file as Directory) }}>
+            <FileIcon extension="newFile"/>
+            </button>
+            <button onClick={(e) => { e.stopPropagation(); onAddFolder(file as Directory) }}>
+            <FileIcon extension="newFolder"/>
+            </button>
+          </>
+        )}
+        <button
+          onClick={(e) => {
+            e.stopPropagation()
+            setIsEditing(true)
+          }}
+        >
+          <FileIcon extension="edit"/>
+        </button>
+        <button
+          onClick={(e) => {
+            e.stopPropagation()
+            onDelete()
+          }}
+        >
+          <FileIcon extension="delete"/>
+        </button>
+      </div>
     </div>
   )
 }
@@ -154,7 +161,7 @@ const DirDiv: React.FC<SubTreeProps> = ({
         onAddFolder={onAddFolder}
       />
       {open ? (
-        <div className="">
+        <div >
           <SubTree
             directory={directory}
             selectedFile={selectedFile}
@@ -191,7 +198,4 @@ const isChildSelected = (directory: Directory, selectedFile: CustomFile) => {
   return res
 }
 
-const FileIcon = ({ extension, name }: { name?: string; extension?: string }) => {
-  const icon = getIcon(extension || "", name || "")
-  return <span className="flex aspect-square w-[32px] items-center justify-center">{icon}</span>
-}
+

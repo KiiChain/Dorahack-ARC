@@ -3,6 +3,7 @@ import React from "react"
 import { Metadata } from "next"
 
 import "@/styles/globals.css"
+import Navbar from "@/components/navbar"
 
 export const metadata: Metadata = {
   title: {
@@ -16,6 +17,20 @@ export const metadata: Metadata = {
     yahoo: "",
   },
 }
+const links: { label: string; href: string }[] = [
+  {
+    label: "Home",
+    href: "/",
+  },
+  {
+    label: "About Us",
+    href: "/about",
+  },
+  {
+    label: "IDE",
+    href: "/ide",
+  },
+]
 
 const RootLayout = ({
   children,
@@ -25,6 +40,11 @@ const RootLayout = ({
   return (
     <html lang="en">
       <body className="min-h-screen bg-dark-3 font-satoshi text-light-0">
+      <Navbar
+        links={links}
+        logoText="Arc"
+        textColor="white"
+      />
         <>{children}</>
       </body>
     </html>

@@ -1,0 +1,26 @@
+.App {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  /* max-width: 100%; */
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  margin: auto;
+}
+
+.li {
+  /* background: "#292F34 !important"; */
+  color: #fff;
+  padding: 8px;
+  border-radius: 4px;
+  margin: 0 10px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.button {
+  border: 0;
+  color: #777;
+  font-size: 24px;
+  margin: 0 8px;
+}

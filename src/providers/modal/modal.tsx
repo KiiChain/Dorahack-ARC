@@ -47,7 +47,7 @@ const ModalProvider: React.FC<IModalProvider> = ({ children }) => {
 const useModal = (modalId: ModalIds) => {
   const { modals, openModal, closeModal } = useContext(ModalContext)
 
-  if (!modals[modalId]) {
+  if (modals[modalId]===undefined) {
     throw new Error(`Modal with id "${modalId}" does not exist`)
   }
 

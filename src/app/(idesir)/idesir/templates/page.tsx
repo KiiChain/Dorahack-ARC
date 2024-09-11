@@ -5,7 +5,7 @@ import { IDETemplateView } from "@/views"
 const IDETemplates = () => {
   return (
     <>
-      <IDETemplateView />
+      <IDETemplateView description="" contractName=""/>
     </>
   )
 }

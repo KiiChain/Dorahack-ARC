@@ -1,3 +1,4 @@
+"use client"
 import React from "react"
 
 import Rodal from "rodal"
@@ -19,6 +20,7 @@ const Modal: React.FC<ModalProps> = ({ modalId, children }) => {
       visible={isOpen}
       onClose={closeModal}
       animation="slideUp"
+      className=""
     >
       {children}
     </Rodal>

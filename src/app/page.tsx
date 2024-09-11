@@ -4,16 +4,18 @@ import { Metadata, NextPage } from "next"
 
 import { HomeView } from "@/views"
 
-interface HomePageProps {}
+// interface HomePageProps {}
 
 export const metadata: Metadata = {
   title: "Home page",
   description: "Home page",
 }
 
-const HomePage: NextPage<HomePageProps> = () => {
+
+const HomePage: NextPage = () => {
   return (
     <>
+     
       <HomeView />
     </>
   )

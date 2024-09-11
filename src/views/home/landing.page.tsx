@@ -8,26 +8,12 @@ import { Carousel } from "@/components/infinite-movement"
 import { FeaturesSectionDemo } from "@/components/landing-cta1"
 import { FollowerPointerCard } from "@/components/landing-cta2"
 import CTA3 from "@/components/landing-cta3"
-import Navbar from "@/components/navbar"
 import { PluginCard } from "@/components/plugin-card"
 import { BackgroundGradient } from "@/ui/background-gradient"
 // import Image from "next/image";
 import { FlipWords } from "@/ui/flip-words"
 import { LampContainer } from "@/ui/lampcontainer"
-const links: { label: string; href: string }[] = [
-  {
-    label: "Home",
-    href: "/",
-  },
-  {
-    label: "About Us",
-    href: "/about",
-  },
-  {
-    label: "IDE",
-    href: "/ide",
-  },
-]
+
 
 const items = [
   <PluginCard
@@ -91,11 +77,7 @@ const arr = [blogContent, blogContent, blogContent, blogContent, blogContent]
 const HomeLandingView = () => {
   return (
     <div className="snap-y snap-mandatory">
-      <Navbar
-        links={links}
-        logoText="Arc"
-        textColor="white"
-      />
+   
       <section className="snap-center snap-always">
         <LampContainer>
           <motion.h1

@@ -1,25 +1,8 @@
 import { Directory, File } from "@/interface/custom/folder-tree/folder-tree"
+import { ExtensionTypes, getIcon } from "../icons"
 
-export enum Type {
-  FILE,
-  DIRECTORY,
-  DUMMY,
-}
 
-// /**
-//  *
-//  * @param rootDir
-//  * @param curDepth
-//  */
-// function getDepth(rootDir: Directory, curDepth: number) {
-//   rootDir.files.forEach((file) => {
-//     file.depth = curDepth + 1;
-//   });
-//   rootDir.dirs.forEach((dir) => {
-//     dir.depth = curDepth + 1;
-//     getDepth(dir, curDepth + 1);
-//   });
-// }
+
 
 export function findFileByName(rootDir: Directory, filename: string): File | undefined {
   let targetFile: File | undefined = undefined
@@ -46,4 +29,9 @@ export function sortDir(l: Directory, r: Directory) {
 
 export function sortFile(l: File, r: File) {
   return l.name.localeCompare(r.name)
+}
+
+export const FileIcon = ({ extension, name }: { name?: string; extension?: ExtensionTypes }) => {
+  const icon = getIcon( name || "",extension)
+  return <span className="flex aspect-square w-[24px] items-center justify-center">{icon}</span>
 }
