@@ -7,7 +7,7 @@ import { FileManager } from "../file-manager"
 import { SidebarBody } from "../ide-sidebar"
 import { cn } from "@/lib/utils"
 import { FileIcon } from "@/ui/file-tree/file-utils"
-import { File } from "@/interface/custom/folder-tree/folder-tree"
+import { Directory, File } from "@/interface/custom/folder-tree/folder-tree"
 import TabButtons from "../tab-section"
 import Dropdown from "@/ui/dropdown"
 import {
@@ -16,6 +16,7 @@ import {
 } from 'react-icons/fa';
 import GettingStarted from "../getting-started"
 import NoFileSelected from "../no-file-selected"
+import { useSearchParams } from "next/navigation"
 const menuItems = [
   {
     heading: 'Edit',
@@ -33,7 +34,8 @@ const menuItems = [
 const IDE = () => {
 
   const { rootDir, selectedFile, setRootDir, setSelectedFile, activeFiles, setActiveFiles } = useIDE()
-
+  const searchparams = useSearchParams()
+  const y = searchparams.get("content")
   const handleTabSelect = (file: File) => {
     setSelectedFile(file)
   }
@@ -48,6 +50,14 @@ const IDE = () => {
     if (selectedFile?.id === file.id && activeFiles && activeFiles.length > 1) setSelectedFile(activeFiles[0])
 
   }
+
+  useEffect(() => {
+    if (y != null) {
+      const z: Directory = JSON.parse(y);
+     
+      setRootDir(z)
+    }
+  }, [])
   useEffect(() => {
     if (activeFiles && activeFiles.length == 0) setSelectedFile(undefined)
   }, [activeFiles])
@@ -105,7 +115,7 @@ const IDE = () => {
                           <MonacoEditor selectedFile={selectedFile} />
                         </div>
                         :
-                        <NoFileSelected/>
+                        <NoFileSelected />
 
                     }
                   </div>

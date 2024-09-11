@@ -1,61 +1,51 @@
-import React, { createContext, useContext, useState } from "react"
+import { createContext, Dispatch, SetStateAction, useContext, useState } from "react"
 
 interface IModalContext {
-  modals: Record<ModalIds, boolean>
-  openModal: (modalId: ModalIds) => void
-  closeModal: (modalId: ModalIds) => void
+  modalData: {
+    isOpen: boolean
+    onClick: () => void
+    buttonText: string
+    onClose: () => void
+    content: JSX.Element
+    title: JSX.Element
+  }
+  setmodalData: Dispatch<
+    SetStateAction<{
+      isOpen: boolean
+      onClick: () => void
+      buttonText: string
+      onClose: () => void
+      content: JSX.Element
+      title: JSX.Element
+    }>
+  >
+}
+interface IModalProvider {
+  children: React.ReactNode
 }
 
-type IModalProvider = IProvider
+const Context = createContext<IModalContext>({} as IModalContext)
 
-const defaultValues: IModalContext = {
-  modals: {
-    normal: false,
-  },
-  openModal: () => {},
-  closeModal: () => {},
+const ModalProvider = ({ children }: IModalProvider) => {
+  const [modalData, setmodalData] = useState({
+    isOpen: false,
+    buttonText: "",
+    onClick: () => {},
+    onClose: () => {},
+    content: <></>,
+    title: <></>,
+  })
+
+  return <Context.Provider value={{ modalData, setmodalData }}>{children}</Context.Provider>
 }
 
-const ModalContext = createContext<IModalContext>(defaultValues)
+const useModal = () => {
+  const c = useContext(Context)
 
-const ModalProvider: React.FC<IModalProvider> = ({ children }) => {
-  const [modals, setModals] = useState(defaultValues.modals)
-
-  const openModal = (modalId: ModalIds) => {
-    setModals((prevModals) => ({
-      ...prevModals,
-      [modalId]: true,
-    }))
+  if (c === undefined) {
+    throw new Error("useUserContext must be used within a UserProvider")
   }
 
-  const closeModal = (modalId: ModalIds) => {
-    setModals((prevModals) => ({
-      ...prevModals,
-      [modalId]: false,
-    }))
-  }
-
-  const modalContextValue: IModalContext = {
-    modals,
-    openModal,
-    closeModal,
-  }
-
-  return <ModalContext.Provider value={modalContextValue}>{children}</ModalContext.Provider>
+  return c
 }
-
-const useModal = (modalId: ModalIds) => {
-  const { modals, openModal, closeModal } = useContext(ModalContext)
-
-  if (modals[modalId]===undefined) {
-    throw new Error(`Modal with id "${modalId}" does not exist`)
-  }
-
-  return {
-    isOpen: modals[modalId] || false,
-    openModal: () => openModal(modalId),
-    closeModal: () => closeModal(modalId),
-  }
-}
-
 export { ModalProvider, useModal }

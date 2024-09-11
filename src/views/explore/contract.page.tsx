@@ -1,11 +1,12 @@
-import React from "react"
+import React, { useState } from "react"
 
 import Link from "next/link"
 
 import { contract } from "@/data"
-import { useModal } from "@/providers";
+// import { useModal } from "@/providers";
 import { useRouter } from "next/navigation";
-import Modal from "@/ui/modal/modal";
+// import Modal from "@/ui/modal/modal";
+import { CustomizeModal } from "@/ui/modal";
 interface Contract {
   identifier: string;
   name: string;
@@ -18,17 +19,38 @@ interface Category {
   description: string;
   contracts: Contract[];
 }
+const sampleText = `
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.26;
 
+contract Counter {
+    uint256 public count;
+
+    // Function to get the current count
+    function get() public view returns (uint256) {
+        return count;
+    }
+
+    // Function to increment count by 1
+    function inc() public {
+        count += 1;
+    }
+
+    // Function to decrement count by 1
+    function dec() public {
+        // This function will fail if count = 0
+        count -= 1;
+    }
+}
+
+`
 
 const ContractCard = ({ contract }: { contract: Contract }) => {
-  let { openModal } = useModal("normal")
   const router = useRouter();
-
+  const [open, setOpen] = useState(false);
   return (
     <>
-      <Modal modalId="normal">
-        <>check kro</>
-      </Modal>
+      <CustomizeModal text={sampleText} open={open} setOpen={setOpen} />
       <div
         key={contract.identifier}
         onClick={() => router.push(`${contract.identifier}/overview`)}
@@ -48,7 +70,7 @@ const ContractCard = ({ contract }: { contract: Contract }) => {
           <h3 className="text-lg font-semibold tracking-tight">{contract.name}</h3>
           <p className="text-secondary-foreground mt-1 text-sm leading-5">{contract.description}</p>
           <div className="relative mt-auto flex justify-between gap-2 pt-3">
-            <button onClick={(e) => { e.stopPropagation(); openModal() }} className="ring-offset-background focus-visible:ring-ring text-primary-foreground relative z-10 inline-flex h-auto items-center justify-center gap-1.5 whitespace-nowrap rounded-md bg-primary px-2.5 py-1.5 text-xs font-medium transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
+            <button onClick={(e) => { e.stopPropagation(); setOpen(true) }} className="ring-offset-background focus-visible:ring-ring text-primary-foreground relative z-10 inline-flex h-auto items-center justify-center gap-1.5 whitespace-nowrap rounded-md bg-primary px-2.5 py-1.5 text-xs font-medium transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
               Customize
             </button>
             <Link href={`/${contract.identifier}/deploy`} className="ring-offset-background focus-visible:ring-ring text-primary-foreground relative z-10 inline-flex h-auto items-center justify-center gap-1.5 whitespace-nowrap rounded-md bg-primary px-2.5 py-1.5 text-xs font-medium transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
