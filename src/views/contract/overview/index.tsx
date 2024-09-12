@@ -30,6 +30,10 @@ const ContractOverviewView: React.FC<IContractOverviewViewProps> = ({ contract }
     }
   }, [])
 
+  const deployContract = () => {
+    // Deploy contract
+  }
+
   return (
     <div className="container mx-auto max-w-5xl px-5 py-20 sm:px-2">
       <div className="py-2 md:pb-0 md:pt-8">
@@ -39,9 +43,11 @@ const ContractOverviewView: React.FC<IContractOverviewViewProps> = ({ contract }
               <div className="aspect-square h-10"></div>
             </div>
             {/* Metadata */}
-            <div className="flex flex-col gap-1">
-              <h1 className="text-2xl font-bold tracking-tight md:text-3xl">{contract.name}</h1>
-              <p className="text-muted-foreground text-sm">{contract.description}</p>
+            <div className="flex justify-between">
+              <div className="flex flex-col gap-1">
+                <h1 className="text-2xl font-bold tracking-tight md:text-3xl">{contract.name}</h1>
+                <p className="text-muted-foreground text-sm">{contract.description}</p>
+              </div>
             </div>
           </div>
           {/* Actions */}
@@ -77,7 +83,24 @@ const ContractOverviewView: React.FC<IContractOverviewViewProps> = ({ contract }
                 {
                   name: "Functions",
                   identifier: "functions",
-                  content: <>{JSON.stringify(contract.source.functions)}</>,
+                  content: (
+                    <>
+                      <Tabs
+                        tabs={[
+                          {
+                            name: "Write",
+                            identifier: "write",
+                            content: <>{JSON.stringify(contract.source.functions.write)}</>,
+                          },
+                          {
+                            name: "Read",
+                            identifier: "read",
+                            content: <>{JSON.stringify(contract.source.functions.read)}</>,
+                          },
+                        ]}
+                      />
+                    </>
+                  ),
                 },
                 {
                   name: "Events",
