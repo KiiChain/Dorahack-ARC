@@ -12,6 +12,8 @@
 @import "./base/reset.css";
 @import "./base/scrollbar.css";
 
+@import "./animations/glow-card.css";
+
 * {
   margin: 0;
   padding: 0;

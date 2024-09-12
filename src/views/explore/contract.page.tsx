@@ -1,24 +1,20 @@
 import React, { useState } from "react"
 
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 import { contract } from "@/data"
-// import { useModal } from "@/providers";
-import { useRouter } from "next/navigation"
-// import Modal from "@/ui/modal/modal";
+
 import { CustomizeModal } from "@/ui/modal"
-interface Contract {
-  identifier: string
-  name: string
-  description: string
-  version: string
-}
+import axios from "axios"
+
 interface Category {
   identifier: string
   name: string
   description: string
-  contracts: Contract[]
+  contracts: IContracts[]
 }
+
 const sampleText = `
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.26;
@@ -45,16 +41,31 @@ contract Counter {
 
 `
 
-const ContractCard = ({ contract }: { contract: Contract }) => {
+const ContractCard = ({ contract }: { contract: IContracts }) => {
   const router = useRouter()
+
   const [open, setOpen] = useState(false)
+  const [content, setContent] = useState("")
+
+  const onClick = () => {
+    axios
+      .post("/api/explore", { contract: contract.path })
+      .then((response) => {
+        setContent(response.data)
+        setOpen(true)
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  }
+
   return (
     <>
-      <CustomizeModal
-        text={sampleText}
-        open={open}
+      {/* <CustomizeModal
+        text={content}
+        open={content !== "" && open}
         setOpen={setOpen}
-      />
+      /> */}
       <div
         key={contract.identifier}
         onClick={() => router.push(`${contract.identifier}/overview`)}
@@ -77,7 +88,8 @@ const ContractCard = ({ contract }: { contract: Contract }) => {
             <button
               onClick={(e) => {
                 e.stopPropagation()
-                setOpen(true)
+                // setOpen(true)
+                onClick()
               }}
               className="ring-offset-background focus-visible:ring-ring text-primary-foreground relative z-10 inline-flex h-auto items-center justify-center gap-1.5 whitespace-nowrap rounded-md bg-primary px-2.5 py-1.5 text-xs font-medium transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
             >
@@ -113,7 +125,7 @@ const CategorySection = ({ category }: { category: Category }) => {
       </div>
       <div className="h-5"></div>
       <div className="relative z-0 grid grid-cols-1 gap-4 md:grid-cols-3">
-        {category.contracts.map((contract) => (
+        {category.contracts.slice(0, 6).map((contract) => (
           <ContractCard
             key={contract.identifier}
             contract={contract}

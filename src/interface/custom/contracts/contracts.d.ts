@@ -5,6 +5,7 @@ declare interface IContracts {
   version: string
   description: string
   source: IContractDefinition
+  path?: `contracts/${string}`
 }
 
 declare interface IContractStore {
