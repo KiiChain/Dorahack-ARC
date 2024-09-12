@@ -1,6 +1,6 @@
 interface CommonProps {
   id: string
-  type: "directory"|"file"
+  type: "directory" | "file"
   name: string
   parentId: string | undefined
   depth: number

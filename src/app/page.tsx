@@ -11,11 +11,9 @@ export const metadata: Metadata = {
   description: "Home page",
 }
 
-
 const HomePage: NextPage = () => {
   return (
     <>
-     
       <HomeView />
     </>
   )

@@ -80,10 +80,9 @@ const FileDiv = ({
   return (
     <div
       onClick={onClick}
-      style={{ paddingLeft: `${depth * 10}px`}}
-      
+      style={{ paddingLeft: `${depth * 10}px` }}
       className={cn(
-        "flex items-center hover:cursor-pointer hover:bg-[#242424] gap-2 group/item",
+        "group/item flex items-center gap-2 hover:cursor-pointer hover:bg-[#242424]",
         isSelected ? "bg-[#242424]" : "bg-transparent"
       )}
     >
@@ -104,14 +103,24 @@ const FileDiv = ({
       ) : (
         <span style={{ marginLeft: 1 }}>{file.name}</span>
       )}
-      <div className="flex ml-auto !invisible !group-hover/item:visible"> 
+      <div className="!group-hover/item:visible !invisible ml-auto flex">
         {file.type === "directory" && (
           <>
-            <button onClick={(e) => { e.stopPropagation(); onAddFile(file as Directory) }}>
-            <FileIcon extension="newFile"/>
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                onAddFile(file as Directory)
+              }}
+            >
+              <FileIcon extension="newFile" />
             </button>
-            <button onClick={(e) => { e.stopPropagation(); onAddFolder(file as Directory) }}>
-            <FileIcon extension="newFolder"/>
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                onAddFolder(file as Directory)
+              }}
+            >
+              <FileIcon extension="newFolder" />
             </button>
           </>
         )}
@@ -121,7 +130,7 @@ const FileDiv = ({
             setIsEditing(true)
           }}
         >
-          <FileIcon extension="edit"/>
+          <FileIcon extension="edit" />
         </button>
         <button
           onClick={(e) => {
@@ -129,7 +138,7 @@ const FileDiv = ({
             onDelete()
           }}
         >
-          <FileIcon extension="delete"/>
+          <FileIcon extension="delete" />
         </button>
       </div>
     </div>
@@ -161,7 +170,7 @@ const DirDiv: React.FC<SubTreeProps> = ({
         onAddFolder={onAddFolder}
       />
       {open ? (
-        <div >
+        <div>
           <SubTree
             directory={directory}
             selectedFile={selectedFile}
@@ -197,5 +206,3 @@ const isChildSelected = (directory: Directory, selectedFile: CustomFile) => {
   isChild(directory, selectedFile)
   return res
 }
-
-

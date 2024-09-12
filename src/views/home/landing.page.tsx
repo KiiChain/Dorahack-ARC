@@ -14,7 +14,6 @@ import { BackgroundGradient } from "@/ui/background-gradient"
 import { FlipWords } from "@/ui/flip-words"
 import { LampContainer } from "@/ui/lampcontainer"
 
-
 const items = [
   <PluginCard
     title="Plugin 1"
@@ -77,7 +76,6 @@ const arr = [blogContent, blogContent, blogContent, blogContent, blogContent]
 const HomeLandingView = () => {
   return (
     <div className="snap-y snap-mandatory">
-   
       <section className="snap-center snap-always">
         <LampContainer>
           <motion.h1

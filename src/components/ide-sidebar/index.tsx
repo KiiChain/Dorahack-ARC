@@ -16,11 +16,11 @@ export const SidebarBody = (props: React.ComponentProps<typeof motion.div>) => {
   )
 }
 export const DesktopSidebar = ({ className, children, ...props }: React.ComponentProps<typeof motion.div>) => {
-  const {  setOpen,  } = useSidebar()
+  const { setOpen } = useSidebar()
   return (
     <>
       <motion.div
-        className={cn("hidden  w-[20vw] flex-shrink-0 bg-neutral-800 px-2 md:flex md:flex-col", className)}
+        className={cn("hidden w-[20vw] flex-shrink-0 bg-neutral-800 px-2 md:flex md:flex-col", className)}
         // animate={{
         //   width: animate ? (open ? "300px" : "60px") : "300px",
         // }}
@@ -39,9 +39,7 @@ export const MobileSidebar = ({ className, children, ...props }: React.Component
   return (
     <>
       <div
-        className={cn(
-          "flex h-10 w-full flex-row items-center justify-between  px-4 py-4 md:hidden bg-neutral-800"
-        )}
+        className={cn("flex h-10 w-full flex-row items-center justify-between bg-neutral-800 px-4 py-4 md:hidden")}
         {...props}
       >
         <div className="z-20 flex w-full justify-end">
@@ -64,7 +62,7 @@ export const MobileSidebar = ({ className, children, ...props }: React.Component
                 ease: "easeInOut",
               }}
               className={cn(
-                "fixed inset-0 z-[100] flex h-full w-full flex-col justify-between  p-10 bg-neutral-900",
+                "fixed inset-0 z-[100] flex h-full w-full flex-col justify-between bg-neutral-900 p-10",
                 className
               )}
             >

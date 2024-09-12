@@ -40,11 +40,11 @@ const RootLayout = ({
   return (
     <html lang="en">
       <body className="min-h-screen bg-dark-3 font-satoshi text-light-0">
-      <Navbar
-        links={links}
-        logoText="Arc"
-        textColor="white"
-      />
+        <Navbar
+          links={links}
+          logoText="Arc"
+          textColor="white"
+        />
         <>{children}</>
       </body>
     </html>

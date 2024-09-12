@@ -1,8 +1,6 @@
 import { IDEProvider } from "@/providers/ide"
 import React from "react"
 
-
-
 const IDELayout = ({
   children,
 }: Readonly<{
@@ -10,11 +8,8 @@ const IDELayout = ({
 }>) => {
   return (
     <IDEProvider>
-      <div className="mt-14 max-w-7xl mx-auto">
-        {children}
-      </div >
+      <div className="mx-auto mt-14 max-w-7xl">{children}</div>
     </IDEProvider>
-
   )
 }
 

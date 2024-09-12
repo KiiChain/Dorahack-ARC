@@ -6,14 +6,21 @@ import { FileTree } from "@/utils/folder-tree"
 
 interface FIleManageProps {
   rootDir: Directory
-  setRootDir: React.Dispatch<React.SetStateAction<Directory|undefined>>
+  setRootDir: React.Dispatch<React.SetStateAction<Directory | undefined>>
   selectedFile: File | undefined
   setSelectedFile: React.Dispatch<React.SetStateAction<File | undefined>>
-  activeFiles: File[]|undefined
-  setActiveFiles: React.Dispatch<React.SetStateAction<File[]|undefined>>
+  activeFiles: File[] | undefined
+  setActiveFiles: React.Dispatch<React.SetStateAction<File[] | undefined>>
 }
 
-export const FileManager: React.FC<FIleManageProps> = ({ rootDir, selectedFile, setRootDir, setSelectedFile,activeFiles,setActiveFiles }) => {
+export const FileManager: React.FC<FIleManageProps> = ({
+  rootDir,
+  selectedFile,
+  setRootDir,
+  setSelectedFile,
+  activeFiles,
+  setActiveFiles,
+}) => {
   const addFile = (parentDir: Directory) => {
     const newFile: File = {
       id: `${parentDir.id}-file-${parentDir.files.length}`,
@@ -28,7 +35,6 @@ export const FileManager: React.FC<FIleManageProps> = ({ rootDir, selectedFile, 
   }
 
   const addFolder = (parentDir: Directory) => {
-    
     const newFolder: Directory = {
       id: `${parentDir.id}-folder-${parentDir.dirs.length}`,
       type: "directory",
@@ -70,9 +76,9 @@ export const FileManager: React.FC<FIleManageProps> = ({ rootDir, selectedFile, 
   }
   const handleSelect = (file: File) => {
     setSelectedFile(file)
-    if (activeFiles===undefined || !activeFiles.some(activeFile => activeFile.id === file.id)) {
-      if(activeFiles)setActiveFiles([...activeFiles, file])
-        else setActiveFiles([file])
+    if (activeFiles === undefined || !activeFiles.some((activeFile) => activeFile.id === file.id)) {
+      if (activeFiles) setActiveFiles([...activeFiles, file])
+      else setActiveFiles([file])
     }
   }
   return (

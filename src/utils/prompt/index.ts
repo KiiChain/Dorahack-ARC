@@ -1,5 +1,7 @@
 export const GenerateInstructions = (language: string) => ({
-    parts: [{text:`## Task: Code Completion
+  parts: [
+    {
+      text: `## Task: Code Completion
     
       ### Language: ${language}
                
@@ -19,13 +21,15 @@ export const GenerateInstructions = (language: string) => ({
       - Only ever return the code snippet, do not return any markdown unless it is part of the code snippet.
       - Do not return any code that is already present in the current text.
       - Do not return anything that is not valid code.
-      - If you do not have a suggestion, return an empty string.`}],
-    role: "user",
-  });
-  export const GenerateCustomizationInstructions=()=>({
-    parts:[
-      {
-        text:`## Task: Code Customization
+      - If you do not have a suggestion, return an empty string.`,
+    },
+  ],
+  role: "user",
+})
+export const GenerateCustomizationInstructions = () => ({
+  parts: [
+    {
+      text: `## Task: Code Customization
     
       ### Language: Solidity
                
@@ -43,8 +47,8 @@ export const GenerateInstructions = (language: string) => ({
       - Ensure that newline suggestions follow the same indentation as the current line.
       - Only ever return the complete code , do not return any markdown unless it is part of the code .
       - Do not return anything that is not valid code.
-      - If you do not have a suggestion, return an empty string.`
-      }
-    ],
-    role:"user"
-  })
+      - If you do not have a suggestion, return an empty string.`,
+    },
+  ],
+  role: "user",
+})

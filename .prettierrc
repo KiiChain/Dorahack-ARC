@@ -8,9 +8,6 @@
   "useTabs": false,
   "trailingComma": "es5",
 
-  "importOrderMergeDuplicateImports": true,
-  "importOrderCombineTypeAndValueImports": true,
-
   "plugins": [
     "prettier-plugin-tailwindcss"
   ]

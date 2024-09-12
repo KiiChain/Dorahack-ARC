@@ -17,7 +17,7 @@ export default function TabButtons({
   tabColors,
   activeTabColor,
 }: {
-  tabNames: Array<string|React.JSX.Element>
+  tabNames: Array<string | React.JSX.Element>
   setActiveTab?: React.Dispatch<React.SetStateAction<string>>
   activeTab?: string
   className?: string
@@ -34,10 +34,7 @@ export default function TabButtons({
       scrollref.current.scrollLeft += shift
 
       setscrollX(scrollX + shift)
-      if (
-        Math.floor(scrollref.current.scrollWidth - scrollref.current.scrollLeft) <=
-        scrollref.current.offsetWidth
-      ) {
+      if (Math.floor(scrollref.current.scrollWidth - scrollref.current.scrollLeft) <= scrollref.current.offsetWidth) {
         setscrolEnd(true)
       } else {
         setscrolEnd(false)
@@ -48,10 +45,7 @@ export default function TabButtons({
   const scrollCheck = () => {
     if (scrollref.current) {
       setscrollX(scrollref.current.scrollLeft)
-      if (
-        Math.floor(scrollref.current.scrollWidth - scrollref.current.scrollLeft) <=
-        scrollref.current.offsetWidth
-      ) {
+      if (Math.floor(scrollref.current.scrollWidth - scrollref.current.scrollLeft) <= scrollref.current.offsetWidth) {
         setscrolEnd(true)
       } else {
         setscrolEnd(false)
@@ -63,60 +57,59 @@ export default function TabButtons({
   }, [])
   return (
     <>
-      <div
-        className={clsx(
-          "flex flex-row  w-full text-xs whitespace-nowrap sm:text-sm  md:gap-15 lg:gap-20",
-          className
-        )}
-      >
+      <div className={clsx("md:gap-15 flex w-full flex-row whitespace-nowrap text-xs sm:text-sm lg:gap-20", className)}>
         {scrollX !== 0 && (
-          <button className={a.button} onClick={() => slide(-50)}>
+          <button
+            className={a.button}
+            onClick={() => slide(-50)}
+          >
             <FaArrowAltCircleLeft />
           </button>
         )}
-        <ul ref={scrollref} onScroll={scrollCheck} className={clsx(a.App, "no-scrollbar")}>
+        <ul
+          ref={scrollref}
+          onScroll={scrollCheck}
+          className={clsx(a.App, "no-scrollbar")}
+        >
           {tabNames?.map((tabName, index) => {
-              const isString = typeof tabName === "string";
-              // const isNode = React.isValidElement(tabName);
-              if(isString){
-                return (
-                  <>
-                    <li
-                      onClick={() => {
-                        if (setActiveTab) setActiveTab(tabName)
-                      }}
-                      // variant={router.pathname.endsWith("/jobs") ? "secondary" : "text"}
-                      // className={clsx(
-                      //   "px-[12px] sm:px-[25px] py-[10px] rounded-xl m-5",
-                      //   activeTab === tabName && "bg-secondary"
-                      // )}
-                      className={clsx(
-                        a.li,
-                        tabColors,
-                        "bg-user_interface_3",
-                        activeTabColor && activeTab && activeTab === tabName && "!bg-secondary",
-                        !activeTabColor &&
-                          activeTab &&
-                          activeTab === tabName &&
-                          " !bg-secondary  rounded-lg"
-                      )}
-                    >
-                      {tabName}
-                    </li>
-                    {seperator && index === 1 && (
-                      <span className="bg-secondary w-[2px] h-[2rem] mx-5 my-auto"></span>
+            const isString = typeof tabName === "string"
+            // const isNode = React.isValidElement(tabName);
+            if (isString) {
+              return (
+                <>
+                  <li
+                    onClick={() => {
+                      if (setActiveTab) setActiveTab(tabName)
+                    }}
+                    // variant={router.pathname.endsWith("/jobs") ? "secondary" : "text"}
+                    // className={clsx(
+                    //   "px-[12px] sm:px-[25px] py-[10px] rounded-xl m-5",
+                    //   activeTab === tabName && "bg-secondary"
+                    // )}
+                    className={clsx(
+                      a.li,
+                      tabColors,
+                      "bg-user_interface_3",
+                      activeTabColor && activeTab && activeTab === tabName && "!bg-secondary",
+                      !activeTabColor && activeTab && activeTab === tabName && "rounded-lg !bg-secondary"
                     )}
-                  </>
-                )
-              }else{
-
-                return tabName
-              }
+                  >
+                    {tabName}
+                  </li>
+                  {seperator && index === 1 && <span className="mx-5 my-auto h-[2rem] w-[2px] bg-secondary"></span>}
+                </>
+              )
+            } else {
+              return tabName
+            }
           })}
         </ul>
-       
+
         {!scrolEnd && (
-          <button className={a.button} onClick={() => slide(50)}>
+          <button
+            className={a.button}
+            onClick={() => slide(50)}
+          >
             <FaArrowAltCircleRight />
           </button>
         )}

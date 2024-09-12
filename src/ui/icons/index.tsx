@@ -1,11 +1,11 @@
 import React, { ReactNode } from "react"
 
 import { AiFillFileText } from "react-icons/ai"
-import { FcFile,  FcPicture } from "react-icons/fc"
+import { FcFile, FcPicture } from "react-icons/fc"
 import { SiCss3, SiHtml5, SiJavascript, SiJson, SiTypescript } from "react-icons/si"
 import { VscNewFile, VscNewFolder } from "react-icons/vsc"
-import { MdDeleteOutline, MdKeyboardArrowRight,MdKeyboardArrowDown } from "react-icons/md";
-import { VscEdit } from "react-icons/vsc";
+import { MdDeleteOutline, MdKeyboardArrowRight, MdKeyboardArrowDown } from "react-icons/md"
+import { VscEdit } from "react-icons/vsc"
 export type ExtensionTypes =
   | "js"
   | "jsx"
@@ -24,7 +24,6 @@ export type ExtensionTypes =
   | "newFolder"
   | "delete"
   | "edit"
-  ;
 function getIconHelper() {
   const cache = new Map<string, ReactNode>()
   cache.set("js", <SiJavascript color="#fbcb38" />)
@@ -46,16 +45,14 @@ function getIconHelper() {
   cache.set("edit", <VscEdit />)
 
   const func = (name: string, extension?: ExtensionTypes): ReactNode => {
-
     if (extension) {
       if (cache.has(extension)) return cache.get(extension)
-      else if (cache.has(name.split('.')[1])) return cache.get(name.split('.')[1])
+      else if (cache.has(name.split(".")[1])) return cache.get(name.split(".")[1])
       else return <FcFile />
     } else {
       if (cache.has(name)) return cache.get(name)
-      else if (cache.has(name.split('.')[1])) return cache.get(name.split('.')[1])
+      else if (cache.has(name.split(".")[1])) return cache.get(name.split(".")[1])
       else return <FcFile />
-
     }
   }
   return func

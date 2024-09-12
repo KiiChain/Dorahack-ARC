@@ -1,4 +1,4 @@
-import { Directory, File } from "@/interface/custom/folder-tree/folder-tree";
+import { Directory, File } from "@/interface/custom/folder-tree/folder-tree"
 
 export const init: Directory = {
   id: "0",
@@ -8,9 +8,9 @@ export const init: Directory = {
   dirs: [],
   files: [],
   parentId: "0",
-};
+}
 
-const templates:Record<string,Directory>= {
+const templates: Record<string, Directory> = {
   "Solidity Basic": {
     id: "solidity_basic",
     name: "Solidity Starter",
@@ -37,7 +37,14 @@ const templates:Record<string,Directory>= {
       },
     ],
     files: [
-      { id: "readme", name: "README.md", parentId: "solidity_basic", type: "file", depth: 1, content: "# Solidity Starter\nA simple Solidity project." },
+      {
+        id: "readme",
+        name: "README.md",
+        parentId: "solidity_basic",
+        type: "file",
+        depth: 1,
+        content: "# Solidity Starter\nA simple Solidity project.",
+      },
     ],
     parentId: "0",
   },
@@ -67,7 +74,14 @@ const templates:Record<string,Directory>= {
       },
     ],
     files: [
-      { id: "readme", name: "README.md", parentId: "erc20_token", type: "file", depth: 1, content: "# ERC20 Token Project\nThis is an ERC20 token contract using OpenZeppelin." },
+      {
+        id: "readme",
+        name: "README.md",
+        parentId: "erc20_token",
+        type: "file",
+        depth: 1,
+        content: "# ERC20 Token Project\nThis is an ERC20 token contract using OpenZeppelin.",
+      },
     ],
     parentId: "0",
   },
@@ -97,14 +111,21 @@ const templates:Record<string,Directory>= {
       },
     ],
     files: [
-      { id: "readme", name: "README.md", parentId: "nft_marketplace", type: "file", depth: 1, content: "# NFT Marketplace Project\nThis project includes an ERC721-based NFT marketplace." },
+      {
+        id: "readme",
+        name: "README.md",
+        parentId: "nft_marketplace",
+        type: "file",
+        depth: 1,
+        content: "# NFT Marketplace Project\nThis project includes an ERC721-based NFT marketplace.",
+      },
     ],
     parentId: "0",
   },
-};
+}
 
 export const addLibrariesToProject = (project: Directory, libraries: File[]) => {
-  const libsFolder:Directory = {
+  const libsFolder: Directory = {
     id: "libs",
     name: "libraries",
     parentId: project.id,
@@ -119,25 +140,24 @@ export const addLibrariesToProject = (project: Directory, libraries: File[]) => 
       depth: project.depth + 2,
       content: `// ${lib} library code\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n`,
     })),
-  };
-  project.dirs.push(libsFolder);
-  return project;
-};
+  }
+  project.dirs.push(libsFolder)
+  return project
+}
 // libraries: File[]
 export const createProject = (projectName: string, templateKey: string | null) => {
-  console.log(`chk`,`pro`,projectName,)
-  let project: Directory = { ...init, name: projectName };
-if(templateKey==`empty`)return init;
+  console.log(`chk`, `pro`, projectName)
+  let project: Directory = { ...init, name: projectName }
+  if (templateKey == `empty`) return init
   if (templateKey && templates[templateKey]) {
-    project = { ...templates[templateKey], name: projectName };
-  }else {
-    project = { ...init, name: projectName };
-
+    project = { ...templates[templateKey], name: projectName }
+  } else {
+    project = { ...init, name: projectName }
   }
 
   // if (libraries.length > 0) {
   //   project = addLibrariesToProject(project, libraries);
   // }
 
-  return project;
-};
+  return project
+}

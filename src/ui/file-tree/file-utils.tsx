@@ -1,9 +1,6 @@
 import { Directory, File } from "@/interface/custom/folder-tree/folder-tree"
 import { ExtensionTypes, getIcon } from "../icons"
 
-
-
-
 export function findFileByName(rootDir: Directory, filename: string): File | undefined {
   let targetFile: File | undefined = undefined
 
@@ -32,6 +29,6 @@ export function sortFile(l: File, r: File) {
 }
 
 export const FileIcon = ({ extension, name }: { name?: string; extension?: ExtensionTypes }) => {
-  const icon = getIcon( name || "",extension)
+  const icon = getIcon(name || "", extension)
   return <span className="flex aspect-square w-[24px] items-center justify-center">{icon}</span>
 }

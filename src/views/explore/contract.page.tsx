@@ -4,20 +4,20 @@ import Link from "next/link"
 
 import { contract } from "@/data"
 // import { useModal } from "@/providers";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation"
 // import Modal from "@/ui/modal/modal";
-import { CustomizeModal } from "@/ui/modal";
+import { CustomizeModal } from "@/ui/modal"
 interface Contract {
-  identifier: string;
-  name: string;
-  description: string;
-  version: string;
+  identifier: string
+  name: string
+  description: string
+  version: string
 }
 interface Category {
-  identifier: string;
-  name: string;
-  description: string;
-  contracts: Contract[];
+  identifier: string
+  name: string
+  description: string
+  contracts: Contract[]
 }
 const sampleText = `
 // SPDX-License-Identifier: MIT
@@ -46,11 +46,15 @@ contract Counter {
 `
 
 const ContractCard = ({ contract }: { contract: Contract }) => {
-  const router = useRouter();
-  const [open, setOpen] = useState(false);
+  const router = useRouter()
+  const [open, setOpen] = useState(false)
   return (
     <>
-      <CustomizeModal text={sampleText} open={open} setOpen={setOpen} />
+      <CustomizeModal
+        text={sampleText}
+        open={open}
+        setOpen={setOpen}
+      />
       <div
         key={contract.identifier}
         onClick={() => router.push(`${contract.identifier}/overview`)}
@@ -70,18 +74,27 @@ const ContractCard = ({ contract }: { contract: Contract }) => {
           <h3 className="text-lg font-semibold tracking-tight">{contract.name}</h3>
           <p className="text-secondary-foreground mt-1 text-sm leading-5">{contract.description}</p>
           <div className="relative mt-auto flex justify-between gap-2 pt-3">
-            <button onClick={(e) => { e.stopPropagation(); setOpen(true) }} className="ring-offset-background focus-visible:ring-ring text-primary-foreground relative z-10 inline-flex h-auto items-center justify-center gap-1.5 whitespace-nowrap rounded-md bg-primary px-2.5 py-1.5 text-xs font-medium transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                setOpen(true)
+              }}
+              className="ring-offset-background focus-visible:ring-ring text-primary-foreground relative z-10 inline-flex h-auto items-center justify-center gap-1.5 whitespace-nowrap rounded-md bg-primary px-2.5 py-1.5 text-xs font-medium transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+            >
               Customize
             </button>
-            <Link href={`/${contract.identifier}/deploy`} className="ring-offset-background focus-visible:ring-ring text-primary-foreground relative z-10 inline-flex h-auto items-center justify-center gap-1.5 whitespace-nowrap rounded-md bg-primary px-2.5 py-1.5 text-xs font-medium transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">
+            <Link
+              href={`/${contract.identifier}/deploy`}
+              className="ring-offset-background focus-visible:ring-ring text-primary-foreground relative z-10 inline-flex h-auto items-center justify-center gap-1.5 whitespace-nowrap rounded-md bg-primary px-2.5 py-1.5 text-xs font-medium transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+            >
               Deploy
             </Link>
           </div>
         </article>
       </div>
     </>
-  );
-};
+  )
+}
 
 const CategorySection = ({ category }: { category: Category }) => {
   return (
@@ -101,12 +114,15 @@ const CategorySection = ({ category }: { category: Category }) => {
       <div className="h-5"></div>
       <div className="relative z-0 grid grid-cols-1 gap-4 md:grid-cols-3">
         {category.contracts.map((contract) => (
-          <ContractCard key={contract.identifier} contract={contract} />
+          <ContractCard
+            key={contract.identifier}
+            contract={contract}
+          />
         ))}
       </div>
     </section>
-  );
-};
+  )
+}
 
 const ExplorePageView = () => {
   return (
@@ -118,7 +134,10 @@ const ExplorePageView = () => {
       </p>
       <div className="h-10"></div>
       {contract.ContractStore.map((category) => (
-        <CategorySection key={category.identifier} category={category} />
+        <CategorySection
+          key={category.identifier}
+          category={category}
+        />
       ))}
     </div>
   )

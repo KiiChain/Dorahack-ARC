@@ -1,32 +1,32 @@
-"use client";
-import { createProject } from "@/data/sample";
-import { useIDE } from "@/providers/ide";
-import React, { useState } from "react";
+"use client"
+import { createProject } from "@/data/sample"
+import { useIDE } from "@/providers/ide"
+import React, { useState } from "react"
 
 const templates = [
   { key: "Solidity Basic", label: "Solidity Starter Project" },
   { key: "ERC20 Token", label: "ERC20 Token Project" },
   { key: "NFT Marketplace", label: "NFT Marketplace Project" },
-];
+]
 
 const GettingStarted = () => {
-  const [projectName, setProjectName] = useState("");
-  const [libraries, setLibraries] = useState("");
-  const [selectedTemplate, setSelectedTemplate] = useState<string | null>(null);
-const {setRootDir}=useIDE()
+  const [projectName, setProjectName] = useState("")
+  const [libraries, setLibraries] = useState("")
+  const [selectedTemplate, setSelectedTemplate] = useState<string | null>(null)
+  const { setRootDir } = useIDE()
   const handleProjectCreation = () => {
     // const librariesArray = libraries.split(",").map((lib) => lib.trim());
-console.log(`selected this `,selectedTemplate)
-let newProject 
-if(selectedTemplate==null) {
-newProject=createProject(projectName, `empty`);
-}else{
-  newProject=createProject(projectName, selectedTemplate);
-}
+    console.log(`selected this `, selectedTemplate)
+    let newProject
+    if (selectedTemplate == null) {
+      newProject = createProject(projectName, `empty`)
+    } else {
+      newProject = createProject(projectName, selectedTemplate)
+    }
     setRootDir(newProject)
     // Handle the newly created project (save to state, localStorage, etc.)
-    console.log("Created Project:", newProject);
-  };
+    console.log("Created Project:", newProject)
+  }
 
   return (
     <div className="w-full">
@@ -39,7 +39,10 @@ newProject=createProject(projectName, `empty`);
 
       <h2 className="text-lg font-semibold">Start Empty Project</h2>
       <div className="mb-4">
-        <label htmlFor="projectName" className="block text-sm font-medium text-gray-700">
+        <label
+          htmlFor="projectName"
+          className="block text-sm font-medium text-gray-700"
+        >
           Project Name
         </label>
         <input
@@ -55,7 +58,10 @@ newProject=createProject(projectName, `empty`);
       </div>
 
       <div className="mb-4">
-        <label htmlFor="libraries" className="block text-sm font-medium text-gray-700">
+        <label
+          htmlFor="libraries"
+          className="block text-sm font-medium text-gray-700"
+        >
           Libraries to Import (Optional)
         </label>
         <input
@@ -71,7 +77,10 @@ newProject=createProject(projectName, `empty`);
 
       <h2 className="text-lg font-semibold">Starter Templates</h2>
       <div className="mb-4">
-        <label htmlFor="template" className="block text-sm font-medium text-gray-700">
+        <label
+          htmlFor="template"
+          className="block text-sm font-medium text-gray-700"
+        >
           Choose a template
         </label>
         <select
@@ -83,7 +92,10 @@ newProject=createProject(projectName, `empty`);
         >
           <option value="empty">None (Start Empty)</option>
           {templates.map((template) => (
-            <option key={template.key} value={template.key}>
+            <option
+              key={template.key}
+              value={template.key}
+            >
               {template.label}
             </option>
           ))}
@@ -100,7 +112,7 @@ newProject=createProject(projectName, `empty`);
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default GettingStarted;
+export default GettingStarted
