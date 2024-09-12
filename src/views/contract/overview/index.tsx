@@ -1,6 +1,9 @@
-import React from "react"
+"use client"
+import React, { useEffect, useState } from "react"
 
 import Link from "next/link"
+
+import axios from "axios"
 
 import { RichText } from "@/components"
 import Tabs from "@/components/misc/Tabs"
@@ -10,6 +13,23 @@ interface IContractOverviewViewProps {
 }
 
 const ContractOverviewView: React.FC<IContractOverviewViewProps> = ({ contract }) => {
+  const [sourceCode, setSourceCode] = useState<string | null>(null)
+
+  useEffect(() => {
+    // Fetch source code
+    if (!sourceCode) {
+      console.log("Fetching source code")
+      axios
+        .post("/api/explore", { contract: contract.path })
+        .then((response) => {
+          setSourceCode(response.data)
+        })
+        .catch((error) => {
+          console.error(error)
+        })
+    }
+  }, [])
+
   return (
     <div className="container mx-auto max-w-5xl px-5 py-20 sm:px-2">
       <div className="py-2 md:pb-0 md:pt-8">
@@ -52,7 +72,7 @@ const ContractOverviewView: React.FC<IContractOverviewViewProps> = ({ contract }
                 {
                   name: "Source",
                   identifier: "source",
-                  content: <>{JSON.stringify(contract.source.code)}</>,
+                  content: <>{sourceCode}</>,
                 },
                 {
                   name: "Functions",

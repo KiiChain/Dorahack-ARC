@@ -3,10 +3,11 @@ import React, { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 
+import axios from "axios"
+
 import { contract } from "@/data"
 
 import { CustomizeModal } from "@/ui/modal"
-import axios from "axios"
 
 interface Category {
   identifier: string
