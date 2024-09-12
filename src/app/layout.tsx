@@ -2,8 +2,11 @@ import React from "react"
 
 import { Metadata } from "next"
 
-import "@/styles/globals.css"
+import { Toaster } from "sonner"
+
 import Navbar from "@/components/navbar"
+
+import "@/styles/globals.css"
 
 export const metadata: Metadata = {
   title: {
@@ -40,6 +43,10 @@ const RootLayout = ({
   return (
     <html lang="en">
       <body className="min-h-screen bg-dark-3 font-satoshi text-light-0">
+        <Toaster
+          position="top-center"
+          invert
+        />
         <Navbar
           links={links}
           logoText="Arc"

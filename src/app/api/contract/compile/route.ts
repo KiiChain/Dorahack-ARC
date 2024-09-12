@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server"
 
-import { existsSync, read, readFileSync } from "fs"
+import { existsSync, readFileSync } from "fs"
 import path from "path"
 import * as solc from "solc"
 
@@ -41,11 +41,12 @@ const resolveSources = (sources: Record<string, { content: string }>, parent?: s
   const queue = Object.entries(sources)
 
   for (const [key, value] of queue) {
+    console.log(`Resolving sources: ${key}`)
     let content = value.content
 
     // Replace both types of import paths (standard and named imports)
     content = content.replace(/import\s+(\{.*?\}\s+from\s+)?["'](.*)["'];/g, (match, namedImports, importPath) => {
-      console.log("Resolving import:", importPath)
+      console.log(`Resolving import: ${importPath}`)
       // Resolve the local path based on the import
       const localPath = resolveImportPath(importPath, parent)
       const fileContent = readSourceFile(localPath)
