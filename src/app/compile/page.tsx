@@ -120,14 +120,14 @@ const CompilePage = () => {
 
         {error && <div className="text-red-500">{error}</div>}
 
-        {/* Outputs */}
-        {/* <Display output={output} /> */}
-
         {/* Deployable */}
         <Deployable
           compiled={output}
           sources={sources}
         />
+
+        {/* Outputs */}
+        <Display output={output} />
       </div>
     </Provider>
   )
