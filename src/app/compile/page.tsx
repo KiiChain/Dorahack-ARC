@@ -1,10 +1,17 @@
 "use client"
 
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 
 import axios from "axios"
+import { ConnectKitButton } from "connectkit"
 import { toast } from "sonner"
 import { Abi } from "viem"
+import { useAccount, useDeployContract, useSwitchChain } from "wagmi"
+
+import { KiiChain } from "@/kiichain"
+
+import RequestToken from "@/components/faucet/request-token"
+import { Provider } from "@/providers"
 
 interface ISources {
   [key: `${string}.sol`]: {
@@ -15,7 +22,7 @@ interface ISources {
 interface IPresent {
   name: string
   abi: Abi
-  bytecode: string
+  bytecode: `0x${string}`
   opcode: string
   sourceMap: string
   metadata: Record<string, unknown>
@@ -80,7 +87,7 @@ const CompilePage = () => {
         res.push({
           name: key,
           abi: contract.abi,
-          bytecode: contract.evm.bytecode.object,
+          bytecode: `0x${contract.evm.bytecode.object}`,
           opcode: contract.evm.bytecode.opcodes,
           sourceMap: contract.evm.bytecode.sourceMap,
           metadata: contract.metadata ? JSON.parse(contract.metadata) : {},
@@ -101,20 +108,28 @@ const CompilePage = () => {
   }
 
   return (
-    <div className="flex flex-col gap-4 p-4 pt-32">
-      {JSON.stringify(sources)}
-      <button
-        className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
-        onClick={compileContract}
-      >
-        Compile
-      </button>
+    <Provider>
+      <div className="flex flex-col gap-4 p-4 pt-32">
+        {JSON.stringify(sources)}
+        <button
+          className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+          onClick={compileContract}
+        >
+          Compile
+        </button>
 
-      {error && <div className="text-red-500">{error}</div>}
+        {error && <div className="text-red-500">{error}</div>}
 
-      {/* Outputs */}
-      <Display output={output} />
-    </div>
+        {/* Outputs */}
+        {/* <Display output={output} /> */}
+
+        {/* Deployable */}
+        <Deployable
+          compiled={output}
+          sources={sources}
+        />
+      </div>
+    </Provider>
   )
 }
 
@@ -221,6 +236,139 @@ const Display = ({ output }: { output: IPresent[] }) => {
                 </pre>
               </div>
             </>
+          )}
+        </div>
+      ))}
+    </div>
+  )
+}
+
+const Deployable = ({ compiled, sources }: { compiled: IPresent[]; sources: ISources }) => {
+  const { deployContract } = useDeployContract()
+  const { isConnected, chain, address } = useAccount()
+  const { switchChain } = useSwitchChain()
+
+  const [selected, setSelected] = useState<IPresent[]>([])
+
+  // Iterate through the sources and find the contract with the same name
+  // Selected would be an array of contracts that are deployable and its bytecode + abi
+  // would be used to deploy the contract
+  useEffect(() => {
+    const res: IPresent[] = []
+    Object.keys(sources).forEach((key) => {
+      const contract = compiled.find((c) => c.name === key)
+
+      if (contract) {
+        res.push(contract)
+      }
+    })
+
+    setSelected(res)
+  }, [compiled, sources])
+
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text)
+    toast.info("Copied to clipboard", { position: "bottom-right" })
+  }
+
+  const handleDeploy = async (bytecode: IPresent["bytecode"], abi: IPresent["abi"]) => {
+    if (!isConnected) {
+      toast.error("Please connect your wallet first")
+      return
+    }
+
+    await switchChain({ chainId: KiiChain.id })
+
+    if (!abi || !bytecode) {
+      toast.error("Please compile the contract first")
+      return
+    }
+
+    try {
+      const contract = await deployContract({
+        abi,
+        bytecode,
+        args: [],
+      })
+
+      console.log("Contract deployed at:", contract)
+    } catch (e) {
+      console.error("Deployment error:", e)
+      toast.error("Failed to deploy contract")
+    }
+  }
+
+  return (
+    <div className="space-y-4">
+      {selected.map((contract, index) => (
+        <div
+          key={index}
+          className="rounded border border-gray-300 p-4 shadow-lg"
+        >
+          <div className="text-lg font-bold">{contract.name}</div>
+          <div className="mt-2">
+            <div className="flex justify-between">
+              <div className="text-sm text-gray-500">ABI</div>
+              <button
+                onClick={() => copyToClipboard(JSON.stringify(contract.abi, null, 2))}
+                className="text-sm text-blue-500 underline hover:text-blue-700"
+              >
+                Copy ABI
+              </button>
+            </div>
+            <pre className="no-scroll max-h-40 overflow-y-auto rounded bg-dark-6 p-2">
+              {JSON.stringify(contract.abi, null, 2)}
+            </pre>
+          </div>
+          <div className="mt-2">
+            <div className="flex justify-between">
+              <div className="text-sm text-gray-500">Bytecode</div>
+              <button
+                onClick={() => copyToClipboard(contract.bytecode)}
+                className="text-sm text-blue-500 underline hover:text-blue-700"
+              >
+                Copy Bytecode
+              </button>
+            </div>
+            <pre className="no-scroll max-h-40 overflow-y-auto rounded bg-dark-6 p-2">{contract.bytecode}</pre>
+          </div>
+
+          {!isConnected && (
+            <ConnectKitButton.Custom>
+              {({ isConnected, isConnecting, show, hide, address, ensName, chain }) => {
+                return (
+                  <button
+                    className="transition-transfor mt-4 w-full transform rounded bg-gradient-to-r from-green-400 to-blue-500 px-4 py-2 font-bold text-white shadow-lg hover:from-green-500 hover:to-blue-600"
+                    onClick={show}
+                  >
+                    Connect your wallet
+                  </button>
+                )
+              }}
+            </ConnectKitButton.Custom>
+          )}
+
+          {isConnected && address && <RequestToken address={address} />}
+
+          {isConnected && chain?.id !== KiiChain.id && (
+            <button
+              className="transition-transfor mt-4 w-full transform rounded bg-gradient-to-r from-green-400 to-blue-500 px-4 py-2 font-bold text-white shadow-lg hover:from-green-500 hover:to-blue-600"
+              onClick={() => switchChain({ chainId: KiiChain.id })}
+            >
+              Switch to KiiChain
+            </button>
+          )}
+
+          {isConnected && chain?.id === KiiChain.id && (
+            <button
+              className="transition-transfor mt-4 w-full transform rounded bg-gradient-to-r from-green-400 to-blue-500 px-4 py-2 font-bold text-white shadow-lg hover:from-green-500 hover:to-blue-600"
+              onClick={() => {
+                handleDeploy(contract.bytecode, contract.abi)
+                console.log(`Deploying ${contract.name}`)
+              }}
+            >
+              Deploy to KiiChain
+            </button>
           )}
         </div>
       ))}
