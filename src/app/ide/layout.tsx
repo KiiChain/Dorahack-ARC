@@ -8,7 +8,7 @@ const IDELayout = ({
 }>) => {
   return (
     <IDEProvider>
-      <div className="mx-auto  max-w-7xl p-12 pt-16 h-screen max-h-screen grid grid-rows-12 grid-cols-12 ">{children}</div>
+      <div className="mx-auto  max-w-7xl p-2 sm:p-6 md:p-12 pt-16 h-screen max-h-screen grid grid-rows-12 grid-cols-12 ">{children}</div>
     </IDEProvider>
   )
 }

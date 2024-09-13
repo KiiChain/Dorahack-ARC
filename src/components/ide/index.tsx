@@ -8,13 +8,14 @@ import { SidebarBody } from "../ide-sidebar"
 import { cn } from "@/lib/utils"
 import { FileIcon } from "@/ui/file-tree/file-utils"
 import { Directory, File } from "@/interface/custom/folder-tree/folder-tree"
-import TabButtons from "../tab-section"
-import Dropdown from "@/ui/dropdown"
 import { FaPencilAlt as PencilIcon, FaLayerGroup as Square2StackIcon } from "react-icons/fa"
 import GettingStarted from "../getting-started"
 import NoFileSelected from "../no-file-selected"
 import { useSearchParams } from "next/navigation"
 import { CSSTabs } from "@/ui/css-tabs"
+import CompilePage, { Deployable } from "../compile-tab"
+import { collectSolFiles } from "@/utils"
+import Download from "../download"
 const menuItems = [
   {
     heading: "Edit",
@@ -30,13 +31,13 @@ const menuItems = [
   },
 ]
 const IDE = () => {
-  const { rootDir, selectedFile, setRootDir, setSelectedFile, activeFiles, setActiveFiles } = useIDE()
+  const { rootDir, selectedFile, setRootDir, setSelectedFile, activeFiles, setActiveFiles,handleFileUpdate } = useIDE()
   const searchparams = useSearchParams()
   const y = searchparams.get("content")
   const handleTabSelect = (file: File) => {
     setSelectedFile(file)
   }
-  const [activeTab, setActiveTab] = useState<number>()
+  const [activeTab, setActiveTab] = useState<number>(0)
 
 
 
@@ -48,51 +49,34 @@ const IDE = () => {
   useEffect(() => {
     if (y != null) {
       const z: Directory = JSON.parse(y)
-
       setRootDir(z)
     }
   }, [])
-  useEffect(()=>{
-    console.log("change",activeTab)
-  },[activeTab])
+  useEffect(() => {
+    console.log("change", activeTab)
+  }, [activeTab])
   useEffect(() => {
     if (activeFiles && activeFiles.length == 0) setSelectedFile(undefined)
   }, [activeFiles])
   return (
     <div className="w-full h-full row-span-12 col-span-12 border border-neutral-800 p-2 rounded-lg">
       <div className="grid grid-cols-12 grid-rows-12 w-full h-full gap-1 rounded-lg">
-        {/* <TabButtons
-          tabNames={tabNames}
-          activeTab={activeTab}
-          setActiveTab={setActiveTab}
-          tabColors="bg-lightGray text-darkGray"
-          activeTabColor="bg-blue-500 text-white"
-          className=" col-span-12 row-span-1"
-          seperator={false}
-        /> */}
+
         <CSSTabs
           tabs={[
             {
               id: "0",
               label: "Editor"
             },
-            
+
             {
               id: "1",
               label: "Compile"
             },
             {
               id: "2",
-              label: "Copy to Clipboard"
-            },
-            {
-              id: "3",
-              label: "Deploy"
-            },
-            <Dropdown
-              menuLabel="Download"
-              menuItems={menuItems}
-            />
+              label: "Download"
+            }
           ]}
           selectedTabIndex={activeTab}
           setSelectedTab={setActiveTab}
@@ -102,17 +86,32 @@ const IDE = () => {
             <>
               <SidebarBody className="justify-between gap-10">
                 <div className="no-scroll flex h-full flex-1 flex-col overflow-y-auto overflow-x-scroll mt-8 gap-2">
-                  <FileManager
-                    rootDir={rootDir}
-                    selectedFile={selectedFile}
-                    setRootDir={setRootDir}
-                    setSelectedFile={setSelectedFile}
-                    activeFiles={activeFiles}
-                    setActiveFiles={setActiveFiles}
-                  />
+                  {
+                    activeTab == 0 ?
+                      <FileManager
+                        rootDir={rootDir}
+                        selectedFile={selectedFile}
+                        setRootDir={setRootDir}
+                        setSelectedFile={setSelectedFile}
+                        activeFiles={activeFiles}
+                        setActiveFiles={setActiveFiles}
+                      />
+                      :
+                      activeTab == 2 ?
+                        <>
+                          <Download contracts={collectSolFiles(rootDir)} rootDir={rootDir} />
+                        </>
+                        :
+                        activeTab == 1 &&
+                        <>
+                          <CompilePage sources={collectSolFiles(rootDir)} />
+                        </>
+
+
+                  }
                 </div>
               </SidebarBody>
-              <div className=" w-4/5 rounded-lg">
+              <div className=" w-full md:w-4/5 rounded-lg">
                 <div className="h-full min-h-8 overflow-y-scroll rounded-lg">
 
 
@@ -145,7 +144,7 @@ const IDE = () => {
                   </div>
                   {selectedFile ? (
                     <div key={selectedFile?.id} className="h-full">
-                      <MonacoEditor selectedFile={selectedFile} />
+                      <MonacoEditor selectedFile={selectedFile} handleFileUpdate={handleFileUpdate} />
                     </div>
                   ) : (
                     <NoFileSelected />

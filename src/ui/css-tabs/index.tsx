@@ -13,9 +13,9 @@ import { Button } from "../button";
 type Tab = { label: string; id: string };
 
 type Props = {
-  selectedTabIndex: number|undefined;
+  selectedTabIndex: number;
   tabs: (Tab|React.ReactNode)[];
-  setSelectedTab: (input: number|undefined) => void;
+  setSelectedTab: (input: number) => void;
 };
 
 export const CSSTabs = ({

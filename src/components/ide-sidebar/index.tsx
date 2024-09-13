@@ -42,15 +42,7 @@ export const MobileSidebar = ({ className, children, ...props }: React.Component
         className={cn("flex h-10 w-full flex-row items-center justify-between bg-neutral-800 px-4 py-4 md:hidden")}
         {...props}
       >
-        <div className="z-20 flex w-full justify-end">
-          {/* IconMenu2 */}
-          <button
-            className="text-neutral-800 dark:text-neutral-200"
-            onClick={() => setOpen(!open)}
-          >
-            button
-          </button>
-        </div>
+       
         <AnimatePresence>
           {open && (
             <motion.div

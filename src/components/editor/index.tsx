@@ -11,7 +11,7 @@ import { useCompletion } from "ai/react"
 import { CompletionFormatter } from "@/utils/formatter"
 import { GenerateInstructions } from "@/utils/prompt"
 import { Content } from "@google/generative-ai"
-export const MonacoEditor = ({ selectedFile }: { selectedFile: File }) => {
+export const MonacoEditor = ({ selectedFile,handleFileUpdate }: { selectedFile: File; handleFileUpdate: (updatedFile: File) => void }) => {
   const code = selectedFile.content
   let language = selectedFile.name.split(".").pop()
 
@@ -134,7 +134,11 @@ export const MonacoEditor = ({ selectedFile }: { selectedFile: File }) => {
   }, [debouncedSuggestions, refreshInterval])
 
   // Use the editor change event to trigger fetching of suggestions
-  const handleEditorChange = useCallback(() => {
+  const handleEditorChange = useCallback((e:string|undefined) => {
+    console.log(e)
+    const x=selectedFile
+    x.content=e??""
+    handleFileUpdate(x)
     startOrResetFetching()
   }, [startOrResetFetching])
 
@@ -190,7 +194,7 @@ export const MonacoEditor = ({ selectedFile }: { selectedFile: File }) => {
           formatOnPaste: true,
           trimAutoWhitespace: true,
         }}
-        onChange={handleEditorChange}
+        onChange={(val)=>handleEditorChange(val)}
         onMount={(editor) => {
           editorRef.current = editor
         }}

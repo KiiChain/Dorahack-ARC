@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 
 //import { init } from "@/data/sample"
 import { Directory, File } from "@/interface/custom/folder-tree/folder-tree"
@@ -11,6 +11,7 @@ interface IIDEContext {
   setSelectedFile: React.Dispatch<React.SetStateAction<File | undefined>>
   activeFiles: File[] | undefined
   setActiveFiles: React.Dispatch<React.SetStateAction<File[] | undefined>>
+  handleFileUpdate: (updatedFile: File) => void
 }
 
 type IIDEProvider = {
@@ -38,9 +39,34 @@ const IDEProvider: React.FC<IIDEProvider> = ({ children }) => {
   // useEffect(() => {
   //   setRootDir(init)
   // }, [])
+  const updateFileInRootDir = (dir: Directory, updatedFile: File): Directory => {
+    // Recursively update the file in the directory structure
+    return {
+      ...dir,
+      files: dir.files.map((file) =>
+        file.id === updatedFile.id ? { ...file, content: updatedFile.content } : file
+      ),
+      dirs: dir.dirs.map((subDir) => updateFileInRootDir(subDir, updatedFile)),
+    }
+  }
+  const handleFileUpdate = (updatedFile: File) => {
+    setSelectedFile(updatedFile)
+
+    if (activeFiles) {
+      setActiveFiles(
+        activeFiles.map((file) => (file.id === updatedFile.id ? updatedFile : file))
+      )
+    }
+    if (rootDir) {
+      setRootDir(updateFileInRootDir(rootDir, updatedFile))
+    }
+  }
+  useEffect(()=>{
+    console.log(rootDir)
+  },[rootDir])
 
   return (
-    <Context.Provider value={{ rootDir, setRootDir, selectedFile, setSelectedFile, activeFiles, setActiveFiles }}>
+    <Context.Provider value={{ rootDir, setRootDir, selectedFile, setSelectedFile, activeFiles, setActiveFiles,handleFileUpdate }}>
       {children}
     </Context.Provider>
   )

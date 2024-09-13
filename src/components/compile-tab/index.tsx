@@ -11,12 +11,11 @@ import { useAccount, useDeployContract, useSwitchChain } from "wagmi"
 import { KiiChain } from "@/kiichain"
 
 import RequestToken from "@/components/faucet/request-token"
+import { Provider } from "@/providers"
+import { copyToClipboard, downloadJson } from "@/utils"
+import { Button } from "@/ui/button"
+import { getIcon } from "@/ui/icons"
 
-interface ISources {
-  [key: `${string}.sol`]: {
-    content: string
-  }
-}
 
 interface IPresent {
   name: string
@@ -27,21 +26,7 @@ interface IPresent {
   metadata: Record<string, unknown>
 }
 
-const CompilePage = () => {
-  const [sources, setSources] = useState<ISources>({
-    "NFTMarket.sol": {
-      content: `
-        // NFTMarket.sol
-pragma solidity ^0.8.0;
-
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-
-contract NFTMarket is ERC721 
-    constructor() ERC721("NFTMarket", "NFTM") {}
-}
-      `,
-    },
-  })
+const CompilePage = ({ sources }: { sources: ISources }) => {
 
   const [output, setOutput] = useState<Array<IPresent>>([])
   const [error, setError] = useState<string | null>(null)
@@ -98,15 +83,16 @@ contract NFTMarket is ERC721
   }
 
   return (
-    <>
-      <div className="flex flex-col gap-4 p-4 pt-32">
-        {JSON.stringify(sources)}
-        <button
-          className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+  
+      <div className="flex flex-col gap-4">
+        {/* {JSON.stringify(sources)} */}
+        <Button
+          // variant="outline"
           onClick={compileContract}
+          className="bg-[#3c3c3c] !outline-none  px-2 py-1 w-full whitespace-nowrap "
         >
           Compile
-        </button>
+        </Button>
 
         {error && <div className="text-red-500">{error}</div>}
 
@@ -119,7 +105,7 @@ contract NFTMarket is ERC721
         {/* Outputs */}
         <Display output={output} />
       </div>
-    </>
+
   )
 }
 
@@ -132,20 +118,6 @@ const Display = ({ output }: { output: IPresent[] }) => {
     setExpanded((prev) => (prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]))
   }
 
-  const copyToClipboard = (text: string) => {
-    navigator.clipboard.writeText(text)
-    toast.info("Copied to clipboard", { position: "bottom-right" })
-  }
-
-  const downloadJson = (data: Record<string, unknown>, filename: string) => {
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" })
-    const url = URL.createObjectURL(blob)
-    const link = document.createElement("a")
-    link.href = url
-    link.download = `${filename}.json`
-    link.click()
-    URL.revokeObjectURL(url)
-  }
 
   return (
     <div className="space-y-4">
@@ -157,11 +129,13 @@ const Display = ({ output }: { output: IPresent[] }) => {
           {/* Contract Name */}
           <div className="flex items-center justify-between">
             <div className="text-lg font-bold">{contract.name}</div>
+
             <button
               onClick={() => toggleExpand(index)}
               className="text-sm text-blue-500 underline hover:text-blue-700"
             >
-              {expanded.includes(index) ? "View Less" : "View More"}
+              
+              {getIcon( expanded.includes(index) ? "openDirectory": "closedDirectory")}
             </button>
           </div>
 
@@ -171,59 +145,52 @@ const Display = ({ output }: { output: IPresent[] }) => {
               {/* ABI Section */}
               <div className="mt-2">
                 <div className="flex justify-between">
-                  <div className="text-sm text-gray-500">ABI</div>
-                  <button
+                  {/* <div className="text-sm text-gray-500">ABI</div> */}
+                  <Button
+                    className="transition-all  bg-[#3c3c3c] !outline-none  px-2 py-1  whitespace-nowrap w-full"
                     onClick={() => copyToClipboard(JSON.stringify(contract.abi, null, 2))}
-                    className="text-sm text-blue-500 underline hover:text-blue-700"
                   >
                     Copy ABI
-                  </button>
+                  </Button>
                 </div>
-                <pre className="no-scroll max-h-40 overflow-y-auto rounded bg-dark-6 p-2">
-                  {JSON.stringify(contract.abi, null, 2)}
-                </pre>
+
               </div>
 
               {/* Bytecode Section */}
               <div className="mt-2">
                 <div className="flex justify-between">
-                  <div className="text-sm text-gray-500">Bytecode</div>
-                  <button
+                  <Button
+                    className="transition-all  bg-[#3c3c3c] !outline-none  px-2 py-1  whitespace-nowrap w-full"
                     onClick={() => copyToClipboard(contract.bytecode)}
-                    className="text-sm text-blue-500 underline hover:text-blue-700"
                   >
                     Copy Bytecode
-                  </button>
+                  </Button>
+
                 </div>
-                <pre className="no-scroll max-h-40 overflow-y-auto rounded bg-dark-6 p-2">{contract.bytecode}</pre>
               </div>
 
               {/* Opcode Section */}
               <div className="mt-2">
-                <div className="text-sm text-gray-500">Opcode</div>
                 <pre className="no-scroll max-h-20 overflow-y-auto rounded bg-dark-6 p-2">{contract.opcode}</pre>
               </div>
 
               {/* Source Map Section */}
               <div className="mt-2">
-                <div className="text-sm text-gray-500">Source Map</div>
                 <pre className="no-scroll max-h-20 overflow-y-auto rounded bg-dark-6 p-2">{contract.sourceMap}</pre>
               </div>
 
               {/* Metadata Section with download option */}
               <div className="mt-2">
                 <div className="flex justify-between">
-                  <div className="text-sm text-gray-500">Metadata</div>
-                  <button
+                  <Button
                     onClick={() => downloadJson(contract.metadata, contract.name)}
-                    className="text-sm text-blue-500 underline hover:text-blue-700"
+                    className="transition-all  bg-[#3c3c3c] !outline-none  px-2 py-1  whitespace-nowrap w-full"
                   >
                     Download Metadata
-                  </button>
+                  </Button>
+
                 </div>
-                <pre className="no-scroll max-h-40 overflow-y-auto rounded bg-dark-6 p-2">
-                  {JSON.stringify(contract.metadata, null, 2)}
-                </pre>
+
               </div>
             </>
           )}
@@ -233,7 +200,7 @@ const Display = ({ output }: { output: IPresent[] }) => {
   )
 }
 
-const Deployable = ({ compiled, sources }: { compiled: IPresent[]; sources: ISources }) => {
+export const Deployable = ({ compiled, sources }: { compiled: IPresent[]; sources: ISources }) => {
   const { deployContract } = useDeployContract()
   const { isConnected, chain, address } = useAccount()
   const { switchChain } = useSwitchChain()
@@ -298,41 +265,38 @@ const Deployable = ({ compiled, sources }: { compiled: IPresent[]; sources: ISou
           <div className="text-lg font-bold">{contract.name}</div>
           <div className="mt-2">
             <div className="flex justify-between">
-              <div className="text-sm text-gray-500">ABI</div>
-              <button
+              {/* <div className="text-sm text-gray-500">ABI</div> */}
+              <Button
+                className="transition-all  bg-[#3c3c3c] !outline-none  px-2 py-1  whitespace-nowrap w-full"
                 onClick={() => copyToClipboard(JSON.stringify(contract.abi, null, 2))}
-                className="text-sm text-blue-500 underline hover:text-blue-700"
               >
                 Copy ABI
-              </button>
+              </Button>
             </div>
-            <pre className="no-scroll max-h-40 overflow-y-auto rounded bg-dark-6 p-2">
-              {JSON.stringify(contract.abi, null, 2)}
-            </pre>
           </div>
           <div className="mt-2">
-            <div className="flex justify-between">
-              <div className="text-sm text-gray-500">Bytecode</div>
-              <button
+            <div className="flex justify-between ">
+              {/* <div className="text-sm text-gray-500">Bytecode</div> */}
+              <Button
                 onClick={() => copyToClipboard(contract.bytecode)}
-                className="text-sm text-blue-500 underline hover:text-blue-700"
+                className="transition-all  bg-[#3c3c3c] !outline-none  px-2 py-1  whitespace-nowrap w-full"
               >
                 Copy Bytecode
-              </button>
+              </Button>
             </div>
-            <pre className="no-scroll max-h-40 overflow-y-auto rounded bg-dark-6 p-2">{contract.bytecode}</pre>
+            <pre className="no-scroll max-h-40 overflow-y-auto rounded bg-dark-6 p-2 mt-2">{contract.bytecode}</pre>
           </div>
 
           {!isConnected && (
             <ConnectKitButton.Custom>
               {({ isConnected, isConnecting, show, hide, address, ensName, chain }) => {
                 return (
-                  <button
-                    className="transition-transfor mt-4 w-full transform rounded bg-gradient-to-r from-green-400 to-blue-500 px-4 py-2 font-bold text-white shadow-lg hover:from-green-500 hover:to-blue-600"
+                  <Button
+                    className="transition-transform mt-4 w-full transform rounded bg-gradient-to-r from-green-400 to-blue-500 px-4 py-2 font-bold text-white shadow-lg hover:from-green-500 hover:to-blue-600"
                     onClick={show}
                   >
                     Connect your wallet
-                  </button>
+                  </Button>
                 )
               }}
             </ConnectKitButton.Custom>
@@ -341,12 +305,12 @@ const Deployable = ({ compiled, sources }: { compiled: IPresent[]; sources: ISou
           {isConnected && address && <RequestToken address={address} />}
 
           {isConnected && chain?.id !== KiiChain.id && (
-            <button
-              className="transition-transfor mt-4 w-full transform rounded bg-gradient-to-r from-green-400 to-blue-500 px-4 py-2 font-bold text-white shadow-lg hover:from-green-500 hover:to-blue-600"
+            <Button
+              className="transition-transform mt-4 w-full transform rounded bg-gradient-to-r from-green-400 to-blue-500 px-4 py-2 font-bold text-white shadow-lg hover:from-green-500 hover:to-blue-600"
               onClick={() => switchChain({ chainId: KiiChain.id })}
             >
               Switch to KiiChain
-            </button>
+            </Button>
           )}
 
           {isConnected && chain?.id === KiiChain.id && (
