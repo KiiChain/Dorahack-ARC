@@ -1,8 +1,10 @@
-import clsx from "clsx"
 import React from "react"
+
+import clsx from "clsx"
 
 interface RichTextProps {
   content: IRichText
+  overrideClass?: string
 }
 
 const tailwindClasses: Record<string, string> = {
@@ -14,9 +16,9 @@ const tailwindClasses: Record<string, string> = {
   li: "my-2",
 }
 
-const RichText: React.FC<RichTextProps> = ({ content }) => {
+const RichText: React.FC<RichTextProps> = ({ content, overrideClass }) => {
   const Tag = content.tag as keyof JSX.IntrinsicElements
-  const tailwindClass = clsx(tailwindClasses[content.tag] || "", content.className)
+  const tailwindClass = clsx(overrideClass ? overrideClass : tailwindClasses[content.tag] || "", content.className)
   const combinedStyle = { ...content.style } as React.CSSProperties
 
   if (Tag === "ul") {
