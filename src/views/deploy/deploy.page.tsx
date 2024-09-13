@@ -32,9 +32,9 @@ const DeployView = () => {
   }
 
   return (
-    <Provider>
+    <>
       <Deploy sources={singleFileExample} />
-    </Provider>
+    </>
   )
 }
 

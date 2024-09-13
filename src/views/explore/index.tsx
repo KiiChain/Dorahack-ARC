@@ -7,9 +7,9 @@ import Contracts from "./contract.page"
 
 const ExploreView = () => {
   return (
-    <Provider>
+    <>
       <Contracts />
-    </Provider>
+    </>
   )
 }
 

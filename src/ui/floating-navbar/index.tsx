@@ -1,45 +1,56 @@
-"use client";
-import React, { useState } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useMotionValueEvent,
-} from "framer-motion";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
+"use client"
+import React, { useState } from "react"
+
+import Link from "next/link"
+
+import { ConnectKitButton } from "connectkit"
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion"
+
+import { Chads } from "@/components"
+import { cn } from "@/lib/utils"
 
 export const FloatingNav = ({
   navItems,
   className,
 }: {
   navItems: {
-    name: string;
-    link: string;
-    icon?: JSX.Element;
-  }[];
-  className?: string;
+    name: string
+    link: string
+    icon?: JSX.Element
+  }[]
+  className?: string
 }) => {
-  const { scrollYProgress } = useScroll();
+  const { scrollYProgress } = useScroll()
 
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true)
+  const [width, setWidth] = useState("80%")
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
+    console.log("PROGRESS:", current)
     // Check if current is not undefined and is a number
     if (typeof current === "number") {
-      let direction = current! - scrollYProgress.getPrevious()!;
+      setWidth((prev) => {
+        const crr = current < 0.005 ? "80%" : "max(min-content, 25%)"
+        console.log("Checking width at", current, " :", prev, crr)
+        if (prev !== crr) {
+          return crr
+        }
+        return prev
+      })
 
-      if (scrollYProgress.get() < 0.05) {
-        setVisible(false);
+      const direction = current! - scrollYProgress.getPrevious()!
+
+      if (current < 0.005) {
+        setVisible(true)
       } else {
         if (direction < 0) {
-          setVisible(true);
+          setVisible(true)
         } else {
-          setVisible(false);
+          setVisible(false)
         }
       }
     }
-  });
+  })
 
   return (
     <AnimatePresence mode="wait">
@@ -47,36 +58,65 @@ export const FloatingNav = ({
         initial={{
           opacity: 1,
           y: -100,
+          width: "80%",
         }}
         animate={{
           y: visible ? 0 : -100,
           opacity: visible ? 1 : 0,
+          width,
         }}
         transition={{
-          duration: 0.2,
+          duration: 0.5,
         }}
         className={cn(
-          "flex max-w-fit  fixed top-10 inset-x-0 mx-auto border border-transparent dark:border-white/[0.2] rounded-full dark:bg-black bg-white shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] pr-2 pl-8 py-2  items-center justify-center space-x-4",
+          "fixed inset-x-0 top-10 z-[5000] mx-auto flex max-w-[80%] items-center justify-between space-x-4 rounded-full border border-transparent bg-white py-2 pl-8 pr-2 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] dark:border-white/[0.2] dark:bg-black",
           className
         )}
       >
-        {navItems.map((navItem: any, idx: number) => (
-          <Link
-            key={`link=${idx}`}
-            href={navItem.link}
-            className={cn(
-              "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
-            )}
-          >
-            <span className="block sm:hidden">{navItem.icon}</span>
-            <span className="hidden sm:block text-sm">{navItem.name}</span>
-          </Link>
-        ))}
-        <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
-          <span>Login</span>
-          <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
-        </button>
+        <div className="center gap-2.5">
+          {navItems.map((navItem, idx) => (
+            <Link
+              key={`link=${idx}`}
+              href={navItem.link}
+              className={cn(
+                "relative flex items-center space-x-1 text-neutral-600 hover:text-neutral-500 dark:text-neutral-50 dark:hover:text-neutral-300"
+              )}
+            >
+              <span className="block sm:hidden">{navItem.icon}</span>
+              <span className="hidden text-sm sm:block">{navItem.name}</span>
+            </Link>
+          ))}
+        </div>
+
+        {/* Login */}
+        <ConnectKitButton.Custom>
+          {({ isConnected, isConnecting, show, address, truncatedAddress }) => {
+            return !isConnected ? (
+              <button
+                onClick={show}
+                className="relative rounded-full border border-neutral-200 px-4 py-2 text-sm font-medium text-black transition-colors duration-200 hover:bg-neutral-100 dark:border-white/[0.2] dark:text-white dark:hover:bg-neutral-800"
+              >
+                <span>Login</span>
+                <span className="absolute inset-x-0 -bottom-px mx-auto h-px w-1/2 bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
+              </button>
+            ) : (
+              <div
+                onClick={show}
+                className="center cursor-pointer gap-2.5"
+              >
+                {address ? (
+                  <Chads
+                    className="h-8 w-8 min-w-[32px] rounded-full"
+                    seed={address}
+                  />
+                ) : (
+                  <Chads seed={"guest"} />
+                )}
+              </div>
+            )
+          }}
+        </ConnectKitButton.Custom>
       </motion.div>
     </AnimatePresence>
-  );
-};
+  )
+}

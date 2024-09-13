@@ -11,7 +11,6 @@ import { useAccount, useDeployContract, useSwitchChain } from "wagmi"
 import { KiiChain } from "@/kiichain"
 
 import RequestToken from "@/components/faucet/request-token"
-import { Provider } from "@/providers"
 
 interface ISources {
   [key: `${string}.sol`]: {
@@ -99,7 +98,7 @@ contract NFTMarket is ERC721
   }
 
   return (
-    <Provider>
+    <>
       <div className="flex flex-col gap-4 p-4 pt-32">
         {JSON.stringify(sources)}
         <button
@@ -120,7 +119,7 @@ contract NFTMarket is ERC721
         {/* Outputs */}
         <Display output={output} />
       </div>
-    </Provider>
+    </>
   )
 }
 
