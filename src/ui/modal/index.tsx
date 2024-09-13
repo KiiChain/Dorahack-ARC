@@ -118,7 +118,7 @@ export const CustomizeModal = ({
                 </button>
               </>
             ) : (
-              <p>{msg.content}</p>
+              <div>{msg.content}</div>
             )}
           </div>
         ))}

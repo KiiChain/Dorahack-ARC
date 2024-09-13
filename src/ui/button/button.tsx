@@ -7,7 +7,8 @@ const variants = {
   pill: "",
   nav: "px-6 py-2 rounded-lg hover:opacity-90",
   outline:
-    "shadow-[0_0_0_3px_#000000_inset] px-6 py-2 bg-transparent border border-black dark:border-white dark:text-white text-black rounded-lg font-bold transform hover:-translate-y-1 transition duration-400",
+    "shadow-[0_0_0_3px_#000000_inset] px-2 py-1 bg-black border border-black dark:border-white dark:text-white text-black rounded-lg  transform  transition duration-400",
+  fill:"px-4 py-2 rounded-md border border-black bg-white text-black  hover:shadow-[4px_4px_0px_0px_rgba(0,0,0)] transition duration-200"
 }
 
 interface ButtonProperties extends React.ButtonHTMLAttributes<HTMLButtonElement> {

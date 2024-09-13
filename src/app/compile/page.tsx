@@ -30,25 +30,16 @@ interface IPresent {
 
 const CompilePage = () => {
   const [sources, setSources] = useState<ISources>({
-    "SimpleStorage.sol": {
+    "NFTMarket.sol": {
       content: `
-        // SPDX-License-Identifier: MIT
+        // NFTMarket.sol
+pragma solidity ^0.8.0;
 
-        import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
-        pragma solidity ^0.8.0;
-
-        contract SimpleStorage {
-          uint256 private _value;
-
-          function setValue(uint256 value) public {
-            _value = value;
-          }
-
-          function getValue() public view returns (uint256) {
-            return _value;
-          }
-        }
+contract NFTMarket is ERC721 {
+    constructor() ERC721("NFTMarket", "NFTM") {}
+}
       `,
     },
   })

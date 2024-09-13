@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from "react"
-
+import { motion } from "framer-motion"
 import clsx from "clsx"
 
 interface TabsProps {
@@ -54,8 +54,17 @@ const Tabs: React.FC<TabsProps> = ({
       </div>
 
       {/* Tab Content */}
-      <div className="p-4">
-        {tabs.map((tab) => activeTab === tab.identifier && <div key={tab.identifier}>{tab.content}</div>)}
+      <div className="">
+        {
+          tabs.map((tab) => activeTab === tab.identifier && <motion.div
+            key={tab.identifier}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.3 }}>
+            {tab.content}
+          </motion.div>)
+        }
       </div>
     </div>
   )

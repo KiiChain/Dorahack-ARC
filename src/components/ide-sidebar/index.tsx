@@ -20,7 +20,7 @@ export const DesktopSidebar = ({ className, children, ...props }: React.Componen
   return (
     <>
       <motion.div
-        className={cn("hidden w-[20vw] flex-shrink-0 bg-neutral-800 px-2 md:flex md:flex-col", className)}
+        className={cn("hidden w-[20vw] flex-shrink-0 bg-[#1e1e1e] border-r-1 border-black px-2 md:flex md:flex-col", className)}
         // animate={{
         //   width: animate ? (open ? "300px" : "60px") : "300px",
         // }}

@@ -8,6 +8,9 @@ import axios from "axios"
 import { contract } from "@/data"
 
 import { CustomizeModal } from "@/ui/modal"
+import { cn } from "@/lib/utils"
+import { Button } from "@/ui/button"
+import { Grid } from "@/ui/explore-grid-design"
 
 interface Category {
   identifier: string
@@ -42,7 +45,7 @@ contract Counter {
 
 `
 
-const ContractCard = ({ contract }: { contract: IContracts }) => {
+export const ContractCard = ({ contract, className }: { contract: IContracts; className?: string }) => {
   const router = useRouter()
 
   const [open, setOpen] = useState(false)
@@ -62,40 +65,45 @@ const ContractCard = ({ contract }: { contract: IContracts }) => {
 
   return (
     <>
-      {/* <CustomizeModal
+      <CustomizeModal
         text={content}
         open={content !== "" && open}
         setOpen={setOpen}
-      /> */}
+      />
       <div
         key={contract.identifier}
         onClick={() => router.push(`${contract.identifier}/overview`)}
+        className={cn(className)}
       >
-        <article className="border-border hover:bg-muted raise-on-hover relative flex min-h-[220px] flex-col rounded-lg border bg-dark-6 p-4">
+        <article className=" hover:bg-muted raise-on-hover relative flex min-h-[220px] flex-col group/contract rounded-lg border-[0.1px] border-gray-500   p-4">
+          <div className="opacity-0 group-hover/contract:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
+
           <div className="flex justify-between">
             <div className="flex items-center gap-1.5">
               <span className="z-1 relative flex items-center gap-1 text-sm font-medium text-accent-4 hover:underline">
                 Flags
               </span>
               <div className="size-1 rounded-full bg-gray-500/75"></div>
-              <p className="text-secondary-foreground text-sm font-medium">v{contract.version}</p>
+              <div className="text-secondary-foreground text-sm font-medium">v{contract.version}</div>
             </div>
           </div>
 
           <div className="h-3.5"></div>
           <h3 className="text-lg font-semibold tracking-tight">{contract.name}</h3>
-          <p className="text-secondary-foreground mt-1 text-sm leading-5">{contract.description}</p>
+          <div className="text-secondary-foreground mt-1 text-sm leading-5 line-clamp-3">{contract.description}</div>
           <div className="relative mt-auto flex justify-between gap-2 pt-3">
-            <button
+            <Button
               onClick={(e) => {
                 e.stopPropagation()
                 // setOpen(true)
                 onClick()
               }}
-              className="ring-offset-background focus-visible:ring-ring text-primary-foreground relative z-10 inline-flex h-auto items-center justify-center gap-1.5 whitespace-nowrap rounded-md bg-primary px-2.5 py-1.5 text-xs font-medium transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+              variant="outline"
+              className="text-sm"
+            // className="ring-offset-background focus-visible:ring-ring text-primary-foreground relative z-10 inline-flex h-auto items-center justify-center gap-1.5 whitespace-nowrap rounded-md bg-primary px-2.5 py-1.5 text-xs font-medium transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
             >
               Customize
-            </button>
+            </Button>
             <Link
               href={`/${contract.identifier}/deploy`}
               className="ring-offset-background focus-visible:ring-ring text-primary-foreground relative z-10 inline-flex h-auto items-center justify-center gap-1.5 whitespace-nowrap rounded-md bg-primary px-2.5 py-1.5 text-xs font-medium transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
@@ -111,11 +119,11 @@ const ContractCard = ({ contract }: { contract: IContracts }) => {
 
 const CategorySection = ({ category }: { category: Category }) => {
   return (
-    <section key={category.identifier}>
+    <section key={category.identifier} className="my-20 ">
       <div className="flex items-center justify-between gap-4">
         <header className="flex flex-col gap-1.5">
           <h2 className="text-2xl font-semibold tracking-tight">{category.name}</h2>
-          <p className="text-secondary-foreground">{category.description}</p>
+          <div className="text-secondary-foreground">{category.description}</div>
         </header>
         <Link
           href={`/explore/${category.identifier}`}
@@ -139,13 +147,15 @@ const CategorySection = ({ category }: { category: Category }) => {
 
 const ExplorePageView = () => {
   return (
-    <div className="px-16 py-20">
-      <h1 className="mb-3 text-5xl font-bold tracking-tighter">Explore</h1>
-      <p className="text-secondary-foreground max-w-screen-md text-lg">
+    <div className="relative px-16 py-20 max-w-7xl mx-auto">
+      <Grid size={20} className="right-1/2" />
+      <Grid size={20} className="left-1/2" />
+
+      <h1 className="mt-32 mb-3 text-7xl font-bold tracking-tighter">Explore</h1>
+      <div className="text-secondary-foreground max-w-screen-md text-lg">
         The best place for web3 developers to explore smart contracts from world-class web3 protocols &amp; engineers —
         all deployable with one click.
-      </p>
-      <div className="h-10"></div>
+      </div>
       {contract.ContractStore.map((category) => (
         <CategorySection
           key={category.identifier}

@@ -89,15 +89,15 @@ const IDE = () => {
             </SidebarBody>
             <div className="w-full md:w-[80vw]">
               <div className="h-full min-h-8 overflow-y-scroll">
-                {
-                  <div>
-                    <div className="no-scroll flex overflow-x-scroll">
+                
+               
+                    <div className="no-scroll flex overflow-x-scroll bg-[#171616]">
                       {activeFiles?.map((file) => (
                         <div
                           key={file.id}
                           className={cn(
                             "relative flex cursor-pointer items-center gap-2 border border-neutral-950 px-3 py-1 text-sm font-semibold text-white focus:outline-none",
-                            file.id === selectedFile?.id && "bg-black"
+                            file.id === selectedFile?.id && "bg-[#3c3c3c]"
                           )}
                           onClick={(e) => {
                             handleTabSelect(file)
@@ -119,14 +119,14 @@ const IDE = () => {
                       ))}
                     </div>
                     {selectedFile ? (
-                      <div key={selectedFile?.id}>
+                      <div key={selectedFile?.id} className="h-full">
                         <MonacoEditor selectedFile={selectedFile} />
                       </div>
                     ) : (
                       <NoFileSelected />
                     )}
-                  </div>
-                }
+                  
+                
               </div>
               {/* <MonacoEditor selectedFile={selectedFile} /> */}
             </div>

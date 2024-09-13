@@ -20,9 +20,9 @@ const TemplateView: React.FC<TemplateViewProps> = ({ contractName, description }
       {/* Welcome */}
       <div className="flex flex-col gap-1">
         <h1 className="text-2xl font-bold tracking-tight md:text-3xl">Project Creation Wizard</h1>
-        <p className="text-muted-foreground text-sm">
+        <div className="text-muted-foreground text-sm">
           Get started by initializing a new project or choose from a variety of prebuilt templates
-        </p>
+        </div>
       </div>
 
       {/* Start empty */}

@@ -119,7 +119,7 @@ const Deploy: React.FC<DeployProps> = ({ sources }) => {
       )} */}
       <div>
         <h2>Compile and Deploy Contract</h2>
-        {error && <p className="text-red-500">{error}</p>}
+        {error && <div className="text-red-500">{error}</p>}
 
         <button
           onClick={compileContract}
@@ -145,9 +145,8 @@ const Deploy: React.FC<DeployProps> = ({ sources }) => {
         <button
           onClick={handleDeploy}
           disabled={!abi || !bytecode || !isConnected}
-          className={`${
-            !abi || !bytecode || !isConnected ? "bg-gray-300" : "bg-green-500"
-          } rounded px-4 py-2 text-white`}
+          className={`${!abi || !bytecode || !isConnected ? "bg-gray-300" : "bg-green-500"
+            } rounded px-4 py-2 text-white`}
         >
           Deploy Contract
         </button>

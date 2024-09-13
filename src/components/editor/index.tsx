@@ -177,9 +177,9 @@ export const MonacoEditor = ({ selectedFile }: { selectedFile: File }) => {
   }, [monaco, completion, stop, cachedSuggestions, language])
 
   return (
-    <div className="m-0 w-full text-[16px]">
+    <div className="m-0 w-full text-[16px]  h-full">
       <Editor
-        height="80vh"
+        // height="80vh"
         language={language}
         value={code}
         theme="vs-dark"

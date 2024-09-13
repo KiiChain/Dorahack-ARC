@@ -10,7 +10,7 @@ import { motion } from "framer-motion"
 import IDE from "@/assets/images/IDE.png"
 import { cn } from "@/lib/utils"
 
-export function FeaturesSectionDemo() {
+export function  FeaturesSectionDemo() {
   const features = [
     {
       title: "Track issues effectively",
@@ -30,25 +30,25 @@ export function FeaturesSectionDemo() {
       skeleton: <SkeletonThree />,
       className: "col-span-1 lg:col-span-3 lg:border-r  dark:border-neutral-800",
     },
-    // {
-    //   title: "Deploy in seconds",
-    //   description:
-    //     "With our blazing fast, state of the art, cutting edge, we are so back cloud servies (read AWS) - you can deploy your model in seconds.",
-    //   skeleton: <SkeletonFour />,
-    //   className: "col-span-1 lg:col-span-3 border-b lg:border-none",
-    // },
+    {
+      title: "Deploy in seconds",
+      description:
+        "With our blazing fast, state of the art, cutting edge, we are so back cloud servies (read AWS) - you can deploy your model in seconds.",
+      skeleton: <SkeletonFour />,
+      className: "col-span-1 lg:col-span-3 border-b lg:border-none",
+    },
   ]
   return (
-    <div className="relative z-20 mx-auto max-w-7xl py-10 lg:py-24">
+    <div className="relative z-20 mx-auto max-w-7xl py-10 lg:py-12">
       <div className="px-8">
         <h4 className="mx-auto max-w-5xl text-center text-3xl font-medium tracking-tight text-black lg:text-5xl lg:leading-tight dark:text-white">
           Packed with thousands of features
         </h4>
 
-        <p className="mx-auto my-4 max-w-2xl text-center text-sm font-normal text-neutral-500 lg:text-base dark:text-neutral-300">
+        <div className="mx-auto my-4 max-w-2xl text-center text-sm font-normal text-neutral-500 lg:text-base dark:text-neutral-300">
           From Image generation to video generation, Everything AI has APIs for literally everything. It can even create
           this website copy for you.
-        </p>
+        </div>
       </div>
 
       <div className="relative">
@@ -75,15 +75,15 @@ const FeatureCard = ({ children, className }: { children?: React.ReactNode; clas
 
 const FeatureTitle = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <p className="mx-auto max-w-5xl text-left text-xl tracking-tight text-black md:text-2xl md:leading-snug dark:text-white">
+    <div className="mx-auto max-w-5xl text-left text-xl tracking-tight text-black md:text-2xl md:leading-snug dark:text-white">
       {children}
-    </p>
+    </div>
   )
 }
 
 const FeatureDescription = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <p
+    <div
       className={cn(
         "mx-auto max-w-4xl text-left text-sm md:text-base",
         "text-center font-normal text-neutral-500 dark:text-neutral-300",
@@ -91,7 +91,7 @@ const FeatureDescription = ({ children }: { children?: React.ReactNode }) => {
       )}
     >
       {children}
-    </p>
+    </div>
   )
 }
 

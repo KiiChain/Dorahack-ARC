@@ -32,9 +32,9 @@ const GettingStarted = () => {
     <div className="w-full">
       <h2>Getting Started</h2>
       <div className="flex flex-col gap-1">
-        <p className="text-muted-foreground text-sm">
+        <div className="text-muted-foreground text-sm">
           Get started by initializing a new project or choose from a variety of prebuilt templates.
-        </p>
+        </div>
       </div>
 
       <h2 className="text-lg font-semibold">Start Empty Project</h2>
