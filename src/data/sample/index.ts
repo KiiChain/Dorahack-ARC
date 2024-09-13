@@ -10,7 +10,7 @@ export const init: Directory = {
   parentId: "0",
 }
 
-const templates: Record<string, Directory> = {
+export const templates: Record<string, Directory> = {
   "Solidity Basic": {
     id: "solidity_basic",
     name: "Solidity Starter",
@@ -118,6 +118,117 @@ const templates: Record<string, Directory> = {
         type: "file",
         depth: 1,
         content: "# NFT Marketplace Project\nThis project includes an ERC721-based NFT marketplace.",
+      },
+    ],
+    parentId: "0",
+  },
+  DAO: {
+    id: "dao_project",
+    name: "DAO Project",
+    type: "directory",
+    depth: 0,
+    dirs: [
+      {
+        id: "contracts",
+        name: "contracts",
+        parentId: "dao_project",
+        type: "directory",
+        depth: 1,
+        dirs: [],
+        files: [
+          {
+            id: "daocontract",
+            name: "DAO.sol",
+            parentId: "contracts",
+            type: "file",
+            depth: 2,
+            content: `// DAO.sol\npragma solidity ^0.8.0;\n\ncontract DAO {\n    struct Proposal {\n        uint id;\n        string description;\n        uint voteCount;\n    }\n\n    Proposal[] public proposals;\n\n    function createProposal(string memory description) public {\n        proposals.push(Proposal({\n            id: proposals.length,\n            description: description,\n            voteCount: 0\n        }));\n    }\n\n    function vote(uint proposalId) public {\n        proposals[proposalId].voteCount += 1;\n    }\n}`,
+          },
+        ],
+      },
+    ],
+    files: [
+      {
+        id: "readme",
+        name: "README.md",
+        parentId: "dao_project",
+        type: "file",
+        depth: 1,
+        content: "# DAO Project\nThis project includes a basic DAO contract.",
+      },
+    ],
+    parentId: "0",
+  },
+  DeFi: {
+    id: "defi_project",
+    name: "DeFi Project",
+    type: "directory",
+    depth: 0,
+    dirs: [
+      {
+        id: "contracts",
+        name: "contracts",
+        parentId: "defi_project",
+        type: "directory",
+        depth: 1,
+        dirs: [],
+        files: [
+          {
+            id: "deficontract",
+            name: "DeFiContract.sol",
+            parentId: "contracts",
+            type: "file",
+            depth: 2,
+            content: `// DeFiContract.sol\npragma solidity ^0.8.0;\n\ncontract DeFiContract {\n    mapping(address => uint256) public balances;\n\n    function deposit() public payable {\n        balances[msg.sender] += msg.value;\n    }\n\n    function withdraw(uint256 amount) public {\n        require(balances[msg.sender] >= amount, "Insufficient balance");\n        balances[msg.sender] -= amount;\n        payable(msg.sender).transfer(amount);\n    }\n}`,
+          },
+        ],
+      },
+    ],
+    files: [
+      {
+        id: "readme",
+        name: "README.md",
+        parentId: "defi_project",
+        type: "file",
+        depth: 1,
+        content: "# DeFi Project\nThis project includes a basic DeFi contract.",
+      },
+    ],
+    parentId: "0",
+  },
+  Oracle: {
+    id: "oracle_project",
+    name: "Oracle Project",
+    type: "directory",
+    depth: 0,
+    dirs: [
+      {
+        id: "contracts",
+        name: "contracts",
+        parentId: "oracle_project",
+        type: "directory",
+        depth: 1,
+        dirs: [],
+        files: [
+          {
+            id: "oraclecontract",
+            name: "Oracle.sol",
+            parentId: "contracts",
+            type: "file",
+            depth: 2,
+            content: `// Oracle.sol\npragma solidity ^0.8.0;\n\ncontract Oracle {\n    address public admin;\n    uint256 public data;\n\n    constructor() {\n        admin = msg.sender;\n    }\n\n    function updateData(uint256 _data) external {\n        require(msg.sender == admin, "Only admin can update data");\n        data = _data;\n    }\n}`,
+          },
+        ],
+      },
+    ],
+    files: [
+      {
+        id: "readme",
+        name: "README.md",
+        parentId: "oracle_project",
+        type: "file",
+        depth: 1,
+        content: "# Oracle Project\nThis project includes a basic Oracle contract.",
       },
     ],
     parentId: "0",
