@@ -17,7 +17,7 @@ export const FileTree = (props: FileTreeProps) => {
 
 const SubTree = (props: SubTreeProps) => {
   return (
-    <div className="group">
+    <div className="">
       {props.directory.dirs.sort(sortDir).map((dir) => (
         <React.Fragment key={dir.id}>
           <DirDiv
@@ -67,7 +67,6 @@ const FileDiv = ({
   onAddFile: (parentDir: Directory) => void
   onAddFolder: (parentDir: Directory) => void
 }) => {
-  const isSelected = selectedFile && selectedFile.id === file.id
   const depth = file.depth
   const [isEditing, setIsEditing] = useState(false)
   const [newName, setNewName] = useState(file.name)
@@ -76,15 +75,16 @@ const FileDiv = ({
     setIsEditing(false)
     onRename(newName)
   }
-
+// const [hovercss,sethovercss]=useState(false);
   return (
     <div
       onClick={onClick}
       style={{ paddingLeft: `${depth * 10}px` }}
       className={cn(
-        "group/item flex items-center gap-2 hover:cursor-pointer hover:bg-[#242424]",
-        isSelected ? "bg-[#242424]" : "bg-transparent"
+        " group flex items-center gap-2 cursor-pointer hover:bg-[#3c3c3c] ",
+      
       )}
+      // onMouseOver={()=>sethovercss(true)}
     >
       <FileIcon
         name={icon}
@@ -103,7 +103,7 @@ const FileDiv = ({
       ) : (
         <span style={{ marginLeft: 1 }}>{file.name}</span>
       )}
-      <div className="!group-hover/item:visible !invisible ml-auto flex">
+      <div className="group-hover:flex hidden  ml-auto ">
         {file.type === "directory" && (
           <>
             <button

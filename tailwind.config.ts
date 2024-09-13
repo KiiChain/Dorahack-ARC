@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss"
-
+import {flattenColorPalette} from "tailwindcss/lib/util/flattenColorPalette"
 const config: Config = {
   content: [
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,6 +10,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        input: `0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`,
+      },
       animation: {
         "meteor-effect": "meteor 5s linear infinite",
         fadeIn: "fadeIn 0.3s forwards",
@@ -96,6 +99,16 @@ const config: Config = {
       },
     },
   },
+}
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+ 
+  addBase({
+    ":root": newVars,
+  });
 }
 
 export default config

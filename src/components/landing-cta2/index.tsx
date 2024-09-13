@@ -9,7 +9,7 @@ type BlogContent = {
 }
 export const FollowerPointerCard = ({ blogContent }: { blogContent: BlogContent; className?: string }) => {
   return (
-    <div className="group relative h-full w-72 overflow-hidden rounded-2xl bg-primary text-white transition duration-200 border-[0.1px] border-gray-600">
+    <div className="group relative h-full w-72 overflow-hidden rounded-2xl bg-primary text-white transition duration-200 border-[0.1px] border-gray-600 mx-auto">
       <div className="xl:aspect-w-16 xl:aspect-h-10 relative overflow-hidden rounded-tl-lg rounded-tr-lg bg-primary">
         <Image
           src={blogContent.image}

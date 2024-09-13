@@ -83,7 +83,7 @@ const CTA3 = ({ items }: CarouselProps) => {
                 },
               }}
               key={"card" + index}
-              className="rounded-3xl"
+              className="rounded-3xl " 
             >
               {item}
             </motion.div>

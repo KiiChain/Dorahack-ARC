@@ -113,7 +113,7 @@ const HomeLandingView = () => {
         </div>
         <div className="mx-auto max-w-7xl">
           <CTA3
-            items={arr.map((e, idx) => {
+            items={arr.map((e) => {
               return (
                 <FollowerPointerCard blogContent={e} />
               )

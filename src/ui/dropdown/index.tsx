@@ -20,18 +20,18 @@ export default function Dropdown({ menuLabel, menuItems }: DropdownProps) {
   return (
     <div className="text-right">
       <Menu>
-        <MenuButton className="inline-flex items-center gap-2 rounded-md bg-transparent px-3 py-1.5 text-sm/6 font-semibold text-white focus:outline-none">
+        <MenuButton className="inline-flex items-center gap-2 rounded-md bg-[#1c1c1c]  px-3 py-1.5 text-sm/6 font-semibold text-white focus:outline-none">
           {menuLabel}
         </MenuButton>
 
         <MenuItems
           transition
-          className="absolute w-80 origin-top-right rounded-lg border border-white/5 p-1 text-sm/6 text-white shadow-lg focus:outline-none"
+          className="absolute z-50 w-80 origin-top-right rounded-lg border border-white/5 bg-[#1c1c1c]  p-1 text-sm/6 text-white shadow-lg focus:outline-none"
         >
           {menuItems.map((item, index) => (
             <MenuItem key={index}>
               <button
-                className="group flex w-full flex-wrap items-center rounded-lg px-3 py-2"
+                className="group flex w-full flex-wrap items-center rounded-lg px-3 py-2 hover:bg-[#3c3c3c]"
                 onClick={item.onClick}
               >
                 {item.icon && <item.icon className="h-6 w-6 text-white" />}

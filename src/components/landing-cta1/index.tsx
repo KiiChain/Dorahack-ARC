@@ -3,7 +3,7 @@ import React from "react"
 import Image from "next/image"
 // import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 import Link from "next/link"
-
+import { TbBrandYoutubeFilled } from "react-icons/tb";
 // import { useEffect, useRef } from "react";
 import { motion } from "framer-motion"
 
@@ -70,7 +70,7 @@ export function  FeaturesSectionDemo() {
 }
 
 const FeatureCard = ({ children, className }: { children?: React.ReactNode; className?: string }) => {
-  return <div className={cn(`relative overflow-hidden p-4 sm:p-8`, className)}>{children}</div>
+  return <div className={cn(`relative overflow-hidden p-4 sm:p-8 `, className)}>{children}</div>
 }
 
 const FeatureTitle = ({ children }: { children?: React.ReactNode }) => {
@@ -99,7 +99,7 @@ export const SkeletonOne = () => {
   return (
     <div className="relative flex h-full gap-10 px-2 py-8">
       <div className="group mx-auto h-full w-full bg-secondary p-5 shadow-2xl">
-        <div className="flex h-80 w-full flex-1 flex-col space-y-2">
+        <div className="flex h-96 w-full flex-1 flex-col space-y-2">
           {/* TODO */}
           <Image
             src={IDE}
@@ -127,12 +127,13 @@ export const SkeletonThree = () => {
       <div className="group mx-auto h-full w-full bg-transparent dark:bg-transparent">
         <div className="relative flex h-full w-full flex-1 flex-col space-y-2">
           {/* TODO */}
-          {/* <IconBrandYoutubeFilled className="h-20 w-20 absolute z-10 inset-0 text-red-500 m-auto " /> */}
+          <TbBrandYoutubeFilled className="h-20 w-20 absolute z-10 inset-0 text-red-500 m-auto " />
           <Image
             src="https://assets.aceternity.com/fireship.jpg"
             alt="header"
-            width={800}
-            height={800}
+            // width={800}
+            // height={800}
+            fill
             className="aspect-square h-full w-full rounded-sm object-cover object-center blur-none transition-all duration-200 group-hover/image:blur-md"
           />
         </div>

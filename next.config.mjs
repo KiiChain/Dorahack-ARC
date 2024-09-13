@@ -12,6 +12,9 @@ const nextConfig = {
       {
         hostname: "assets.aceternity.com",
       },
+      {
+        hostname:"example.com"
+      }
     ],
   },
   compiler: {
