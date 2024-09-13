@@ -143,47 +143,72 @@ const ContractOverviewView: React.FC<IContractOverviewViewProps> = ({ contract }
 
         {/* Details */}
         {/* <div className="flex flex-col"> */}
-        <div className="sticky top-4 h-fit space-y-2">
-          <RichText
-            content={{
-              tag: "h2",
-              content: "Extensions",
-              className: "",
-            }}
-          />
-          <div className="flex flex-col gap-1">
-            {contract.source.extensions.map((extension, index) => (
-              <RichText
-                key={`extension_${index}`}
-                content={{
-                  tag: "span",
-                  content: extension.name,
-                  className: "hover:underline cursor-pointer",
-                }}
-              />
-            ))}
+        <div className="sticky top-4 h-fit space-y-10 pt-4">
+          <div className="flex flex-col gap-2">
+            <button
+              onClick={deployContract}
+              className="rounded-lg bg-gray-400/50 px-4 py-2 text-white backdrop-blur-md transition-all hover:bg-gray-400/80"
+            >
+              <span className="">Deploy Contract</span>
+            </button>
+            <button
+              onClick={() => {}}
+              className="rounded-lg bg-zinc-300/30 px-4 py-2 text-white backdrop-blur-md transition-all hover:bg-zinc-300/50"
+            >
+              <span className="">Customize using AI</span>
+            </button>
+            <button
+              onClick={() => {}}
+              className="rounded-lg bg-gray-500/30 px-4 py-2 text-white backdrop-blur-md transition-all hover:bg-gray-500/50"
+            >
+              <span className="">Open in IDE</span>
+            </button>
           </div>
 
-          <div className="h-10" />
+          {contract.source.extensions && contract.source.extensions.length > 0 && (
+            <div>
+              <RichText
+                content={{
+                  tag: "h2",
+                  content: "Extensions",
+                  className: "",
+                }}
+              />
+              <div className="flex flex-col gap-1">
+                {contract.source.extensions.map((extension, index) => (
+                  <RichText
+                    key={`extension_${index}`}
+                    content={{
+                      tag: "span",
+                      content: extension.name,
+                      className: "hover:underline cursor-pointer",
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
 
-          <RichText
-            content={{
-              tag: "h2",
-              content: "Resources",
-              className: "",
-            }}
-          />
-          <div className="flex flex-col gap-1">
-            {contract.source.resources.map((resource, index) => (
-              <Link
-                target="_blank"
-                key={`resource_${index}`}
-                href={resource.url}
-                className="text-blue-400 hover:underline"
-              >
-                {resource.title}
-              </Link>
-            ))}
+          <div className="">
+            <RichText
+              content={{
+                tag: "h2",
+                content: "Resources",
+                className: "",
+              }}
+            />
+            <div className="flex flex-col gap-1">
+              {contract.source.resources.map((resource, index) => (
+                <Link
+                  target="_blank"
+                  key={`resource_${index}`}
+                  href={resource.url}
+                  className="text-blue-400 hover:underline"
+                >
+                  {resource.title}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
         {/* </div> */}
