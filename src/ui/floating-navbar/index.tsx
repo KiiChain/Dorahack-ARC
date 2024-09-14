@@ -1,7 +1,9 @@
 "use client"
+
 import React, { useState } from "react"
 
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 import { ConnectKitButton } from "connectkit"
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion"
@@ -12,23 +14,24 @@ import { cn } from "@/lib/utils"
 export const FloatingNav = ({
   navItems,
   className,
-  stagnant = false
+  stagnant = false,
 }: {
   navItems: {
     name: string
     link: string
     icon?: JSX.Element
   }[]
-  stagnant?: boolean; 
+  stagnant?: boolean
   className?: string
 }) => {
+  const pathname = usePathname()
   const { scrollYProgress } = useScroll()
 
   const [visible, setVisible] = useState(true)
   const [width, setWidth] = useState("80%")
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
-    if(!stagnant){
+    if (!stagnant) {
       if (typeof current === "number") {
         setWidth((prev) => {
           const crr = current < 0.005 ? "80%" : "max(min-content, 25%)"
@@ -37,9 +40,9 @@ export const FloatingNav = ({
           }
           return prev
         })
-  
+
         const direction = current! - scrollYProgress.getPrevious()!
-  
+
         if (current < 0.005) {
           setVisible(true)
         } else {
@@ -53,6 +56,12 @@ export const FloatingNav = ({
     }
   })
 
+  // Disable in pages
+  const disabledPaths = ["/dashboard"].some((path) => path === pathname)
+  if (disabledPaths) {
+    return <></>
+  }
+
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -62,15 +71,15 @@ export const FloatingNav = ({
           width: stagnant ? "100%" : "80%",
         }}
         animate={{
-          y: stagnant ? 0 : (visible ? 0 : -100),
-          opacity: stagnant ? 1 : (visible ? 1 : 0),
+          y: stagnant ? 0 : visible ? 0 : -100,
+          opacity: stagnant ? 1 : visible ? 1 : 0,
           width: stagnant ? "100%" : width,
         }}
         transition={{
           duration: 0.5,
         }}
         className={cn(
-          "fixed inset-x-0 top-10 z-[5000] mx-auto flex max-w-[80%] items-center justify-between space-x-4 rounded-full border border-transparent backdrop-blur-lg py-2 pl-8 pr-2 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] dark:border-white/[0.2] ",
+          "fixed inset-x-0 top-10 z-[5000] mx-auto flex max-w-[80%] items-center justify-between space-x-4 rounded-full border border-transparent py-2 pl-8 pr-2 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] backdrop-blur-lg dark:border-white/[0.2]",
           className
         )}
       >
