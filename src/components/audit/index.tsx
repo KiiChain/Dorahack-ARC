@@ -20,6 +20,7 @@ type resp = [
     }
 ];
 
+
 const Audit = ({ selectedFile }: { selectedFile: File | undefined }) => {
     const { complete } = useCompletion({
         api: "/api/audit",
@@ -82,7 +83,7 @@ const Audit = ({ selectedFile }: { selectedFile: File | undefined }) => {
     if (!selectedFile) return <div>Select A File</div>;
 
     return (
-        <div className="p-4">
+        <div className="p-1">
             <SyncLoader
                 color={color}
                 loading={loading}
@@ -95,7 +96,7 @@ const Audit = ({ selectedFile }: { selectedFile: File | undefined }) => {
             {
                 text && !loading &&
                 <Button
-                    className="flex gap-2 items-center transition-all bg-[#3c3c3c] text-white px-4 py-2 w-full"
+                    className="flex gap-2 items-center transition-all bg-[#3c3c3c] text-white px-4 py-2 w-full text-center"
                     onClick={downloadPDF}
                 >
                     Download PDF
@@ -103,7 +104,7 @@ const Audit = ({ selectedFile }: { selectedFile: File | undefined }) => {
             }
             {!loading && !text && (
                 <Button
-                    className="flex gap-2 items-center transition-all bg-[#3c3c3c] text-white px-4 py-2 w-full"
+                    className="flex gap-2 items-center transition-all bg-[#3c3c3c] text-white px-4 py-2 w-full text-center"
                     onClick={checkVulnerability}
                 >
                     Generate Vulnerability Report
@@ -112,18 +113,20 @@ const Audit = ({ selectedFile }: { selectedFile: File | undefined }) => {
 
             {text && !loading && (
                 <div className="mt-4">
-                    <h2 className="text-2xl font-bold mb-4 text-center">Vulnerability Report</h2>
-                    {text.map((section, index) => (
-                        <div key={index} className="mb-6">
-                            {/* For each key (section title), display it as a heading */}
-                            {Object.keys(section).map((key) => (
-                                <div key={key}>
-                                    <h3 className="text-xl font-semibold capitalize mb-2">{key.replace(/_/g, ' ')}</h3>
-                                    <p className="text-neutral-600 italic text-sm">{section[key]}</p>
-                                </div>
-                            ))}
-                        </div>
-                    ))}
+                    <h2 className="text-2xl font-bold mb-4 text-left">Vulnerability Report</h2>
+                    <div className='flex flex-col gap-2 md:gap-3'>
+                        {text.map((section, index) => (
+                            <div key={index} className="mb-6 flex flex-col gap-4">
+                                {/* For each key (section title), display it as a heading */}
+                                {Object.keys(section).map((key) => (
+                                    <div key={key} className=' border-[0.1px] border-gray-500 p-1 rounded-md bg-[#171616]'>
+                                        <h3 className="text-xl font-semibold capitalize mb-2">{key.replace(/_/g, ' ')}</h3>
+                                        <p className="text-neutral-300 italic text-sm p-1">{section[key]}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        ))}
+                    </div>
                 </div>
             )}
 

@@ -36,8 +36,8 @@ export const GenerateCustomizationInstructions = () => ({
       ### Instructions:
       - You are a world class code customizer.
       - Given the current text, context, customize the code according to user requirements.
-      - The suggestion must be based on the current text.
       - This is not a conversation, so please do not ask questions or prompt for additional information.
+      - If the user asks any question or makes a request unrelated to code customization, return an empty string.
       - Always return complete code (not the code snippet) , if users asks for a snippet then adjust complete code accordingly.
       ### Notes
       - NEVER INCLUDE ANY MARKDOWN IN THE RESPONSE - THIS MEANS CODEBLOCKS AS WELL.
@@ -46,7 +46,9 @@ export const GenerateCustomizationInstructions = () => ({
       - Never suggest a newline after a space or newline.
       - Ensure that newline suggestions follow the same indentation as the current line.
       - Only ever return the complete code , do not return any markdown unless it is part of the code .
+      - Ensure the output is valid Solidity code with no errors or missing parts.
       - Do not return anything that is not valid code.
+      - If the user's request is not related to code, return an empty string.
       - If you do not have a suggestion, return an empty string.`,
     },
   ],
@@ -104,20 +106,20 @@ export const GenerateAuditInstructions = () => ([{
   role: "user"
 }])
 
-export const GenerateCodeInstructions = ({ 
-  category, 
-  contract_type, 
-  name, 
-  token, 
+export const GenerateCodeInstructions = ({
+  category,
+  contract_type,
+  name,
+  token,
   description,
   prompt
-}: { 
-  category: string, 
-  contract_type: string, 
-  name: string, 
-  token: string, 
-  description: string ,
-  prompt:string
+}: {
+  category: string,
+  contract_type: string,
+  name: string,
+  token: string,
+  description: string,
+  prompt: string
 }) => ({
   parts: [
     {

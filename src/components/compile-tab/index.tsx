@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState } from "react"
+import React, { CSSProperties, useEffect, useState } from "react"
 
 import axios from "axios"
 import { ConnectKitButton } from "connectkit"
@@ -11,11 +11,11 @@ import { useAccount, useDeployContract, useSwitchChain } from "wagmi"
 import { KiiChain } from "@/kiichain"
 
 import RequestToken from "@/components/faucet/request-token"
-import { Provider } from "@/providers"
 import { copyToClipboard, downloadJson } from "@/utils"
 import { Button } from "@/ui/button"
 import { getIcon } from "@/ui/icons"
 import Modal2 from "@/ui/modal2"
+import SyncLoader from "react-spinners/SyncLoader"
 
 interface IPresent {
   name: string
@@ -25,14 +25,20 @@ interface IPresent {
   sourceMap: string
   metadata: Record<string, unknown>
 }
+const override: CSSProperties = {
+  display: "block",
+  margin: "0 auto",
+  borderColor: "red",
+};
 
 const CompilePage = ({ sources }: { sources: ISources }) => {
   const [output, setOutput] = useState<Array<IPresent>>([])
   const [error, setError] = useState<string | null>(null)
+  let [loading, setLoading] = useState(false);
 
   const compileContract = async () => {
+    setLoading(true);
     try {
-      // Use Axios to send the sources to the API for compilation
       const response = await axios.post("/api/contract/compile", { sources })
 
       const data = response.data
@@ -41,7 +47,6 @@ const CompilePage = ({ sources }: { sources: ISources }) => {
         throw new Error(data.error || "Failed to compile contract")
       }
 
-      // Extract ABI and bytecode
       const compiled = data.compiled as ICompilerOutput
 
       console.log("Compiled:", { compiled })
@@ -72,7 +77,6 @@ const CompilePage = ({ sources }: { sources: ISources }) => {
         })
       })
 
-      // Sort res in a way the contract from the first source is first
       res.sort((a, b) => {
         return Object.keys(sources).indexOf(b.name) - Object.keys(sources).indexOf(a.name)
       })
@@ -82,30 +86,45 @@ const CompilePage = ({ sources }: { sources: ISources }) => {
     } catch (e) {
       console.error("Compilation error:", e)
       setError("Failed to compile contract")
+    } finally {
+      setLoading(false)
     }
   }
 
   return (
     <div className="flex flex-col gap-4">
       {/* {JSON.stringify(sources)} */}
-      <Button
-        // variant="outline"
-        onClick={compileContract}
-        className="w-full whitespace-nowrap bg-[#3c3c3c] px-2 py-1 !outline-none"
-      >
-        Compile
-      </Button>
-
+      {
+        !loading &&
+        <Button
+          // variant="outline"
+          onClick={compileContract}
+          className="w-full whitespace-nowrap bg-[#3c3c3c] px-2 py-1 !outline-none"
+        >
+          Compile
+        </Button>
+        }
+      {loading && (
+        <>
+          <SyncLoader
+            color={"#fff"}
+            loading={loading}
+            cssOverride={override}
+            size={15}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+            className="mt-4"
+          />
+        </>
+      )}
       {error && <div className="text-red-500">{error}</div>}
+      {loading && (
+        <>
+          <Deployable compiled={output} sources={sources} />
+          <Display output={output} />
+        </>
+      )}
 
-      {/* Deployable */}
-      <Deployable
-        compiled={output}
-        sources={sources}
-      />
-
-      {/* Outputs */}
-      <Display output={output} />
     </div>
   )
 }

@@ -131,7 +131,7 @@ const IDE = () => {
                       <div
                         key={file.id}
                         className={cn(
-                          "relative flex cursor-pointer items-center gap-2 border border-neutral-950 px-3 py-1 text-sm font-semibold text-white focus:outline-none",
+                          "rounded-md relative flex cursor-pointer items-center gap-2 border border-neutral-950 px-3 py-1 text-sm font-semibold text-white focus:outline-none",
                           file.id === selectedFile?.id && "bg-[#3c3c3c]"
                         )}
                         onClick={(e) => {

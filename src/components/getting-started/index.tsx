@@ -54,9 +54,28 @@ const GettingStarted = () => {
     console.log("Created Project:", newProject)
   }
   const handleProjectCreationScratch = () => {
-    let newProject = init
-    newProject.dirs[0] = init;
-    newProject.dirs[0].name = projectName
+    setLoading(true);
+    let newProject=init
+        // @ts-ignore
+        let newdir:Directory={}
+        newdir.depth=1
+        newdir.dirs=[]
+        newdir.files=[]
+        newdir.name = projectName
+        newdir.id="contracts"
+        newdir.parentId="0"
+        newdir.type="directory"
+        newProject.dirs.push(newdir)
+    
+        const file: File = {
+          content: "//Write Code here",
+          depth: 2,
+          id: "contract1",
+          name: "AIfile.sol",
+          parentId: "contracts",
+          type: "file"
+        }
+        newProject.files.push(file)
     setRootDir(newProject)
     console.log("Created Project:", newProject)
   }
