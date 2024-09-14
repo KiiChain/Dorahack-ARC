@@ -29,11 +29,13 @@ export const CustomizeModal = ({
   setOpen: React.Dispatch<React.SetStateAction<boolean>>
 }) => {
   const router = useRouter()
-console.log("this is the conent",content)
+  console.log("this is the conent", content)
   const chatContainerRef = useRef<HTMLDivElement>(null)
 
   const [text, setText] = useState(content)
-  const [messages, setMessages] = useState<{ role: "user" | "ai" | "generic"; content: string }[]>([{content,role:"ai"}])
+  const [messages, setMessages] = useState<{ role: "user" | "ai" | "generic"; content: string }[]>([
+    { content, role: "ai" },
+  ])
 
   const { complete } = useCompletion({
     api: "/api/customize",
@@ -127,11 +129,10 @@ console.log("this is the conent",content)
               >
                 {msg.role === "ai" ? (
                   <>
-                  <CodeBlockWithViewMore
+                    <CodeBlockWithViewMore
                       language={"solidity"}
                       text={msg.content}
-                      
-                  />
+                    />
                     <div className="center mt-2.5 w-min gap-2.5">
                       <button
                         onClick={() => handleMoveToEditor(msg.content)}

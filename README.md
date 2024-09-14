@@ -133,6 +133,8 @@ Arc helps to manage and visualize all the contracts with it's intuitive dashboar
 Arc utilizes the AI plugin to search for relevant web resources related to your smart contract helping users find documentation, tutorials and other resources that can assist in your development process
 
 <img src="assets/features/14a.png" alt="" width="828px">
+<br />
+<img src="assets/features/14b.png" alt="" width="828px">
 
 #### 15. Decode a transaction with AI explanation
 
