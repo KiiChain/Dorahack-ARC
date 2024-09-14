@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 const links: { label: string; href: string }[] = [
   {
     label: "Home",
-    href: "/",
+    href: "/dashboard",
   },
   {
     label: "About Us",

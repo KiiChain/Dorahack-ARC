@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react"
 
 import axios from "axios"
 import { ConnectKitButton } from "connectkit"
+import { useRouter } from "next/navigation"
 import { ReactSearchAutocomplete } from "react-search-autocomplete"
 import { toast } from "sonner"
 import { useAccount } from "wagmi"
@@ -45,6 +46,7 @@ interface IContract {
 }
 
 const DashboardPage = () => {
+  const router = useRouter()
   const { address, isConnected } = useAccount()
 
   const [isLoading, setIsLoading] = useState(true)
@@ -188,6 +190,9 @@ const DashboardPage = () => {
                 },
               ].map((option, index) => (
                 <div
+                  onClick={() => {
+                    router.push(option.link)
+                  }}
                   key={index}
                   className="group relative transform cursor-pointer rounded-lg bg-zinc-700 p-4 shadow-md transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:bg-zinc-600"
                   style={{ height: "120px" }}

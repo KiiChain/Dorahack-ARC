@@ -1,6 +1,5 @@
 import { Directory, File } from "@/interface/custom/folder-tree/folder-tree"
 
-
 export const init: Directory = {
   id: "0",
   name: "root",
@@ -278,7 +277,7 @@ import { AiFillHome, AiFillMessage, AiFillUsb } from "react-icons/ai"
 export const navItems = [
   {
     name: "Home",
-    link: "/",
+    link: "/dashboard",
     icon: <AiFillHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
   },
   {
@@ -287,8 +286,13 @@ export const navItems = [
     icon: <AiFillUsb className="h-4 w-4 text-neutral-500 dark:text-white" />,
   },
   {
-    name: "Contact",
-    link: "/contact",
+    name: "Explore",
+    link: "/explore",
+    icon: <AiFillMessage className="h-4 w-4 text-neutral-500 dark:text-white" />,
+  },
+  {
+    name: "IDE",
+    link: "/ide",
     icon: <AiFillMessage className="h-4 w-4 text-neutral-500 dark:text-white" />,
   },
 ]
