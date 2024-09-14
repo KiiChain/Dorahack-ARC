@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 
 import { Directory, File as CustomFile, FileTreeProps, SubTreeProps } from "@/interface/custom/folder-tree/folder-tree"
+import { motion } from "framer-motion"
 
 import { cn } from "@/lib/utils"
 import { FileIcon, sortDir, sortFile } from "@/ui/file-tree/file-utils"
@@ -70,76 +71,88 @@ const FileDiv = ({
   const depth = file.depth
   const [isEditing, setIsEditing] = useState(false)
   const [newName, setNewName] = useState(file.name)
+  const [showOptions, setShowOptions] = useState(false)
 
   const handleRename = () => {
     setIsEditing(false)
     onRename(newName)
   }
-// const [hovercss,sethovercss]=useState(false);
   return (
     <div
-      onClick={onClick}
-      style={{ paddingLeft: `${depth * 10}px` }}
-      className={cn(
-        " group flex items-center gap-2 cursor-pointer hover:bg-[#3c3c3c] ",
-      
-      )}
-      // onMouseOver={()=>sethovercss(true)}
+      onMouseEnter={() => setShowOptions(true)}
+      onMouseLeave={() => setShowOptions(false)}
+      className="group w-full"
     >
-      <FileIcon
-        name={icon}
-        extension={file.name.split(".").pop() as unknown as ExtensionTypes}
-      />
-      {isEditing ? (
-        <input
-          type="text"
-          value={newName}
-          onChange={(e) => setNewName(e.target.value)}
-          onBlur={handleRename}
-          className="bg-black text-white"
-          onKeyDown={(e) => e.key === "Enter" && handleRename()}
-          autoFocus
+      <div
+        onClick={onClick}
+        style={{ paddingLeft: `${depth * 10}px` }}
+        className={cn("flex cursor-pointer items-center gap-2 hover:bg-[#3c3c3c]")}
+        // onMouseOver={()=>sethovercss(true)}
+      >
+        <FileIcon
+          name={icon}
+          extension={file.name.split(".").pop() as unknown as ExtensionTypes}
         />
-      ) : (
-        <span style={{ marginLeft: 1 }}>{file.name}</span>
-      )}
-      <div className="flex ml-auto ">
-        {file.type === "directory" && (
-          <>
-            <button
-              onClick={(e) => {
-                e.stopPropagation()
-                onAddFile(file as Directory)
-              }}
-            >
-              <FileIcon extension="newFile" />
-            </button>
-            <button
-              onClick={(e) => {
-                e.stopPropagation()
-                onAddFolder(file as Directory)
-              }}
-            >
-              <FileIcon extension="newFolder" />
-            </button>
-          </>
+        {isEditing ? (
+          <input
+            type="text"
+            value={newName}
+            onChange={(e) => setNewName(e.target.value)}
+            onBlur={handleRename}
+            className="bg-black text-white"
+            onKeyDown={(e) => e.key === "Enter" && handleRename()}
+            autoFocus
+          />
+        ) : (
+          <span
+            className=""
+            style={{ marginLeft: 1 }}
+          >
+            {file.name}
+          </span>
         )}
-        <button
-          onClick={(e) => {
-            e.stopPropagation()
-            setIsEditing(true)
-          }}
+        {/* Options */}
+        <div
+          style={{ display: showOptions ? "flex" : "none" }}
+          className="ml-auto"
         >
-          <FileIcon extension="edit" />
-        </button>
-        <button
-          onClick={(e) => {
-            e.stopPropagation()
-            onDelete()
-          }}
-        >
-          <FileIcon extension="delete" />
-        </button>
+          {file.type === "directory" && (
+            <>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation()
+                  onAddFile(file as Directory)
+                }}
+              >
+                <FileIcon extension="newFile" />
+              </button>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation()
+                  onAddFolder(file as Directory)
+                }}
+              >
+                <FileIcon extension="newFolder" />
+              </button>
+            </>
+          )}
+          <button
+            onClick={(e) => {
+              e.stopPropagation()
+              setIsEditing(true)
+            }}
+          >
+            <FileIcon extension="edit" />
+          </button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation()
+              onDelete()
+            }}
+          >
+            <FileIcon extension="delete" />
+          </button>
+        </div>
       </div>
     </div>
   )
