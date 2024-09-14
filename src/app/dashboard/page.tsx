@@ -42,6 +42,7 @@ interface IContract {
 const DashboardPage = () => {
   const { address, isConnected } = useAccount()
 
+  const [isLoading, setIsLoading] = useState(true)
   const [transactions, setTransactions] = useState<ITransaction[]>([])
   const [contracts, setContracts] = useState<IContract[]>([])
 
@@ -53,6 +54,7 @@ const DashboardPage = () => {
           const response = await axios.get(`https://kii.backend.kiivalidator.com/transactionsByAddress/${address}`)
           const data = response.data.transactions
           setTransactions(data)
+          setIsLoading(false)
         }
       } catch (error) {
         console.error(error)
@@ -76,19 +78,76 @@ const DashboardPage = () => {
   }, [])
 
   return (
-    <div className="flex h-screen flex-col py-20 text-neutral-100">
-      {/* User not signed in */}
-      {!isConnected ? (
-        <div className="flex flex-col items-center justify-center">
-          <h1 className="text-4xl font-semibold">Welcome to KiiChain</h1>
-          <p className="mt-4 text-lg">Sign in to get started</p>
+    <div className="flex min-h-screen flex-col py-20 pb-20 text-neutral-100">
+      <div className="grid grid-cols-4">
+        {/* User not signed in */}
+        <div className="col-span-3 flex w-full flex-col">
+          {!isConnected ? (
+            <div className="flex w-full flex-col items-center justify-center">
+              <h1 className="text-4xl font-semibold">Welcome to KiiChain</h1>
+              <p className="mt-4 text-lg">Sign in to get started</p>
+            </div>
+          ) : (
+            <div className="flex w-full flex-col items-center justify-center space-y-10">
+              <Contracts contracts={contracts} />
+              <Transactions
+                transactions={transactions}
+                isLoading={isLoading}
+              />
+            </div>
+          )}
         </div>
-      ) : (
-        <div className="flex flex-col items-center justify-center">
-          <Contracts contracts={contracts} />
-          <Transactions transactions={transactions} />
+        <div className="p-4">
+          <h2 className="mb-4 text-lg font-semibold">Explore</h2>
+          <div className="space-y-4">
+            {[
+              {
+                title: "Explore Prebuilt Contracts",
+                description:
+                  "Browse through a wide variety of prebuilt and audited smart contracts and interact with them",
+                gradient: "from-blue-500 to-purple-600",
+              },
+              {
+                title: "Open Integrated IDE",
+                description:
+                  "Launch the integrated development environment to start coding and deploying your smart contracts directly from your browser",
+                gradient: "from-green-500 to-teal-600",
+              },
+              {
+                title: "Learning Resources",
+                description:
+                  "Access a variety of tutorials, guides and other educational materials to help you get started with KiiChain",
+                gradient: "from-yellow-500 to-orange-600",
+              },
+              {
+                title: "Comprehensive Documentation",
+                description:
+                  "Find detailed and thorough documentation for KiiChain, covering all its features and functionalities",
+                gradient: "from-red-500 to-pink-600",
+              },
+              {
+                title: "Explore our AI",
+                description: "Explore our fine tuned AI to help you with your smart contract development",
+                gradient: "from-purple-500 to-indigo-600",
+              },
+            ].map((option, index) => (
+              <div
+                key={index}
+                className="group relative transform cursor-pointer rounded-lg bg-zinc-700 p-4 shadow-md transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:bg-zinc-600"
+                style={{ height: "120px" }}
+              >
+                <div
+                  className={`absolute inset-0 rounded-lg bg-gradient-to-r ${option.gradient} opacity-0 transition duration-300 ease-in-out group-hover:opacity-100`}
+                ></div>
+                <div className="relative z-10 flex h-full flex-col justify-center">
+                  <h3 className="text-lg font-semibold text-neutral-100 group-hover:text-white">{option.title}</h3>
+                  <p className="text-sm text-neutral-400 group-hover:text-light-3/75">{option.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      )}
+      </div>
     </div>
   )
 }
@@ -97,8 +156,8 @@ export default DashboardPage
 
 const Contracts: React.FC<{ contracts: readonly IContract[] }> = ({ contracts }) => {
   return (
-    <div className="p-4">
-      <h2 className="mb-4 text-lg font-semibold">Deployed Contracts</h2>
+    <div className="w-full">
+      <h2 className="mb-4 w-full px-2 text-start text-xl font-semibold">My Contracts</h2>
       <div className="grid grid-cols-3 gap-4">
         {contracts.map((contract) => (
           <div key={contract.name}>
@@ -143,107 +202,103 @@ const Contracts: React.FC<{ contracts: readonly IContract[] }> = ({ contracts })
   )
 }
 
-const Transactions: React.FC<{ transactions: ITransaction[] }> = ({ transactions }) => {
+const Transactions: React.FC<{ transactions: ITransaction[]; isLoading: boolean }> = ({ transactions, isLoading }) => {
+  const [expanded, setExpanded] = useState<string | null>(null)
+
   return (
-    <div className="grid grid-cols-4">
+    <div className="w-full">
       {/* Left Section: Deployed Contracts */}
-      <div className="col-span-3 p-4">
-        <h2 className="mb-4 text-lg font-semibold">All transactions</h2>
-        {transactions.length > 0 ? (
-          <ul className="space-y-4">
-            {transactions.map((contract, index) => (
-              <li
-                key={index}
-                className="flex items-center justify-between rounded-lg bg-dark-6/50 px-4 py-2 shadow-md backdrop-blur-lg"
-              >
-                <div className="">
-                  <div className="center w-min gap-2.5 whitespace-nowrap">
-                    <p className="text-lg text-neutral-100">Test {16 - index}</p>(
-                    <a
-                      href={`https://app.kiichain.io/kiichain/tx/${contract.transaction.hash}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="cursor-pointer text-sm text-neutral-100 hover:text-blue-500 hover:underline"
-                    >
-                      {`${contract.transaction.hash?.slice(0, 4)}...${contract.transaction.hash?.slice(-3)}`}
-                    </a>
-                    )
-                  </div>
-                  <p className="text-sm text-neutral-500">
-                    this is a test contract to check the deployment functionality
-                  </p>
+      <h2 className="mb-4 w-full px-2 text-start text-xl font-semibold">All transactions</h2>
+      {isLoading ? (
+        <div className="">
+          <div className="h-10 w-10 animate-spin rounded-full border-b-2 border-t-2 border-light-1"></div>
+        </div>
+      ) : transactions.length > 0 ? (
+        <ul className="w-full space-y-4">
+          {transactions.map((contract, index) => (
+            <li
+              onClick={() =>
+                setExpanded((prev) => (prev === contract.transaction.hash ? null : contract.transaction.hash))
+              }
+              key={index}
+              className="flex cursor-pointer flex-col space-y-2 rounded-lg bg-dark-6/50 px-4 py-2 shadow-md backdrop-blur-lg"
+            >
+              <div className="flex items-center justify-between">
+                <div className="center w-min gap-2.5 whitespace-nowrap">
+                  <a
+                    href={`https://app.kiichain.io/kiichain/tx/${contract.transaction.hash}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="cursor-pointer text-sm text-neutral-100 hover:text-blue-500 hover:underline"
+                  >
+                    {`${contract.transaction.hash}`}
+                  </a>
+                  <span className="text-sm text-neutral-400">
+                    {(() => {
+                      const now = new Date()
+                      const diff = now.getTime() - contract.timestamp
+                      const seconds = Math.floor(diff / 1000)
+                      const minutes = Math.floor(seconds / 60)
+                      const hours = Math.floor(minutes / 60)
+                      const days = Math.floor(hours / 24)
+
+                      if (days > 0) {
+                        return `(${days} day${days > 1 ? "s" : ""} ago)`
+                      } else if (hours > 0) {
+                        return `(${hours} hour${hours > 1 ? "s" : ""} ago)`
+                      } else if (minutes > 0) {
+                        return `(${minutes} minute${minutes > 1 ? "s" : ""} ago)`
+                      } else if (seconds > 0) {
+                        return `(${seconds} second${seconds > 1 ? "s" : ""} ago)`
+                      } else {
+                        return `(${new Date(contract.timestamp).toLocaleString()})`
+                      }
+                    })()}
+                  </span>
                 </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex space-x-2">
+              </div>
+              {expanded === contract.transaction.hash && (
+                <>
+                  <div className="flex flex-col space-y-1">
+                    <span className="text-sm text-neutral-400">From: {contract.sender}</span>
+                    <span className="text-sm text-neutral-400">To: {contract.transaction.to}</span>
+                    <span className="text-sm text-neutral-400">
+                      Value: {parseInt(contract.transaction.value, 16) / 1e18} ETH
+                    </span>
+                    <span className="text-sm text-neutral-400">Gas: {parseInt(contract.transaction.gas, 16)}</span>
+                    <span className="text-sm text-neutral-400">
+                      Gas Price: {parseInt(contract.transaction.gasPrice, 16) / 1e9} Gwei
+                    </span>
+                  </div>
+                  <div className="mt-2 space-x-4">
                     <button
-                      onClick={() => navigator.clipboard.writeText(contract.transaction.hash)}
-                      className="rounded-lg bg-zinc-700 px-2 py-1 text-sm text-neutral-100 shadow-md"
+                      onClick={(e) => {
+                        e.stopPropagation()
+                      }}
+                      className="rounded-lg bg-blue-600 px-4 py-2 text-sm text-white shadow-md"
+                    >
+                      Decode Transaction
+                    </button>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        navigator.clipboard.writeText(contract.transaction.hash)
+                      }}
+                      className="rounded-lg bg-zinc-700 px-4 py-2 text-sm text-neutral-100 shadow-md"
                     >
                       Copy details
                     </button>
                   </div>
-                </div>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <div className="rounded-lg bg-zinc-700 p-4 text-neutral-400 shadow-md">
-            <p>No contracts deployed yet</p>
-          </div>
-        )}
-      </div>
-
-      {/* Right Section: Options */}
-      <div className="p-4">
-        <h2 className="mb-4 text-lg font-semibold">Explore</h2>
-        <div className="space-y-4">
-          {[
-            {
-              title: "Explore Prebuilt Contracts",
-              description:
-                "Browse through a wide variety of prebuilt and audited smart contracts and interact with them",
-              gradient: "from-blue-500 to-purple-600",
-            },
-            {
-              title: "Open Integrated IDE",
-              description:
-                "Launch the integrated development environment to start coding and deploying your smart contracts directly from your browser",
-              gradient: "from-green-500 to-teal-600",
-            },
-            {
-              title: "Learning Resources",
-              description:
-                "Access a variety of tutorials, guides and other educational materials to help you get started with KiiChain",
-              gradient: "from-yellow-500 to-orange-600",
-            },
-            {
-              title: "Comprehensive Documentation",
-              description:
-                "Find detailed and thorough documentation for KiiChain, covering all its features and functionalities",
-              gradient: "from-red-500 to-pink-600",
-            },
-            {
-              title: "Explore our AI",
-              description: "Explore our fine tuned AI to help you with your smart contract development",
-              gradient: "from-purple-500 to-indigo-600",
-            },
-          ].map((option, index) => (
-            <div
-              key={index}
-              className="group relative transform cursor-pointer rounded-lg bg-zinc-700 p-4 shadow-md transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:bg-zinc-600"
-              style={{ height: "120px" }}
-            >
-              <div
-                className={`absolute inset-0 rounded-lg bg-gradient-to-r ${option.gradient} opacity-0 transition duration-300 ease-in-out group-hover:opacity-100`}
-              ></div>
-              <div className="relative z-10 flex h-full flex-col justify-center">
-                <h3 className="text-lg font-semibold text-neutral-100 group-hover:text-white">{option.title}</h3>
-                <p className="text-sm text-neutral-400 group-hover:text-light-3/75">{option.description}</p>
-              </div>
-            </div>
+                </>
+              )}
+            </li>
           ))}
+        </ul>
+      ) : (
+        <div className="w-full rounded-lg bg-zinc-700 p-4 text-neutral-400 shadow-md">
+          <p>No transactions yet</p>
         </div>
-      </div>
+      )}
     </div>
   )
 }
