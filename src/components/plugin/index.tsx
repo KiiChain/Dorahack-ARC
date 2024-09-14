@@ -26,7 +26,7 @@ const Plugin = ({ selectedFile, rootDir, setRootDir }: { selectedFile: File | un
     const { complete } = useCompletion({
         api: "/api/audit",
     });
-    const [name, setname] = useState("")
+    const [name, setname] = useState(selectedFile?.name)
     let [loading, setLoading] = useState(false);
     let [color, setColor] = useState("#ffffff");
     const [loading2, setLoading2] = useState(false)
@@ -77,6 +77,7 @@ const Plugin = ({ selectedFile, rootDir, setRootDir }: { selectedFile: File | un
     };
     const GenerateTests = () => {
         if (!selectedFile) return
+        setLoading2(true)
         const payload2: Content[] = [
             GenerateTestInstructions(),
             {
@@ -149,7 +150,7 @@ const Plugin = ({ selectedFile, rootDir, setRootDir }: { selectedFile: File | un
             .catch((err) => console.log(err))
             .finally(() => {
                 console.log("fin chala")
-                setLoading(false);
+                setLoading2(false);
             });
     }
 
@@ -158,7 +159,7 @@ const Plugin = ({ selectedFile, rootDir, setRootDir }: { selectedFile: File | un
         <div className="p-1">
             <SyncLoader
                 color={color}
-                loading={loading}
+                loading={loading || loading2}
                 cssOverride={override}
                 size={15}
                 aria-label="Loading Spinner"
@@ -174,7 +175,7 @@ const Plugin = ({ selectedFile, rootDir, setRootDir }: { selectedFile: File | un
                     >
                         Generate Documentation
                     </Button>
-                    <div className='mt-6 text-sm italic '>Enter file name</div>
+                    <div className='mt-6 text-sm italic '>Enter file name (without extension)</div>
                     <TextInput
                         name='name'
                         id='name'
@@ -195,7 +196,6 @@ const Plugin = ({ selectedFile, rootDir, setRootDir }: { selectedFile: File | un
                         name='tests'
                         id='tests'
                         value={selectedFile?.name}
-                        onChange={(e) => setname(e.target.value)}
                         className='bg-black rounded-md border-[0.1px] border-gray-600 '
                         disabled
                     />
