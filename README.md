@@ -23,11 +23,12 @@
   - [Mission](#mission)
   - [Core](#core)
   - [Features](#features)
+  - [Concepts](#concepts)
   - [Value Proposition](#value)
   - [Tech stack](#tech)
 - [Motivation](#motivation)
-- [Project Gallery](#gallery)
 - [Installation](#installation)
+- [Project Gallery](#gallery)
 - [Contributors](#contributors)
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
@@ -133,15 +134,35 @@ Decode a transaction (and AI explanation) to understand the details of the trans
 
 <img src="assets/features/15a.png" alt="" width="828px">
 
+### Concepts [](#concepts)
+
+- [Training deep learning model for smart contract vulnerability detection](./docs/ResNet.md)
+- [Enhanced problem detection and fixing using Gemini](./docs/Gemini.md)
+
 ### Value Proposition [](#value)
+
+Arc aims to transform the way developers interact with smart contracts by providing a comprehensive suite of tools that streamline and enhance the development process. Our platform is designed to:
+
+- **Increase Productivity**: By offering AI powered autocompletion, prebuilt templates and a custom compiler, Arc helps developers write, test and deploy smart contracts faster and more efficiently
+
+- **Enhance Security**: With advanced AI powered vulnerability checking and code auditing, Arc ensures that smart contracts are secure and resilient against potential threats
+
+- **Simplify Complexity**: The AI driven documentation and explanation tools make complex contracts easier to understand and maintain, reducing the learning curve and improving overall code quality
+
+- **Streamline Deployment**: The one click deployment feature simplifies the process of deploying contracts to the Kiichain testnet, removing the need for manual configurations and setup
+
+- **Facilitate Integration**: By providing ABI and bytecode extraction, Arc makes it easy to integrate smart contracts with front-end applications and other blockchain components
 
 ### Tech stack [](#tech)
 
-<div align="right">[ <a href="#table-of-contents">↑ Back to top ↑</a> ]</div>
+Arc is built using a robust tech stack to ensure performance, reliability, and scalability:
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
-
-## Project Gallery [](#gallery)
+- Next.js
+- Solidity
+- Slither
+- Hardhat
+- Foundry
+- AI models
 
 <div align="right">[ <a href="#table-of-contents">↑ Back to top ↑</a> ]</div>
 
@@ -149,11 +170,19 @@ Decode a transaction (and AI explanation) to understand the details of the trans
 
 ## Motivation [](#motivation)
 
+The motivation behind Arc is to address the common challenges faced by smart contract developers, such as security vulnerabilities, complexity of development, and inefficiencies in the deployment process. By leveraging advanced AI and providing a comprehensive suite of tools, Arc aims to make smart contract development more accessible, secure, and efficient, ultimately fostering innovation and growth within the blockchain ecosystem
+
 <div align="right">[ <a href="#table-of-contents">↑ Back to top ↑</a> ]</div>
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## Installation [](#installation)
+
+<div align="right">[ <a href="#table-of-contents">↑ Back to top ↑</a> ]</div>
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+## Project Gallery [](#gallery)
 
 <div align="right">[ <a href="#table-of-contents">↑ Back to top ↑</a> ]</div>
 
