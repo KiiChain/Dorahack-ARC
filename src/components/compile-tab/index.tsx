@@ -16,7 +16,6 @@ import { copyToClipboard, downloadJson } from "@/utils"
 import { Button } from "@/ui/button"
 import { getIcon } from "@/ui/icons"
 
-
 interface IPresent {
   name: string
   abi: Abi
@@ -27,7 +26,6 @@ interface IPresent {
 }
 
 const CompilePage = ({ sources }: { sources: ISources }) => {
-
   const [output, setOutput] = useState<Array<IPresent>>([])
   const [error, setError] = useState<string | null>(null)
 
@@ -83,29 +81,27 @@ const CompilePage = ({ sources }: { sources: ISources }) => {
   }
 
   return (
-  
-      <div className="flex flex-col gap-4">
-        {/* {JSON.stringify(sources)} */}
-        <Button
-          // variant="outline"
-          onClick={compileContract}
-          className="bg-[#3c3c3c] !outline-none  px-2 py-1 w-full whitespace-nowrap "
-        >
-          Compile
-        </Button>
+    <div className="flex flex-col gap-4">
+      {/* {JSON.stringify(sources)} */}
+      <Button
+        // variant="outline"
+        onClick={compileContract}
+        className="w-full whitespace-nowrap bg-[#3c3c3c] px-2 py-1 !outline-none"
+      >
+        Compile
+      </Button>
 
-        {error && <div className="text-red-500">{error}</div>}
+      {error && <div className="text-red-500">{error}</div>}
 
-        {/* Deployable */}
-        <Deployable
-          compiled={output}
-          sources={sources}
-        />
+      {/* Deployable */}
+      <Deployable
+        compiled={output}
+        sources={sources}
+      />
 
-        {/* Outputs */}
-        <Display output={output} />
-      </div>
-
+      {/* Outputs */}
+      <Display output={output} />
+    </div>
   )
 }
 
@@ -117,7 +113,6 @@ const Display = ({ output }: { output: IPresent[] }) => {
   const toggleExpand = (index: number) => {
     setExpanded((prev) => (prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]))
   }
-
 
   return (
     <div className="space-y-4">
@@ -134,8 +129,7 @@ const Display = ({ output }: { output: IPresent[] }) => {
               onClick={() => toggleExpand(index)}
               className="text-sm text-blue-500 underline hover:text-blue-700"
             >
-              
-              {getIcon( expanded.includes(index) ? "openDirectory": "closedDirectory")}
+              {getIcon(expanded.includes(index) ? "openDirectory" : "closedDirectory")}
             </button>
           </div>
 
@@ -147,25 +141,23 @@ const Display = ({ output }: { output: IPresent[] }) => {
                 <div className="flex justify-between">
                   {/* <div className="text-sm text-gray-500">ABI</div> */}
                   <Button
-                    className="transition-all  bg-[#3c3c3c] !outline-none  px-2 py-1  whitespace-nowrap w-full"
+                    className="w-full whitespace-nowrap bg-[#3c3c3c] px-2 py-1 !outline-none transition-all"
                     onClick={() => copyToClipboard(JSON.stringify(contract.abi, null, 2))}
                   >
                     Copy ABI
                   </Button>
                 </div>
-
               </div>
 
               {/* Bytecode Section */}
               <div className="mt-2">
                 <div className="flex justify-between">
                   <Button
-                    className="transition-all  bg-[#3c3c3c] !outline-none  px-2 py-1  whitespace-nowrap w-full"
+                    className="w-full whitespace-nowrap bg-[#3c3c3c] px-2 py-1 !outline-none transition-all"
                     onClick={() => copyToClipboard(contract.bytecode)}
                   >
                     Copy Bytecode
                   </Button>
-
                 </div>
               </div>
 
@@ -184,13 +176,11 @@ const Display = ({ output }: { output: IPresent[] }) => {
                 <div className="flex justify-between">
                   <Button
                     onClick={() => downloadJson(contract.metadata, contract.name)}
-                    className="transition-all  bg-[#3c3c3c] !outline-none  px-2 py-1  whitespace-nowrap w-full"
+                    className="w-full whitespace-nowrap bg-[#3c3c3c] px-2 py-1 !outline-none transition-all"
                   >
                     Download Metadata
                   </Button>
-
                 </div>
-
               </div>
             </>
           )}
@@ -267,7 +257,7 @@ export const Deployable = ({ compiled, sources }: { compiled: IPresent[]; source
             <div className="flex justify-between">
               {/* <div className="text-sm text-gray-500">ABI</div> */}
               <Button
-                className="transition-all  bg-[#3c3c3c] !outline-none  px-2 py-1  whitespace-nowrap w-full"
+                className="w-full whitespace-nowrap bg-[#3c3c3c] px-2 py-1 !outline-none transition-all"
                 onClick={() => copyToClipboard(JSON.stringify(contract.abi, null, 2))}
               >
                 Copy ABI
@@ -275,16 +265,16 @@ export const Deployable = ({ compiled, sources }: { compiled: IPresent[]; source
             </div>
           </div>
           <div className="mt-2">
-            <div className="flex justify-between ">
+            <div className="flex justify-between">
               {/* <div className="text-sm text-gray-500">Bytecode</div> */}
               <Button
                 onClick={() => copyToClipboard(contract.bytecode)}
-                className="transition-all  bg-[#3c3c3c] !outline-none  px-2 py-1  whitespace-nowrap w-full"
+                className="w-full whitespace-nowrap bg-[#3c3c3c] px-2 py-1 !outline-none transition-all"
               >
                 Copy Bytecode
               </Button>
             </div>
-            <pre className="no-scroll max-h-40 overflow-y-auto rounded bg-dark-6 p-2 mt-2">{contract.bytecode}</pre>
+            <pre className="no-scroll mt-2 max-h-40 overflow-y-auto rounded bg-dark-6 p-2">{contract.bytecode}</pre>
           </div>
 
           {!isConnected && (
@@ -292,7 +282,7 @@ export const Deployable = ({ compiled, sources }: { compiled: IPresent[]; source
               {({ isConnected, isConnecting, show, hide, address, ensName, chain }) => {
                 return (
                   <Button
-                    className="transition-transform mt-4 w-full transform rounded bg-gradient-to-r from-green-400 to-blue-500 px-4 py-2 font-bold text-white shadow-lg hover:from-green-500 hover:to-blue-600"
+                    className="mt-4 w-full transform rounded bg-gradient-to-r from-green-400 to-blue-500 px-4 py-2 font-bold text-white shadow-lg transition-transform hover:from-green-500 hover:to-blue-600"
                     onClick={show}
                   >
                     Connect your wallet
@@ -306,7 +296,7 @@ export const Deployable = ({ compiled, sources }: { compiled: IPresent[]; source
 
           {isConnected && chain?.id !== KiiChain.id && (
             <Button
-              className="transition-transform mt-4 w-full transform rounded bg-gradient-to-r from-green-400 to-blue-500 px-4 py-2 font-bold text-white shadow-lg hover:from-green-500 hover:to-blue-600"
+              className="mt-4 w-full transform rounded bg-gradient-to-r from-green-400 to-blue-500 px-4 py-2 font-bold text-white shadow-lg transition-transform hover:from-green-500 hover:to-blue-600"
               onClick={() => switchChain({ chainId: KiiChain.id })}
             >
               Switch to KiiChain

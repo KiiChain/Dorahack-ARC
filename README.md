@@ -47,7 +47,7 @@ Our mission with Arc is to democratize smart contract development on Kiichain by
 Arc is packed with a wide array of features designed to enhance every aspect of smart contract development.
 Here is a detailed breakdown:
 
-#### 1. **AI Powered IDE**
+#### 1. **AI powered IDE**
 
 Arc provides an intelligent development environment for solidity where you can write smart contracts from scratch or use pre-built templates. The AI-driven autocompletion suggests code as you type, speeding up the process and reducing errors
 
@@ -55,7 +55,55 @@ Arc provides an intelligent development environment for solidity where you can w
 
 Start with secure, pre built smart contract templates (collected from different sources) that have been thoroughly audited. These templates offer a robust foundation, saving time and effort while ensuring reliability
 
-<img src="assets/features/2.png" alt="" width="800px">
+<img src="assets/features/2.png" alt="" width="828px">
+
+#### 3. **Custom Compiler**
+
+Arc’s custom compiler supports dynamic import resolution, allowing for seamless management of external dependencies and libraries. It also handles multi-file compilation, making it easy to work with complex contracts that span multiple files
+
+#### 4. **AI powered vulnerability checking**
+
+Security is a top priority with Arc. The platform uses advanced AI to analyze the smart contract code in real time, identifying potential vulnerabilities and suggesting fixes to ensure robust and secure contracts
+
+#### 5. **AI plugins**
+
+Automatically generate detailed documentation for your smart contracts using Arc’s AI plugin. This feature provides comprehensive explanations and makes your code easier to understand and maintain.
+
+#### 6. **Chat with contract**
+
+Interact with your smart contract through a conversational AI interface. You can ask questions to understand specific functions, explore use cases or troubleshoot issues enhancing your understanding of complex contracts
+
+#### 7. **Explain contract**
+
+Use the "Explain Contract" tool to receive high level or detailed explanations of your smart contract. This feature helps demystify the functionality and components of your contract, making it easier to grasp and review
+
+#### 8. **Code auditing**
+
+Arc has two modes of auditing AI powered checks and using static analysis tools that assess your smart contract against adding an extra layer of security and ensures comprehensive vulnerability detection
+
+#### 9. **Downloade contracts in multiple formats**
+
+After developing your contract, Arc allows to download it in various formats such as Zip, Hardhat or Foundry templates. Users can also copy the contract code directly to the clipboard for immediate use
+
+#### 10. **One click deployment**
+
+Deploy your smart contract to the `Kiichain testnet` with a single click. Arc integrates wallet support and configuration for effortless deployment, removing the need for complex setups or manual configurations
+
+#### 11. **Contract ABI and bytecode extraction**
+
+Quickly generate and download the ABI (Application Binary Interface) and bytecode for the smart contract. This feature facilitates integration with front-end applications and other blockchain components
+
+#### 12. **Testnet faucet**
+
+Arc includes an integrated faucet for obtaining testnet tokens, ensuring you have the resources needed for testing your contracts on the Kiichain testnet
+
+#### 13. **Contract management dashboard**
+
+Arc helps to manage and visualize all the contracts with it's intuitive dashboard where users can track the contract statuses, interact with them and make necessary modifications through a user-friendly interface
+
+#### 14. **Web resource search**
+
+Arc utilizes the AI plugin to search for relevant web resources related to your smart contract helping users find documentation, tutorials and other resources that can assist in your development process
 
 ### Value Proposition [](#value)
 
