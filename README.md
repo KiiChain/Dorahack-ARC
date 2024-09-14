@@ -77,6 +77,8 @@ Automatically generate detailed documentation for your smart contracts using Arc
 
 Interact with your smart contract through a conversational AI interface. You can ask questions to understand specific functions, explore use cases or troubleshoot issues enhancing your understanding of complex contracts
 
+<img src="assets/features/7a.png" alt="" width="828px">
+
 #### 7. **Explain contract**
 
 Use the "Explain Contract" tool to receive high level or detailed explanations of your smart contract. This feature helps demystify the functionality and components of your contract, making it easier to grasp and review
@@ -89,9 +91,23 @@ Arc has two modes of auditing AI powered checks and using static analysis tools 
 
 After developing your contract, Arc allows to download it in various formats such as Zip, Hardhat or Foundry templates. Users can also copy the contract code directly to the clipboard for immediate use
 
+<img src="assets/features/9a.png" alt="" width="828px">
+<br/>
+<img src="assets/features/9b.png" alt="" width="828px">
+
 #### 10. **One click deployment**
 
 Deploy your smart contract to the `Kiichain testnet` with a single click. Arc integrates wallet support and configuration for effortless deployment, removing the need for complex setups or manual configurations
+
+<img src="assets/features/10a.png" alt="" width="828px">
+<br/>
+<img src="assets/features/10b.png" alt="" width="828px">
+<br/>
+<img src="assets/features/10c.png" alt="" width="828px">
+<br/>
+<img src="assets/features/10d.png" alt="" width="828px">
+<br/>
+<img src="assets/features/10e.png" alt="" width="828px">
 
 #### 11. **Contract ABI and bytecode extraction**
 
@@ -108,6 +124,14 @@ Arc helps to manage and visualize all the contracts with it's intuitive dashboar
 #### 14. **Web resource search**
 
 Arc utilizes the AI plugin to search for relevant web resources related to your smart contract helping users find documentation, tutorials and other resources that can assist in your development process
+
+<img src="assets/features/14a.png" alt="" width="828px">
+
+#### 15. Decode a transaction with AI explanation
+
+Decode a transaction (and AI explanation) to understand the details of the transaction, including the input data, output data and other relevant information helping users to analyze and troubleshoot transactions more effectively
+
+<img src="assets/features/15a.png" alt="" width="828px">
 
 ### Value Proposition [](#value)
 
