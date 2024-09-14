@@ -3,7 +3,7 @@ import React from "react"
 import Image from "next/image"
 // import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 import Link from "next/link"
-import { TbBrandYoutubeFilled } from "react-icons/tb";
+import { TbBrandYoutubeFilled } from "react-icons/tb"
 // import { useEffect, useRef } from "react";
 import { motion } from "framer-motion"
 import Compile from "@/assets/images/compile.png"
@@ -12,50 +12,54 @@ import Download from "@/assets/images/download.png"
 import Opt from "@/assets/images/optimizations.png"
 import Alt from "@/assets/images/IDE.png"
 
-
-
 import IDE from "@/assets/images/IDE.png"
 import { cn } from "@/lib/utils"
 
-export function  FeaturesSectionDemo() {
+export function FeaturesSectionDemo() {
   const features = [
     {
       title: "Seamless Smart Contract Creation",
-      description: "Easily write and deploy smart contracts with our intuitive code editor, which includes AI-powered auto-complete and dynamic import resolution for a smooth development experience.",
+      description:
+        "Easily write and deploy smart contracts with our intuitive code editor, which includes AI-powered auto-complete and dynamic import resolution for a smooth development experience.",
       skeleton: <SkeletonOne />,
       className: "col-span-1 lg:col-span-4 border-b lg:border-r dark:border-neutral-800",
     },
     {
       title: "AI-Driven Code Assistance",
-      description: "Enhance your coding efficiency with AI-powered features like real-time code vulnerability checking, automatic documentation generation, and interactive contract chat.",
+      description:
+        "Enhance your coding efficiency with AI-powered features like real-time code vulnerability checking, automatic documentation generation, and interactive contract chat.",
       skeleton: <SkeletonTwo />,
       className: "border-b col-span-1 lg:col-span-2 dark:border-neutral-800",
     },
     {
       title: "Comprehensive Contract Management",
-      description: "Manage and monitor your deployed contracts with our detailed dashboard. Access pre-deployed contracts, view metrics, and make adjustments effortlessly.",
+      description:
+        "Manage and monitor your deployed contracts with our detailed dashboard. Access pre-deployed contracts, view metrics, and make adjustments effortlessly.",
       skeleton: <SkeletonThree />,
       className: "col-span-1 lg:col-span-3 lg:border-r dark:border-neutral-800",
     },
     {
       title: "One-Click Deployment to Kiichain",
-      description: "Deploy your smart contracts to the Kiichain testnet with a single click. Our platform integrates with a testnet faucet to ensure you have the necessary tokens for deployment.",
+      description:
+        "Deploy your smart contracts to the Kiichain testnet with a single click. Our platform integrates with a testnet faucet to ensure you have the necessary tokens for deployment.",
       skeleton: <SkeletonFour />,
       className: "col-span-1 lg:col-span-3 border-b lg:border-none",
     },
   ]
-  
+
   return (
     <div className="relative z-20 mx-auto max-w-7xl py-10 lg:py-12">
-    <div className="px-8">
-  <h4 className="mx-auto max-w-5xl text-center text-3xl font-medium tracking-tight text-black lg:text-5xl lg:leading-tight dark:text-white">
-    Empowering Your Smart Contract Journey
-  </h4>
+      <div className="px-8">
+        <h4 className="mx-auto max-w-5xl text-center text-3xl font-medium tracking-tight text-black lg:text-5xl lg:leading-tight dark:text-white">
+          Empowering Your Smart Contract Journey
+        </h4>
 
-  <div className="mx-auto my-4 max-w-2xl text-center text-sm font-normal text-neutral-500 lg:text-base dark:text-neutral-300">
-    Discover how Arc transforms smart contract development with cutting-edge AI features. From seamless code creation to comprehensive contract management, our platform provides everything you need for efficient and secure smart contract deployment.
-  </div>
-</div>
+        <div className="mx-auto my-4 max-w-2xl text-center text-sm font-normal text-neutral-500 lg:text-base dark:text-neutral-300">
+          Discover how Arc transforms smart contract development with cutting-edge AI features. From seamless code
+          creation to comprehensive contract management, our platform provides everything you need for efficient and
+          secure smart contract deployment.
+        </div>
+      </div>
       <div className="relative">
         <div className="mt-12 grid grid-cols-1 rounded-md lg:grid-cols-6 xl:border dark:border-neutral-800">
           {features.map((feature) => (
@@ -75,7 +79,7 @@ export function  FeaturesSectionDemo() {
 }
 
 const FeatureCard = ({ children, className }: { children?: React.ReactNode; className?: string }) => {
-  return <div className={cn(`relative overflow-hidden p-4 sm:p-8 `, className)}>{children}</div>
+  return <div className={cn(`relative overflow-hidden p-4 sm:p-8`, className)}>{children}</div>
 }
 
 const FeatureTitle = ({ children }: { children?: React.ReactNode }) => {
@@ -132,7 +136,7 @@ export const SkeletonThree = () => {
       <div className="group mx-auto h-full w-full bg-transparent dark:bg-transparent">
         <div className="relative flex h-full w-full flex-1 flex-col space-y-2">
           {/* TODO */}
-          <TbBrandYoutubeFilled className="h-20 w-20 absolute z-10 inset-0 text-red-500 m-auto " />
+          <TbBrandYoutubeFilled className="absolute inset-0 z-10 m-auto h-20 w-20 text-red-500" />
           <Image
             src="https://assets.aceternity.com/fireship.jpg"
             alt="header"
@@ -148,13 +152,7 @@ export const SkeletonThree = () => {
 }
 
 export const SkeletonTwo = () => {
-  const images = [
-    Download,
-    Compile,
-    Vulnerability,
-    Alt,
-    Opt,
-  ]
+  const images = [Download, Compile, Vulnerability, Alt, Opt]
 
   const imageVariants = {
     whileHover: {
@@ -225,7 +223,13 @@ export const SkeletonTwo = () => {
 export const SkeletonFour = () => {
   return (
     <div className="relative mt-10 flex h-60 flex-col items-center bg-transparent md:h-60 dark:bg-transparent">
-
+      <Image
+        src={"/deploy.gif"}
+        alt=""
+        width={1080}
+        height={1080}
+        className=""
+      />
     </div>
   )
 }

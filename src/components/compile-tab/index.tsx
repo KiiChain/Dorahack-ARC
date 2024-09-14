@@ -4,6 +4,7 @@ import React, { CSSProperties, useEffect, useState } from "react"
 
 import axios from "axios"
 import { ConnectKitButton } from "connectkit"
+import SyncLoader from "react-spinners/SyncLoader"
 import { toast } from "sonner"
 import { Abi } from "viem"
 import { useAccount, useDeployContract, useSwitchChain } from "wagmi"
@@ -11,11 +12,10 @@ import { useAccount, useDeployContract, useSwitchChain } from "wagmi"
 import { KiiChain } from "@/kiichain"
 
 import RequestToken from "@/components/faucet/request-token"
-import { copyToClipboard, downloadJson } from "@/utils"
 import { Button } from "@/ui/button"
 import { getIcon } from "@/ui/icons"
 import Modal2 from "@/ui/modal2"
-import SyncLoader from "react-spinners/SyncLoader"
+import { copyToClipboard, downloadJson } from "@/utils"
 
 interface IPresent {
   name: string
@@ -29,15 +29,13 @@ const override: CSSProperties = {
   display: "block",
   margin: "0 auto",
   borderColor: "red",
-};
+}
 
 const CompilePage = ({ sources }: { sources: ISources }) => {
   const [output, setOutput] = useState<Array<IPresent>>([])
   const [error, setError] = useState<string | null>(null)
-  let [loading, setLoading] = useState(false);
 
   const compileContract = async () => {
-    setLoading(true);
     try {
       const response = await axios.post("/api/contract/compile", { sources })
 
@@ -86,45 +84,26 @@ const CompilePage = ({ sources }: { sources: ISources }) => {
     } catch (e) {
       console.error("Compilation error:", e)
       setError("Failed to compile contract")
-    } finally {
-      setLoading(false)
     }
   }
 
   return (
     <div className="flex flex-col gap-4">
-      {/* {JSON.stringify(sources)} */}
-      {
-        !loading &&
-        <Button
-          // variant="outline"
-          onClick={compileContract}
-          className="w-full whitespace-nowrap bg-[#3c3c3c] px-2 py-1 !outline-none"
-        >
-          Compile
-        </Button>
-        }
-      {loading && (
-        <>
-          <SyncLoader
-            color={"#fff"}
-            loading={loading}
-            cssOverride={override}
-            size={15}
-            aria-label="Loading Spinner"
-            data-testid="loader"
-            className="mt-4"
-          />
-        </>
-      )}
-      {error && <div className="text-red-500">{error}</div>}
-      {loading && (
-        <>
-          <Deployable compiled={output} sources={sources} />
-          <Display output={output} />
-        </>
-      )}
+      <Button
+        onClick={compileContract}
+        className="w-full whitespace-nowrap bg-[#3c3c3c] px-2 py-1 !outline-none"
+      >
+        Compile
+      </Button>
 
+      {error && <div className="text-red-500">{error}</div>}
+      <>
+        <Deployable
+          compiled={output}
+          sources={sources}
+        />
+        <Display output={output} />
+      </>
     </div>
   )
 }
