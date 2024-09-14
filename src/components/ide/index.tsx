@@ -16,15 +16,15 @@ import CompilePage, { Deployable } from "../compile-tab"
 import { collectSolFiles } from "@/utils"
 import Download from "../download"
 import Audit from "../audit"
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic"
 import { CircularSpinner } from "@/ui/circular-spinner"
 const MonacoEditor = dynamic(() => import("@/components/editor/").then((mod) => mod.MonacoEditor), {
   ssr: false,
-  loading: () => <CircularSpinner />
-});
+  loading: () => <CircularSpinner />,
+})
 const SidebarBody = dynamic(() => import("@/components/ide-sidebar").then((mod) => mod.SidebarBody), {
   ssr: false,
-  loading: () => <CircularSpinner />
+  loading: () => <CircularSpinner />,
 })
 const FileManager = dynamic(() => import("@/components/file-manager").then((mod) => mod.FileManager))
 
@@ -54,75 +54,75 @@ const IDE = () => {
     if (activeFiles && activeFiles.length == 0) setSelectedFile(undefined)
   }, [activeFiles])
   return (
-    <div className="w-full h-full row-span-12 col-span-12 border border-neutral-800 p-2 rounded-lg">
-      <div className="grid grid-cols-12 grid-rows-12 w-full h-full gap-1 rounded-lg">
-        {
-          rootDir ?
+    <div className="col-span-12 row-span-12 h-full w-full rounded-lg border border-neutral-800 p-2">
+      <div className="grid h-full w-full grid-cols-12 grid-rows-12 gap-1 rounded-lg">
+        {rootDir ? (
           <CSSTabs
             tabs={[
               {
                 id: "0",
-                label: "Editor"
+                label: "Editor",
               },
-  
+
               {
                 id: "1",
-                label: "Compile"
+                label: "Compile",
               },
               {
                 id: "2",
-                label: "Download"
-              }
-              ,
+                label: "Download",
+              },
               {
                 id: "3",
-                label: "Audit"
-              }
+                label: "Audit",
+              },
+              {
+                id: "4",
+                label: "Plugins",
+              },
             ]}
             selectedTabIndex={activeTab}
             setSelectedTab={setActiveTab}
-          />:
+          />
+        ) : (
           <div></div>
-        }
-        <div className="flex h-full col-span-12 row-span-11 gap-1">
+        )}
+        <div className="col-span-12 row-span-11 flex h-full gap-1">
           {rootDir ? (
             <>
               <SidebarBody className="justify-between gap-10">
-                <div className="no-scroll flex h-full flex-1 flex-col overflow-y-auto overflow-x-scroll mt-8 gap-2">
-                  {
-                    activeTab == 0 ?
-                      <FileManager
+                <div className="no-scroll mt-8 flex h-full flex-1 flex-col gap-2 overflow-y-auto overflow-x-scroll">
+                  {activeTab == 0 ? (
+                    <FileManager
+                      rootDir={rootDir}
+                      selectedFile={selectedFile}
+                      setRootDir={setRootDir}
+                      setSelectedFile={setSelectedFile}
+                      activeFiles={activeFiles}
+                      setActiveFiles={setActiveFiles}
+                    />
+                  ) : activeTab == 2 ? (
+                    <>
+                      <Download
+                        contracts={collectSolFiles(rootDir)}
                         rootDir={rootDir}
-                        selectedFile={selectedFile}
-                        setRootDir={setRootDir}
-                        setSelectedFile={setSelectedFile}
-                        activeFiles={activeFiles}
-                        setActiveFiles={setActiveFiles}
                       />
-                      :
-                      activeTab == 2 ?
-                        <>
-                          <Download contracts={collectSolFiles(rootDir)} rootDir={rootDir} />
-                        </>
-                        :
-                        activeTab == 1 ?
-                          <>
-                            <CompilePage sources={collectSolFiles(rootDir)} />
-                          </>
-                          :
-                          activeTab == 3 &&
-                          <>
-                            <Audit selectedFile={selectedFile} />
-                          </>
-
-
-                  }
+                    </>
+                  ) : activeTab == 1 ? (
+                    <>
+                      <CompilePage sources={collectSolFiles(rootDir)} />
+                    </>
+                  ) : activeTab == 3 ? (
+                    <>
+                      <Audit selectedFile={selectedFile} />
+                    </>
+                  ) : activeTab == 4 ? (
+                    <></>
+                  ) : null}
                 </div>
               </SidebarBody>
-              <div className=" w-full md:w-4/5 rounded-lg">
+              <div className="w-full rounded-lg md:w-4/5">
                 <div className="h-full min-h-8 overflow-y-scroll rounded-lg">
-
-
                   <div className="no-scroll flex overflow-x-scroll bg-[#171616]">
                     {activeFiles?.map((file) => (
                       <div
@@ -151,14 +151,18 @@ const IDE = () => {
                     ))}
                   </div>
                   {selectedFile ? (
-                    <div key={selectedFile?.id} className="h-full">
-                      <MonacoEditor selectedFile={selectedFile} handleFileUpdate={handleFileUpdate} />
+                    <div
+                      key={selectedFile?.id}
+                      className="h-full"
+                    >
+                      <MonacoEditor
+                        selectedFile={selectedFile}
+                        handleFileUpdate={handleFileUpdate}
+                      />
                     </div>
                   ) : (
                     <NoFileSelected />
                   )}
-
-
                 </div>
                 {/* <MonacoEditor selectedFile={selectedFile} /> */}
               </div>
@@ -169,7 +173,6 @@ const IDE = () => {
             </div>
           )}
         </div>
-
       </div>
     </div>
   )

@@ -61,6 +61,10 @@ Start with secure, pre built smart contract templates (collected from different 
 
 Arc’s custom compiler supports dynamic import resolution, allowing for seamless management of external dependencies and libraries. It also handles multi-file compilation, making it easy to work with complex contracts that span multiple files
 
+<img src="assets/features/3a.png" alt="" width="828px">
+<br/>
+<img src="assets/features/3b.png" alt="" width="828px">
+
 #### 4. **AI powered vulnerability checking**
 
 Security is a top priority with Arc. The platform uses advanced AI to analyze the smart contract code in real time, identifying potential vulnerabilities and suggesting fixes to ensure robust and secure contracts

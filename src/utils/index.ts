@@ -27,9 +27,10 @@ export const downloadJson = (data: Record<string, unknown>, filename: string) =>
 }
 
 const removeLocalImports = (content: string): string => {
-  const importRegex = /^\s*import\s+["'](\.\/|\.\.\/|\/)?[^"']+["'];\s*$/gm;
+  const importRegex = /^\s*import\s+["'](\.\/|\.\.\/)[^"']*["'];\s*$/gm;
   return content.replace(importRegex, '');
 };
+
 export const collectSolFiles = (rootDir: Directory): ISources => {
   const sources: ISources = {};
 

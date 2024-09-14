@@ -95,11 +95,7 @@ export const POST = async (req: NextRequest) => {
     //   })
     // )
 
-    console.log("Original source: ", sources)
-
     const modifiedSources = resolveSources(sources)
-
-    console.log("Compiling sources: ", modifiedSources)
 
     const input = {
       language: "Solidity",
