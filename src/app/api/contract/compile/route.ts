@@ -73,7 +73,6 @@ const resolveSources = (sources: Record<string, { content: string }>, parent?: s
 export const POST = async (req: NextRequest) => {
   try {
     const body = await req.json()
-
     if (!body || !body.sources) {
       return NextResponse.json({ error: "Missing sources" }, { status: 400 })
     }

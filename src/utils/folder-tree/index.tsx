@@ -103,7 +103,7 @@ const FileDiv = ({
       ) : (
         <span style={{ marginLeft: 1 }}>{file.name}</span>
       )}
-      <div className="group-hover:flex hidden  ml-auto ">
+      <div className="flex ml-auto ">
         {file.type === "directory" && (
           <>
             <button

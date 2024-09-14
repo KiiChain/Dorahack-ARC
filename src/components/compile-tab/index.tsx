@@ -44,6 +44,11 @@ const CompilePage = ({ sources }: { sources: ISources }) => {
       const compiled = data.compiled as ICompilerOutput
 
       console.log("Compiled:", { compiled })
+      if(compiled.errors && compiled.errors.length>0){
+        const err=compiled.errors.map((er)=>er.formattedMessage)
+        setError(JSON.stringify(err))
+        return
+      }
 
       const res: IPresent[] = []
       Object.keys(compiled.contracts).forEach((key) => {
@@ -52,7 +57,6 @@ const CompilePage = ({ sources }: { sources: ISources }) => {
         ] as ICompilerOutput["contracts"][`${string}.sol`][string]
 
         console.log("Contract:", { contract })
-
         if (!contract) {
           return
         }

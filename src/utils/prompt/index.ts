@@ -104,46 +104,55 @@ export const GenerateAuditInstructions = () => ([{
   role: "user"
 }])
 
-export const GenerateCodeInstructions = ({ category, contract_type, name, token, description }:
-  { category: string, contract_type: string, name: string, token: string, description: string }) => ({
+export const GenerateCodeInstructions = ({ 
+  category, 
+  contract_type, 
+  name, 
+  token, 
+  description,
+  prompt
+}: { 
+  category: string, 
+  contract_type: string, 
+  name: string, 
+  token: string, 
+  description: string ,
+  prompt:string
+}) => ({
+  parts: [
+    {
+      text: `
+        ## Task: Create an optimized Solidity smart contract incorporating user-defined specifications:
 
-    parts: [
-      {
-        text:
-          `
-                  ##Task :  Create an optimized Solidity smart contract incorporating user-defined specifications:
+        ### Language: Solidity
 
-                  ### Language: Solidity
+        ### Instructions:
+        - You are a world-class coder.
+        - This is not a conversation, so please do not ask questions or prompt for additional information.
+        - Do not return anything that is not valid code.
+        - Never include any annotations such as "# Suggestion:" or "# Suggestions:".
+        - Newlines should be included after any of the following characters: "{", "[", "(", ")", "]", "}", and ",".
+        - VERY STRICTLY follow the prompt of the user
 
-                  ### Instructions:
-                  - You are a world class coder.
+        ### Specifications
 
-                  - This is not a conversation, so please do not ask questions or prompt for additional information.
-
-                  - This is not a conversation, so please do not ask questions or prompt for additional information.
-
-                  - Do not return anything that is not valid code.
-
-                  - Never include any annotations such as "# Suggestion:" or "# Suggestions:".
-
-                  - Newlines should be included after any of the following characters: "{", "[", "(", ")", "]", "}", and ",".
-
-                  
-                  ###Specifications
-
-                  Category: ${category}
-                  Type: ${contract_type}
-                  Contract Name: ${name}
-                  Purpose: ${description}
-                  Requirements:
-      
-                  Efficiency: Apply gas optimization techniques suitable for the contract's type and features.
-                  Security: Integrate security best practices to mitigate common vulnerabilities and ensure the integrity of the contract's features.
-                  Documentation: Provide NatSpec documentation for all elements, including a comprehensive overview and detailed comments for public functions and variables.
-                  Testing Outline: Suggest test scenarios that cover critical functionalities and potential edge cases.
-                  Deliverables:
-      
-                  `
-      }
-    ]
-  })
+        **Category:** ${category}
+        **Contract Name:** ${name}
+        **Purpose:** ${description}
+        **Prompt:** ${prompt} 
+        
+        ### Requirements:
+        - **Efficiency:** Apply gas optimization techniques suitable for the contract's type and features.
+        - **Security:** Integrate security best practices to mitigate common vulnerabilities and ensure the integrity of the contract's features.
+        - **Documentation:** Provide NatSpec documentation for all elements, including a comprehensive overview and detailed comments for public functions and variables.
+        - **Testing Outline:** Suggest test scenarios that cover critical functionalities and potential edge cases.
+        
+        ### Deliverables:
+        - The final smart contract code optimized for gas usage, including security enhancements.
+        - NatSpec documentation covering all functions and variables.
+        - Suggested test cases for validating the contract’s functionality and security.
+      `
+    }
+  ],
+  role: "user"
+})

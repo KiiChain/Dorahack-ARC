@@ -6,7 +6,7 @@ import Image from "next/image"
 import clsx from "clsx"
 import Slider, { Settings } from "react-slick"
 
-import { createProject, templates } from "@/data/sample"
+import { createProject, init, templates } from "@/data/sample"
 
 import { cn } from "@/lib/utils"
 import { useIDE } from "@/providers/ide"
@@ -15,6 +15,10 @@ import TextInput from "@/ui/text-input"
 
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import { useCompletion } from "ai/react"
+import { Content } from "@google/generative-ai"
+import { GenerateCodeInstructions } from "@/utils/prompt"
+import { Directory, File } from "@/interface/custom/folder-tree/folder-tree"
 
 const GettingStarted = () => {
   const { setRootDir } = useIDE()
@@ -23,7 +27,13 @@ const GettingStarted = () => {
   const [projectDesc, setProjectDesc] = useState("")
   const [libraries, setLibraries] = useState("")
   const [selectedTemplate, setSelectedTemplate] = useState<string | null>(null)
+  const [category, setCategory] = useState("Financial")
+  const [loading, setLoading] = useState<boolean>(false);
+  const [prompt, setPrompt] = useState("")
 
+  const { complete } = useCompletion({
+    api: "/api/customize",
+  });
   const [activePanel, setActivePanel] = useState<string | null>(null)
 
   const handlePanelClick = (panel: string) => {
@@ -43,18 +53,71 @@ const GettingStarted = () => {
     // Handle the newly created project (save to state, localStorage, etc.)
     console.log("Created Project:", newProject)
   }
-  const handleProjectCreationAI = async() => {
-    // const librariesArray = libraries.split(",").map((lib) => lib.trim());
-    console.log(`selected this `, selectedTemplate)
-    let newProject
-    if (selectedTemplate == null) {
-      newProject = createProject(projectName, `empty`)
-    } else {
-      newProject = createProject(projectName, selectedTemplate)
-    }
+  const handleProjectCreationScratch = () => {
+    let newProject = init
+    newProject.dirs[0] = init;
+    newProject.dirs[0].name = projectName
     setRootDir(newProject)
-    // Handle the newly created project (save to state, localStorage, etc.)
     console.log("Created Project:", newProject)
+  }
+  const handleProjectCreationAI = async () => {
+    setLoading(true);
+    const sampleUseCase = GenerateCodeInstructions({
+      category: category || "Governance",
+      contract_type: "",
+      name: projectName || "DecentralizedVoting",
+      token: "GOVT",
+      description: projectDesc || "A decentralized voting system allowing token holders to cast votes on governance proposals.",
+      prompt
+    });
+
+    const payload: Content[] = [
+      sampleUseCase
+    ];
+    let code = ""
+    complete("", {
+      body: {
+        messages: payload,
+      },
+    })
+      .then((newCompletion) => {
+        const aiResponse = newCompletion || "There was an error with the AI response. Please try again.";
+        const cleanedResponse = aiResponse.replace(/```(\w+)?/g, ""); // Remove code block formatting
+        console.log(cleanedResponse)
+        code = cleanedResponse
+
+
+
+        let newProject=init
+        // @ts-ignore
+        let newdir:Directory={}
+        newdir.depth=1
+        newdir.dirs=[]
+        newdir.files=[]
+        newdir.name = projectName
+        newdir.id="contracts"
+        newdir.parentId="0"
+        newdir.type="directory"
+        newProject.dirs.push(newdir)
+    
+        const file: File = {
+          content: code,
+          depth: 2,
+          id: "contract1",
+          name: "AIfile.sol",
+          parentId: "contracts",
+          type: "file"
+        }
+        newProject.files.push(file)
+        setRootDir(newProject)
+        // Handle the newly created project (save to state, localStorage, etc.)
+        console.log("Created Project:", newProject)
+      })
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setLoading(false);
+      });
+   
   }
 
   return (
@@ -66,7 +129,6 @@ const GettingStarted = () => {
         </h1>
 
         <div className="mx-auto max-w-4xl space-y-6">
-          {/* Manual Section */}
           {(activePanel === null || activePanel === "manual") && (
             <div className="meteor-effect rounded-lg border border-gray-600 bg-dark-3">
               <button
@@ -105,7 +167,7 @@ const GettingStarted = () => {
                     type="button"
                     variant="fill"
                     className="w-full"
-                    onClick={handleProjectCreation}
+                    onClick={handleProjectCreationScratch}
                   >
                     🚀 Create blank project
                   </Button>
@@ -114,7 +176,6 @@ const GettingStarted = () => {
             </div>
           )}
 
-          {/* Template Section */}
           {(activePanel === null || activePanel === "template") && (
             <div className="meteor-effect rounded-lg border border-gray-600 bg-dark-3">
               <button
@@ -179,7 +240,6 @@ const GettingStarted = () => {
             </div>
           )}
 
-          {/* AI Section */}
           {(activePanel === null || activePanel === "ai") && (
             <div className="meteor-effect rounded-lg border border-gray-600 bg-dark-3">
               <button
@@ -194,18 +254,30 @@ const GettingStarted = () => {
                     type="text"
                     placeholder="Contract Name"
                     className="w-full rounded bg-zinc-800 p-2 text-white placeholder:text-neutral-500"
+                    value={projectName}
+                    onChange={(e) => setProjectName(e.target.value)}
                   />
-                  <select className="w-full rounded bg-zinc-800 p-2 text-white placeholder:text-neutral-500">
-                    <option>Select Category</option>
-                    <option>Financial</option>
-                    <option>Supply Chain</option>
-                    <option>Gaming</option>
+                  <select
+                    value={category}
+                    onChange={(e) => setCategory(e.target.value)}
+                    className="w-full rounded bg-zinc-800 p-2 text-white"
+                  >
+                    <option value="">Select Category</option>
+                    <option value="Financial">Financial</option>
+                    <option value="Supply Chain">Supply Chain</option>
+                    <option value="Gaming">Gaming</option>
+                    <option value="Governance">Governance</option>
                   </select>
+
                   <textarea
-                    placeholder="Description"
+                    value={projectDesc}
+                    onChange={(e) => setProjectDesc(e.target.value)}
+                    placeholder="Contract Description"
                     className="w-full rounded bg-zinc-800 p-2 text-white placeholder:text-neutral-500"
                   />
                   <textarea
+                    value={prompt}
+                    onChange={(e) => setPrompt(e.target.value)}
                     placeholder="Prompt"
                     className="w-full rounded bg-zinc-800 p-2 text-white placeholder:text-neutral-500"
                   />
@@ -214,6 +286,7 @@ const GettingStarted = () => {
                     variant="fill"
                     className="w-full"
                     onClick={handleProjectCreationAI}
+                    disabled={loading}
                   >
                     Generate code
                   </Button>
@@ -228,7 +301,4 @@ const GettingStarted = () => {
 }
 
 
-const LabelInputContainer = ({ children, className }: { children: React.ReactNode; className?: string }) => {
-  return <div className={cn("flex w-full flex-col space-y-2", className)}>{children}</div>
-}
 export default GettingStarted

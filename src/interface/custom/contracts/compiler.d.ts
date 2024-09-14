@@ -31,4 +31,17 @@ interface ICompilerOutput {
       id: number
     }
   }
+  errors: {
+    component: string
+    errorCode: string
+    formattedMessage: string
+    message: string
+    severity: 'error' | 'warning'
+    sourceLocation: {
+      end: number
+      file: string
+      start: number
+    }
+    type: string
+  }[]
 }

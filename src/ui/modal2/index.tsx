@@ -18,7 +18,7 @@ export default function Modal2({ isOpen, onClose, children, className }: ModalPr
     >
       <Dialog
         as="div"
-        className="relative z-50"
+        className="relative z-[5001]"
         onClose={onClose}
       >
         <Transition.Child

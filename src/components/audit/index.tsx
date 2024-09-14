@@ -101,7 +101,6 @@ const Audit = ({ selectedFile }: { selectedFile: File | undefined }) => {
                     Download PDF
                 </Button>
             }
-            {/* Generate Button */}
             {!loading && !text && (
                 <Button
                     className="flex gap-2 items-center transition-all bg-[#3c3c3c] text-white px-4 py-2 w-full"
@@ -111,10 +110,9 @@ const Audit = ({ selectedFile }: { selectedFile: File | undefined }) => {
                 </Button>
             )}
 
-            {/* Display Vulnerability Report */}
             {text && !loading && (
                 <div className="mt-4">
-                    <h2 className="text-2xl font-bold mb-4">Vulnerability Report</h2>
+                    <h2 className="text-2xl font-bold mb-4 text-center">Vulnerability Report</h2>
                     {text.map((section, index) => (
                         <div key={index} className="mb-6">
                             {/* For each key (section title), display it as a heading */}

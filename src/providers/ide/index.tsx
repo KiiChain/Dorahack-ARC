@@ -23,13 +23,13 @@ const defaultValues = {}
 {
 }
 const initialRoot: Directory = {
-id: "root",
-type: "directory",
-name: "root",
-parentId: undefined,
-depth: 0,
-files: [],
-dirs: [],
+  id: "root",
+  type: "directory",
+  name: "root",
+  parentId: undefined,
+  depth: 0,
+  files: [],
+  dirs: [],
 }
 const Context = React.createContext<IIDEContext>(defaultValues as IIDEContext)
 const IDEProvider: React.FC<IIDEProvider> = ({ children }) => {
@@ -61,12 +61,23 @@ const IDEProvider: React.FC<IIDEProvider> = ({ children }) => {
       setRootDir(updateFileInRootDir(rootDir, updatedFile))
     }
   }
-  useEffect(()=>{
-    
-  },[rootDir])
+  useEffect(() => {
+    let x = window.localStorage.getItem("rootdir")
+    console.log("pager  ", x)
+    if (x != undefined) {
+      console.log("chkec ", x)
+      let y = JSON.parse(x)
+      setRootDir(y)
+    }
+  }, [])
+  useEffect(() => {
+    if (rootDir != undefined) {
+      window.localStorage.setItem("rootdir", JSON.stringify(rootDir))
+    }
+  }, [rootDir])
 
   return (
-    <Context.Provider value={{ rootDir, setRootDir, selectedFile, setSelectedFile, activeFiles, setActiveFiles,handleFileUpdate }}>
+    <Context.Provider value={{ rootDir, setRootDir, selectedFile, setSelectedFile, activeFiles, setActiveFiles, handleFileUpdate }}>
       {children}
     </Context.Provider>
   )

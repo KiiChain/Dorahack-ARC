@@ -13,6 +13,7 @@ import { GenerateCustomizationInstructions } from "@/utils/prompt"
 
 import Modal2 from "../modal2"
 import { PlaceholdersAndVanishInput } from "../search-input"
+import CodeBlockWithViewMore from "@/components/code-block-vmore"
 
 const placeholders = ["customize the code", "ask me anything", "ask me to change any part"]
 
@@ -28,11 +29,11 @@ export const CustomizeModal = ({
   setOpen: React.Dispatch<React.SetStateAction<boolean>>
 }) => {
   const router = useRouter()
-
+console.log("this is the conent",content)
   const chatContainerRef = useRef<HTMLDivElement>(null)
 
   const [text, setText] = useState(content)
-  const [messages, setMessages] = useState<{ role: "user" | "ai" | "generic"; content: string }[]>([])
+  const [messages, setMessages] = useState<{ role: "user" | "ai" | "generic"; content: string }[]>([{content,role:"ai"}])
 
   const { complete } = useCompletion({
     api: "/api/customize",
@@ -126,12 +127,11 @@ export const CustomizeModal = ({
               >
                 {msg.role === "ai" ? (
                   <>
-                    <CopyBlock
+                  <CodeBlockWithViewMore
                       language={"solidity"}
                       text={msg.content}
-                      theme={dracula}
-                      codeBlock
-                    />
+                      
+                  />
                     <div className="center mt-2.5 w-min gap-2.5">
                       <button
                         onClick={() => handleMoveToEditor(msg.content)}

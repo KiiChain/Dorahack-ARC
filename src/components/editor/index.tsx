@@ -142,6 +142,25 @@ export const MonacoEditor = ({ selectedFile,handleFileUpdate }: { selectedFile: 
     startOrResetFetching()
   }, [startOrResetFetching])
 
+
+  // useEffect(() => {
+  //   if (monaco && editorRef.current && errors.length > 0) {
+  //     const model = editorRef.current.getModel()
+
+  //     // Convert the errors into Monaco editor markers
+  //     const markers = errors.map((error) => ({
+  //       startLineNumber: model.getPositionAt(error.sourceLocation.start).lineNumber,
+  //       startColumn: model.getPositionAt(error.sourceLocation.start).column,
+  //       endLineNumber: model.getPositionAt(error.sourceLocation.end).lineNumber,
+  //       endColumn: model.getPositionAt(error.sourceLocation.end).column,
+  //       message: error.formattedMessage,
+  //       severity: monaco.MarkerSeverity.Error,
+  //     }))
+
+  //     // Apply the markers to the model
+  //     monaco.editor.setModelMarkers(model, 'owner', markers)
+  //   }
+  // }, [monaco, errors])
   useEffect(() => {
     if (!monaco) return
 

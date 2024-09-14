@@ -36,6 +36,7 @@ const IDE = () => {
     setSelectedFile(file)
   }
   const [activeTab, setActiveTab] = useState<number>(0)
+  // const {compilerErrors,setcompilerErros=r}
   // const [shouldRenderTabs,setshouldRenderTabs]=useState(rootDir && !GettingStarted)
 
   const handleTabClose = (file: File) => {
@@ -123,7 +124,9 @@ const IDE = () => {
               </SidebarBody>
               <div className="w-full rounded-lg md:w-4/5">
                 <div className="h-full min-h-8 overflow-y-scroll rounded-lg">
-                  <div className="no-scroll flex overflow-x-scroll bg-[#171616]">
+
+
+                  <div className="no-scroll flex overflow-x-scroll bg-[#171616] p-1">
                     {activeFiles?.map((file) => (
                       <div
                         key={file.id}

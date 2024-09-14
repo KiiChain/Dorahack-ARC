@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 
 import Link from "next/link"
 import { useRouter } from "next/navigation"
@@ -27,26 +27,34 @@ export const ContractCard = ({ contract, className }: { contract: IContracts; cl
 
   const [open, setOpen] = useState(false)
   const [content, setContent] = useState("")
-
+const [called,setcalled]=useState(false)
   const onClick = () => {
-    axios
-      .post("/api/explore", { contract: contract.path })
-      .then((response) => {
-        setContent(response.data)
-        setOpen(true)
-      })
-      .catch((error) => {
-        console.error(error)
-      })
+    if(content==""){
+      axios
+        .post("/api/explore", { contract: contract.path })
+        .then((response) => {
+          setContent(response.data)
+          console.log("mike ",response.data)
+        })
+        .catch((error) => {
+          console.error(error)
+        })
+    }else{
+      setOpen(true)
+    }
   }
+ useEffect(()=>{
+if(content!="") setOpen(true)
+ },[content])
 
   return (
     <>
-      <CustomizeModal
-        text={content}
+    {content!="" && <CustomizeModal
+        text={JSON.parse(content) ??""}
         open={content !== "" && open}
         setOpen={setOpen}
-      />
+      />}
+      
       <div
         key={contract.identifier}
         onClick={() => router.push(`${contract.identifier}/overview`)}
