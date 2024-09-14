@@ -18,6 +18,7 @@ import Download from "../download"
 import Audit from "../audit"
 import dynamic from "next/dynamic"
 import { CircularSpinner } from "@/ui/circular-spinner"
+import Plugin from "../plugin"
 const MonacoEditor = dynamic(() => import("@/components/editor/").then((mod) => mod.MonacoEditor), {
   ssr: false,
   loading: () => <CircularSpinner />,
@@ -118,7 +119,7 @@ const IDE = () => {
                       <Audit selectedFile={selectedFile} />
                     </>
                   ) : activeTab == 4 ? (
-                    <></>
+                    <><Plugin rootDir={rootDir} setRootDir={setRootDir} selectedFile={selectedFile}/></>
                   ) : null}
                 </div>
               </SidebarBody>

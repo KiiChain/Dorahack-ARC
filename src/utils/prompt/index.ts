@@ -158,3 +158,107 @@ export const GenerateCodeInstructions = ({
   ],
   role: "user"
 })
+
+export const GenerateDocumentationInstructions = () => {
+  return (
+    {
+      parts: [
+        {
+          text: `
+           ### Instructions:
+            - Generate the respose in MARKDOWN format only  
+            
+              You are a professional technical writer tasked with generating complete project documentation for a software project based on the provided file system structure. The file system includes directories and files, each containing relevant code and content.
+
+              Requirements:
+              Project Overview: Begin with a high-level overview of the project, summarizing its purpose, goals, and the main components of the codebase.
+
+              File and Directory Documentation:
+
+              For each directory:
+              -Provide a description of the directory's purpose and how it fits within the project.
+              -List and describe each file and subdirectory it contains.
+              For each file:
+              -Include a detailed description of the file's purpose, functionality, and the code it contains.
+              -Provide explanations for important functions, classes, or other significant blocks of code.
+              -Mention relevant dependencies or references to other files or directories.
+              Technologies and Dependencies: Identify the programming languages, frameworks, and libraries used in the project, and explain how they are integrated.
+
+              Code Interactions: Detail how the files and directories interact with each other, and how different components of the codebase are connected.
+
+              Additional Information:
+
+              -Mention any notable design patterns, coding conventions, or architectural decisions used in the project.
+              -Provide usage instructions or examples if applicable.
+              Notes:
+              -Ensure the documentation is detailed, yet concise, and easy to navigate.
+              -Use clear section headings for each directory and file.
+              -Do not include any unnecessary technical jargon, but ensure completeness in code descriptions.
+
+              ###Format:
+              -Introduction
+              -Directory and File wise Description
+              -Prerequisites
+              -License
+              -Gas Optimization and Performance
+              -Testing
+              - Interacting with the Contract
+              -Deployment
+              
+        `
+}
+      ],
+      role: "user"
+    }
+  )
+}
+
+export const GenerateTestInstructions = () => {
+  return (
+    {
+      parts: [
+        {
+          text: `
+          You are a highly skilled Solidity developer tasked with creating comprehensive unit tests for a given Solidity smart contract. The contract will be provided, and your job is to write the corresponding tests to ensure its functionality, security, and robustness.
+          - This is not a conversation, so please do not ask questions or prompt for additional information.
+          - NEVER INCLUDE ANY MARKDOWN IN THE RESPONSE - THIS MEANS CODEBLOCKS AS WELL.
+           - Never include any annotations such as "# Suggestion:" or "# Suggestions:".
+          Requirements:
+          Testing Framework:
+                  
+          Use the appropriate Solidity testing framework (e.g., Hardhat, Truffle, Foundry, or any framework specified).
+          Test Structure:
+                  
+          Write test cases for each function in the smart contract, ensuring edge cases and possible failures are handled.
+          Arrange: Set up the initial conditions and deploy the contract.
+          Act: Call functions and simulate scenarios.
+          Assert: Verify that the outcomes are as expected.
+          Test Scenarios:
+                  
+          Test normal functionality: Ensure each function works as intended under normal conditions.
+          Test edge cases: Check for boundary values and abnormal inputs.
+          Test error handling: Verify that the contract reverts or throws errors under invalid or unexpected conditions.
+          Gas usage and optimization: Write tests to ensure that gas usage is efficient and within expected limits.
+          Specific Test Details:
+                  
+          For state-changing functions: Verify that the state is updated correctly.
+          For view functions: Ensure they return the correct data.
+          For modifiers: Test that the restrictions and checks imposed by the modifiers are enforced.
+          For events: Verify that events are emitted correctly with the appropriate parameters.
+          Test for any access control or role-based permissions in the contract.
+          Edge Case Considerations:
+                  
+          Handle underflows, overflows, and other Solidity-specific security issues.
+          Test for reentrancy vulnerabilities if applicable.
+          Simulate time-dependent functions if the contract has any time-based logic.
+          Notes:
+          The tests must be written in  TypeScript  using a framework like Hardhat or Truffle, or in Solidity itself if applicable.
+          Ensure code quality by avoiding repetitive code and making use of utility functions where necessary.
+              
+        `
+}
+      ],
+      role: "user"
+    }
+  )
+}

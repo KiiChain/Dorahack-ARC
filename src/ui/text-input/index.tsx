@@ -85,7 +85,7 @@ const TextInput: React.FC<Props> = ({
           id={id}
           className={clsx(
             ` w-full  border-[0.01px] border-[#505054] shadow-sm px-[12px] py-[9px] flex flex-row items-center focus:outline-none   ${className}`,
-            errorMessage ? "border-accent_red focus:border-accent_red focus:shadow-accent_red" : ""
+            errorMessage ? "border-accent-6 focus:border-accent-6 focus:shadow-accent-6" : ""
           )}
           onKeyPress={onKeyPress}
           onBlur={onBlur}
@@ -104,7 +104,7 @@ const TextInput: React.FC<Props> = ({
           id={id}
           className={clsx(
             ` w-full  border-[0.01px] border-[#505054] px-[12px] py-[9px] flex flex-row items-center focus:outline-none  ${className}`,
-            errorMessage ? "border-accent_red focus:border-accent_red focus:shadow-accent_red" : ""
+            errorMessage ? "border-accent-6 focus:border-accent-6 focus:shadow-accent-6" : ""
           )}
           onKeyPress={onKeyPress}
           onBlur={onBlur}
@@ -115,7 +115,7 @@ const TextInput: React.FC<Props> = ({
         ></textarea>
       )}
       {errorMessage ? (
-        <span className="flex gap-1 p-1 text-accent_red text-[12px] items-center">
+        <span className="flex gap-1 p-1 text-accent-6 text-[12px] items-center">
           <PiWarningCircleFill />
           <div>{errorMessage}</div>
         </span>

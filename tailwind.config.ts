@@ -58,6 +58,7 @@ const config: Config = {
           3: "#FFA9A9",
           4: "#9AF6C1",
           5: "#F6F4E5",
+          6: "#E54E51",
         },
         primary: "#000",
         secondary: "#000",
