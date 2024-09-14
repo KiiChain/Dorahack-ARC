@@ -263,11 +263,42 @@ export const Deployable = ({ compiled, sources }: { compiled: IPresent[]; source
     }
 
     try {
-      const contract = await deployContract({
-        abi: currentContract.abi,
-        bytecode: currentContract.bytecode,
-        args: args,
-      })
+      const contract = await deployContract(
+        {
+          abi: currentContract.abi,
+          bytecode: currentContract.bytecode,
+          args: args,
+        },
+        {
+          onError: (error) => {
+            console.error("Deployment error:", error)
+            toast.error("Contract deployment failed!")
+          },
+          onSuccess: (data) => {
+            console.log("Contract deployed successfully:", data)
+            toast.success(`Transaction hash: ${data}`)
+            toast.custom(() => (
+              <div className="w-full min-w-[356px] rounded-lg border border-solid border-dark-2 bg-black p-4 text-center text-sm text-white shadow-lg">
+                <a
+                  href={`https://app.kiichain.io/kiichain/tx/${data}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block underline"
+                >
+                  View Transaction on Explorer
+                </a>
+              </div>
+            ))
+          },
+          onSettled: (data, error) => {
+            if (error) {
+              console.error("Transaction failed or was rejected:", error)
+            } else {
+              console.log("Transaction completed:", data)
+            }
+          },
+        }
+      )
 
       console.log("Contract deployed at:", contract)
       toast.success(`Deploying contract`)
