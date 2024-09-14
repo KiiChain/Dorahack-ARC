@@ -2,13 +2,12 @@
 import React, { useEffect, useState } from "react"
 import { useIDE } from "@/providers/ide"
 
-import { MonacoEditor } from "../editor"
-import { FileManager } from "../file-manager"
-import { SidebarBody } from "../ide-sidebar"
+// import { MonacoEditor } from "../editor"
+// import { FileManager } from "../file-manager"
+// import { SidebarBody } from "../ide-sidebar"
 import { cn } from "@/lib/utils"
 import { FileIcon } from "@/ui/file-tree/file-utils"
 import { Directory, File } from "@/interface/custom/folder-tree/folder-tree"
-import { FaPencilAlt as PencilIcon, FaLayerGroup as Square2StackIcon } from "react-icons/fa"
 import GettingStarted from "../getting-started"
 import NoFileSelected from "../no-file-selected"
 import { useSearchParams } from "next/navigation"
@@ -16,30 +15,28 @@ import { CSSTabs } from "@/ui/css-tabs"
 import CompilePage, { Deployable } from "../compile-tab"
 import { collectSolFiles } from "@/utils"
 import Download from "../download"
-const menuItems = [
-  {
-    heading: "Edit",
-    icon: PencilIcon,
-    subheading: "Sample Hardhat project to get started with development and testing.",
-    onClick: () => console.log("Edit clicked"),
-  },
-  {
-    heading: "Duplicate",
-    icon: Square2StackIcon,
-    subheading: "Create a copy of the current project for experimentation.",
-    onClick: () => console.log("Duplicate clicked"),
-  },
-]
+import Audit from "../audit"
+import dynamic from 'next/dynamic';
+import { CircularSpinner } from "@/ui/circular-spinner"
+const MonacoEditor = dynamic(() => import("@/components/editor/").then((mod) => mod.MonacoEditor), {
+  ssr: false,
+  loading: () => <CircularSpinner />
+});
+const SidebarBody = dynamic(() => import("@/components/ide-sidebar").then((mod) => mod.SidebarBody), {
+  ssr: false,
+  loading: () => <CircularSpinner />
+})
+const FileManager = dynamic(() => import("@/components/file-manager").then((mod) => mod.FileManager))
+
 const IDE = () => {
-  const { rootDir, selectedFile, setRootDir, setSelectedFile, activeFiles, setActiveFiles,handleFileUpdate } = useIDE()
+  const { rootDir, selectedFile, setRootDir, setSelectedFile, activeFiles, setActiveFiles, handleFileUpdate } = useIDE()
   const searchparams = useSearchParams()
   const y = searchparams.get("content")
   const handleTabSelect = (file: File) => {
     setSelectedFile(file)
   }
   const [activeTab, setActiveTab] = useState<number>(0)
-
-
+  // const [shouldRenderTabs,setshouldRenderTabs]=useState(rootDir && !GettingStarted)
 
   const handleTabClose = (file: File) => {
     setActiveFiles((prevFiles) => prevFiles?.filter((activeFile) => activeFile.id !== file.id))
@@ -52,35 +49,41 @@ const IDE = () => {
       setRootDir(z)
     }
   }, [])
-  useEffect(() => {
-    console.log("change", activeTab)
-  }, [activeTab])
+
   useEffect(() => {
     if (activeFiles && activeFiles.length == 0) setSelectedFile(undefined)
   }, [activeFiles])
   return (
     <div className="w-full h-full row-span-12 col-span-12 border border-neutral-800 p-2 rounded-lg">
       <div className="grid grid-cols-12 grid-rows-12 w-full h-full gap-1 rounded-lg">
-
-        <CSSTabs
-          tabs={[
-            {
-              id: "0",
-              label: "Editor"
-            },
-
-            {
-              id: "1",
-              label: "Compile"
-            },
-            {
-              id: "2",
-              label: "Download"
-            }
-          ]}
-          selectedTabIndex={activeTab}
-          setSelectedTab={setActiveTab}
-        />
+        {
+          rootDir ?
+          <CSSTabs
+            tabs={[
+              {
+                id: "0",
+                label: "Editor"
+              },
+  
+              {
+                id: "1",
+                label: "Compile"
+              },
+              {
+                id: "2",
+                label: "Download"
+              }
+              ,
+              {
+                id: "3",
+                label: "Audit"
+              }
+            ]}
+            selectedTabIndex={activeTab}
+            setSelectedTab={setActiveTab}
+          />:
+          <div></div>
+        }
         <div className="flex h-full col-span-12 row-span-11 gap-1">
           {rootDir ? (
             <>
@@ -102,10 +105,15 @@ const IDE = () => {
                           <Download contracts={collectSolFiles(rootDir)} rootDir={rootDir} />
                         </>
                         :
-                        activeTab == 1 &&
-                        <>
-                          <CompilePage sources={collectSolFiles(rootDir)} />
-                        </>
+                        activeTab == 1 ?
+                          <>
+                            <CompilePage sources={collectSolFiles(rootDir)} />
+                          </>
+                          :
+                          activeTab == 3 &&
+                          <>
+                            <Audit selectedFile={selectedFile} />
+                          </>
 
 
                   }

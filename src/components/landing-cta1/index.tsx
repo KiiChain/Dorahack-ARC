@@ -6,6 +6,13 @@ import Link from "next/link"
 import { TbBrandYoutubeFilled } from "react-icons/tb";
 // import { useEffect, useRef } from "react";
 import { motion } from "framer-motion"
+import Compile from "@/assets/images/compile.png"
+import Vulnerability from "@/assets/images/vulnerability.png"
+import Download from "@/assets/images/download.png"
+import Opt from "@/assets/images/optimizations.png"
+import Alt from "@/assets/images/IDE.png"
+
+
 
 import IDE from "@/assets/images/IDE.png"
 import { cn } from "@/lib/utils"
@@ -13,44 +20,42 @@ import { cn } from "@/lib/utils"
 export function  FeaturesSectionDemo() {
   const features = [
     {
-      title: "Track issues effectively",
-      description: "Track and manage your project issues with ease using our intuitive interface.",
+      title: "Seamless Smart Contract Creation",
+      description: "Easily write and deploy smart contracts with our intuitive code editor, which includes AI-powered auto-complete and dynamic import resolution for a smooth development experience.",
       skeleton: <SkeletonOne />,
       className: "col-span-1 lg:col-span-4 border-b lg:border-r dark:border-neutral-800",
     },
     {
-      title: "Capture pictures with AI",
-      description: "Capture stunning photos effortlessly using our advanced AI technology.",
+      title: "AI-Driven Code Assistance",
+      description: "Enhance your coding efficiency with AI-powered features like real-time code vulnerability checking, automatic documentation generation, and interactive contract chat.",
       skeleton: <SkeletonTwo />,
       className: "border-b col-span-1 lg:col-span-2 dark:border-neutral-800",
     },
     {
-      title: "Watch our AI on YouTube",
-      description: "Whether its you or Tyler Durden, you can get to know about our product on YouTube",
+      title: "Comprehensive Contract Management",
+      description: "Manage and monitor your deployed contracts with our detailed dashboard. Access pre-deployed contracts, view metrics, and make adjustments effortlessly.",
       skeleton: <SkeletonThree />,
-      className: "col-span-1 lg:col-span-3 lg:border-r  dark:border-neutral-800",
+      className: "col-span-1 lg:col-span-3 lg:border-r dark:border-neutral-800",
     },
     {
-      title: "Deploy in seconds",
-      description:
-        "With our blazing fast, state of the art, cutting edge, we are so back cloud servies (read AWS) - you can deploy your model in seconds.",
+      title: "One-Click Deployment to Kiichain",
+      description: "Deploy your smart contracts to the Kiichain testnet with a single click. Our platform integrates with a testnet faucet to ensure you have the necessary tokens for deployment.",
       skeleton: <SkeletonFour />,
       className: "col-span-1 lg:col-span-3 border-b lg:border-none",
     },
   ]
+  
   return (
     <div className="relative z-20 mx-auto max-w-7xl py-10 lg:py-12">
-      <div className="px-8">
-        <h4 className="mx-auto max-w-5xl text-center text-3xl font-medium tracking-tight text-black lg:text-5xl lg:leading-tight dark:text-white">
-          Packed with thousands of features
-        </h4>
+    <div className="px-8">
+  <h4 className="mx-auto max-w-5xl text-center text-3xl font-medium tracking-tight text-black lg:text-5xl lg:leading-tight dark:text-white">
+    Empowering Your Smart Contract Journey
+  </h4>
 
-        <div className="mx-auto my-4 max-w-2xl text-center text-sm font-normal text-neutral-500 lg:text-base dark:text-neutral-300">
-          From Image generation to video generation, Everything AI has APIs for literally everything. It can even create
-          this website copy for you.
-        </div>
-      </div>
-
+  <div className="mx-auto my-4 max-w-2xl text-center text-sm font-normal text-neutral-500 lg:text-base dark:text-neutral-300">
+    Discover how Arc transforms smart contract development with cutting-edge AI features. From seamless code creation to comprehensive contract management, our platform provides everything you need for efficient and secure smart contract deployment.
+  </div>
+</div>
       <div className="relative">
         <div className="mt-12 grid grid-cols-1 rounded-md lg:grid-cols-6 xl:border dark:border-neutral-800">
           {features.map((feature) => (
@@ -144,11 +149,11 @@ export const SkeletonThree = () => {
 
 export const SkeletonTwo = () => {
   const images = [
-    "https://images.unsplash.com/photo-1517322048670-4fba75cbbb62?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1573790387438-4da905039392?q=80&w=3425&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1555400038-63f5ba517a47?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1554931670-4ebfabf6e7a9?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=2581&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    Download,
+    Compile,
+    Vulnerability,
+    Alt,
+    Opt,
   ]
 
   const imageVariants = {
@@ -220,55 +225,7 @@ export const SkeletonTwo = () => {
 export const SkeletonFour = () => {
   return (
     <div className="relative mt-10 flex h-60 flex-col items-center bg-transparent md:h-60 dark:bg-transparent">
-      {/* <Globe className="absolute -right-10 md:-right-10 -bottom-80 md:-bottom-72" /> */}
+
     </div>
   )
 }
-
-// export const Globe = ({ className }: { className?: string }) => {
-//   const canvasRef = useRef<HTMLCanvasElement>(null);
-
-//   useEffect(() => {
-//     let phi = 0;
-
-//     if (!canvasRef.current) return;
-
-//     const globe = createGlobe(canvasRef.current, {
-//       devicePixelRatio: 2,
-//       width: 600 * 2,
-//       height: 600 * 2,
-//       phi: 0,
-//       theta: 0,
-//       dark: 1,
-//       diffuse: 1.2,
-//       mapSamples: 16000,
-//       mapBrightness: 6,
-//       baseColor: [0.3, 0.3, 0.3],
-//       markerColor: [0.1, 0.8, 1],
-//       glowColor: [1, 1, 1],
-//       markers: [
-//         // longitude latitude
-//         { location: [37.7595, -122.4367], size: 0.03 },
-//         { location: [40.7128, -74.006], size: 0.1 },
-//       ],
-//       onRender: (state) => {
-//         // Called on every animation frame.
-//         // `state` will be an empty object, return updated params.
-//         state.phi = phi;
-//         phi += 0.01;
-//       },
-//     });
-
-//     return () => {
-//       globe.destroy();
-//     };
-//   }, []);
-
-//   return (
-//     <canvas
-//       ref={canvasRef}
-//       style={{ width: 600, height: 600, maxWidth: "100%", aspectRatio: 1 }}
-//       className={className}
-//     />
-//   );
-// };

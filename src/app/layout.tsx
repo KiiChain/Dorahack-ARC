@@ -2,7 +2,6 @@ import React from "react"
 
 import { Metadata } from "next"
 
-import { AiFillHome, AiFillMessage, AiFillUsb } from "react-icons/ai"
 import { Toaster } from "sonner"
 
 import Navbar from "@/components/navbar"
@@ -10,6 +9,7 @@ import { Provider } from "@/providers"
 import { FloatingNav } from "@/ui/floating-navbar"
 
 import "@/styles/globals.css"
+import { navItems } from "@/data/sample"
 
 export const metadata: Metadata = {
   title: {
@@ -37,23 +37,7 @@ const links: { label: string; href: string }[] = [
     href: "/ide",
   },
 ]
-const navItems = [
-  {
-    name: "Home",
-    link: "/",
-    icon: <AiFillHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
-  },
-  {
-    name: "About",
-    link: "/about",
-    icon: <AiFillUsb className="h-4 w-4 text-neutral-500 dark:text-white" />,
-  },
-  {
-    name: "Contact",
-    link: "/contact",
-    icon: <AiFillMessage className="h-4 w-4 text-neutral-500 dark:text-white" />,
-  },
-]
+
 
 const RootLayout = ({
   children,

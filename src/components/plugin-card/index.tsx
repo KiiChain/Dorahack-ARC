@@ -29,7 +29,7 @@ export const PluginCard: React.FC<MeteorsCardProps> = ({
 
         <h1 className="relative z-50 mb-4 text-xl font-bold text-white">{title}</h1>
 
-        <div className="relative z-50 mb-4 text-base font-normal text-slate-500">{description}</p>
+        <div className="relative z-50 mb-4 text-base font-normal text-slate-500">{description}</div>
 
         <button
           className="rounded-lg border border-gray-500 px-4 py-1 text-gray-300"

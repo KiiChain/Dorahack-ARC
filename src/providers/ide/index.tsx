@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react"
 
 //import { init } from "@/data/sample"
 import { Directory, File } from "@/interface/custom/folder-tree/folder-tree"
+import { useLocalStorage } from "@/hooks"
 
 interface IIDEContext {
   rootDir?: Directory
@@ -20,21 +21,20 @@ type IIDEProvider = {
 
 const defaultValues = {}
 {
-  /*const initialRoot: Directory = {
-  id: "root",
-  type: "directory",
-  name: "root",
-  parentId: undefined,
-  depth: 0,
-  files: [],
-  dirs: [],
-})*/
+}
+const initialRoot: Directory = {
+id: "root",
+type: "directory",
+name: "root",
+parentId: undefined,
+depth: 0,
+files: [],
+dirs: [],
 }
 const Context = React.createContext<IIDEContext>(defaultValues as IIDEContext)
 const IDEProvider: React.FC<IIDEProvider> = ({ children }) => {
   const [rootDir, setRootDir] = useState<Directory>()
   const [activeFiles, setActiveFiles] = useState<File[]>()
-
   const [selectedFile, setSelectedFile] = useState<File | undefined>()
   // useEffect(() => {
   //   setRootDir(init)
@@ -62,7 +62,7 @@ const IDEProvider: React.FC<IIDEProvider> = ({ children }) => {
     }
   }
   useEffect(()=>{
-    console.log(rootDir)
+    
   },[rootDir])
 
   return (

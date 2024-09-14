@@ -6,7 +6,10 @@ const nextConfig = {
         hostname: process.env.NEXT_IMAGE_DOMAIN ?? "http://localhost:3000",
       },
       {
-        hostname: "images.unsplash.com",
+        hostname: "miro.medium.com",
+      },
+      {
+        hostname: "blog.kiiglobal.io",
       },
       {
         hostname: "assets.aceternity.com",
