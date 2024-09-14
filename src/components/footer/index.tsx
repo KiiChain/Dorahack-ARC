@@ -28,13 +28,13 @@ const Footer: React.FC<FooterProps> = ({ footerLogo, footerLinks, footerText }) 
             className="mb-4 flex items-center space-x-3 sm:mb-0 rtl:space-x-reverse"
           >
             <img
-              src={footerLogo.src}
-              className="h-8"
+              src={"/logo-white.svg"}
+              className="w-20"
               alt={footerLogo.alt}
             />
-            <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
+            {/* <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
               {footerLogo.text}
-            </span>
+            </span> */}
           </a>
           <ul className="mb-6 flex flex-wrap items-center text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
             {footerLinks.map((link, index) => (
