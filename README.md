@@ -1,5 +1,5 @@
 <p align="center"> 
-  <img src="assets/arc.png" alt="" width="80px" height="80px">
+  <img src="assets/logo.svg" alt="" width="180px">
 </p>
 <h1 align="center"> 
     Arc
