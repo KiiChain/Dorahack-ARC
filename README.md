@@ -1,5 +1,5 @@
 <p align="center"> 
-  <img src="assets/arc.png" alt="" width="80px" height="80px">
+  <img src="assets/logo.svg" alt="" width="180px">
 </p>
 <h1 align="center"> 
     Arc
@@ -88,6 +88,8 @@ Use the "Explain Contract" tool to receive high level or detailed explanations o
 
 Arc has two modes of auditing AI powered checks and using static analysis tools that assess your smart contract against adding an extra layer of security and ensures comprehensive vulnerability detection
 
+<img src="assets/features/8a.png" alt="" width="828px">
+
 #### 9. **Downloade contracts in multiple formats**
 
 After developing your contract, Arc allows to download it in various formats such as Zip, Hardhat or Foundry templates. Users can also copy the contract code directly to the clipboard for immediate use
@@ -133,6 +135,8 @@ Arc helps to manage and visualize all the contracts with it's intuitive dashboar
 Arc utilizes the AI plugin to search for relevant web resources related to your smart contract helping users find documentation, tutorials and other resources that can assist in your development process
 
 <img src="assets/features/14a.png" alt="" width="828px">
+<br />
+<img src="assets/features/14b.png" alt="" width="828px">
 
 #### 15. Decode a transaction with AI explanation
 
