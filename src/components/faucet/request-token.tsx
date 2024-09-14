@@ -15,9 +15,14 @@ const RequestToken: React.FC<RequestTokenProps> = ({ address }) => {
       className="transition-transfor mt-4 w-full transform rounded bg-gradient-to-r from-green-400 to-blue-500 px-4 py-2 font-bold text-white shadow-lg hover:from-green-500 hover:to-blue-600"
       onClick={() => {
         toast.info("Requesting airdrop...")
-        axios.get(url).then(() => {
-          toast.success("Token request sent successfully")
-        })
+        axios
+          .get(url)
+          .then(() => {
+            toast.success("Token request sent successfully")
+          })
+          .catch(() => {
+            console.log("Error")
+          })
       }}
     >
       Request Kii airdrop

@@ -20,48 +20,49 @@ interface Category {
   contracts: IContracts[]
 }
 
-
-
 export const ContractCard = ({ contract, className }: { contract: IContracts; className?: string }) => {
   const router = useRouter()
 
   const [open, setOpen] = useState(false)
   const [content, setContent] = useState("")
-const [called,setcalled]=useState(false)
+  const [called, setcalled] = useState(false)
   const onClick = () => {
-    if(content==""){
+    if (content == "") {
       axios
         .post("/api/explore", { contract: contract.path })
         .then((response) => {
           setContent(response.data)
-          console.log("mike ",response.data)
+          console.log("mike ", response.data)
         })
         .catch((error) => {
           console.error(error)
         })
-    }else{
+    } else {
       setOpen(true)
     }
   }
- useEffect(()=>{
-if(content!="") setOpen(true)
- },[content])
+  
+  useEffect(() => {
+    if (content != "") setOpen(true)
+  }, [content])
 
   return (
     <>
-    {content!="" && <CustomizeModal
-        text={JSON.parse(content) ??""}
-        open={content !== "" && open}
-        setOpen={setOpen}
-      />}
-      
+      {content != "" && (
+        <CustomizeModal
+          text={JSON.parse(content) ?? ""}
+          open={content !== "" && open}
+          setOpen={setOpen}
+        />
+      )}
+
       <div
         key={contract.identifier}
         onClick={() => router.push(`${contract.identifier}/overview`)}
         className={cn(className)}
       >
-        <article className=" hover:bg-muted raise-on-hover relative flex min-h-[220px] flex-col group/contract rounded-lg border-[0.1px] border-gray-500   p-4">
-          <div className="opacity-0 group-hover/contract:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
+        <article className="hover:bg-muted raise-on-hover group/contract relative flex min-h-[220px] flex-col rounded-lg border-[0.1px] border-gray-500 p-4">
+          <div className="pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-t from-neutral-100 to-transparent opacity-0 transition duration-200 group-hover/contract:opacity-100 dark:from-neutral-800" />
 
           <div className="flex justify-between">
             <div className="flex items-center gap-1.5">
@@ -75,7 +76,7 @@ if(content!="") setOpen(true)
 
           <div className="h-3.5"></div>
           <h3 className="text-lg font-semibold tracking-tight">{contract.name}</h3>
-          <div className="text-secondary-foreground mt-1 text-sm leading-5 line-clamp-3">{contract.description}</div>
+          <div className="text-secondary-foreground mt-1 line-clamp-3 text-sm leading-5">{contract.description}</div>
           <div className="relative mt-auto flex justify-between gap-2 pt-3">
             <Button
               onClick={(e) => {
@@ -85,12 +86,12 @@ if(content!="") setOpen(true)
               }}
               variant="outline"
               className="text-sm"
-            // className="ring-offset-background focus-visible:ring-ring text-primary-foreground relative z-10 inline-flex h-auto items-center justify-center gap-1.5 whitespace-nowrap rounded-md bg-primary px-2.5 py-1.5 text-xs font-medium transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+              // className="ring-offset-background focus-visible:ring-ring text-primary-foreground relative z-10 inline-flex h-auto items-center justify-center gap-1.5 whitespace-nowrap rounded-md bg-primary px-2.5 py-1.5 text-xs font-medium transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
             >
               Customize
             </Button>
             <Link
-              href={`/${contract.identifier}/deploy`}
+              href={`/${contract.identifier}/overview`}
               className="ring-offset-background focus-visible:ring-ring text-primary-foreground relative z-10 inline-flex h-auto items-center justify-center gap-1.5 whitespace-nowrap rounded-md bg-primary px-2.5 py-1.5 text-xs font-medium transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
             >
               Deploy
@@ -104,7 +105,10 @@ if(content!="") setOpen(true)
 
 const CategorySection = ({ category }: { category: Category }) => {
   return (
-    <section key={category.identifier} className="my-20 ">
+    <section
+      key={category.identifier}
+      className="my-20"
+    >
       <div className="flex items-center justify-between gap-4">
         <header className="flex flex-col gap-1.5">
           <h2 className="text-2xl font-semibold tracking-tight">{category.name}</h2>
@@ -132,11 +136,17 @@ const CategorySection = ({ category }: { category: Category }) => {
 
 const ExplorePageView = () => {
   return (
-    <div className="relative px-16 py-20 max-w-7xl mx-auto">
-      <Grid size={20} className="right-1/2" />
-      <Grid size={20} className="left-1/2" />
+    <div className="relative mx-auto max-w-7xl px-16 py-20">
+      <Grid
+        size={20}
+        className="right-1/2"
+      />
+      <Grid
+        size={20}
+        className="left-1/2"
+      />
 
-      <h1 className="mt-32 mb-3 text-7xl font-bold tracking-tighter">Explore</h1>
+      <h1 className="mb-3 mt-32 text-7xl font-bold tracking-tighter">Explore</h1>
       <div className="text-secondary-foreground max-w-screen-md text-lg">
         The best place for web3 developers to explore smart contracts from world-class web3 protocols &amp; engineers —
         all deployable with one click.

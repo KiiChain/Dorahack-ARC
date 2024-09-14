@@ -109,6 +109,8 @@ Deploy your smart contract to the `Kiichain testnet` with a single click. Arc in
 <img src="assets/features/10d.png" alt="" width="828px">
 <br/>
 <img src="assets/features/10e.png" alt="" width="828px">
+<br/>
+<img src="assets/features/10f.png" alt="" width="828px">
 
 #### 11. **Contract ABI and bytecode extraction**
 
