@@ -15,10 +15,9 @@
 
 - [Introduction](#introduction)
 - [Motivation](#motivation)
-- [Core Features](#core)
-- [Features](#features)
-- [Concepts](#concepts)
 - [Tech stack](#tech)
+- [Core Features](#core)
+- [Concepts](#concepts)
 - [Contributors](#contributors)
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
@@ -51,6 +50,10 @@ Here is a detailed breakdown:
 
 Arc provides an intelligent development environment for solidity where you can write smart contracts from scratch or use pre-built templates. The AI-driven autocompletion suggests code as you type, speeding up the process and reducing errors
 
+<img src="assets/features/1a.png" alt="" width="828px">
+<br/>
+<img src="assets/features/1b.png" alt="" width="828px">
+
 #### 2. **1000+ prebuilt and audited templates**
 
 Start with secure, pre built smart contract templates (collected from different sources) that have been thoroughly audited. These templates offer a robust foundation, saving time and effort while ensuring reliability
@@ -69,19 +72,31 @@ Arc’s custom compiler supports dynamic import resolution, allowing for seamles
 
 Security is a top priority with Arc. The platform uses advanced AI to analyze the smart contract code in real time, identifying potential vulnerabilities and suggesting fixes to ensure robust and secure contracts
 
+<img src="assets/features/4a.png" alt="" width="828px">
+<br/>
+<img src="assets/features/4b.png" alt="" width="828px">
+
 #### 5. **AI plugins**
 
-Automatically generate detailed documentation for your smart contracts using Arc’s AI plugin. This feature provides comprehensive explanations and makes your code easier to understand and maintain.
+Automatically generate detailed documentation for your smart contracts using Arc’s AI plugin. This feature provides comprehensive explanations and makes your code easier to understand and maintain
+
+<img src="assets/features/5a.png" alt="" width="828px">
+<br/>
+<img src="assets/features/5b.png" alt="" width="828px">
 
 #### 6. **Chat with contract**
 
 Interact with your smart contract through a conversational AI interface. You can ask questions to understand specific functions, explore use cases or troubleshoot issues enhancing your understanding of complex contracts
 
-<img src="assets/features/7a.png" alt="" width="828px">
+<img src="assets/features/6a.png" alt="" width="828px">
 
 #### 7. **Explain contract**
 
 Use the "Explain Contract" tool to receive high level or detailed explanations of your smart contract. This feature helps demystify the functionality and components of your contract, making it easier to grasp and review
+
+<img src="assets/features/7a.png" alt="" width="828px">
+<br/>
+<img src="assets/features/7b.png" alt="" width="828px">
 
 #### 8. **Code auditing**
 
@@ -121,9 +136,13 @@ Deploy your smart contract to the `Kiichain testnet` with a single click. Arc in
 
 Quickly generate and download the ABI (Application Binary Interface) and bytecode for the smart contract. This feature facilitates integration with front-end applications and other blockchain components
 
+<img src="assets/features/11a.png" alt="" width="828px">
+
 #### 12. **Testnet faucet**
 
 Arc includes an integrated faucet for obtaining testnet tokens, ensuring you have the resources needed for testing your contracts on the Kiichain testnet
+
+<img src="assets/features/12a.png" alt="" width="828px">
 
 #### 13. **Contract management dashboard**
 
@@ -150,6 +169,7 @@ Decode a transaction (and AI explanation) to understand the details of the trans
 
 # Contributors[](#contributors)
 
+
 The following individuals have contributed to the this project:
 
 ### 1. [Akhilesh Jyotishi](https://github.com/AkhileshJyotishi)
@@ -157,7 +177,10 @@ The following individuals have contributed to the this project:
 - Role: Full Stack Developer
 - Responsibilities: Refining frontend components, optimizing performance, ensuring responsive design, maintaining code consistency across the application, and ensuring smooth integration with the backend.
 
+- Role: Full Stack Developer
+- Responsibilities: Refining frontend components, optimizing performance, ensuring responsive design, maintaining code consistency across the application, and ensuring smooth integration with the backend
+
 ### 2. [Karthik S](https://github.com/KarthikS373)
 
 - Role: BlockChain Developer
-- Responsibilities: Development of Blockchain based functionalities.
+- Responsibilities: Developing smart contract templates, integrating blockchain functionalities such as code compilation, deployment and testing, developed security features and dynamic import resolution protocols
