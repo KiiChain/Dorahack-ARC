@@ -1,37 +1,3 @@
-interface IContractFunction {
-  function: string
-  signature: string
-  params: FunctionParam[]
-}
-
-interface IContractEvent {
-  function: string
-  signature: string
-  params: FunctionParam[]
-  content: ContentItem[]
-}
-
-interface IContractExtension {
-  name: string
-  description: string
-  source: string
-}
-
-declare interface IContractDefinition {
-  name: string
-  description: string
-  content: IRichText[]
-  resources: IAnchor[]
-  functions: {
-    write: IContractFunction[]
-    read: IContractFunction[]
-  }
-  events: IContractEvent[]
-  code?: string
-  extensions: IContractExtension[]
-  license: string
-}
-
 const definition: IContractDefinition = {
   name: "MarketplaceV3",
   description: `A decentralized marketplace for buying and selling digital assets, featuring an advanced royalty system, flexible listing options, and robust security measures.`,
@@ -217,6 +183,7 @@ const definition: IContractDefinition = {
       content: [{ tag: "p", content: "Earnings have been withdrawn from the contract.", style: {} }],
     },
   ],
+  resources: [] as IAnchor[] | [],
   extensions: [],
   license: "MIT",
 }

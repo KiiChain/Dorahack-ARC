@@ -20,13 +20,11 @@ We noticed that, while the [ResNet model](ResNetModelTraining.md) can assist in 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 <h2 id="dataset"> Dataset </h2>
 
 We generated our own dataset by engaging in conversations with ChatGPT 3.5 and Bard. Subsequently, we compiled all the information they provided to train the gemini model. This dataset exclusively consists of content from our interactions with ChatGPT and Bard, and we did not incorporate any external or sophisticated datasets. This homemade dataset played a crucial role in enhancing gemini's language understanding capabilities, enabling it to become more adept at identifying and resolving code-related issues.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <h2 id="model"> Model </h2>
 
@@ -34,13 +32,11 @@ We employed a technique known as qLoRA to fine-tune our model, aiming to reduce 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 <h2 id="workflow"> Solution Workflow </h2>
 
 Our solution workflow commences with our initial model detecting vulnerabilities in contracts. In the event vulnerabilities are identified, the process triggers the Language Model (LLM) with a base prompt. If the contract is determined to be secure, the workflow yields a confirmation of its safety accompanied by a summary. This streamlined approach guarantees a comprehensive analysis of contracts for vulnerabilities. In instances where no issues are detected, users receive a distinct affirmation of safety along with a succinct summary.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <h2 id="advantages"> Key Advantages </h2>
 

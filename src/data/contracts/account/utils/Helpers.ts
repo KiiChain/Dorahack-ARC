@@ -1,4 +1,3 @@
-
 const definition: IContractDefinition = {
   name: "Helpers",
   description: `A library of reusable helper functions for various common Solidity tasks.`,
@@ -305,7 +304,7 @@ const definition: IContractDefinition = {
   events: [],
   extensions: [],
   license: "MIT",
-  resources:[]
+  resources: [],
 }
 
 export default definition

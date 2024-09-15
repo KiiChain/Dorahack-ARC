@@ -27,7 +27,7 @@ interface IContractEvent {
   function: string
   signature: string
   params: FunctionParam[]
-  content: ContentItem[]
+  content: ContentItem[] | []
 }
 
 interface IContractExtension {
@@ -40,12 +40,12 @@ declare interface IContractDefinition {
   name: string
   description: string
   content: IRichText[]
-  resources: IAnchor[] |[]
+  resources: IAnchor[] | []
   functions: {
     write: IContractFunction[]
     read: IContractFunction[]
   }
   events: IContractEvent[]
-  extensions: IContractExtension[]
+  extensions: IContractExtension[] | []
   license: string
 }

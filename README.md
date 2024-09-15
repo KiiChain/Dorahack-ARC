@@ -21,8 +21,6 @@
 - [Tech stack](#tech)
 - [Contributors](#contributors)
 
-
-
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 # Introduction [](#introduction)
@@ -43,7 +41,6 @@ Arc is built using a robust tech stack to ensure performance, reliability, and s
 - Hardhat
 - Foundry
 - AI models
-
 
 # Core Features [](#core)
 
@@ -151,14 +148,16 @@ Decode a transaction (and AI explanation) to understand the details of the trans
 - [Training deep learning model for smart contract vulnerability detection](./docs/ResNet.md)
 - [Enhanced problem detection and fixing using Gemini](./docs/Gemini.md)
 
-
 # Contributors[](#contributors)
+
 The following individuals have contributed to the this project:
 
 ### 1. [Akhilesh Jyotishi](https://github.com/AkhileshJyotishi)
- - Role: Full Stack Developer
- - Responsibilities: Refining frontend components, optimizing performance, ensuring responsive design, maintaining code consistency across the application, and ensuring smooth integration with the backend.
+
+- Role: Full Stack Developer
+- Responsibilities: Refining frontend components, optimizing performance, ensuring responsive design, maintaining code consistency across the application, and ensuring smooth integration with the backend.
 
 ### 2. [Karthik S](https://github.com/KarthikS373)
- - Role: BlockChain Developer
- - Responsibilities: Development of Blockchain based functionalities.
+
+- Role: BlockChain Developer
+- Responsibilities: Development of Blockchain based functionalities.

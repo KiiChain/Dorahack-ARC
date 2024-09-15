@@ -1,5 +1,3 @@
-
-
 const definition: IContractDefinition = {
   name: "IEntryPoint",
   description: `Interface for entry point of a reentrancy guard`,
@@ -43,8 +41,7 @@ const definition: IContractDefinition = {
   events: [],
   extensions: [],
   license: "MIT",
-  resources:[]
+  resources: [],
 }
-
 
 export default definition

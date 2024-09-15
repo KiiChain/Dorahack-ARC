@@ -1,4 +1,3 @@
-
 const definition: IContractDefinition = {
   name: "AccountCore",
   description: `A core account management contract.`,
@@ -158,7 +157,7 @@ const definition: IContractDefinition = {
   ],
   extensions: [],
   license: "MIT",
-  resources:[]
+  resources: [],
 }
 
 export default definition

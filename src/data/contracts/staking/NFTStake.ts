@@ -85,6 +85,7 @@ const definition: IContractDefinition = {
         { name: "user", type: "address", indexed: true },
         { name: "tokenId", type: "uint256", indexed: true },
       ],
+      content: [],
     },
     {
       function: "Unstaked",
@@ -93,6 +94,7 @@ const definition: IContractDefinition = {
         { name: "user", type: "address", indexed: true },
         { name: "tokenId", type: "uint256", indexed: true },
       ],
+      content: [],
     },
     {
       function: "RewardsWithdrawn",
@@ -101,6 +103,7 @@ const definition: IContractDefinition = {
         { name: "user", type: "address", indexed: true },
         { name: "amount", type: "uint256" },
       ],
+      content: [],
     },
   ],
   extensions: [],

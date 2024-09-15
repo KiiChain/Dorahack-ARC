@@ -1,37 +1,3 @@
-interface IContractFunction {
-  function: string
-  signature: string
-  params: ITemporaryVariable[]
-}
-
-interface IContractEvent {
-  function: string
-  signature: string
-  params: ITemporaryVariable[]
-  content: ITemporaryVariable[]
-}
-
-interface IContractExtension {
-  name: string
-  description: string
-  source: string
-}
-
-declare interface IContractDefinition {
-  name: string
-  description: string
-  content: IRichText[]
-  resources: IAnchor[]
-  functions: {
-    write: IContractFunction[]
-    read: IContractFunction[]
-  }
-  events: IContractEvent[]
-  code?: string
-  extensions: IContractExtension[]
-  license: string
-}
-
 const definition: IContractDefinition = {
   name: "DynamicAccount",
   description: `A dynamic account contract that allows for the delegation of execution permissions to other addresses. This contract can be used to implement a variety of use cases, such as multi-signature wallets, decentralized governance systems, and more.`,

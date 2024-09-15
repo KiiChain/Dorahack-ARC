@@ -2,7 +2,7 @@
 import React, { useState } from "react"
 
 interface IUserContext {
-  user: IUser | null
+  user: ITemporaryVariable | null
 }
 
 type IUserProvider = IProvider
@@ -14,7 +14,7 @@ const defaultValues: IUserContext = {
 const Context = React.createContext<IUserContext>(defaultValues)
 
 const UserProvider: React.FC<IUserProvider> = ({ children }) => {
-  const [user] = useState<IUser | null>(null)
+  const [user] = useState<ITemporaryVariable | null>(null)
 
   return <Context.Provider value={{ user }}>{children}</Context.Provider>
 }

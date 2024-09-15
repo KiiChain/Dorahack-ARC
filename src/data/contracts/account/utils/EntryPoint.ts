@@ -1,4 +1,3 @@
-
 const definition: IContractDefinition = {
   name: "EntryPoint",
   description: `This contract is an entry point for executing user operations on StarkNet. It is responsible for handling gas payments, validating signatures, and executing the user operation on the StarkNet system. It is also responsible for handling the execution of the user operation and the resulting state updates on the StarkNet system.`,
@@ -240,7 +239,7 @@ const definition: IContractDefinition = {
   ],
   extensions: [],
   license: "MIT",
-  resources:[]
+  resources: [],
 }
 
 export default definition
