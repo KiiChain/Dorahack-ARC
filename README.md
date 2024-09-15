@@ -11,15 +11,6 @@
   </p>
 </div>
 
-<iframe 
-  width="828" 
-  src="https://www.youtube.com/embed/YUKQrb5gsmM?si=ONOjhE8-EiAue_YX" 
-  title="Arc" 
-  frameborder="0" 
-  allow="autoplay; encrypted-media; picture-in-picture; web-share" 
-  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
-></iframe>
-
 ## Table of contents [](#table-of-contents)
 
 - [Introduction](#introduction)
