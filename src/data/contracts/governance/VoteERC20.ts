@@ -141,7 +141,6 @@ const definition: IContractDefinition = {
       content: [{ tag: "p", content: "This event is emitted when a new proposal is created.", style: {} }],
     },
   ],
-  code: "",
   extensions: [
     {
       name: "ERC2771ContextUpgradeable",

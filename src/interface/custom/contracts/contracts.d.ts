@@ -40,13 +40,12 @@ declare interface IContractDefinition {
   name: string
   description: string
   content: IRichText[]
-  resources: IAnchor[]
+  resources: IAnchor[] |[]
   functions: {
     write: IContractFunction[]
     read: IContractFunction[]
   }
   events: IContractEvent[]
-  code?: string
   extensions: IContractExtension[]
   license: string
 }

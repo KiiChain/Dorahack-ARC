@@ -107,6 +107,7 @@ const definition: IContractDefinition = {
         { name: "action", type: "bytes" },
         { name: "context", type: "bytes" },
       ],
+      content:[] as IRichText[]
     },
     {
       function: "RuleEvaluated",
@@ -114,10 +115,13 @@ const definition: IContractDefinition = {
       params: [
         { name: "ruleId", type: "string" },
         { name: "result", type: "bool" },
+
       ],
+      content:[] as IRichText[]
     },
   ],
-  extensions: [],
+  extensions: [] as IContractExtension[]
+  ,
   license: "MIT",
 
   resources: [
