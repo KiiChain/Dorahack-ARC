@@ -51,7 +51,7 @@ contract AirdropERC1155 is ERC1155, IAirdropERC1155 {
     }
 }
                             `,
-      style: { language: "solidity" },
+      style: {},
     },
   ],
   functions: {

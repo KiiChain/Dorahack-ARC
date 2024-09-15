@@ -38,7 +38,7 @@ const definition: IContractDefinition = {
                                 // ... Implementation details
                             }
                             `,
-      style: { language: "solidity" },
+      style: {},
     },
   ],
   functions: {

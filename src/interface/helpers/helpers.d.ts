@@ -10,7 +10,7 @@ declare type IIterable<T = unknown> = Array<T>
 declare interface IRichText extends React.HTMLAttributes<HTMLElement> {
   tag: string
   content: string
-  style?: React.CSSProperties;
+  style?: React.CSSProperties
   className?: string
 }
 
