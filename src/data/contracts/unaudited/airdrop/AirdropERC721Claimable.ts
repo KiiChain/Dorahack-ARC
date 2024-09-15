@@ -158,13 +158,22 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "ERC-721 Non-Fungible Token Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
-  { title: "OpenZeppelin ERC721 Contract Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
-  { title: "Airdrop Smart Contract Example (Solidity)", url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721Airdrop.sol" },
-  { title: "Building an Airdrop System with Solidity", url: "https://medium.com/coinmonks/building-an-airdrop-system-with-solidity-854602696424" },
-  { title: "Airdrop Contract: A Step-by-Step Guide to Building an Airdrop System", url: "https://medium.com/coinmonks/airdrop-contract-a-step-by-step-guide-to-building-an-airdrop-system-5c3c293532c2" },
-  { title: "Solidity Tutorial - Creating an Airdrop Contract", url: "https://www.youtube.com/watch?v=H8s_19g9YfU" }
-],
+    { title: "ERC-721 Non-Fungible Token Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
+    { title: "OpenZeppelin ERC721 Contract Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
+    {
+      title: "Airdrop Smart Contract Example (Solidity)",
+      url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721Airdrop.sol",
+    },
+    {
+      title: "Building an Airdrop System with Solidity",
+      url: "https://medium.com/coinmonks/building-an-airdrop-system-with-solidity-854602696424",
+    },
+    {
+      title: "Airdrop Contract: A Step-by-Step Guide to Building an Airdrop System",
+      url: "https://medium.com/coinmonks/airdrop-contract-a-step-by-step-guide-to-building-an-airdrop-system-5c3c293532c2",
+    },
+    { title: "Solidity Tutorial - Creating an Airdrop Contract", url: "https://www.youtube.com/watch?v=H8s_19g9YfU" },
+  ],
 }
 
 export default definition

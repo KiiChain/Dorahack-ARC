@@ -1,5 +1,6 @@
 "use client"
 import React, { useEffect, useRef, useState } from "react"
+
 import clsx from "clsx"
 import { FaArrowAltCircleLeft } from "react-icons/fa"
 import { FaArrowAltCircleRight } from "react-icons/fa"

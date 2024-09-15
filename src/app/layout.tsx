@@ -4,12 +4,13 @@ import { Metadata } from "next"
 
 import { Toaster } from "sonner"
 
+import { navItems } from "@/data/sample"
+
 import Navbar from "@/components/navbar"
 import { Provider } from "@/providers"
 import { FloatingNav } from "@/ui/floating-navbar"
 
 import "@/styles/globals.css"
-import { navItems } from "@/data/sample"
 
 export const metadata: Metadata = {
   title: {
@@ -37,7 +38,6 @@ const links: { label: string; href: string }[] = [
     href: "/ide",
   },
 ]
-
 
 const RootLayout = ({
   children,

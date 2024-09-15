@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react"
 
 //import { init } from "@/data/sample"
 import { Directory, File } from "@/interface/custom/folder-tree/folder-tree"
-import { useLocalStorage } from "@/hooks"
 
 interface IIDEContext {
   rootDir?: Directory
@@ -19,19 +18,7 @@ type IIDEProvider = {
   children: React.ReactNode
 }
 
-const defaultValues = {}
-{
-}
-const initialRoot: Directory = {
-  id: "root",
-  type: "directory",
-  name: "root",
-  parentId: undefined,
-  depth: 0,
-  files: [],
-  dirs: [],
-}
-const Context = React.createContext<IIDEContext>(defaultValues as IIDEContext)
+const Context = React.createContext<IIDEContext>({} as IIDEContext)
 const IDEProvider: React.FC<IIDEProvider> = ({ children }) => {
   const [rootDir, setRootDir] = useState<Directory>()
   const [activeFiles, setActiveFiles] = useState<File[]>()
@@ -43,9 +30,7 @@ const IDEProvider: React.FC<IIDEProvider> = ({ children }) => {
     // Recursively update the file in the directory structure
     return {
       ...dir,
-      files: dir.files.map((file) =>
-        file.id === updatedFile.id ? { ...file, content: updatedFile.content } : file
-      ),
+      files: dir.files.map((file) => (file.id === updatedFile.id ? { ...file, content: updatedFile.content } : file)),
       dirs: dir.dirs.map((subDir) => updateFileInRootDir(subDir, updatedFile)),
     }
   }
@@ -53,20 +38,18 @@ const IDEProvider: React.FC<IIDEProvider> = ({ children }) => {
     setSelectedFile(updatedFile)
 
     if (activeFiles) {
-      setActiveFiles(
-        activeFiles.map((file) => (file.id === updatedFile.id ? updatedFile : file))
-      )
+      setActiveFiles(activeFiles.map((file) => (file.id === updatedFile.id ? updatedFile : file)))
     }
     if (rootDir) {
       setRootDir(updateFileInRootDir(rootDir, updatedFile))
     }
   }
   useEffect(() => {
-    let x = window.localStorage.getItem("rootdir")
+    const x = window.localStorage.getItem("rootdir")
     console.log("pager  ", x)
     if (x != undefined) {
       console.log("chkec ", x)
-      let y = JSON.parse(x)
+      const y = JSON.parse(x)
       setRootDir(y)
     }
   }, [])
@@ -77,7 +60,9 @@ const IDEProvider: React.FC<IIDEProvider> = ({ children }) => {
   }, [rootDir])
 
   return (
-    <Context.Provider value={{ rootDir, setRootDir, selectedFile, setSelectedFile, activeFiles, setActiveFiles, handleFileUpdate }}>
+    <Context.Provider
+      value={{ rootDir, setRootDir, selectedFile, setSelectedFile, activeFiles, setActiveFiles, handleFileUpdate }}
+    >
       {children}
     </Context.Provider>
   )

@@ -1,7 +1,8 @@
-import { PDFDocument, rgb, StandardFonts } from "pdf-lib"
 import { NextResponse } from "next/server"
-import { marked } from "marked"
+
 import { htmlToText } from "html-to-text"
+import { marked } from "marked"
+import { PDFDocument, rgb, StandardFonts } from "pdf-lib"
 
 const PAGE_WIDTH = 595.276 // A4 width in points
 const PAGE_HEIGHT = 841.89 // A4 height in points

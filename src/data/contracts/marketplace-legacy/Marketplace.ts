@@ -123,17 +123,26 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "OpenSea Documentation", url: "https://docs.opensea.io/docs/smart-contracts" },
-  { title: "Ethereum.org Marketplace Documentation", url: "https://ethereum.org/en/developers/docs/smart-contracts/marketplace/" },
-  { title: "Rarible Marketplace Smart Contract", url: "https://github.com/rarible/rarible-protocol/blob/main/contracts/lib/Market.sol" },
-  { title: "Wyvern Protocol Documentation", url: "https://docs.wyvern.io/docs/protocol" },
-  { title: "ERC721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
-  { title: "ERC1155 Standard", url: "https://eips.ethereum.org/EIPS/eip-1155" },
-  { title: "Building a Marketplace on Ethereum", url: "https://medium.com/@0xPolygon/building-a-marketplace-on-ethereum-a-practical-guide-210261d086a0" },
-  { title: "Solidity by Example: Marketplace", url: "https://solidity-by-example.org/marketplace/" },
-  { title: "How to Create a Marketplace on Ethereum", url: "https://www.youtube.com/watch?v=N8n_i07l5s8" },
-  { title: "Building a Decentralized Marketplace on Ethereum", url: "https://www.youtube.com/watch?v=bQf42J0Z4-I" }
-],
+    { title: "OpenSea Documentation", url: "https://docs.opensea.io/docs/smart-contracts" },
+    {
+      title: "Ethereum.org Marketplace Documentation",
+      url: "https://ethereum.org/en/developers/docs/smart-contracts/marketplace/",
+    },
+    {
+      title: "Rarible Marketplace Smart Contract",
+      url: "https://github.com/rarible/rarible-protocol/blob/main/contracts/lib/Market.sol",
+    },
+    { title: "Wyvern Protocol Documentation", url: "https://docs.wyvern.io/docs/protocol" },
+    { title: "ERC721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
+    { title: "ERC1155 Standard", url: "https://eips.ethereum.org/EIPS/eip-1155" },
+    {
+      title: "Building a Marketplace on Ethereum",
+      url: "https://medium.com/@0xPolygon/building-a-marketplace-on-ethereum-a-practical-guide-210261d086a0",
+    },
+    { title: "Solidity by Example: Marketplace", url: "https://solidity-by-example.org/marketplace/" },
+    { title: "How to Create a Marketplace on Ethereum", url: "https://www.youtube.com/watch?v=N8n_i07l5s8" },
+    { title: "Building a Decentralized Marketplace on Ethereum", url: "https://www.youtube.com/watch?v=bQf42J0Z4-I" },
+  ],
 }
 
 export default definition

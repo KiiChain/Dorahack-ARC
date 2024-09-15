@@ -1,24 +1,21 @@
 "use client"
 import React, { useState } from "react"
 
-import Image from "next/image"
-
+import { useCompletion } from "ai/react"
 import clsx from "clsx"
-import Slider, { Settings } from "react-slick"
+import Slider from "react-slick"
 
 import { createProject, init, templates } from "@/data/sample"
+import { Directory, File } from "@/interface/custom/folder-tree/folder-tree"
+import { Content } from "@google/generative-ai"
 
 import { cn } from "@/lib/utils"
 import { useIDE } from "@/providers/ide"
 import { Button } from "@/ui/button"
-import TextInput from "@/ui/text-input"
+import { GenerateCodeInstructions } from "@/utils/prompt"
 
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import { useCompletion } from "ai/react"
-import { Content } from "@google/generative-ai"
-import { GenerateCodeInstructions } from "@/utils/prompt"
-import { Directory, File } from "@/interface/custom/folder-tree/folder-tree"
 
 const GettingStarted = () => {
   const { setRootDir } = useIDE()
@@ -28,12 +25,12 @@ const GettingStarted = () => {
   const [libraries, setLibraries] = useState("")
   const [selectedTemplate, setSelectedTemplate] = useState<string | null>(null)
   const [category, setCategory] = useState("Financial")
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false)
   const [prompt, setPrompt] = useState("")
 
   const { complete } = useCompletion({
     api: "/api/customize",
-  });
+  })
   const [activePanel, setActivePanel] = useState<string | null>(null)
 
   const handlePanelClick = (panel: string) => {
@@ -54,45 +51,43 @@ const GettingStarted = () => {
     console.log("Created Project:", newProject)
   }
   const handleProjectCreationScratch = () => {
-    setLoading(true);
-    let newProject=init
-        // @ts-ignore
-        let newdir:Directory={}
-        newdir.depth=1
-        newdir.dirs=[]
-        newdir.files=[]
-        newdir.name = projectName
-        newdir.id="contracts"
-        newdir.parentId="0"
-        newdir.type="directory"
-        newProject.dirs.push(newdir)
-    
-        const file: File = {
-          content: "//Write Code here",
-          depth: 2,
-          id: "contract1",
-          name: "AIfile.sol",
-          parentId: "contracts",
-          type: "file"
-        }
-        newProject.files.push(file)
+    setLoading(true)
+    const newProject = init
+    const newdir: Directory = {} as Directory
+    newdir.depth = 1
+    newdir.dirs = []
+    newdir.files = []
+    newdir.name = projectName
+    newdir.id = "contracts"
+    newdir.parentId = "0"
+    newdir.type = "directory"
+    newProject.dirs.push(newdir)
+
+    const file: File = {
+      content: "//Write Code here",
+      depth: 2,
+      id: "contract1",
+      name: "AIfile.sol",
+      parentId: "contracts",
+      type: "file",
+    }
+    newProject.files.push(file)
     setRootDir(newProject)
     console.log("Created Project:", newProject)
   }
   const handleProjectCreationAI = async () => {
-    setLoading(true);
+    setLoading(true)
     const sampleUseCase = GenerateCodeInstructions({
       category: category || "Governance",
       contract_type: "",
       name: projectName || "DecentralizedVoting",
       token: "GOVT",
-      description: projectDesc || "A decentralized voting system allowing token holders to cast votes on governance proposals.",
-      prompt
-    });
+      description:
+        projectDesc || "A decentralized voting system allowing token holders to cast votes on governance proposals.",
+      prompt,
+    })
 
-    const payload: Content[] = [
-      sampleUseCase
-    ];
+    const payload: Content[] = [sampleUseCase]
     let code = ""
     complete("", {
       body: {
@@ -100,32 +95,30 @@ const GettingStarted = () => {
       },
     })
       .then((newCompletion) => {
-        const aiResponse = newCompletion || "There was an error with the AI response. Please try again.";
-        const cleanedResponse = aiResponse.replace(/```(\w+)?/g, ""); // Remove code block formatting
+        const aiResponse = newCompletion || "There was an error with the AI response. Please try again."
+        const cleanedResponse = aiResponse.replace(/```(\w+)?/g, "") // Remove code block formatting
         console.log(cleanedResponse)
         code = cleanedResponse
 
-
-
-        let newProject=init
+        const newProject = init
         // @ts-ignore
-        let newdir:Directory={}
-        newdir.depth=1
-        newdir.dirs=[]
-        newdir.files=[]
+        const newdir: Directory = {}
+        newdir.depth = 1
+        newdir.dirs = []
+        newdir.files = []
         newdir.name = projectName
-        newdir.id="contracts"
-        newdir.parentId="0"
-        newdir.type="directory"
+        newdir.id = "contracts"
+        newdir.parentId = "0"
+        newdir.type = "directory"
         newProject.dirs.push(newdir)
-    
+
         const file: File = {
           content: code,
           depth: 2,
           id: "contract1",
           name: "AIfile.sol",
           parentId: "contracts",
-          type: "file"
+          type: "file",
         }
         newProject.files.push(file)
         setRootDir(newProject)
@@ -134,9 +127,8 @@ const GettingStarted = () => {
       })
       .catch((err) => console.log(err))
       .finally(() => {
-        setLoading(false);
-      });
-   
+        setLoading(false)
+      })
   }
 
   return (
@@ -318,6 +310,5 @@ const GettingStarted = () => {
     </>
   )
 }
-
 
 export default GettingStarted

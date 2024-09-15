@@ -96,15 +96,21 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "ERC-721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
-  { title: "OpenZeppelin ERC721 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
-  { title: "Airdrop Smart Contract Tutorial", url: "https://www.youtube.com/watch?v=y8F0Qv0W6cI" },
-  { title: "How to Create an Airdrop Smart Contract", url: "https://medium.com/coinmonks/how-to-create-an-airdrop-smart-contract-on-ethereum-665f7a8d95e4" },
-  { title: "Airdrop Smart Contract Example", url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721Airdrop.sol" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "Remix IDE", url: "https://remix.ethereum.org/" },
-  { title: "Ethers.js Documentation", url: "https://docs.ethers.io/v5/" }
-],
+    { title: "ERC-721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
+    { title: "OpenZeppelin ERC721 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
+    { title: "Airdrop Smart Contract Tutorial", url: "https://www.youtube.com/watch?v=y8F0Qv0W6cI" },
+    {
+      title: "How to Create an Airdrop Smart Contract",
+      url: "https://medium.com/coinmonks/how-to-create-an-airdrop-smart-contract-on-ethereum-665f7a8d95e4",
+    },
+    {
+      title: "Airdrop Smart Contract Example",
+      url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721Airdrop.sol",
+    },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "Remix IDE", url: "https://remix.ethereum.org/" },
+    { title: "Ethers.js Documentation", url: "https://docs.ethers.io/v5/" },
+  ],
 }
 
 export default definition

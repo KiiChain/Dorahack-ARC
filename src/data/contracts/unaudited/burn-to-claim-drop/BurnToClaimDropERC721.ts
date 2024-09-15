@@ -111,12 +111,18 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "ERC721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
-  { title: "OpenZeppelin ERC721 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
-  { title: "Burn Mechanism in Solidity", url: "https://ethereum.org/en/developers/docs/smart-contracts/functionality/burn-tokens/" },
-  { title: "Claiming Tokens in Solidity", url: "https://ethereum.org/en/developers/docs/smart-contracts/functionality/claim-tokens/" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" }
-],
+    { title: "ERC721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
+    { title: "OpenZeppelin ERC721 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
+    {
+      title: "Burn Mechanism in Solidity",
+      url: "https://ethereum.org/en/developers/docs/smart-contracts/functionality/burn-tokens/",
+    },
+    {
+      title: "Claiming Tokens in Solidity",
+      url: "https://ethereum.org/en/developers/docs/smart-contracts/functionality/claim-tokens/",
+    },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+  ],
 }
 
 export default definition

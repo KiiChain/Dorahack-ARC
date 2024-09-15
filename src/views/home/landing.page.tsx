@@ -1,18 +1,23 @@
 import React, { useState } from "react"
+
+import { useRouter } from "next/navigation"
+
+import { AiFillThunderbolt } from "react-icons/ai"
+
+import { ContractStore } from "@/data/contracts"
+
+import Logo from "@/assets/images/arc-logo.webp"
+import { BackgroundCellCore } from "@/components/background-cell"
 import Footer from "@/components/footer"
 import { Carousel } from "@/components/infinite-movement"
 import { FeaturesSectionDemo } from "@/components/landing-cta1"
 import { FollowerPointerCard } from "@/components/landing-cta2"
 import CTA3 from "@/components/landing-cta3"
-import { FlipWords } from "@/ui/flip-words"
 import { Spotlight } from "@/components/spotlight"
-import { BackgroundCellCore } from "@/components/background-cell"
-import { ContractStore } from "@/data/contracts"
-import { ContractCard } from "../explore/contract.page"
-import Logo from "@/assets/images/arc-logo.webp"
 import { Button } from "@/ui/button"
-import { AiFillThunderbolt } from "react-icons/ai"
-import { useRouter } from "next/navigation"
+import { FlipWords } from "@/ui/flip-words"
+
+import { ContractCard } from "../explore/contract.page"
 // import { TypewriterEffect } from "@/components/typewriter-effect"
 const items = ContractStore[0].contracts.slice(0, 6).map((contract) => {
   return (
@@ -24,11 +29,7 @@ const items = ContractStore[0].contracts.slice(0, 6).map((contract) => {
   )
 })
 
-
-const words = [
-  "Unlock Smart Contract Innovation",
-  "AI-driven coding  made easy.",
-  "Deploy to Kiichain with one click."]
+const words = ["Unlock Smart Contract Innovation", "AI-driven coding  made easy.", "Deploy to Kiichain with one click."]
 export const footerLinks = [
   { href: "#", label: "About" },
   { href: "#", label: "Privacy Policy" },
@@ -85,78 +86,83 @@ const blogContent = [
       "Arc's dashboard allows users to manage and monitor deployed contracts efficiently. In this article, we walk through the features and how you can use them to track, manage, and optimize your smart contracts.",
     image: "https://blog.kiiglobal.io/wp-content/uploads/2024/07/KiiChain-launches-testnet-2.webp",
   },
-];
-const words2 = [
-  { text: "Spotlight effect is a great way to draw attention to a specific part " },
-  { text: "of the page. ", className: "text-neutral-300" },
-  { text: "Here,", className: "text-neutral-300" },
-  { text: "we are drawing the attention towards the text" },
-  { text: "section of the page.", className: "text-neutral-300" },
-  { text: "I don't know why but I'm running out of" },
-  { text: "copy. ", className: "text-neutral-300" },
-];
+]
+
 const HomeLandingView = () => {
   const router = useRouter()
-  const [isFlipWordsComplete, setIsFlipWordsComplete] = useState(false);
+  const [isFlipWordsComplete, setIsFlipWordsComplete] = useState(false)
   return (
-    <div className="snap-y snap-mandatory max-w-7xl mx-auto bg-secondary">
+    <div className="mx-auto max-w-7xl snap-y snap-mandatory bg-secondary">
       <section className="snap-center snap-always">
-        <div className="h-screen w-full rounded-md flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
-
+        <div className="bg-grid-white/[0.02] relative flex h-screen w-full overflow-hidden rounded-md bg-black/[0.96] antialiased md:items-center md:justify-center">
           <Spotlight
-            className="-top-40 left-0 md:left-60 md:-top-20"
+            className="-top-40 left-0 md:-top-20 md:left-60"
             fill="white"
           />
           <BackgroundCellCore />
-          <div className=" p-4 max-w-7xl  m-auto relative z-50  w-full pt-20 md:pt-0">
-            <h1 className="text-3xl md:text-6xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-              <FlipWords words={words} onAnimationComplete={() => setTimeout(() => setIsFlipWordsComplete(true), 3000)} />
+          <div className="relative z-50 m-auto w-full max-w-7xl p-4 pt-20 md:pt-0">
+            <h1 className="bg-opacity-50 bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-center text-3xl font-bold text-transparent md:text-6xl">
+              <FlipWords
+                words={words}
+                onAnimationComplete={() => setTimeout(() => setIsFlipWordsComplete(true), 3000)}
+              />
             </h1>
             {isFlipWordsComplete ? (
               <>
-                <div className="mt-4 font-normal text-base text-neutral-300 max-w-2xl text-center mx-auto italic">
-                  Transform smart contract development with Arc. Write, deploy, and manage contracts effortlessly with AI-driven tools and one-click deployment to Kiichain’s testnet.
+                <div className="mx-auto mt-4 max-w-2xl text-center text-base font-normal italic text-neutral-300">
+                  Transform smart contract development with Arc. Write, deploy, and manage contracts effortlessly with
+                  AI-driven tools and one-click deployment to Kiichain’s testnet.
                 </div>
-                <Button type="button" className="flex gap-4 mx-auto mt-6" variant="fill" onClick={() => { router.push("/ide") }}>
-                  <AiFillThunderbolt className="text-2xl my-auto h-full" /><div className="font-extrabold mx-auto text-xl" >Get started</div>
+                <Button
+                  type="button"
+                  className="mx-auto mt-6 flex gap-4"
+                  variant="fill"
+                  onClick={() => {
+                    router.push("/ide")
+                  }}
+                >
+                  <AiFillThunderbolt className="my-auto h-full text-2xl" />
+                  <div className="mx-auto text-xl font-extrabold">Get started</div>
                 </Button>
               </>
-            ) :
-              <div className="mt-4 font-normal text-base text-neutral-300 w-[32rem] text-center mx-auto h-[170px]"></div>
-            }
+            ) : (
+              <div className="mx-auto mt-4 h-[170px] w-[32rem] text-center text-base font-normal text-neutral-300"></div>
+            )}
           </div>
         </div>
-
       </section>
       <section className="snap-center snap-always bg-black py-14">
         <FeaturesSectionDemo />
       </section>
-      <section className="snap-center snap-always bg-secondary my-14">
-        <h2 className=" max-w-5xl  text-3xl font-bold tracking-tight text-black lg:text-5xl lg:leading-tight dark:text-white mb-4">
-          Smart contracts for <br />every use case
+      <section className="my-14 snap-center snap-always bg-secondary">
+        <h2 className="mb-4 max-w-5xl text-3xl font-bold tracking-tight text-black lg:text-5xl lg:leading-tight dark:text-white">
+          Smart contracts for <br />
+          every use case
         </h2>
         <div className="mx-auto max-w-7xl">
-
           <Carousel
             items={items}
             className=""
             direction="right"
-          // speed="normal"
+            // speed="normal"
           />
         </div>
       </section>
-      <section className="snap-center snap-always bg-secondary my-16 pt-14">
-        <h2 className=" max-w-5xl  text-3xl font-bold tracking-tight text-black lg:text-5xl lg:leading-tight dark:text-white mb-2">
+      <section className="my-16 snap-center snap-always bg-secondary pt-14">
+        <h2 className="mb-2 max-w-5xl text-3xl font-bold tracking-tight text-black lg:text-5xl lg:leading-tight dark:text-white">
           End-to-end tools for smart contracts
         </h2>
-        <div className=" my-4 pb-4   text-sm font-normal text-neutral-300 lg:text-base dark:text-neutral-300">
+        <div className="my-4 pb-4 text-sm font-normal text-neutral-300 lg:text-base dark:text-neutral-300">
           Trusted and modular smart contracts that can be deployed securely on Kiichain.
         </div>
         <div className="mx-auto max-w-7xl">
           <CTA3
-            items={blogContent.map((e) => {
+            items={blogContent.map((e, key) => {
               return (
-                <FollowerPointerCard blogContent={e} />
+                <FollowerPointerCard
+                  blogContent={e}
+                  key={key}
+                />
               )
             })}
           />

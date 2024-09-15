@@ -166,14 +166,32 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "Staking Contracts: A Comprehensive Guide", url: "https://www.blockchain-council.org/blockchain/staking-contracts-a-comprehensive-guide/" },
-  { title: "Solidity Smart Contract for Staking", url: "https://medium.com/coinmonks/solidity-smart-contract-for-staking-3277742f18d7" },
-  { title: "How to Build a Staking Contract in Solidity", url: "https://www.youtube.com/watch?v=Y6v79z7aZ34" },
-  { title: "Staking Smart Contracts: A Beginner's Guide", url: "https://www.moralis.io/blog/staking-smart-contracts/" },
-  { title: "Smart Contract Development: Staking", url: "https://medium.com/coinmonks/smart-contract-development-staking-949a6c813304" },
-  { title: "Staking Contracts: A Deep Dive", url: "https://www.coindesk.com/tech/2022/07/08/staking-contracts-a-deep-dive/" },
-  { title: "Solidity Staking Contract Example", url: "https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts/staking" }
-],
+    {
+      title: "Staking Contracts: A Comprehensive Guide",
+      url: "https://www.blockchain-council.org/blockchain/staking-contracts-a-comprehensive-guide/",
+    },
+    {
+      title: "Solidity Smart Contract for Staking",
+      url: "https://medium.com/coinmonks/solidity-smart-contract-for-staking-3277742f18d7",
+    },
+    { title: "How to Build a Staking Contract in Solidity", url: "https://www.youtube.com/watch?v=Y6v79z7aZ34" },
+    {
+      title: "Staking Smart Contracts: A Beginner's Guide",
+      url: "https://www.moralis.io/blog/staking-smart-contracts/",
+    },
+    {
+      title: "Smart Contract Development: Staking",
+      url: "https://medium.com/coinmonks/smart-contract-development-staking-949a6c813304",
+    },
+    {
+      title: "Staking Contracts: A Deep Dive",
+      url: "https://www.coindesk.com/tech/2022/07/08/staking-contracts-a-deep-dive/",
+    },
+    {
+      title: "Solidity Staking Contract Example",
+      url: "https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts/staking",
+    },
+  ],
 }
 
 export default definition

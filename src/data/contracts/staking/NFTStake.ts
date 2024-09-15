@@ -107,18 +107,45 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "NFT Staking: A Comprehensive Guide", url: "https://www.blockchain.com/en/resources/guides/nft-staking" },
-  { title: "NFT Staking Explained: How to Stake Your NFTs and Earn Rewards", url: "https://cointelegraph.com/explained/nft-staking-explained-how-to-stake-your-nfts-and-earn-rewards" },
-  { title: "NFT Staking Explained: Everything You Need to Know", url: "https://www.binance.com/en/blog/nft-staking-explained-everything-you-need-to-know-55819" },
-  { title: "NFT Staking: A Beginner's Guide to NFT Staking Platforms and How to Earn Passive Income", url: "https://www.kucoin.com/news/en/nft-staking-a-beginners-guide-to-nft-staking-platforms-and-how-to-earn-passive-income" },
-  { title: "NFT Staking: How to Stake NFTs & Earn Rewards", url: "https://academy.binance.com/en/articles/nft-staking" },
-  { title: "NFT Staking 101: A Step-by-Step Guide", url: "https://cryptopotato.com/nft-staking-101-a-step-by-step-guide/" },
-  { title: "NFT Staking: What Is It and How Does it Work?", url: "https://www.coingecko.com/en/learn/what-is-nft-staking" },
-  { title: "NFT Staking Guide: A Complete Guide to NFT Staking", url: "https://www.coinbureau.com/learn/nft-staking/" },
-  { title: "NFT Staking: A Comprehensive Guide", url: "https://medium.com/@NFT_Staking_Guide/nft-staking-a-comprehensive-guide-784259e56093" },
-  { title: "NFT Staking: How to Stake Your NFTs", url: "https://www.youtube.com/watch?v=3X13u50o35M" },
-  { title: "NFT Staking for Beginners: How to Stake Your NFTs and Earn Rewards", url: "https://www.youtube.com/watch?v=gU9p_w1yQ4A" }
-],
+    { title: "NFT Staking: A Comprehensive Guide", url: "https://www.blockchain.com/en/resources/guides/nft-staking" },
+    {
+      title: "NFT Staking Explained: How to Stake Your NFTs and Earn Rewards",
+      url: "https://cointelegraph.com/explained/nft-staking-explained-how-to-stake-your-nfts-and-earn-rewards",
+    },
+    {
+      title: "NFT Staking Explained: Everything You Need to Know",
+      url: "https://www.binance.com/en/blog/nft-staking-explained-everything-you-need-to-know-55819",
+    },
+    {
+      title: "NFT Staking: A Beginner's Guide to NFT Staking Platforms and How to Earn Passive Income",
+      url: "https://www.kucoin.com/news/en/nft-staking-a-beginners-guide-to-nft-staking-platforms-and-how-to-earn-passive-income",
+    },
+    {
+      title: "NFT Staking: How to Stake NFTs & Earn Rewards",
+      url: "https://academy.binance.com/en/articles/nft-staking",
+    },
+    {
+      title: "NFT Staking 101: A Step-by-Step Guide",
+      url: "https://cryptopotato.com/nft-staking-101-a-step-by-step-guide/",
+    },
+    {
+      title: "NFT Staking: What Is It and How Does it Work?",
+      url: "https://www.coingecko.com/en/learn/what-is-nft-staking",
+    },
+    {
+      title: "NFT Staking Guide: A Complete Guide to NFT Staking",
+      url: "https://www.coinbureau.com/learn/nft-staking/",
+    },
+    {
+      title: "NFT Staking: A Comprehensive Guide",
+      url: "https://medium.com/@NFT_Staking_Guide/nft-staking-a-comprehensive-guide-784259e56093",
+    },
+    { title: "NFT Staking: How to Stake Your NFTs", url: "https://www.youtube.com/watch?v=3X13u50o35M" },
+    {
+      title: "NFT Staking for Beginners: How to Stake Your NFTs and Earn Rewards",
+      url: "https://www.youtube.com/watch?v=gU9p_w1yQ4A",
+    },
+  ],
 }
 
 export default definition

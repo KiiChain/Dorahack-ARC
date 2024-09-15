@@ -100,7 +100,7 @@ export const FloatingNav = ({
 
         {/* Login */}
         <ConnectKitButton.Custom>
-          {({ isConnected, isConnecting, show, address, truncatedAddress }) => {
+          {({ isConnected, show, address }) => {
             return !isConnected ? (
               <button
                 onClick={show}

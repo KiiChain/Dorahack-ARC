@@ -1,14 +1,14 @@
 interface IContractFunction {
   function: string
   signature: string
-  params: FunctionParam[]
+  params: ITemporaryVariable[]
 }
 
 interface IContractEvent {
   function: string
   signature: string
-  params: FunctionParam[]
-  content: ContentItem[]
+  params: ITemporaryVariable[]
+  content: ITemporaryVariable[]
 }
 
 interface IContractExtension {
@@ -189,6 +189,7 @@ const definition: IContractDefinition = {
   ],
   extensions: [],
   license: "MIT",
+  resources: [],
 }
 
 export default definition

@@ -1,9 +1,11 @@
 import { toast } from "sonner"
+
+import { Directory } from "@/interface/custom/folder-tree/folder-tree"
+
 import { BrowserApiUtils } from "./browser-api"
 import { DateUtils } from "./date"
 import misc from "./misc"
 import Web3Utils from "./web3"
-import { Directory } from "@/interface/custom/folder-tree/folder-tree"
 
 const utils = {
   date: DateUtils,
@@ -27,30 +29,30 @@ export const downloadJson = (data: Record<string, unknown>, filename: string) =>
 }
 
 const removeLocalImports = (content: string): string => {
-  const importRegex = /^\s*import\s+["'](\.\/|\.\.\/)[^"']*["'];\s*$/gm;
-  return content.replace(importRegex, '');
-};
+  const importRegex = /^\s*import\s+["'](\.\/|\.\.\/)[^"']*["'];\s*$/gm
+  return content.replace(importRegex, "")
+}
 
 export const collectSolFiles = (rootDir: Directory): ISources => {
-  const sources: ISources = {};
+  const sources: ISources = {}
 
   const traverseDirectory = (directory: Directory) => {
     directory.files.forEach((file) => {
-      if (file.name.endsWith('.sol')) {
-        const v = removeLocalImports(file.content);
-        (sources[(`${file.name}` as keyof typeof sources)]) = { content: v };
+      if (file.name.endsWith(".sol")) {
+        const v = removeLocalImports(file.content)
+        sources[`${file.name}` as keyof typeof sources] = { content: v }
       }
-    });
+    })
 
     directory.dirs.forEach((subdir) => {
-      traverseDirectory(subdir);
-    });
-  };
+      traverseDirectory(subdir)
+    })
+  }
 
-  traverseDirectory(rootDir);
+  traverseDirectory(rootDir)
 
-  return sources;
-};
+  return sources
+}
 /**
  * Checks if a file with a given name already exists in a directory or its subdirectories.
  * @param dir - The directory to search within.
@@ -59,15 +61,15 @@ export const collectSolFiles = (rootDir: Directory): ISources => {
  */
 export const fileNameAlreadyExists = (dir: Directory, fileName: string): boolean => {
   // Check if any file in the current directory matches the given name
-  const fileExistsInCurrentDir = dir.files.some((file) => file.name === fileName);
-  
+  const fileExistsInCurrentDir = dir.files.some((file) => file.name === fileName)
+
   if (fileExistsInCurrentDir) {
-    return true;
+    return true
   }
 
   // Recursively check in each subdirectory
-  return dir.dirs.some((subDir) => fileNameAlreadyExists(subDir, fileName));
-};
+  return dir.dirs.some((subDir) => fileNameAlreadyExists(subDir, fileName))
+}
 
 /**
  * Checks if a directory with a given name already exists in a directory or its subdirectories.
@@ -77,12 +79,12 @@ export const fileNameAlreadyExists = (dir: Directory, fileName: string): boolean
  */
 export const directoryAlreadyExists = (dir: Directory, dirName: string): boolean => {
   // Check if any directory in the current directory matches the given name
-  const directoryExistsInCurrentDir = dir.dirs.some((sm)=>sm.dirs.some((subDir) => subDir.name === dirName));
-  
+  const directoryExistsInCurrentDir = dir.dirs.some((sm) => sm.dirs.some((subDir) => subDir.name === dirName))
+
   if (directoryExistsInCurrentDir) {
-    return true;
+    return true
   }
-return false;
-};
+  return false
+}
 
 export default utils

@@ -1,10 +1,9 @@
 "use client"
 
-import React, { CSSProperties, useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 
 import axios from "axios"
 import { ConnectKitButton } from "connectkit"
-import SyncLoader from "react-spinners/SyncLoader"
 import { toast } from "sonner"
 import { Abi } from "viem"
 import { useAccount, useDeployContract, useSwitchChain } from "wagmi"
@@ -24,11 +23,6 @@ interface IPresent {
   opcode: string
   sourceMap: string
   metadata: Record<string, unknown>
-}
-const override: CSSProperties = {
-  display: "block",
-  margin: "0 auto",
-  borderColor: "red",
 }
 
 const CompilePage = ({ sources }: { sources: ISources }) => {
@@ -326,7 +320,7 @@ export const Deployable = ({ compiled, sources }: { compiled: IPresent[]; source
           {/* Request Airdrop / Connect Wallet / Switch Chain / Deploy Button */}
           {!isConnected && (
             <ConnectKitButton.Custom>
-              {({ isConnected, show }) => (
+              {({ show }) => (
                 <Button
                   className="mt-4 w-full transform rounded bg-gradient-to-r from-green-400 to-blue-500 px-4 py-2 font-bold text-white shadow-lg"
                   onClick={show}

@@ -99,16 +99,16 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "Split - Documentation", url: "https://docs.split.io/docs/sdks/javascript" },
-  { title: "Split - API Reference", url: "https://docs.split.io/docs/api/sdk-api" },
-  { title: "Split - GitHub Repository", url: "https://github.com/split-io/javascript-sdk" },
-  { title: "Split - Blog", url: "https://split.io/blog/" },
-  { title: "Split - Community Forum", url: "https://community.split.io/" },
-  { title: "Split - YouTube Channel", url: "https://www.youtube.com/channel/UCt9tR6zX1zM6L-F1_Z1W0Sg" },
-  { title: "Split - Integrations", url: "https://split.io/integrations/" },
-  { title: "Split - Case Studies", url: "https://split.io/case-studies/" },
-  { title: "Split - Pricing", url: "https://split.io/pricing/" }
-],
+    { title: "Split - Documentation", url: "https://docs.split.io/docs/sdks/javascript" },
+    { title: "Split - API Reference", url: "https://docs.split.io/docs/api/sdk-api" },
+    { title: "Split - GitHub Repository", url: "https://github.com/split-io/javascript-sdk" },
+    { title: "Split - Blog", url: "https://split.io/blog/" },
+    { title: "Split - Community Forum", url: "https://community.split.io/" },
+    { title: "Split - YouTube Channel", url: "https://www.youtube.com/channel/UCt9tR6zX1zM6L-F1_Z1W0Sg" },
+    { title: "Split - Integrations", url: "https://split.io/integrations/" },
+    { title: "Split - Case Studies", url: "https://split.io/case-studies/" },
+    { title: "Split - Pricing", url: "https://split.io/pricing/" },
+  ],
 }
 
 export default definition

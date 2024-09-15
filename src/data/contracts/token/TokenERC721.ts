@@ -178,17 +178,35 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "ERC-721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
-  { title: "OpenZeppelin ERC721 Contract Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
-  { title: "ERC721: Non-Fungible Token Standard", url: "https://ethereum.org/en/developers/docs/standards/tokens/erc-721/" },
-  { title: "Building Your First NFT Collection - YouTube", url: "https://www.youtube.com/watch?v=fN1J49L7fJg" },
-  { title: "Solidity by Example: ERC721 Token", url: "https://solidity-by-example.org/erc721/" },
-  { title: "Create an NFT Marketplace with Hardhat and OpenZeppelin", url: "https://ethereum.org/en/developers/tutorials/create-an-nft-marketplace/" },
-  { title: "NFT Development: A Guide to Creating Your Own NFT Collection", url: "https://www.101blockchains.com/nft-development-guide/" },
-  { title: "NFT Smart Contract Development: A Comprehensive Guide", url: "https://www.dappuniversity.com/articles/nft-smart-contract-development-guide" },
-  { title: "NFT Smart Contract Security Best Practices", url: "https://www.consensys.net/blog/security-audit/nft-smart-contract-security-best-practices/" },
-  { title: "Understanding ERC721 & ERC1155 (Non-Fungible Token Standards)", url: "https://medium.com/@austintgriffith/understanding-erc721-erc1155-non-fungible-token-standards-816707192d6b" }
-],
+    { title: "ERC-721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
+    { title: "OpenZeppelin ERC721 Contract Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
+    {
+      title: "ERC721: Non-Fungible Token Standard",
+      url: "https://ethereum.org/en/developers/docs/standards/tokens/erc-721/",
+    },
+    { title: "Building Your First NFT Collection - YouTube", url: "https://www.youtube.com/watch?v=fN1J49L7fJg" },
+    { title: "Solidity by Example: ERC721 Token", url: "https://solidity-by-example.org/erc721/" },
+    {
+      title: "Create an NFT Marketplace with Hardhat and OpenZeppelin",
+      url: "https://ethereum.org/en/developers/tutorials/create-an-nft-marketplace/",
+    },
+    {
+      title: "NFT Development: A Guide to Creating Your Own NFT Collection",
+      url: "https://www.101blockchains.com/nft-development-guide/",
+    },
+    {
+      title: "NFT Smart Contract Development: A Comprehensive Guide",
+      url: "https://www.dappuniversity.com/articles/nft-smart-contract-development-guide",
+    },
+    {
+      title: "NFT Smart Contract Security Best Practices",
+      url: "https://www.consensys.net/blog/security-audit/nft-smart-contract-security-best-practices/",
+    },
+    {
+      title: "Understanding ERC721 & ERC1155 (Non-Fungible Token Standards)",
+      url: "https://medium.com/@austintgriffith/understanding-erc721-erc1155-non-fungible-token-standards-816707192d6b",
+    },
+  ],
 }
 
 export default definition

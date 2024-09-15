@@ -104,13 +104,13 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "OffersStorage Contract on Etherscan", url: "https://etherscan.io/address/<contract_address>" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "Ethereum.org Documentation", url: "https://ethereum.org/en/developers/docs/" },
-  { title: "OpenZeppelin Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/" },
-  { title: "Stack Overflow", url: "https://stackoverflow.com/questions/tagged/solidity" },
-  { title: "Ethereum Stack Exchange", url: "https://ethereum.stackexchange.com/questions/tagged/solidity" }
-],
+    { title: "OffersStorage Contract on Etherscan", url: "https://etherscan.io/address/<contract_address>" },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "Ethereum.org Documentation", url: "https://ethereum.org/en/developers/docs/" },
+    { title: "OpenZeppelin Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/" },
+    { title: "Stack Overflow", url: "https://stackoverflow.com/questions/tagged/solidity" },
+    { title: "Ethereum Stack Exchange", url: "https://ethereum.stackexchange.com/questions/tagged/solidity" },
+  ],
 }
 
 export default definition

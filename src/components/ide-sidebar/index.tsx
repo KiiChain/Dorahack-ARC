@@ -20,7 +20,10 @@ export const DesktopSidebar = ({ className, children, ...props }: React.Componen
   return (
     <>
       <motion.div
-        className={cn("hidden flex-shrink-0 bg-[#1e1e1e] border-r-1 border-black px-2 md:flex md:flex-col w-1/5 rounded-lg", className)}
+        className={cn(
+          "border-r-1 hidden w-1/5 flex-shrink-0 rounded-lg border-black bg-[#1e1e1e] px-2 md:flex md:flex-col",
+          className
+        )}
         // animate={{
         //   width: animate ? (open ? "300px" : "60px") : "300px",
         // }}
@@ -42,7 +45,6 @@ export const MobileSidebar = ({ className, children, ...props }: React.Component
         className={cn("flex h-10 w-full flex-row items-center justify-between bg-neutral-800 px-4 py-4 md:hidden")}
         {...props}
       >
-       
         <AnimatePresence>
           {open && (
             <motion.div

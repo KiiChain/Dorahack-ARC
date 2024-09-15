@@ -108,14 +108,20 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "ERC-721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
-  { title: "ERC-20 Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "OpenZeppelin ERC721 Contract", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
-  { title: "Burn Mechanism in Solidity", url: "https://ethereum.org/en/developers/docs/smart-contracts/token-standards/erc-20/#burning-tokens" },
-  { title: "Smart Contract Security Best Practices", url: "https://consensys.net/blog/smart-contract-security-best-practices/" },
-  { title: "Gas Optimization Techniques for Solidity", url: "https://solidity-by-example.com/gas-optimization/" }
-],
+    { title: "ERC-721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
+    { title: "ERC-20 Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "OpenZeppelin ERC721 Contract", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
+    {
+      title: "Burn Mechanism in Solidity",
+      url: "https://ethereum.org/en/developers/docs/smart-contracts/token-standards/erc-20/#burning-tokens",
+    },
+    {
+      title: "Smart Contract Security Best Practices",
+      url: "https://consensys.net/blog/smart-contract-security-best-practices/",
+    },
+    { title: "Gas Optimization Techniques for Solidity", url: "https://solidity-by-example.com/gas-optimization/" },
+  ],
 }
 
 export default definition

@@ -200,13 +200,16 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "OpenZeppelin ERC721 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
-  { title: "ERC721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
-  { title: "OpenSea Documentation", url: "https://docs.opensea.io/docs/smart-contracts" },
-  { title: "Ethereum.org Documentation", url: "https://ethereum.org/en/developers/docs/standards/tokens/" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "Smart Contract Security Best Practices", url: "https://consensys.net/diligence/smart-contract-security-audit-checklist/" }
-],
+    { title: "OpenZeppelin ERC721 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
+    { title: "ERC721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
+    { title: "OpenSea Documentation", url: "https://docs.opensea.io/docs/smart-contracts" },
+    { title: "Ethereum.org Documentation", url: "https://ethereum.org/en/developers/docs/standards/tokens/" },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    {
+      title: "Smart Contract Security Best Practices",
+      url: "https://consensys.net/diligence/smart-contract-security-audit-checklist/",
+    },
+  ],
 }
 
 export default definition

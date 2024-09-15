@@ -1,11 +1,12 @@
 "use client"
 
 import React, { useState } from "react"
+
+import { useCompletion } from "ai/react"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 
 import { PlaceholdersAndVanishInput } from "@/ui/search-input"
-import { useCompletion } from "ai/react"
 
 const AiChatPage = () => {
   const { completion, complete, isLoading } = useCompletion()

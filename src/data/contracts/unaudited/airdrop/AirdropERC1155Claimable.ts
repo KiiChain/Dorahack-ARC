@@ -246,12 +246,21 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "ERC1155 Standard", url: "https://eips.ethereum.org/EIPS/eip-1155" },
-  { title: "OpenZeppelin ERC1155 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc1155" },
-  { title: "Airdroping ERC1155 Tokens: A Guide", url: "https://medium.com/coinmonks/airdropping-erc1155-tokens-a-guide-f387a26d1d17" },
-  { title: "Building an ERC1155 Airdrop Contract: A Step-by-Step Guide", url: "https://blog.openzeppelin.com/building-an-erc1155-airdrop-contract/" },
-  { title: "Airdrop Contract Example", url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC1155/extensions/ERC1155Airdrop.sol" }
-],
+    { title: "ERC1155 Standard", url: "https://eips.ethereum.org/EIPS/eip-1155" },
+    { title: "OpenZeppelin ERC1155 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc1155" },
+    {
+      title: "Airdroping ERC1155 Tokens: A Guide",
+      url: "https://medium.com/coinmonks/airdropping-erc1155-tokens-a-guide-f387a26d1d17",
+    },
+    {
+      title: "Building an ERC1155 Airdrop Contract: A Step-by-Step Guide",
+      url: "https://blog.openzeppelin.com/building-an-erc1155-airdrop-contract/",
+    },
+    {
+      title: "Airdrop Contract Example",
+      url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC1155/extensions/ERC1155Airdrop.sol",
+    },
+  ],
 }
 
 export default definition

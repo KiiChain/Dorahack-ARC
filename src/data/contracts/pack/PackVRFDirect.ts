@@ -91,11 +91,11 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "PackVRFDirect Contract on Etherscan", url: "https://etherscan.io/address/<CONTRACT_ADDRESS>" },
-  { title: "Chainlink VRF Documentation", url: "https://docs.chain.link/docs/vrf/v2/introduction" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "OpenZeppelin Contracts Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/" }
-],
+    { title: "PackVRFDirect Contract on Etherscan", url: "https://etherscan.io/address/<CONTRACT_ADDRESS>" },
+    { title: "Chainlink VRF Documentation", url: "https://docs.chain.link/docs/vrf/v2/introduction" },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "OpenZeppelin Contracts Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/" },
+  ],
 }
 
 export default definition

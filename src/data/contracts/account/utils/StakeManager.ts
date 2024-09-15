@@ -150,13 +150,19 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "StakeManager Contract on Etherscan", url: "https://etherscan.io/address/<ContractAddress>" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "Ethereum.org Documentation", url: "https://ethereum.org/en/developers/docs/" },
-  { title: "Stack Overflow (Search for 'StakeManager Smart Contract')", url: "https://stackoverflow.com/questions/tagged/smart-contract" },
-  { title: "GitHub (Search for 'StakeManager Smart Contract')", url: "https://github.com/search?q=StakeManager+Smart+Contract" },
-  { title: "CryptoZombies", url: "https://cryptozombies.io/" }
-],
+    { title: "StakeManager Contract on Etherscan", url: "https://etherscan.io/address/<ContractAddress>" },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "Ethereum.org Documentation", url: "https://ethereum.org/en/developers/docs/" },
+    {
+      title: "Stack Overflow (Search for 'StakeManager Smart Contract')",
+      url: "https://stackoverflow.com/questions/tagged/smart-contract",
+    },
+    {
+      title: "GitHub (Search for 'StakeManager Smart Contract')",
+      url: "https://github.com/search?q=StakeManager+Smart+Contract",
+    },
+    { title: "CryptoZombies", url: "https://cryptozombies.io/" },
+  ],
 }
 
 export default definition

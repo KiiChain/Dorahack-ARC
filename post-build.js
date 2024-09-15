@@ -1,6 +1,5 @@
-const fs = require("fs")
-const path = require("path")
-
+import fs from "fs"
+import path from "path"
 // Define source and destination paths
 const sourceDir = path.join(__dirname, "openzeppelin")
 const destinationDir = path.join(__dirname, ".next", "openzeppelin")

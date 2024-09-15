@@ -85,14 +85,14 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "ERC721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
-  { title: "OpenZeppelin ERC721 Implementation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
-  { title: "Airdrop Basics", url: "https://www.investopedia.com/terms/a/airdrop.asp" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "Ethereum Development Tutorials", url: "https://ethereum.org/en/developers/" },
-  { title: "Web3.js Documentation", url: "https://web3js.readthedocs.io/en/v1.x/" },
-  { title: "Hardhat Framework", url: "https://hardhat.org/" }
-],
+    { title: "ERC721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
+    { title: "OpenZeppelin ERC721 Implementation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
+    { title: "Airdrop Basics", url: "https://www.investopedia.com/terms/a/airdrop.asp" },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "Ethereum Development Tutorials", url: "https://ethereum.org/en/developers/" },
+    { title: "Web3.js Documentation", url: "https://web3js.readthedocs.io/en/v1.x/" },
+    { title: "Hardhat Framework", url: "https://hardhat.org/" },
+  ],
 }
 
 export default definition

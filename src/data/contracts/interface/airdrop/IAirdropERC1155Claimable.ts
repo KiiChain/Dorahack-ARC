@@ -130,13 +130,16 @@ contract AirdropERC1155Claimable is ERC1155, AccessControl, IAirdropERC1155Claim
   license: "MIT",
 
   resources: [
-  { title: "ERC1155 Standard", url: "https://eips.ethereum.org/EIPS/eip-1155" },
-  { title: "OpenZeppelin ERC1155 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc1155" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "Airdrop Best Practices", url: "https://www.coindesk.com/learn/airdrop-best-practices/" },
-  { title: "Smart Contract Security Best Practices", url: "https://consensys.net/blog/smart-contract-security-best-practices/" },
-  { title: "Ethereum Development Resources", url: "https://ethereum.org/en/developers/" }
-],
+    { title: "ERC1155 Standard", url: "https://eips.ethereum.org/EIPS/eip-1155" },
+    { title: "OpenZeppelin ERC1155 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc1155" },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "Airdrop Best Practices", url: "https://www.coindesk.com/learn/airdrop-best-practices/" },
+    {
+      title: "Smart Contract Security Best Practices",
+      url: "https://consensys.net/blog/smart-contract-security-best-practices/",
+    },
+    { title: "Ethereum Development Resources", url: "https://ethereum.org/en/developers/" },
+  ],
 }
 
 export default definition

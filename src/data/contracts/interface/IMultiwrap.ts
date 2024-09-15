@@ -135,12 +135,27 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "IMultiwrap Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/api/utils/multicall/imultiwrap.html" },
-  { title: "Multicall Contract", url: "https://docs.openzeppelin.com/contracts/4.x/api/utils/multicall/multicall.html" },
-  { title: "OpenZeppelin Documentation: Multicall", url: "https://docs.openzeppelin.com/contracts/4.x/utils/multicall" },
-  { title: "Ethereum Improvement Proposal - 1167 (EIP-1167):  Standard for deploying contracts with create2", url: "https://eips.ethereum.org/EIPS/eip-1167" },
-  { title: "EIP-1167 and CREATE2 for Deterministic Deployments", url: "https://medium.com/coinmonks/eip-1167-and-create2-for-deterministic-deployments-1d37f0460f10" }
-],
+    {
+      title: "IMultiwrap Documentation",
+      url: "https://docs.openzeppelin.com/contracts/4.x/api/utils/multicall/imultiwrap.html",
+    },
+    {
+      title: "Multicall Contract",
+      url: "https://docs.openzeppelin.com/contracts/4.x/api/utils/multicall/multicall.html",
+    },
+    {
+      title: "OpenZeppelin Documentation: Multicall",
+      url: "https://docs.openzeppelin.com/contracts/4.x/utils/multicall",
+    },
+    {
+      title: "Ethereum Improvement Proposal - 1167 (EIP-1167):  Standard for deploying contracts with create2",
+      url: "https://eips.ethereum.org/EIPS/eip-1167",
+    },
+    {
+      title: "EIP-1167 and CREATE2 for Deterministic Deployments",
+      url: "https://medium.com/coinmonks/eip-1167-and-create2-for-deterministic-deployments-1d37f0460f10",
+    },
+  ],
 }
 
 export default definition

@@ -56,12 +56,15 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "ERC721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
-  { title: "OpenZeppelin ERC721 Contract Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
-  { title: "Airdrop Smart Contract Example (using ERC721)", url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721Airdrop.sol" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "Ethereum Development Resources", url: "https://ethereum.org/en/developers/" }
-],
+    { title: "ERC721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
+    { title: "OpenZeppelin ERC721 Contract Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
+    {
+      title: "Airdrop Smart Contract Example (using ERC721)",
+      url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721Airdrop.sol",
+    },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "Ethereum Development Resources", url: "https://ethereum.org/en/developers/" },
+  ],
 }
 
 export default definition

@@ -252,21 +252,21 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "ERC721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
-  { title: "OpenZeppelin ERC721 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
-  { title: "Drop Contract Overview", url: "https://docs.openzeppelin.com/contracts/4.x/drop" },
-  { title: "ERC20 Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
-  { title: "ERC1155 Standard", url: "https://eips.ethereum.org/EIPS/eip-1155" },
-  { title: "OpenZeppelin Merkle Proof Library", url: "https://docs.openzeppelin.com/contracts/4.x/merkle-proof" },
-  { title: "OpenZeppelin Access Control Library", url: "https://docs.openzeppelin.com/contracts/4.x/access-control" },
-  { title: "Ethereum.org - Smart Contracts", url: "https://ethereum.org/en/developers/docs/smart-contracts/" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "Remix IDE", url: "https://remix.ethereum.org/" },
-  { title: "Hardhat Documentation", url: "https://hardhat.org/guides/getting-started" },
-  { title: "Truffle Documentation", url: "https://www.trufflesuite.com/docs/truffle/" },
-  { title: "Ethers.js Documentation", url: "https://docs.ethers.io/v5/" },
-  { title: "Web3.js Documentation", url: "https://web3js.readthedocs.io/en/v1.x/" }
-],
+    { title: "ERC721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
+    { title: "OpenZeppelin ERC721 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
+    { title: "Drop Contract Overview", url: "https://docs.openzeppelin.com/contracts/4.x/drop" },
+    { title: "ERC20 Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
+    { title: "ERC1155 Standard", url: "https://eips.ethereum.org/EIPS/eip-1155" },
+    { title: "OpenZeppelin Merkle Proof Library", url: "https://docs.openzeppelin.com/contracts/4.x/merkle-proof" },
+    { title: "OpenZeppelin Access Control Library", url: "https://docs.openzeppelin.com/contracts/4.x/access-control" },
+    { title: "Ethereum.org - Smart Contracts", url: "https://ethereum.org/en/developers/docs/smart-contracts/" },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "Remix IDE", url: "https://remix.ethereum.org/" },
+    { title: "Hardhat Documentation", url: "https://hardhat.org/guides/getting-started" },
+    { title: "Truffle Documentation", url: "https://www.trufflesuite.com/docs/truffle/" },
+    { title: "Ethers.js Documentation", url: "https://docs.ethers.io/v5/" },
+    { title: "Web3.js Documentation", url: "https://web3js.readthedocs.io/en/v1.x/" },
+  ],
 }
 
 export default definition

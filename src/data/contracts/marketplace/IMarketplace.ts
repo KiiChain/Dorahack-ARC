@@ -125,15 +125,24 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "IMarketplace Contract Documentation (Hypothetical)", url: "https://docs.example.com/contracts/imarketplace" },
-  { title: "OpenZeppelin ERC721 Standard", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
-  { title: "OpenZeppelin ERC1155 Standard", url: "https://docs.openzeppelin.com/contracts/4.x/erc1155" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "Ethereum Developer Documentation", url: "https://ethereum.org/en/developers/" },
-  { title: "Building a Decentralized Marketplace on Ethereum (Article)", url: "https://medium.com/ethereum-dev/building-a-decentralized-marketplace-on-ethereum-746211b2e070" },
-  { title: "Decentralized Marketplace Architecture (Blog Post)", url: "https://blog.example.com/decentralized-marketplace-architecture" },
-  { title: "Decentralized Marketplaces: A Beginner's Guide (Video)", url: "https://www.youtube.com/watch?v=..." }
-],
+    {
+      title: "IMarketplace Contract Documentation (Hypothetical)",
+      url: "https://docs.example.com/contracts/imarketplace",
+    },
+    { title: "OpenZeppelin ERC721 Standard", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
+    { title: "OpenZeppelin ERC1155 Standard", url: "https://docs.openzeppelin.com/contracts/4.x/erc1155" },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "Ethereum Developer Documentation", url: "https://ethereum.org/en/developers/" },
+    {
+      title: "Building a Decentralized Marketplace on Ethereum (Article)",
+      url: "https://medium.com/ethereum-dev/building-a-decentralized-marketplace-on-ethereum-746211b2e070",
+    },
+    {
+      title: "Decentralized Marketplace Architecture (Blog Post)",
+      url: "https://blog.example.com/decentralized-marketplace-architecture",
+    },
+    { title: "Decentralized Marketplaces: A Beginner's Guide (Video)", url: "https://www.youtube.com/watch?v=..." },
+  ],
 }
 
 export default definition

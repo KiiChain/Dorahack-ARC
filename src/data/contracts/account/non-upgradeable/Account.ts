@@ -78,14 +78,26 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "Account Contract on Ethereum", url: "https://ethereum.org/en/developers/docs/accounts/" },
-  { title: "Creating and Managing Accounts with Web3.js", url: "https://web3js.readthedocs.io/en/v1.7.0/web3-eth-accounts.html" },
-  { title: "Understanding Ethereum Accounts", url: "https://medium.com/coinmonks/understanding-ethereum-accounts-a-beginners-guide-9b35e2827a22" },
-  { title: "Account Abstraction on Ethereum", url: "https://ethereum.org/en/developers/docs/accounts/account-abstraction/" },
-  { title: "Account Management in Solidity", url: "https://solidity-by-example.org/account-management/" },
-  { title: "Account Security Best Practices", url: "https://medium.com/coinmonks/ethereum-account-security-best-practices-8174807653b9" },
-  { title: "Ethereum Accounts: A Deep Dive", url: "https://www.youtube.com/watch?v=72_2_o0b9zE" }
-],
+    { title: "Account Contract on Ethereum", url: "https://ethereum.org/en/developers/docs/accounts/" },
+    {
+      title: "Creating and Managing Accounts with Web3.js",
+      url: "https://web3js.readthedocs.io/en/v1.7.0/web3-eth-accounts.html",
+    },
+    {
+      title: "Understanding Ethereum Accounts",
+      url: "https://medium.com/coinmonks/understanding-ethereum-accounts-a-beginners-guide-9b35e2827a22",
+    },
+    {
+      title: "Account Abstraction on Ethereum",
+      url: "https://ethereum.org/en/developers/docs/accounts/account-abstraction/",
+    },
+    { title: "Account Management in Solidity", url: "https://solidity-by-example.org/account-management/" },
+    {
+      title: "Account Security Best Practices",
+      url: "https://medium.com/coinmonks/ethereum-account-security-best-practices-8174807653b9",
+    },
+    { title: "Ethereum Accounts: A Deep Dive", url: "https://www.youtube.com/watch?v=72_2_o0b9zE" },
+  ],
 }
 
 export default definition

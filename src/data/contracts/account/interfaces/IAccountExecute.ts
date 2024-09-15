@@ -51,14 +51,29 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "IAccountExecute Interface on Etherscan", url: "https://etherscan.io/address/<CONTRACT_ADDRESS_HERE>#code" },
-  { title: "Account Abstraction - EIP-2938", url: "https://eips.ethereum.org/EIPS/eip-2938" },
-  { title: "Account Abstraction: The Future of Ethereum Accounts", url: "https://blog.openzeppelin.com/account-abstraction-the-future-of-ethereum-accounts/" },
-  { title: "Building Account Abstraction Smart Contracts", url: "https://docs.openzeppelin.com/contracts/4.x/account-abstraction" },
-  { title: "Account Abstraction with Entry Point and User Operation", url: "https://medium.com/starkware/account-abstraction-with-entry-point-and-user-operation-a-deep-dive-484b7db8479f" },
-  { title: "Understanding Account Abstraction", url: "https://ethereum.org/en/developers/docs/account-abstraction/" },
-  { title: "Account Abstraction: A New Era for Ethereum", url: "https://www.coindesk.com/tech/2023/04/18/account-abstraction-a-new-era-for-ethereum/" }
-],
+    {
+      title: "IAccountExecute Interface on Etherscan",
+      url: "https://etherscan.io/address/<CONTRACT_ADDRESS_HERE>#code",
+    },
+    { title: "Account Abstraction - EIP-2938", url: "https://eips.ethereum.org/EIPS/eip-2938" },
+    {
+      title: "Account Abstraction: The Future of Ethereum Accounts",
+      url: "https://blog.openzeppelin.com/account-abstraction-the-future-of-ethereum-accounts/",
+    },
+    {
+      title: "Building Account Abstraction Smart Contracts",
+      url: "https://docs.openzeppelin.com/contracts/4.x/account-abstraction",
+    },
+    {
+      title: "Account Abstraction with Entry Point and User Operation",
+      url: "https://medium.com/starkware/account-abstraction-with-entry-point-and-user-operation-a-deep-dive-484b7db8479f",
+    },
+    { title: "Understanding Account Abstraction", url: "https://ethereum.org/en/developers/docs/account-abstraction/" },
+    {
+      title: "Account Abstraction: A New Era for Ethereum",
+      url: "https://www.coindesk.com/tech/2023/04/18/account-abstraction-a-new-era-for-ethereum/",
+    },
+  ],
 }
 
 export default definition

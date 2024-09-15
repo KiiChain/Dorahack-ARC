@@ -1,7 +1,5 @@
 import React from "react"
 
-import { Meteors } from "@/ui/meteors"
-
 // Define the prop types for the component
 type MeteorsCardProps = {
   title: string
@@ -17,7 +15,6 @@ export const PluginCard: React.FC<MeteorsCardProps> = ({
   title,
   description,
   logo,
-  meteorsCount = 3, // default value
   //   gradientFrom = "from-blue-500",
   //   gradientTo = "to-teal-500",
   onExploreClick,

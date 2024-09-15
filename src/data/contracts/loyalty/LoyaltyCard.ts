@@ -110,15 +110,33 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "Loyalty Program Smart Contract Development", url: "https://medium.com/coinmonks/loyalty-program-smart-contract-development-17f720a0a9e2" },
-  { title: "Loyalty Program with Blockchain: Benefits and Best Practices", url: "https://www.101blockchains.com/loyalty-program-with-blockchain/" },
-  { title: "Building a Loyalty Program on Ethereum", url: "https://medium.com/coinmonks/building-a-loyalty-program-on-ethereum-e97329f9f497" },
-  { title: "Loyalty Programs: How To Design & Build Them on the Blockchain", url: "https://medium.com/hackernoon/loyalty-programs-how-to-design-build-them-on-the-blockchain-7a4e168a44a2" },
-  { title: "Loyalty Program using Blockchain: A Case Study", url: "https://www.linkedin.com/pulse/loyalty-program-using-blockchain-a-case-study-920823886/" },
-  { title: "Loyalty Points on the Blockchain: A Smart Contract Approach", url: "https://www.researchgate.net/publication/344428984_Loyalty_Points_on_the_Blockchain_A_Smart_Contract_Approach" },
-  { title: "ERC721 standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
-  { title: "OpenZeppelin ERC721 contract", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" }
-],
+    {
+      title: "Loyalty Program Smart Contract Development",
+      url: "https://medium.com/coinmonks/loyalty-program-smart-contract-development-17f720a0a9e2",
+    },
+    {
+      title: "Loyalty Program with Blockchain: Benefits and Best Practices",
+      url: "https://www.101blockchains.com/loyalty-program-with-blockchain/",
+    },
+    {
+      title: "Building a Loyalty Program on Ethereum",
+      url: "https://medium.com/coinmonks/building-a-loyalty-program-on-ethereum-e97329f9f497",
+    },
+    {
+      title: "Loyalty Programs: How To Design & Build Them on the Blockchain",
+      url: "https://medium.com/hackernoon/loyalty-programs-how-to-design-build-them-on-the-blockchain-7a4e168a44a2",
+    },
+    {
+      title: "Loyalty Program using Blockchain: A Case Study",
+      url: "https://www.linkedin.com/pulse/loyalty-program-using-blockchain-a-case-study-920823886/",
+    },
+    {
+      title: "Loyalty Points on the Blockchain: A Smart Contract Approach",
+      url: "https://www.researchgate.net/publication/344428984_Loyalty_Points_on_the_Blockchain_A_Smart_Contract_Approach",
+    },
+    { title: "ERC721 standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
+    { title: "OpenZeppelin ERC721 contract", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
+  ],
 }
 
 export default definition

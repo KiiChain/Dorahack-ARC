@@ -1,13 +1,13 @@
 import React, { ReactNode } from "react"
 
 import { AiFillFileText } from "react-icons/ai"
+import { FaMarkdown } from "react-icons/fa"
 import { FcFile, FcPicture } from "react-icons/fc"
+import { MdDeleteOutline, MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md"
 import { SiCss3, SiHtml5, SiJavascript, SiJson, SiTypescript } from "react-icons/si"
+import { SiSolidity } from "react-icons/si"
 import { VscNewFile, VscNewFolder } from "react-icons/vsc"
-import { MdDeleteOutline, MdKeyboardArrowRight, MdKeyboardArrowDown } from "react-icons/md"
 import { VscEdit } from "react-icons/vsc"
-import { SiSolidity } from "react-icons/si";
-import { FaMarkdown } from "react-icons/fa";
 export type ExtensionTypes =
   | "js"
   | "jsx"
@@ -47,9 +47,7 @@ function getIconHelper() {
   cache.set("delete", <MdDeleteOutline />)
   cache.set("edit", <VscEdit />)
   cache.set("sol", <SiSolidity />)
-  cache.set("md",<FaMarkdown/>)
-
-
+  cache.set("md", <FaMarkdown />)
 
   const func = (name: string, extension?: ExtensionTypes): ReactNode => {
     console.log("nem ", name)

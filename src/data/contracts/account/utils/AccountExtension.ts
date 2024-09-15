@@ -75,12 +75,21 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "Account Extension: A Powerful Tool for Decentralized Applications", url: "https://medium.com/ethereum-foundation/account-extension-a-powerful-tool-for-decentralized-applications-313547955c40" },
-  { title: "Account Abstraction and Account Extensions", url: "https://ethereum.org/en/developers/docs/account-abstraction/" },
-  { title: "EIP-4337: Account Abstraction", url: "https://eips.ethereum.org/EIPS/eip-4337" },
-  { title: "Account Extension Examples", url: "https://github.com/account-abstraction/account-abstraction/tree/main/examples/account-extensions" },
-  { title: "Account Extension Smart Contract Tutorial", url: "https://www.youtube.com/watch?v=your-video-id-here" }
-],
+    {
+      title: "Account Extension: A Powerful Tool for Decentralized Applications",
+      url: "https://medium.com/ethereum-foundation/account-extension-a-powerful-tool-for-decentralized-applications-313547955c40",
+    },
+    {
+      title: "Account Abstraction and Account Extensions",
+      url: "https://ethereum.org/en/developers/docs/account-abstraction/",
+    },
+    { title: "EIP-4337: Account Abstraction", url: "https://eips.ethereum.org/EIPS/eip-4337" },
+    {
+      title: "Account Extension Examples",
+      url: "https://github.com/account-abstraction/account-abstraction/tree/main/examples/account-extensions",
+    },
+    { title: "Account Extension Smart Contract Tutorial", url: "https://www.youtube.com/watch?v=your-video-id-here" },
+  ],
 }
 
 export default definition

@@ -136,16 +136,25 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "IMarketplace Interface", url: "https://docs.openzeppelin.com/contracts/4.x/api/contracts/interfaces/IMarketplace.sol" },
-  { title: "OpenZeppelin Contracts Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/" },
-  { title: "ERC-721 Non-Fungible Token Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
-  { title: "ERC-1155 Multi Token Standard", url: "https://eips.ethereum.org/EIPS/eip-1155" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "Ethereum Development Tutorials", url: "https://ethereum.org/en/developers/" },
-  { title: "CryptoZombies", url: "https://cryptozombies.io/" },
-  { title: "Build a Decentralized Marketplace on Ethereum", url: "https://medium.com/ethereum-dev/build-a-decentralized-marketplace-on-ethereum-d7eb5b47b66c" },
-  { title: "Smart Contracts for Decentralized Marketplaces", url: "https://medium.com/hackernoon/smart-contracts-for-decentralized-marketplaces-9a414d0e7076" }
-],
+    {
+      title: "IMarketplace Interface",
+      url: "https://docs.openzeppelin.com/contracts/4.x/api/contracts/interfaces/IMarketplace.sol",
+    },
+    { title: "OpenZeppelin Contracts Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/" },
+    { title: "ERC-721 Non-Fungible Token Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
+    { title: "ERC-1155 Multi Token Standard", url: "https://eips.ethereum.org/EIPS/eip-1155" },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "Ethereum Development Tutorials", url: "https://ethereum.org/en/developers/" },
+    { title: "CryptoZombies", url: "https://cryptozombies.io/" },
+    {
+      title: "Build a Decentralized Marketplace on Ethereum",
+      url: "https://medium.com/ethereum-dev/build-a-decentralized-marketplace-on-ethereum-d7eb5b47b66c",
+    },
+    {
+      title: "Smart Contracts for Decentralized Marketplaces",
+      url: "https://medium.com/hackernoon/smart-contracts-for-decentralized-marketplaces-9a414d0e7076",
+    },
+  ],
 }
 
 export default definition

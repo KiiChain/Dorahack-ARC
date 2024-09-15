@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react"
+
 import clsx from "clsx"
 import { PiWarningCircleFill } from "react-icons/pi"
 interface Props extends React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
@@ -73,7 +74,7 @@ const TextInput: React.FC<Props> = ({
   }, [textAreaRef.current, value])
 
   return (
-    <div className="relative flex flex-col items-start w-full">
+    <div className="relative flex w-full flex-col items-start">
       {!element || element === "input" ? (
         <input
           onKeyUp={onKeyUp}
@@ -84,7 +85,7 @@ const TextInput: React.FC<Props> = ({
           name={name}
           id={id}
           className={clsx(
-            ` w-full  border-[0.01px] border-[#505054] shadow-sm px-[12px] py-[9px] flex flex-row items-center focus:outline-none   ${className}`,
+            `flex w-full flex-row items-center border-[0.01px] border-[#505054] px-[12px] py-[9px] shadow-sm focus:outline-none ${className}`,
             errorMessage ? "border-accent-6 focus:border-accent-6 focus:shadow-accent-6" : ""
           )}
           onKeyPress={onKeyPress}
@@ -103,7 +104,7 @@ const TextInput: React.FC<Props> = ({
           name={name}
           id={id}
           className={clsx(
-            ` w-full  border-[0.01px] border-[#505054] px-[12px] py-[9px] flex flex-row items-center focus:outline-none  ${className}`,
+            `flex w-full flex-row items-center border-[0.01px] border-[#505054] px-[12px] py-[9px] focus:outline-none ${className}`,
             errorMessage ? "border-accent-6 focus:border-accent-6 focus:shadow-accent-6" : ""
           )}
           onKeyPress={onKeyPress}
@@ -115,7 +116,7 @@ const TextInput: React.FC<Props> = ({
         ></textarea>
       )}
       {errorMessage ? (
-        <span className="flex gap-1 p-1 text-accent-6 text-[12px] items-center">
+        <span className="flex items-center gap-1 p-1 text-[12px] text-accent-6">
           <PiWarningCircleFill />
           <div>{errorMessage}</div>
         </span>

@@ -288,13 +288,19 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "ERC1155 Standard", url: "https://eips.ethereum.org/EIPS/eip-1155" },
-  { title: "OpenZeppelin ERC1155 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc1155" },
-  { title: "ERC1155: Semi-Fungible Tokens", url: "https://medium.com/ethereum-hub/erc-1155-semi-fungible-tokens-a-comprehensive-guide-3c0d7d47a682" },
-  { title: "ERC1155: A Detailed Overview", url: "https://blog.openzeppelin.com/erc-1155-detailed-overview/" },
-  { title: "ERC1155 for Beginners: A Practical Guide", url: "https://www.youtube.com/watch?v=qU63T4Z72z4" },
-  { title: "Building a Decentralized Marketplace for ERC1155 Tokens", url: "https://medium.com/coinmonks/building-a-decentralized-marketplace-for-erc-1155-tokens-202b286a1a48" }
-],
+    { title: "ERC1155 Standard", url: "https://eips.ethereum.org/EIPS/eip-1155" },
+    { title: "OpenZeppelin ERC1155 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc1155" },
+    {
+      title: "ERC1155: Semi-Fungible Tokens",
+      url: "https://medium.com/ethereum-hub/erc-1155-semi-fungible-tokens-a-comprehensive-guide-3c0d7d47a682",
+    },
+    { title: "ERC1155: A Detailed Overview", url: "https://blog.openzeppelin.com/erc-1155-detailed-overview/" },
+    { title: "ERC1155 for Beginners: A Practical Guide", url: "https://www.youtube.com/watch?v=qU63T4Z72z4" },
+    {
+      title: "Building a Decentralized Marketplace for ERC1155 Tokens",
+      url: "https://medium.com/coinmonks/building-a-decentralized-marketplace-for-erc-1155-tokens-202b286a1a48",
+    },
+  ],
 }
 
 export default definition

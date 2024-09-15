@@ -95,13 +95,31 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "IAggregator Interface on Ethereum", url: "https://ethereum.org/en/developers/docs/standards/erc/erc-1497/" },
-  { title: "Chainlink Documentation: Aggregator Interface", url: "https://docs.chain.link/docs/chainlink-contracts/" },
-  { title: "Chainlink Aggregator Contract Example", url: "https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol" },
-  { title: "Using Chainlink Price Feeds in Solidity", url: "https://docs.chain.link/docs/ethereum-developer-tools/using-chainlink-price-feeds" },
-  { title: "Understanding Price Feeds and Oracles", url: "https://www.coindesk.com/learn/what-are-price-feeds-and-oracles/" },
-  { title: "Solidity Documentation: Interface", url: "https://docs.soliditylang.org/en/v0.8.17/contracts.html#interfaces" }
-],
+    {
+      title: "IAggregator Interface on Ethereum",
+      url: "https://ethereum.org/en/developers/docs/standards/erc/erc-1497/",
+    },
+    {
+      title: "Chainlink Documentation: Aggregator Interface",
+      url: "https://docs.chain.link/docs/chainlink-contracts/",
+    },
+    {
+      title: "Chainlink Aggregator Contract Example",
+      url: "https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol",
+    },
+    {
+      title: "Using Chainlink Price Feeds in Solidity",
+      url: "https://docs.chain.link/docs/ethereum-developer-tools/using-chainlink-price-feeds",
+    },
+    {
+      title: "Understanding Price Feeds and Oracles",
+      url: "https://www.coindesk.com/learn/what-are-price-feeds-and-oracles/",
+    },
+    {
+      title: "Solidity Documentation: Interface",
+      url: "https://docs.soliditylang.org/en/v0.8.17/contracts.html#interfaces",
+    },
+  ],
 }
 
 export default definition

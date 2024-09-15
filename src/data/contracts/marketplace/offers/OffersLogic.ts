@@ -152,15 +152,15 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "OffersLogic Smart Contract Documentation", url: "https://docs.offerslogic.com/smart-contract" },
-  { title: "OffersLogic Github Repository", url: "https://github.com/OffersLogic/smart-contract" },
-  { title: "OffersLogic Blog", url: "https://blog.offerslogic.com" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "Ethereum Documentation", url: "https://ethereum.org/en/developers/docs/" },
-  { title: "OpenZeppelin Documentation", url: "https://docs.openzeppelin.com/" },
-  { title: "OffersLogic Forum", url: "https://forum.offerslogic.com/" },
-  { title: "OffersLogic Discord Server", url: "https://discord.gg/offerslogic" }
-],
+    { title: "OffersLogic Smart Contract Documentation", url: "https://docs.offerslogic.com/smart-contract" },
+    { title: "OffersLogic Github Repository", url: "https://github.com/OffersLogic/smart-contract" },
+    { title: "OffersLogic Blog", url: "https://blog.offerslogic.com" },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "Ethereum Documentation", url: "https://ethereum.org/en/developers/docs/" },
+    { title: "OpenZeppelin Documentation", url: "https://docs.openzeppelin.com/" },
+    { title: "OffersLogic Forum", url: "https://forum.offerslogic.com/" },
+    { title: "OffersLogic Discord Server", url: "https://discord.gg/offerslogic" },
+  ],
 }
 
 export default definition

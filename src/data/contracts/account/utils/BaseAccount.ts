@@ -175,17 +175,26 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "OpenZeppelin Account Contract Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/access-control" },
-  { title: "Understanding Smart Contracts", url: "https://ethereum.org/en/developers/docs/smart-contracts/" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "Ethereum Yellow Paper", url: "https://ethereum.org/en/developers/docs/whitepapers/ethereum-yellow-paper/" },
-  { title: "Web3.js Documentation", url: "https://web3js.readthedocs.io/en/v1.x/" },
-  { title: "Ethers.js Documentation", url: "https://docs.ethers.io/v5/" },
-  { title: "Hardhat Documentation", url: "https://hardhat.org/getting-started/" },
-  { title: "Remix IDE", url: "https://remix-ide.readthedocs.io/en/latest/" },
-  { title: "Truffle Suite", url: "https://www.trufflesuite.com/docs/truffle/" },
-  { title: "OpenZeppelin Account Contract Examples", url: "https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts/access" }
-],
+    {
+      title: "OpenZeppelin Account Contract Documentation",
+      url: "https://docs.openzeppelin.com/contracts/4.x/access-control",
+    },
+    { title: "Understanding Smart Contracts", url: "https://ethereum.org/en/developers/docs/smart-contracts/" },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    {
+      title: "Ethereum Yellow Paper",
+      url: "https://ethereum.org/en/developers/docs/whitepapers/ethereum-yellow-paper/",
+    },
+    { title: "Web3.js Documentation", url: "https://web3js.readthedocs.io/en/v1.x/" },
+    { title: "Ethers.js Documentation", url: "https://docs.ethers.io/v5/" },
+    { title: "Hardhat Documentation", url: "https://hardhat.org/getting-started/" },
+    { title: "Remix IDE", url: "https://remix-ide.readthedocs.io/en/latest/" },
+    { title: "Truffle Suite", url: "https://www.trufflesuite.com/docs/truffle/" },
+    {
+      title: "OpenZeppelin Account Contract Examples",
+      url: "https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts/access",
+    },
+  ],
 }
 
 export default definition

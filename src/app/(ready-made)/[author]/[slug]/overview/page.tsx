@@ -1,7 +1,9 @@
 import React from "react"
 
 import { NextPage } from "next"
+
 import { contract as contractData } from "@/data"
+
 import { ContractOverviewView } from "@/views"
 
 interface ContractOverviewPageProps {

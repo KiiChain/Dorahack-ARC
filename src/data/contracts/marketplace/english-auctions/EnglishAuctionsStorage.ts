@@ -114,11 +114,11 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "EnglishAuctionsStorage Contract on Etherscan", url: "https://etherscan.io/address/<contract_address>" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "OpenZeppelin Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/" },
-  { title: "Ethereum.org Documentation", url: "https://ethereum.org/en/developers/docs/" }
-],
+    { title: "EnglishAuctionsStorage Contract on Etherscan", url: "https://etherscan.io/address/<contract_address>" },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "OpenZeppelin Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/" },
+    { title: "Ethereum.org Documentation", url: "https://ethereum.org/en/developers/docs/" },
+  ],
 }
 
 export default definition

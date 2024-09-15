@@ -89,16 +89,22 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "BurnToClaimDrop721Storage Contract on Etherscan", url: "https://etherscan.io/address/YOUR_CONTRACT_ADDRESS" },
-  { title: "OpenZeppelin ERC721 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "Ethereum.org Documentation", url: "https://ethereum.org/en/developers/docs/" },
-  { title: "Stack Overflow", url: "https://stackoverflow.com/questions/tagged/solidity" },
-  { title: "CryptoZombies Course", url: "https://cryptozombies.io/" },
-  { title: "Ethereum Developers Forum", url: "https://ethereum.org/en/developers/forum/" },
-  { title: "GitHub", url: "https://github.com/search?q=BurnToClaimDrop721Storage" },
-  { title: "YouTube Tutorials on Smart Contract Development", url: "https://www.youtube.com/results?search_query=smart+contract+development" }
-],
+    {
+      title: "BurnToClaimDrop721Storage Contract on Etherscan",
+      url: "https://etherscan.io/address/YOUR_CONTRACT_ADDRESS",
+    },
+    { title: "OpenZeppelin ERC721 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "Ethereum.org Documentation", url: "https://ethereum.org/en/developers/docs/" },
+    { title: "Stack Overflow", url: "https://stackoverflow.com/questions/tagged/solidity" },
+    { title: "CryptoZombies Course", url: "https://cryptozombies.io/" },
+    { title: "Ethereum Developers Forum", url: "https://ethereum.org/en/developers/forum/" },
+    { title: "GitHub", url: "https://github.com/search?q=BurnToClaimDrop721Storage" },
+    {
+      title: "YouTube Tutorials on Smart Contract Development",
+      url: "https://www.youtube.com/results?search_query=smart+contract+development",
+    },
+  ],
 }
 
 export default definition

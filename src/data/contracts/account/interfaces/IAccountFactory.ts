@@ -64,14 +64,26 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "IAccountFactory Interface Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/api/contracts/access/IAccountFactory.sol" },
-  { title: "Account Abstraction Overview", url: "https://ethereum.org/en/developers/docs/account-abstraction/" },
-  { title: "EIP-2938: Account Abstraction", url: "https://eips.ethereum.org/EIPS/eip-2938" },
-  { title: "Account Abstraction on Ethereum: A Beginner's Guide", url: "https://blog.alchemy.com/account-abstraction-ethereum/" },
-  { title: "Account Abstraction: The Future of Ethereum", url: "https://blog.consensys.net/account-abstraction-the-future-of-ethereum/" },
-  { title: "Account Abstraction and the Future of Ethereum", url: "https://www.youtube.com/watch?v=l7p97F-dK-g" },
-  { title: "Building with Account Abstraction: An Introduction", url: "https://blog.openzeppelin.com/building-with-account-abstraction-an-introduction/" }
-],
+    {
+      title: "IAccountFactory Interface Documentation",
+      url: "https://docs.openzeppelin.com/contracts/4.x/api/contracts/access/IAccountFactory.sol",
+    },
+    { title: "Account Abstraction Overview", url: "https://ethereum.org/en/developers/docs/account-abstraction/" },
+    { title: "EIP-2938: Account Abstraction", url: "https://eips.ethereum.org/EIPS/eip-2938" },
+    {
+      title: "Account Abstraction on Ethereum: A Beginner's Guide",
+      url: "https://blog.alchemy.com/account-abstraction-ethereum/",
+    },
+    {
+      title: "Account Abstraction: The Future of Ethereum",
+      url: "https://blog.consensys.net/account-abstraction-the-future-of-ethereum/",
+    },
+    { title: "Account Abstraction and the Future of Ethereum", url: "https://www.youtube.com/watch?v=l7p97F-dK-g" },
+    {
+      title: "Building with Account Abstraction: An Introduction",
+      url: "https://blog.openzeppelin.com/building-with-account-abstraction-an-introduction/",
+    },
+  ],
 }
 
 export default definition

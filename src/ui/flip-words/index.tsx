@@ -9,12 +9,12 @@ export const FlipWords = ({
   words,
   duration = 3000,
   className,
-  onAnimationComplete
+  onAnimationComplete,
 }: {
   words: string[]
   duration?: number
   className?: string
-  onAnimationComplete?: () => void;
+  onAnimationComplete?: () => void
 }) => {
   const [currentWord, setCurrentWord] = useState(words[0])
   const [isAnimating, setIsAnimating] = useState<boolean>(false)
@@ -34,9 +34,9 @@ export const FlipWords = ({
   }, [isAnimating, duration, startAnimation])
   useEffect(() => {
     if (!isAnimating && onAnimationComplete) {
-      onAnimationComplete(); // Notify when animation completes
+      onAnimationComplete() // Notify when animation completes
     }
-  }, [isAnimating, onAnimationComplete]);
+  }, [isAnimating, onAnimationComplete])
 
   return (
     <AnimatePresence
@@ -66,7 +66,10 @@ export const FlipWords = ({
           scale: 2,
           position: "absolute",
         }}
-        className={cn("relative z-10 inline-block px-2 text-left text-neutral-900 dark:text-neutral-100 mx-auto", className)}
+        className={cn(
+          "relative z-10 mx-auto inline-block px-2 text-left text-neutral-900 dark:text-neutral-100",
+          className
+        )}
         key={currentWord}
       >
         {/* edit suggested by Sajal: https://x.com/DewanganSajal */}

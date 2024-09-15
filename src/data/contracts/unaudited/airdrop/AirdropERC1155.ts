@@ -218,14 +218,26 @@ contract AirdropERC1155 is Ownable {
 `,
 
   resources: [
-  { title: "ERC1155 Standard", url: "https://eips.ethereum.org/EIPS/eip-1155" },
-  { title: "OpenZeppelin ERC1155 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc1155" },
-  { title: "Airdrop Contract Example (OpenZeppelin)", url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC1155/utils/ERC1155Holder.sol" },
-  { title: "Airdrop Tutorial (Moralis)", url: "https://moralis.io/blog/how-to-create-an-airdrop-smart-contract-in-solidity/" },
-  { title: "Airdrop Contract Example (Hardhat)", url: "https://www.youtube.com/watch?v=m2u6F5q9d9o" },
-  { title: "Understanding Airdrops and their Implementation", url: "https://medium.com/coinmonks/understanding-airdrops-and-their-implementation-8428513b0987" },
-  { title: "Airdrop Smart Contract Security Considerations", url: "https://blog.openzeppelin.com/airdrop-smart-contract-security-considerations/" }
-],
+    { title: "ERC1155 Standard", url: "https://eips.ethereum.org/EIPS/eip-1155" },
+    { title: "OpenZeppelin ERC1155 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc1155" },
+    {
+      title: "Airdrop Contract Example (OpenZeppelin)",
+      url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC1155/utils/ERC1155Holder.sol",
+    },
+    {
+      title: "Airdrop Tutorial (Moralis)",
+      url: "https://moralis.io/blog/how-to-create-an-airdrop-smart-contract-in-solidity/",
+    },
+    { title: "Airdrop Contract Example (Hardhat)", url: "https://www.youtube.com/watch?v=m2u6F5q9d9o" },
+    {
+      title: "Understanding Airdrops and their Implementation",
+      url: "https://medium.com/coinmonks/understanding-airdrops-and-their-implementation-8428513b0987",
+    },
+    {
+      title: "Airdrop Smart Contract Security Considerations",
+      url: "https://blog.openzeppelin.com/airdrop-smart-contract-security-considerations/",
+    },
+  ],
 }
 
 export default definition

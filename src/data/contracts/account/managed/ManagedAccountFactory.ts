@@ -135,12 +135,21 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "OpenZeppelin Account Factory Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/account-factory" },
-  { title: "OpenZeppelin Accounts", url: "https://docs.openzeppelin.com/contracts/4.x/accounts" },
-  { title: "OpenZeppelin Accounts (GitHub)", url: "https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts/access" },
-  { title: "Ethereum Accounts and the Account Abstraction Concept", url: "https://ethereum.org/en/developers/docs/accounts/" },
-  { title: "EIP-2938: Account Abstraction", url: "https://eips.ethereum.org/EIPS/eip-2938" }
-],
+    {
+      title: "OpenZeppelin Account Factory Documentation",
+      url: "https://docs.openzeppelin.com/contracts/4.x/account-factory",
+    },
+    { title: "OpenZeppelin Accounts", url: "https://docs.openzeppelin.com/contracts/4.x/accounts" },
+    {
+      title: "OpenZeppelin Accounts (GitHub)",
+      url: "https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts/access",
+    },
+    {
+      title: "Ethereum Accounts and the Account Abstraction Concept",
+      url: "https://ethereum.org/en/developers/docs/accounts/",
+    },
+    { title: "EIP-2938: Account Abstraction", url: "https://eips.ethereum.org/EIPS/eip-2938" },
+  ],
 }
 
 export default definition

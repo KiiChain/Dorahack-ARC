@@ -120,14 +120,14 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "TokenBoundAccount (TBA) Whitepaper", url: "https://www.tokenbound.account/TBA-Whitepaper.pdf" },
-  { title: "TokenBoundAccount (TBA) Website", url: "https://www.tokenbound.account/" },
-  { title: "TokenBoundAccount (TBA) GitHub Repository", url: "https://github.com/tokenbound/tba-contracts" },
-  { title: "TokenBoundAccount (TBA) Forum", url: "https://forum.tokenbound.account/" },
-  { title: "TokenBoundAccount (TBA) Documentation", url: "https://docs.tokenbound.account/" },
-  { title: "ERC-725 Standard", url: "https://eips.ethereum.org/EIPS/eip-725" },
-  { title: "ERC-735 Standard", url: "https://eips.ethereum.org/EIPS/eip-735" }
-],
+    { title: "TokenBoundAccount (TBA) Whitepaper", url: "https://www.tokenbound.account/TBA-Whitepaper.pdf" },
+    { title: "TokenBoundAccount (TBA) Website", url: "https://www.tokenbound.account/" },
+    { title: "TokenBoundAccount (TBA) GitHub Repository", url: "https://github.com/tokenbound/tba-contracts" },
+    { title: "TokenBoundAccount (TBA) Forum", url: "https://forum.tokenbound.account/" },
+    { title: "TokenBoundAccount (TBA) Documentation", url: "https://docs.tokenbound.account/" },
+    { title: "ERC-725 Standard", url: "https://eips.ethereum.org/EIPS/eip-725" },
+    { title: "ERC-735 Standard", url: "https://eips.ethereum.org/EIPS/eip-735" },
+  ],
 }
 
 export default definition

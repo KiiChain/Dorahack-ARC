@@ -82,12 +82,24 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "OpenZeppelin AccountFactory Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/account-factory" },
-  { title: "OpenZeppelin Account Contract Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/account" },
-  { title: "Creating and Managing Accounts with OpenZeppelin", url: "https://blog.openzeppelin.com/creating-and-managing-accounts-with-openzeppelin/" },
-  { title: "Using a Smart Contract as an Account", url: "https://ethereum.org/en/developers/docs/smart-contracts/account-abstraction/" },
-  { title: "EIP-2981: NFT Royalty Standard", url: "https://eips.ethereum.org/EIPS/eip-2981" }
-],
+    {
+      title: "OpenZeppelin AccountFactory Documentation",
+      url: "https://docs.openzeppelin.com/contracts/4.x/account-factory",
+    },
+    {
+      title: "OpenZeppelin Account Contract Documentation",
+      url: "https://docs.openzeppelin.com/contracts/4.x/account",
+    },
+    {
+      title: "Creating and Managing Accounts with OpenZeppelin",
+      url: "https://blog.openzeppelin.com/creating-and-managing-accounts-with-openzeppelin/",
+    },
+    {
+      title: "Using a Smart Contract as an Account",
+      url: "https://ethereum.org/en/developers/docs/smart-contracts/account-abstraction/",
+    },
+    { title: "EIP-2981: NFT Royalty Standard", url: "https://eips.ethereum.org/EIPS/eip-2981" },
+  ],
 }
 
 export default definition

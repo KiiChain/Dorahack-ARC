@@ -81,13 +81,13 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "EIP-712:  Draft: Standard for Signature Verification", url: "https://eips.ethereum.org/EIPS/eip-712" },
-  { title: "OpenZeppelin EIP-712 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/eip-712" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "Ethereum.org: Token Standards", url: "https://ethereum.org/en/developers/docs/standards/tokens/" },
-  { title: "Web3.js Documentation", url: "https://web3js.readthedocs.io/en/v1.x/" },
-  { title: "Ethers.js Documentation", url: "https://docs.ethers.io/v5/" }
-],
+    { title: "EIP-712:  Draft: Standard for Signature Verification", url: "https://eips.ethereum.org/EIPS/eip-712" },
+    { title: "OpenZeppelin EIP-712 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/eip-712" },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "Ethereum.org: Token Standards", url: "https://ethereum.org/en/developers/docs/standards/tokens/" },
+    { title: "Web3.js Documentation", url: "https://web3js.readthedocs.io/en/v1.x/" },
+    { title: "Ethers.js Documentation", url: "https://docs.ethers.io/v5/" },
+  ],
 }
 
 export default definition

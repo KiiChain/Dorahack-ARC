@@ -118,14 +118,29 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "PackedUserOperation: A Deep Dive", url: "https://blog.alchemy.com/packeduseroperation-deep-dive/" },
-  { title: "StarkNet Documentation: User Operations", url: "https://starknet.io/docs/starknet-protocol/user_operations.html" },
-  { title: "StarkNet User Operations: A Technical Overview", url: "https://www.youtube.com/watch?v=XvH39M8uM6c" },
-  { title: "StarkNet User Operations: How They Work and Why They Are Important", url: "https://medium.com/starknet/starknet-user-operations-how-they-work-and-why-they-are-important-54e73a9a603d" },
-  { title: "StarkNet Developer Portal: User Operations", url: "https://starknet.io/docs/developer-guides/starknet-operations.html" },
-  { title: "StarkNet: User Operations and Bundles", url: "https://starkware.co/starknet/user-operations-and-bundles/" },
-  { title: "StarkNet User Operations in Action", url: "https://github.com/starkware-industries/starknet-examples/tree/master/user_operations" }
-],
+    { title: "PackedUserOperation: A Deep Dive", url: "https://blog.alchemy.com/packeduseroperation-deep-dive/" },
+    {
+      title: "StarkNet Documentation: User Operations",
+      url: "https://starknet.io/docs/starknet-protocol/user_operations.html",
+    },
+    { title: "StarkNet User Operations: A Technical Overview", url: "https://www.youtube.com/watch?v=XvH39M8uM6c" },
+    {
+      title: "StarkNet User Operations: How They Work and Why They Are Important",
+      url: "https://medium.com/starknet/starknet-user-operations-how-they-work-and-why-they-are-important-54e73a9a603d",
+    },
+    {
+      title: "StarkNet Developer Portal: User Operations",
+      url: "https://starknet.io/docs/developer-guides/starknet-operations.html",
+    },
+    {
+      title: "StarkNet: User Operations and Bundles",
+      url: "https://starkware.co/starknet/user-operations-and-bundles/",
+    },
+    {
+      title: "StarkNet User Operations in Action",
+      url: "https://github.com/starkware-industries/starknet-examples/tree/master/user_operations",
+    },
+  ],
 }
 
 export default definition

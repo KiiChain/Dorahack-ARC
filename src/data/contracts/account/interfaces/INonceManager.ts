@@ -47,12 +47,21 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "INonceManager Interface Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/api/contracts/utils/cryptography/INonceManager.sol" },
-  { title: "OpenZeppelin Nonces Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/security/nonces" },
-  { title: "Understanding Nonces in Ethereum", url: "https://ethereum.org/en/developers/docs/gas/nonces/" },
-  { title: "Implementing Nonce-based Authentication in Solidity", url: "https://medium.com/@benjamin.dillon/implementing-nonce-based-authentication-in-solidity-221668a4e0fc" },
-  { title: "Nonce Management in Smart Contracts - Best Practices", url: "https://blog.openzeppelin.com/nonce-management-in-smart-contracts-best-practices/" }
-],
+    {
+      title: "INonceManager Interface Documentation",
+      url: "https://docs.openzeppelin.com/contracts/4.x/api/contracts/utils/cryptography/INonceManager.sol",
+    },
+    { title: "OpenZeppelin Nonces Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/security/nonces" },
+    { title: "Understanding Nonces in Ethereum", url: "https://ethereum.org/en/developers/docs/gas/nonces/" },
+    {
+      title: "Implementing Nonce-based Authentication in Solidity",
+      url: "https://medium.com/@benjamin.dillon/implementing-nonce-based-authentication-in-solidity-221668a4e0fc",
+    },
+    {
+      title: "Nonce Management in Smart Contracts - Best Practices",
+      url: "https://blog.openzeppelin.com/nonce-management-in-smart-contracts-best-practices/",
+    },
+  ],
 }
 
 export default definition

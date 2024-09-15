@@ -76,17 +76,32 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "Airdrop Smart Contract Tutorial", url: "https://www.youtube.com/watch?v=w8B3i7F2r6M" },
-  { title: "Building an Airdrop Smart Contract in Solidity", url: "https://blog.openzeppelin.com/building-an-airdrop-smart-contract-in-solidity/" },
-  { title: "ERC20 Token Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
-  { title: "OpenZeppelin ERC20 Contract", url: "https://docs.openzeppelin.com/contracts/4.x/api/token/ERC20" },
-  { title: "How to Create an Airdrop Smart Contract", url: "https://medium.com/coinmonks/how-to-create-an-airdrop-smart-contract-7b5043362616" },
-  { title: "Solidity Tutorial: Airdrop Smart Contract", url: "https://www.youtube.com/watch?v=y8Zt_Z83D5Y" },
-  { title: "Airdrop Smart Contract: A Comprehensive Guide", url: "https://www.blockchain-council.org/blockchain/airdrop-smart-contract-a-comprehensive-guide/" },
-  { title: "Building an Airdrop Contract with Hardhat", url: "https://www.youtube.com/watch?v=0P3_M_k2z0A" },
-  { title: "Airdrop Smart Contracts: A Beginner's Guide", url: "https://www.tutorialspoint.com/airdrop-smart-contracts-a-beginners-guide" },
-  { title: "How to Create an Airdrop Smart Contract on Ethereum", url: "https://www.ethereum.org/en/developers/tutorials/how-to-create-an-airdrop-smart-contract/" }
-],
+    { title: "Airdrop Smart Contract Tutorial", url: "https://www.youtube.com/watch?v=w8B3i7F2r6M" },
+    {
+      title: "Building an Airdrop Smart Contract in Solidity",
+      url: "https://blog.openzeppelin.com/building-an-airdrop-smart-contract-in-solidity/",
+    },
+    { title: "ERC20 Token Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
+    { title: "OpenZeppelin ERC20 Contract", url: "https://docs.openzeppelin.com/contracts/4.x/api/token/ERC20" },
+    {
+      title: "How to Create an Airdrop Smart Contract",
+      url: "https://medium.com/coinmonks/how-to-create-an-airdrop-smart-contract-7b5043362616",
+    },
+    { title: "Solidity Tutorial: Airdrop Smart Contract", url: "https://www.youtube.com/watch?v=y8Zt_Z83D5Y" },
+    {
+      title: "Airdrop Smart Contract: A Comprehensive Guide",
+      url: "https://www.blockchain-council.org/blockchain/airdrop-smart-contract-a-comprehensive-guide/",
+    },
+    { title: "Building an Airdrop Contract with Hardhat", url: "https://www.youtube.com/watch?v=0P3_M_k2z0A" },
+    {
+      title: "Airdrop Smart Contracts: A Beginner's Guide",
+      url: "https://www.tutorialspoint.com/airdrop-smart-contracts-a-beginners-guide",
+    },
+    {
+      title: "How to Create an Airdrop Smart Contract on Ethereum",
+      url: "https://www.ethereum.org/en/developers/tutorials/how-to-create-an-airdrop-smart-contract/",
+    },
+  ],
 }
 
 export default definition

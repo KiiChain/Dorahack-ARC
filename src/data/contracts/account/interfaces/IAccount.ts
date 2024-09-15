@@ -48,14 +48,17 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "OpenZeppelin IAccount Interface", url: "https://docs.openzeppelin.com/contracts/4.x/api/interfaces/IAccount" },
-  { title: "EIP-1271: Standard for Signature Verification", url: "https://eips.ethereum.org/EIPS/eip-1271" },
-  { title: "Ethereum Accounts and Key Management", url: "https://ethereum.org/en/developers/docs/accounts/" },
-  { title: "Gnosis Safe: Multi-Signature Wallets", url: "https://safe.global/" },
-  { title: "Argent: Non-Custodial Wallet", url: "https://www.argent.xyz/" },
-  { title: "EIP-712: Typed Data V4", url: "https://eips.ethereum.org/EIPS/eip-712" },
-  { title: "EIP-2771: Meta-Transactions over ERC2771", url: "https://eips.ethereum.org/EIPS/eip-2771" }
-],
+    {
+      title: "OpenZeppelin IAccount Interface",
+      url: "https://docs.openzeppelin.com/contracts/4.x/api/interfaces/IAccount",
+    },
+    { title: "EIP-1271: Standard for Signature Verification", url: "https://eips.ethereum.org/EIPS/eip-1271" },
+    { title: "Ethereum Accounts and Key Management", url: "https://ethereum.org/en/developers/docs/accounts/" },
+    { title: "Gnosis Safe: Multi-Signature Wallets", url: "https://safe.global/" },
+    { title: "Argent: Non-Custodial Wallet", url: "https://www.argent.xyz/" },
+    { title: "EIP-712: Typed Data V4", url: "https://eips.ethereum.org/EIPS/eip-712" },
+    { title: "EIP-2771: Meta-Transactions over ERC2771", url: "https://eips.ethereum.org/EIPS/eip-2771" },
+  ],
 }
 
 export default definition

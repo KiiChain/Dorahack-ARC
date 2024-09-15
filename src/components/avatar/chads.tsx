@@ -12,7 +12,7 @@ interface ChadsProps extends React.ImgHTMLAttributes<HTMLImageElement> {
 const LIGHTNESS = 0
 const SATURATION = 70
 
-const Chads: React.FC<ChadsProps> = ({ seed, className, width, height, placeholder, ...props }) => {
+const Chads: React.FC<ChadsProps> = ({ seed, className, width, height, ...props }) => {
   const svgURI = useMemo(
     () => "data:image/svg+xml;utf8," + encodeURIComponent(minidenticon(seed ?? "user", SATURATION, LIGHTNESS)),
     [seed]

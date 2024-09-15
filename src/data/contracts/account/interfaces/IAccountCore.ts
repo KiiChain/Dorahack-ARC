@@ -270,12 +270,21 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "IAccountCore Interface on Etherscan", url: "https://etherscan.io/address/<IAccountCore_contract_address>#code" },
-  { title: "IAccountCore Interface Documentation (if available)", url: "<link_to_documentation>" },
-  { title: "Ethereum Account Abstraction (EAA) Documentation", url: "https://ethereum.org/en/developers/docs/account-abstraction/" },
-  { title: "EIP-4337: Account Abstraction", url: "https://eips.ethereum.org/EIPS/eip-4337" },
-  { title: "Smart Contract Security Best Practices", url: "https://consensys.net/blog/smart-contract-security-audit-best-practices/" }
-],
+    {
+      title: "IAccountCore Interface on Etherscan",
+      url: "https://etherscan.io/address/<IAccountCore_contract_address>#code",
+    },
+    { title: "IAccountCore Interface Documentation (if available)", url: "<link_to_documentation>" },
+    {
+      title: "Ethereum Account Abstraction (EAA) Documentation",
+      url: "https://ethereum.org/en/developers/docs/account-abstraction/",
+    },
+    { title: "EIP-4337: Account Abstraction", url: "https://eips.ethereum.org/EIPS/eip-4337" },
+    {
+      title: "Smart Contract Security Best Practices",
+      url: "https://consensys.net/blog/smart-contract-security-audit-best-practices/",
+    },
+  ],
 }
 
 export default definition

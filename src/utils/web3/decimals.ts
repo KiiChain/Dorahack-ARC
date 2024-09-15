@@ -1,5 +1,3 @@
-export interface IWeb3DecimalUtils {}
-
 class Web3DecimalUtils {
   /**
    * Insert a decimal point into string of digits at a specified index.

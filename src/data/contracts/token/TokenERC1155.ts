@@ -169,15 +169,24 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "ERC1155 Standard", url: "https://eips.ethereum.org/EIPS/eip-1155" },
-  { title: "OpenZeppelin ERC1155 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc1155" },
-  { title: "ERC1155 Tutorial by OpenZeppelin", url: "https://docs.openzeppelin.com/contracts/4.x/tutorials/erc1155" },
-  { title: "ERC1155.js Library", url: "https://github.com/enjin/erc1155.js" },
-  { title: "ERC1155 Contract Example (Solidity)", url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC1155/ERC1155.sol" },
-  { title: "ERC1155: A Detailed Guide to the Standard", url: "https://medium.com/coinmonks/erc-1155-a-detailed-guide-to-the-standard-202f5c0247f9" },
-  { title: "ERC1155: The Future of NFTs?", url: "https://www.coindesk.com/markets/erc-1155-the-future-of-nfts" },
-  { title: "Building Your Own ERC1155 Token: A Step-by-Step Guide", url: "https://medium.com/coinmonks/building-your-own-erc-1155-token-a-step-by-step-guide-11e7415e97c3" }
-],
+    { title: "ERC1155 Standard", url: "https://eips.ethereum.org/EIPS/eip-1155" },
+    { title: "OpenZeppelin ERC1155 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc1155" },
+    { title: "ERC1155 Tutorial by OpenZeppelin", url: "https://docs.openzeppelin.com/contracts/4.x/tutorials/erc1155" },
+    { title: "ERC1155.js Library", url: "https://github.com/enjin/erc1155.js" },
+    {
+      title: "ERC1155 Contract Example (Solidity)",
+      url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC1155/ERC1155.sol",
+    },
+    {
+      title: "ERC1155: A Detailed Guide to the Standard",
+      url: "https://medium.com/coinmonks/erc-1155-a-detailed-guide-to-the-standard-202f5c0247f9",
+    },
+    { title: "ERC1155: The Future of NFTs?", url: "https://www.coindesk.com/markets/erc-1155-the-future-of-nfts" },
+    {
+      title: "Building Your Own ERC1155 Token: A Step-by-Step Guide",
+      url: "https://medium.com/coinmonks/building-your-own-erc-1155-token-a-step-by-step-guide-11e7415e97c3",
+    },
+  ],
 }
 
 export default definition

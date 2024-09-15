@@ -133,21 +133,21 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "EvolvingNFT Documentation", url: "https://evolvingnft.com/docs" },
-  { title: "EvolvingNFT Whitepaper", url: "https://evolvingnft.com/whitepaper" },
-  { title: "EvolvingNFT Blog", url: "https://evolvingnft.com/blog" },
-  { title: "EvolvingNFT on Medium", url: "https://medium.com/@evolvingnft" },
-  { title: "EvolvingNFT on GitHub", url: "https://github.com/evolvingnft" },
-  { title: "EvolvingNFT on Discord", url: "https://discord.gg/evolvingnft" },
-  { title: "ERC721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
-  { title: "ERC1155 Standard", url: "https://eips.ethereum.org/EIPS/eip-1155" },
-  { title: "OpenZeppelin ERC721 Implementation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
-  { title: "OpenZeppelin ERC1155 Implementation", url: "https://docs.openzeppelin.com/contracts/4.x/erc1155" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org" },
-  { title: "Hardhat Documentation", url: "https://hardhat.org/guides" },
-  { title: "Truffle Documentation", url: "https://www.trufflesuite.com/docs/truffle" },
-  { title: "Ganache Documentation", url: "https://trufflesuite.com/ganache" }
-],
+    { title: "EvolvingNFT Documentation", url: "https://evolvingnft.com/docs" },
+    { title: "EvolvingNFT Whitepaper", url: "https://evolvingnft.com/whitepaper" },
+    { title: "EvolvingNFT Blog", url: "https://evolvingnft.com/blog" },
+    { title: "EvolvingNFT on Medium", url: "https://medium.com/@evolvingnft" },
+    { title: "EvolvingNFT on GitHub", url: "https://github.com/evolvingnft" },
+    { title: "EvolvingNFT on Discord", url: "https://discord.gg/evolvingnft" },
+    { title: "ERC721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
+    { title: "ERC1155 Standard", url: "https://eips.ethereum.org/EIPS/eip-1155" },
+    { title: "OpenZeppelin ERC721 Implementation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
+    { title: "OpenZeppelin ERC1155 Implementation", url: "https://docs.openzeppelin.com/contracts/4.x/erc1155" },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org" },
+    { title: "Hardhat Documentation", url: "https://hardhat.org/guides" },
+    { title: "Truffle Documentation", url: "https://www.trufflesuite.com/docs/truffle" },
+    { title: "Ganache Documentation", url: "https://trufflesuite.com/ganache" },
+  ],
 }
 
 export default definition

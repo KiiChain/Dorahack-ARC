@@ -144,18 +144,18 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "ERC20 Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
-  { title: "OpenZeppelin ERC20 Implementation", url: "https://docs.openzeppelin.com/contracts/4.x/erc20" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "Ethereum.org - Smart Contracts", url: "https://ethereum.org/en/developers/docs/smart-contracts/" },
-  { title: "CryptoZombies - Learn Solidity", url: "https://cryptozombies.io/" },
-  { title: "Remix IDE", url: "https://remix-ide.com/" },
-  { title: "Truffle Framework", url: "https://www.trufflesuite.com/" },
-  { title: "Hardhat Framework", url: "https://hardhat.org/" },
-  { title: "Ethers.js Library", url: "https://docs.ethers.io/v5/" },
-  { title: "Web3.js Library", url: "https://web3js.readthedocs.io/en/v1.x/" },
-  { title: "OpenZeppelin Contracts", url: "https://docs.openzeppelin.com/contracts/4.x/" }
-],
+    { title: "ERC20 Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
+    { title: "OpenZeppelin ERC20 Implementation", url: "https://docs.openzeppelin.com/contracts/4.x/erc20" },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "Ethereum.org - Smart Contracts", url: "https://ethereum.org/en/developers/docs/smart-contracts/" },
+    { title: "CryptoZombies - Learn Solidity", url: "https://cryptozombies.io/" },
+    { title: "Remix IDE", url: "https://remix-ide.com/" },
+    { title: "Truffle Framework", url: "https://www.trufflesuite.com/" },
+    { title: "Hardhat Framework", url: "https://hardhat.org/" },
+    { title: "Ethers.js Library", url: "https://docs.ethers.io/v5/" },
+    { title: "Web3.js Library", url: "https://web3js.readthedocs.io/en/v1.x/" },
+    { title: "OpenZeppelin Contracts", url: "https://docs.openzeppelin.com/contracts/4.x/" },
+  ],
 }
 
 export default definition

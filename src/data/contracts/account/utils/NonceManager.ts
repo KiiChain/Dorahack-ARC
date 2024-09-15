@@ -65,13 +65,28 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "NonceManager.sol Source Code", url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/cryptography/NonceManager.sol" },
-  { title: "OpenZeppelin Contracts Documentation - NonceManager", url: "https://docs.openzeppelin.com/contracts/4.x/api/utils/cryptography/NonceManager" },
-  { title: "EIP-1271 - Standard for validating signatures", url: "https://eips.ethereum.org/EIPS/eip-1271" },
-  { title: "Understanding Nonces in Cryptography", url: "https://www.freecodecamp.org/news/understanding-nonces-in-cryptography/" },
-  { title: "Solidity Documentation - ECDSA Signature Verification", url: "https://docs.soliditylang.org/en/v0.8.17/security-considerations.html#ecdsa-signature-verification" },
-  { title: "Meta Transactions for Gasless Transactions", url: "https://medium.com/coinmonks/understanding-meta-transactions-in-ethereum-41d9282d6d8d" }
-],
+    {
+      title: "NonceManager.sol Source Code",
+      url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/cryptography/NonceManager.sol",
+    },
+    {
+      title: "OpenZeppelin Contracts Documentation - NonceManager",
+      url: "https://docs.openzeppelin.com/contracts/4.x/api/utils/cryptography/NonceManager",
+    },
+    { title: "EIP-1271 - Standard for validating signatures", url: "https://eips.ethereum.org/EIPS/eip-1271" },
+    {
+      title: "Understanding Nonces in Cryptography",
+      url: "https://www.freecodecamp.org/news/understanding-nonces-in-cryptography/",
+    },
+    {
+      title: "Solidity Documentation - ECDSA Signature Verification",
+      url: "https://docs.soliditylang.org/en/v0.8.17/security-considerations.html#ecdsa-signature-verification",
+    },
+    {
+      title: "Meta Transactions for Gasless Transactions",
+      url: "https://medium.com/coinmonks/understanding-meta-transactions-in-ethereum-41d9282d6d8d",
+    },
+  ],
 }
 
 export default definition

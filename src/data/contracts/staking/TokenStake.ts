@@ -171,19 +171,22 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "TokenStake Smart Contract Documentation", url: "https://github.com/TokenStake/tokenstake-contracts/blob/main/README.md" },
-  { title: "TokenStake Project Website", url: "https://www.tokenstake.com/" },
-  { title: "TokenStake Blog", url: "https://blog.tokenstake.com/" },
-  { title: "TokenStake on GitHub", url: "https://github.com/TokenStake" },
-  { title: "TokenStake on Twitter", url: "https://twitter.com/tokenstake" },
-  { title: "TokenStake Whitepaper", url: "https://www.tokenstake.com/whitepaper.pdf" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "Ethereum Documentation", url: "https://ethereum.org/en/developers/docs/" },
-  { title: "OpenZeppelin Documentation", url: "https://docs.openzeppelin.com/" },
-  { title: "ERC20 Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
-  { title: "Uniswap Documentation", url: "https://docs.uniswap.org/" },
-  { title: "TokenStake Contract Audit", url: "https://www.tokenstake.com/audit.pdf" }
-],
+    {
+      title: "TokenStake Smart Contract Documentation",
+      url: "https://github.com/TokenStake/tokenstake-contracts/blob/main/README.md",
+    },
+    { title: "TokenStake Project Website", url: "https://www.tokenstake.com/" },
+    { title: "TokenStake Blog", url: "https://blog.tokenstake.com/" },
+    { title: "TokenStake on GitHub", url: "https://github.com/TokenStake" },
+    { title: "TokenStake on Twitter", url: "https://twitter.com/tokenstake" },
+    { title: "TokenStake Whitepaper", url: "https://www.tokenstake.com/whitepaper.pdf" },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "Ethereum Documentation", url: "https://ethereum.org/en/developers/docs/" },
+    { title: "OpenZeppelin Documentation", url: "https://docs.openzeppelin.com/" },
+    { title: "ERC20 Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
+    { title: "Uniswap Documentation", url: "https://docs.uniswap.org/" },
+    { title: "TokenStake Contract Audit", url: "https://www.tokenstake.com/audit.pdf" },
+  ],
 }
 
 export default definition

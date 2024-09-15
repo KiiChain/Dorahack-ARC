@@ -130,17 +130,32 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "OpenZeppelin Governor Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/governance" },
-  { title: "Meta-Transactions Overview", url: "https://docs.openzeppelin.com/contracts/4.x/metatx" },
-  { title: "ERC20 Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
-  { title: "VoteERC20 Contract Source Code", url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/governance/extensions/VoteERC20.sol" },
-  { title: "VoteERC20 Contract Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/api/governance#voteerc20" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "Ethereum Documentation", url: "https://ethereum.org/en/developers/docs/" },
-  { title: "Voting Systems in Blockchain", url: "https://medium.com/coinmonks/voting-systems-in-blockchain-a-comprehensive-guide-63356535d4c0" },
-  { title: "Decentralized Governance with ERC20 Voting", url: "https://medium.com/coinmonks/decentralized-governance-with-erc20-voting-a-guide-for-developers-23e7775757df" },
-  { title: "Building a Decentralized Governance System with Ethereum", url: "https://medium.com/coinmonks/building-a-decentralized-governance-system-with-ethereum-a-practical-guide-f0677f2d87a7" }
-],
+    { title: "OpenZeppelin Governor Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/governance" },
+    { title: "Meta-Transactions Overview", url: "https://docs.openzeppelin.com/contracts/4.x/metatx" },
+    { title: "ERC20 Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
+    {
+      title: "VoteERC20 Contract Source Code",
+      url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/governance/extensions/VoteERC20.sol",
+    },
+    {
+      title: "VoteERC20 Contract Documentation",
+      url: "https://docs.openzeppelin.com/contracts/4.x/api/governance#voteerc20",
+    },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "Ethereum Documentation", url: "https://ethereum.org/en/developers/docs/" },
+    {
+      title: "Voting Systems in Blockchain",
+      url: "https://medium.com/coinmonks/voting-systems-in-blockchain-a-comprehensive-guide-63356535d4c0",
+    },
+    {
+      title: "Decentralized Governance with ERC20 Voting",
+      url: "https://medium.com/coinmonks/decentralized-governance-with-erc20-voting-a-guide-for-developers-23e7775757df",
+    },
+    {
+      title: "Building a Decentralized Governance System with Ethereum",
+      url: "https://medium.com/coinmonks/building-a-decentralized-governance-system-with-ethereum-a-practical-guide-f0677f2d87a7",
+    },
+  ],
 }
 
 export default definition

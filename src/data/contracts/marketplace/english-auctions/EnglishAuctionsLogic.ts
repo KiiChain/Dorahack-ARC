@@ -133,12 +133,12 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "English Auctions Logic", url: "https://docs.openzeppelin.com/contracts/4.x/auction" },
-  { title: "OpenZeppelin Auctions Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/auction" },
-  { title: "Ethereum Smart Contract Development Tutorials", url: "https://www.youtube.com/watch?v=M576wJ7-D0o" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "English Auctions", url: "https://en.wikipedia.org/wiki/English_auction" }
-],
+    { title: "English Auctions Logic", url: "https://docs.openzeppelin.com/contracts/4.x/auction" },
+    { title: "OpenZeppelin Auctions Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/auction" },
+    { title: "Ethereum Smart Contract Development Tutorials", url: "https://www.youtube.com/watch?v=M576wJ7-D0o" },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "English Auctions", url: "https://en.wikipedia.org/wiki/English_auction" },
+  ],
 }
 
 export default definition

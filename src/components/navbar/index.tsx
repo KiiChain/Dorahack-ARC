@@ -1,10 +1,7 @@
 // import Image from 'next/image';
 import React from "react"
 
-import Link from "next/link"
-
 // import Logo from "@/app/assets/Logo.jpeg"
-import clsx from "clsx"
 interface NavbarLink {
   label: string
   href: string
@@ -17,12 +14,7 @@ interface NavbarProps {
   textColor?: string
 }
 
-const Navbar: React.FC<NavbarProps> = ({
-  //   logoText,
-  links,
-
-  textColor = "text-gray-900",
-}) => {
+const Navbar: React.FC<NavbarProps> = ({}) => {
   return (
     // <nav className={`absolute top-0 z-10 w-full bg-transparent text-white`}>
     //   <div className="mx-auto w-11/12 px-4">

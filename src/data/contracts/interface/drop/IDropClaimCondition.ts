@@ -103,16 +103,25 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "EIP-712:  Draft -  Standard for Signature Verification", url: "https://eips.ethereum.org/EIPS/eip-712" },
-  { title: "OpenZeppelin's ERC721  Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
-  { title: "OpenZeppelin's  ERC1155 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc1155" },
-  { title: "OpenZeppelin's  EIP-712 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/eip712" },
-  { title: "OpenZeppelin's  Merkle Proofs Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/merkle" },
-  { title: "OpenZeppelin's  Access Control Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/access" },
-  { title: "OpenZeppelin's  Claim Conditions Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/claim" },
-  { title: "Learnweb3's Claim Condition Tutorial", url: "https://learnweb3.io/docs/claim-conditions" },
-  { title: "Drop (NFT) Contract Example", url: "https://github.com/learnweb3/learnweb3-examples/blob/main/contracts/drop/Drop.sol" }
-],
+    { title: "EIP-712:  Draft -  Standard for Signature Verification", url: "https://eips.ethereum.org/EIPS/eip-712" },
+    { title: "OpenZeppelin's ERC721  Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
+    { title: "OpenZeppelin's  ERC1155 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc1155" },
+    { title: "OpenZeppelin's  EIP-712 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/eip712" },
+    { title: "OpenZeppelin's  Merkle Proofs Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/merkle" },
+    {
+      title: "OpenZeppelin's  Access Control Documentation",
+      url: "https://docs.openzeppelin.com/contracts/4.x/access",
+    },
+    {
+      title: "OpenZeppelin's  Claim Conditions Documentation",
+      url: "https://docs.openzeppelin.com/contracts/4.x/claim",
+    },
+    { title: "Learnweb3's Claim Condition Tutorial", url: "https://learnweb3.io/docs/claim-conditions" },
+    {
+      title: "Drop (NFT) Contract Example",
+      url: "https://github.com/learnweb3/learnweb3-examples/blob/main/contracts/drop/Drop.sol",
+    },
+  ],
 }
 
 export default definition

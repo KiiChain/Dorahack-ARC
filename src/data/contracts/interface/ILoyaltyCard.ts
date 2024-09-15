@@ -167,15 +167,21 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "ILoyaltyCard Contract Documentation (Source Code)", url: "https://github.com/your-repository/contracts/blob/main/ILoyaltyCard.sol" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "Ethereum.org Documentation", url: "https://ethereum.org/en/developers/docs/" },
-  { title: "OpenZeppelin Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/" },
-  { title: "ERC-721 (Non-Fungible Token Standard)", url: "https://eips.ethereum.org/EIPS/eip-721" },
-  { title: "Understanding Smart Contracts (Ethereum.org)", url: "https://ethereum.org/en/developers/docs/smart-contracts/" },
-  { title: "Building DApps (Ethereum.org)", url: "https://ethereum.org/en/developers/docs/dapps/" },
-  { title: "Web3.js Documentation", url: "https://web3js.readthedocs.io/en/v1.x/" }
-],
+    {
+      title: "ILoyaltyCard Contract Documentation (Source Code)",
+      url: "https://github.com/your-repository/contracts/blob/main/ILoyaltyCard.sol",
+    },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "Ethereum.org Documentation", url: "https://ethereum.org/en/developers/docs/" },
+    { title: "OpenZeppelin Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/" },
+    { title: "ERC-721 (Non-Fungible Token Standard)", url: "https://eips.ethereum.org/EIPS/eip-721" },
+    {
+      title: "Understanding Smart Contracts (Ethereum.org)",
+      url: "https://ethereum.org/en/developers/docs/smart-contracts/",
+    },
+    { title: "Building DApps (Ethereum.org)", url: "https://ethereum.org/en/developers/docs/dapps/" },
+    { title: "Web3.js Documentation", url: "https://web3js.readthedocs.io/en/v1.x/" },
+  ],
 }
 
 export default definition

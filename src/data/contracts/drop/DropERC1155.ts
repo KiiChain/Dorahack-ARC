@@ -179,14 +179,23 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "ERC1155 Standard", url: "https://eips.ethereum.org/EIPS/eip-1155" },
-  { title: "OpenZeppelin ERC1155 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc1155" },
-  { title: "Drop Contract Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/drop" },
-  { title: "ERC1155 Tutorial (with OpenZeppelin)", url: "https://blog.openzeppelin.com/erc1155-tutorial/" },
-  { title: "Building an NFT Marketplace with ERC1155", url: "https://blog.openzeppelin.com/building-an-nft-marketplace-with-erc1155/" },
-  { title: "ERC1155 vs ERC721: When to Use Each", url: "https://blog.openzeppelin.com/erc1155-vs-erc721-when-to-use-each/" },
-  { title: "Drop Contract Example on Github", url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC1155/extensions/ERC1155Burnable.sol" }
-],
+    { title: "ERC1155 Standard", url: "https://eips.ethereum.org/EIPS/eip-1155" },
+    { title: "OpenZeppelin ERC1155 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc1155" },
+    { title: "Drop Contract Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/drop" },
+    { title: "ERC1155 Tutorial (with OpenZeppelin)", url: "https://blog.openzeppelin.com/erc1155-tutorial/" },
+    {
+      title: "Building an NFT Marketplace with ERC1155",
+      url: "https://blog.openzeppelin.com/building-an-nft-marketplace-with-erc1155/",
+    },
+    {
+      title: "ERC1155 vs ERC721: When to Use Each",
+      url: "https://blog.openzeppelin.com/erc1155-vs-erc721-when-to-use-each/",
+    },
+    {
+      title: "Drop Contract Example on Github",
+      url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC1155/extensions/ERC1155Burnable.sol",
+    },
+  ],
 }
 
 export default definition

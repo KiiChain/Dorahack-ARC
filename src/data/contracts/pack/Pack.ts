@@ -127,15 +127,15 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "Pack.gg Documentation", url: "https://docs.pack.gg/" },
-  { title: "Pack.gg GitHub Repository", url: "https://github.com/pack-gg/pack" },
-  { title: "Pack.gg Blog", url: "https://blog.pack.gg/" },
-  { title: "Pack.gg Twitter", url: "https://twitter.com/packgg" },
-  { title: "Pack.gg Discord", url: "https://discord.gg/packgg" },
-  { title: "Pack.gg Forum", url: "https://forum.pack.gg/" },
-  { title: "Pack.gg Medium", url: "https://medium.com/@packgg" },
-  { title: "Pack.gg Telegram", url: "https://t.me/packgg" }
-],
+    { title: "Pack.gg Documentation", url: "https://docs.pack.gg/" },
+    { title: "Pack.gg GitHub Repository", url: "https://github.com/pack-gg/pack" },
+    { title: "Pack.gg Blog", url: "https://blog.pack.gg/" },
+    { title: "Pack.gg Twitter", url: "https://twitter.com/packgg" },
+    { title: "Pack.gg Discord", url: "https://discord.gg/packgg" },
+    { title: "Pack.gg Forum", url: "https://forum.pack.gg/" },
+    { title: "Pack.gg Medium", url: "https://medium.com/@packgg" },
+    { title: "Pack.gg Telegram", url: "https://t.me/packgg" },
+  ],
 }
 
 export default definition

@@ -8,10 +8,10 @@ import axios from "axios"
 
 import { contract } from "@/data"
 
-import { CustomizeModal } from "@/ui/modal"
 import { cn } from "@/lib/utils"
 import { Button } from "@/ui/button"
 import { Grid } from "@/ui/explore-grid-design"
+import { CustomizeModal } from "@/ui/modal"
 
 interface Category {
   identifier: string
@@ -25,7 +25,6 @@ export const ContractCard = ({ contract, className }: { contract: IContracts; cl
 
   const [open, setOpen] = useState(false)
   const [content, setContent] = useState("")
-  const [called, setcalled] = useState(false)
   const onClick = () => {
     if (content == "") {
       axios
@@ -41,7 +40,7 @@ export const ContractCard = ({ contract, className }: { contract: IContracts; cl
       setOpen(true)
     }
   }
-  
+
   useEffect(() => {
     if (content != "") setOpen(true)
   }, [content])

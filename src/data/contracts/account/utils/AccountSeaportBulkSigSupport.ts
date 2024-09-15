@@ -78,12 +78,24 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "AccountSeaportBulkSigSupport Documentation", url: "https://docs.opensea.io/docs/seaport/bulk-signatures" },
-  { title: "Seaport API Documentation", url: "https://docs.opensea.io/docs/api" },
-  { title: "Seaport Contract Source Code", url: "https://github.com/ProjectOpenSea/seaport/blob/main/contracts/Seaport.sol" },
-  { title: "Seaport Bulk Signature Tutorial", url: "https://medium.com/opensea/introducing-bulk-signatures-on-seaport-58392f23d3f3" },
-  { title: "Seaport Bulk Signature Example", url: "https://github.com/ProjectOpenSea/seaport/blob/main/test/SeaportBulkSignatures.ts" }
-],
+    {
+      title: "AccountSeaportBulkSigSupport Documentation",
+      url: "https://docs.opensea.io/docs/seaport/bulk-signatures",
+    },
+    { title: "Seaport API Documentation", url: "https://docs.opensea.io/docs/api" },
+    {
+      title: "Seaport Contract Source Code",
+      url: "https://github.com/ProjectOpenSea/seaport/blob/main/contracts/Seaport.sol",
+    },
+    {
+      title: "Seaport Bulk Signature Tutorial",
+      url: "https://medium.com/opensea/introducing-bulk-signatures-on-seaport-58392f23d3f3",
+    },
+    {
+      title: "Seaport Bulk Signature Example",
+      url: "https://github.com/ProjectOpenSea/seaport/blob/main/test/SeaportBulkSignatures.ts",
+    },
+  ],
 }
 
 export default definition

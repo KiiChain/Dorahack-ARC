@@ -184,15 +184,24 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "ERC-6551: Account Abstraction for ERC-721", url: "https://eips.ethereum.org/EIPS/eip-6551" },
-  { title: "Account Abstraction on Ethereum", url: "https://ethereum.org/en/developers/docs/accounts/" },
-  { title: "EIP-2981: NFT Royalty Standard", url: "https://eips.ethereum.org/EIPS/eip-2981" },
-  { title: "ERC-721: Non-Fungible Token Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
-  { title: "Account Abstraction: A Primer", url: "https://medium.com/ethereum-cat/account-abstraction-a-primer-63c6b446f469" },
-  { title: "ERC-6551: Account Abstraction for ERC-721 - A Deeper Dive", url: "https://blog.openzeppelin.com/erc-6551-account-abstraction-for-erc-721/" },
-  { title: "Building with ERC-6551: A Step-by-Step Guide", url: "https://blog.alchemy.com/building-with-erc-6551-a-step-by-step-guide/" },
-  { title: "ERC-6551: Account Abstraction for NFTs", url: "https://www.youtube.com/watch?v=v4v5L3x1t_I" }
-],
+    { title: "ERC-6551: Account Abstraction for ERC-721", url: "https://eips.ethereum.org/EIPS/eip-6551" },
+    { title: "Account Abstraction on Ethereum", url: "https://ethereum.org/en/developers/docs/accounts/" },
+    { title: "EIP-2981: NFT Royalty Standard", url: "https://eips.ethereum.org/EIPS/eip-2981" },
+    { title: "ERC-721: Non-Fungible Token Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
+    {
+      title: "Account Abstraction: A Primer",
+      url: "https://medium.com/ethereum-cat/account-abstraction-a-primer-63c6b446f469",
+    },
+    {
+      title: "ERC-6551: Account Abstraction for ERC-721 - A Deeper Dive",
+      url: "https://blog.openzeppelin.com/erc-6551-account-abstraction-for-erc-721/",
+    },
+    {
+      title: "Building with ERC-6551: A Step-by-Step Guide",
+      url: "https://blog.alchemy.com/building-with-erc-6551-a-step-by-step-guide/",
+    },
+    { title: "ERC-6551: Account Abstraction for NFTs", url: "https://www.youtube.com/watch?v=v4v5L3x1t_I" },
+  ],
 }
 
 export default definition

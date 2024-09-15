@@ -133,14 +133,29 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "UserOperationLib Documentation", url: "https://docs.starknet.io/docs/starknet-guides/user-operations" },
-  { title: "StarkNet User Operations Guide", url: "https://docs.starknet.io/docs/starknet-guides/user-operations/user-operations-overview" },
-  { title: "StarkNet User Operations Tutorial", url: "https://docs.starknet.io/docs/starknet-guides/user-operations/tutorial" },
-  { title: "StarkNet User Operations: Bundlers and Paymasters", url: "https://docs.starknet.io/docs/starknet-guides/user-operations/bundlers-and-paymasters" },
-  { title: "StarkNet User Operations: Simulating Transactions", url: "https://docs.starknet.io/docs/starknet-guides/user-operations/simulating-transactions" },
-  { title: "StarkNet User Operations: Example Code", url: "https://github.com/starkware-libs/starknet-examples/tree/main/contracts/user_operations" },
-  { title: "StarkNet User Operations: Community Resources", url: "https://discord.com/invite/starknet" }
-],
+    { title: "UserOperationLib Documentation", url: "https://docs.starknet.io/docs/starknet-guides/user-operations" },
+    {
+      title: "StarkNet User Operations Guide",
+      url: "https://docs.starknet.io/docs/starknet-guides/user-operations/user-operations-overview",
+    },
+    {
+      title: "StarkNet User Operations Tutorial",
+      url: "https://docs.starknet.io/docs/starknet-guides/user-operations/tutorial",
+    },
+    {
+      title: "StarkNet User Operations: Bundlers and Paymasters",
+      url: "https://docs.starknet.io/docs/starknet-guides/user-operations/bundlers-and-paymasters",
+    },
+    {
+      title: "StarkNet User Operations: Simulating Transactions",
+      url: "https://docs.starknet.io/docs/starknet-guides/user-operations/simulating-transactions",
+    },
+    {
+      title: "StarkNet User Operations: Example Code",
+      url: "https://github.com/starkware-libs/starknet-examples/tree/main/contracts/user_operations",
+    },
+    { title: "StarkNet User Operations: Community Resources", url: "https://discord.com/invite/starknet" },
+  ],
 }
 
 export default definition

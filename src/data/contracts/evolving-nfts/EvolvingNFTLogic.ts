@@ -131,13 +131,16 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "EvolvingNFTLogic Contract Documentation", url: "https://github.com/EvolvingNFT/evolving-nft-logic/blob/main/docs/EvolvingNFTLogic.md" },
-  { title: "EvolvingNFT Logic Repository", url: "https://github.com/EvolvingNFT/evolving-nft-logic" },
-  { title: "ERC721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
-  { title: "OpenZeppelin ERC721 Contract", url: "https://docs.openzeppelin.com/contracts/4.x/api/token/ERC721" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "Hardhat Documentation", url: "https://hardhat.org/guides/introduction.html" }
-],
+    {
+      title: "EvolvingNFTLogic Contract Documentation",
+      url: "https://github.com/EvolvingNFT/evolving-nft-logic/blob/main/docs/EvolvingNFTLogic.md",
+    },
+    { title: "EvolvingNFT Logic Repository", url: "https://github.com/EvolvingNFT/evolving-nft-logic" },
+    { title: "ERC721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
+    { title: "OpenZeppelin ERC721 Contract", url: "https://docs.openzeppelin.com/contracts/4.x/api/token/ERC721" },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "Hardhat Documentation", url: "https://hardhat.org/guides/introduction.html" },
+  ],
 }
 
 export default definition

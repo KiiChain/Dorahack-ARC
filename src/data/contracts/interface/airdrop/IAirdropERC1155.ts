@@ -73,14 +73,23 @@ contract AirdropERC1155 is ERC1155, IAirdropERC1155 {
   license: "MIT",
 
   resources: [
-  { title: "ERC1155 Standard", url: "https://eips.ethereum.org/EIPS/eip-1155" },
-  { title: "OpenZeppelin ERC1155 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc1155" },
-  { title: "Airdrop Tutorial (ERC20 & ERC721)", url: "https://ethereum.org/en/developers/tutorials/airdrop-tutorial/" },
-  { title: "Airdrop Contract Example", url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol" },
-  { title: "ERC1155 Airdrop Example", url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC1155/ERC1155.sol" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "Ethereum.org Documentation", url: "https://ethereum.org/en/developers/" }
-],
+    { title: "ERC1155 Standard", url: "https://eips.ethereum.org/EIPS/eip-1155" },
+    { title: "OpenZeppelin ERC1155 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc1155" },
+    {
+      title: "Airdrop Tutorial (ERC20 & ERC721)",
+      url: "https://ethereum.org/en/developers/tutorials/airdrop-tutorial/",
+    },
+    {
+      title: "Airdrop Contract Example",
+      url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol",
+    },
+    {
+      title: "ERC1155 Airdrop Example",
+      url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC1155/ERC1155.sol",
+    },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "Ethereum.org Documentation", url: "https://ethereum.org/en/developers/" },
+  ],
 }
 
 export default definition

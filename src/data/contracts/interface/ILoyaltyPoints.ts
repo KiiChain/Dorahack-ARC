@@ -125,15 +125,21 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "ILoyaltyPoints Interface on Etherscan", url: "https://etherscan.io/address/<ILoyaltyPoints_Contract_Address>#code" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "OpenZeppelin Documentation", url: "https://docs.openzeppelin.com/" },
-  { title: "Ethereum.org Documentation", url: "https://ethereum.org/en/developers/docs/" },
-  { title: "Stack Overflow", url: "https://stackoverflow.com/" },
-  { title: "Reddit - r/ethereum", url: "https://www.reddit.com/r/ethereum/" },
-  { title: "GitHub - OpenZeppelin", url: "https://github.com/OpenZeppelin/openzeppelin-contracts" },
-  { title: "YouTube -  Ethereum Development Tutorials", url: "https://www.youtube.com/results?search_query=ethereum+development+tutorials" }
-],
+    {
+      title: "ILoyaltyPoints Interface on Etherscan",
+      url: "https://etherscan.io/address/<ILoyaltyPoints_Contract_Address>#code",
+    },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "OpenZeppelin Documentation", url: "https://docs.openzeppelin.com/" },
+    { title: "Ethereum.org Documentation", url: "https://ethereum.org/en/developers/docs/" },
+    { title: "Stack Overflow", url: "https://stackoverflow.com/" },
+    { title: "Reddit - r/ethereum", url: "https://www.reddit.com/r/ethereum/" },
+    { title: "GitHub - OpenZeppelin", url: "https://github.com/OpenZeppelin/openzeppelin-contracts" },
+    {
+      title: "YouTube -  Ethereum Development Tutorials",
+      url: "https://www.youtube.com/results?search_query=ethereum+development+tutorials",
+    },
+  ],
 }
 
 export default definition

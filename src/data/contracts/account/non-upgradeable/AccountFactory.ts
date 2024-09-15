@@ -168,12 +168,27 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "AccountFactory - OpenZeppelin Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/account-factory" },
-  { title: "AccountFactory Contract Source Code", url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/AccountFactory.sol" },
-  { title: "Using AccountFactory to Deploy Account Contracts", url: "https://forum.openzeppelin.com/t/using-account-factory-to-deploy-account-contracts/11263" },
-  { title: "Account Abstraction with AccountFactory", url: "https://ethereum.org/en/developers/docs/account-abstraction/" },
-  { title: "Understanding Account Abstraction", url: "https://medium.com/ethereum-foundation/understanding-account-abstraction-a-primer-a8e9f411c709" }
-],
+    {
+      title: "AccountFactory - OpenZeppelin Documentation",
+      url: "https://docs.openzeppelin.com/contracts/4.x/account-factory",
+    },
+    {
+      title: "AccountFactory Contract Source Code",
+      url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/AccountFactory.sol",
+    },
+    {
+      title: "Using AccountFactory to Deploy Account Contracts",
+      url: "https://forum.openzeppelin.com/t/using-account-factory-to-deploy-account-contracts/11263",
+    },
+    {
+      title: "Account Abstraction with AccountFactory",
+      url: "https://ethereum.org/en/developers/docs/account-abstraction/",
+    },
+    {
+      title: "Understanding Account Abstraction",
+      url: "https://medium.com/ethereum-foundation/understanding-account-abstraction-a-primer-a8e9f411c709",
+    },
+  ],
 }
 
 export default definition

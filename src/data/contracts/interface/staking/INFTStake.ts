@@ -131,14 +131,14 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "INFTStake Contract on Etherscan", url: "https://etherscan.io/address/<CONTRACT_ADDRESS>" },
-  { title: "INFTStake Documentation (If Available)", url: "https://<WEBSITE_OR_GITHUB_REPO_LINK>/docs/INFTStake" },
-  { title: "INFTStake GitHub Repository", url: "https://github.com/<OWNER>/INFTStake" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "ERC721 Standard (For NFT Functionality)", url: "https://eips.ethereum.org/EIPS/eip-721" },
-  { title: "ERC20 Standard (For Token Functionality)", url: "https://eips.ethereum.org/EIPS/eip-20" },
-  { title: "OpenZeppelin Contracts", url: "https://docs.openzeppelin.com/contracts/4.x/" }
-],
+    { title: "INFTStake Contract on Etherscan", url: "https://etherscan.io/address/<CONTRACT_ADDRESS>" },
+    { title: "INFTStake Documentation (If Available)", url: "https://<WEBSITE_OR_GITHUB_REPO_LINK>/docs/INFTStake" },
+    { title: "INFTStake GitHub Repository", url: "https://github.com/<OWNER>/INFTStake" },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "ERC721 Standard (For NFT Functionality)", url: "https://eips.ethereum.org/EIPS/eip-721" },
+    { title: "ERC20 Standard (For Token Functionality)", url: "https://eips.ethereum.org/EIPS/eip-20" },
+    { title: "OpenZeppelin Contracts", url: "https://docs.openzeppelin.com/contracts/4.x/" },
+  ],
 }
 
 export default definition

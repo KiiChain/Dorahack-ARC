@@ -55,10 +55,11 @@ export const GenerateCustomizationInstructions = () => ({
   role: "user",
 })
 
-
-export const GenerateAuditInstructions = () => ([{
-  parts: [{
-    text: `
+export const GenerateAuditInstructions = () => [
+  {
+    parts: [
+      {
+        text: `
         ### Special Instructions:
 
         - The response **must** strictly follow the required structure: an array of objects in this exact format:
@@ -101,24 +102,24 @@ export const GenerateAuditInstructions = () => ([{
 
         The final response **MUST** be in this format:
         \`[{summary: "<response>", vulnerabilities: "<response>", optimizations: "<response>", additional: "<response>"}]\`
-    `
-  }],
-  role: "user"
-}])
+    `,
+      },
+    ],
+    role: "user",
+  },
+]
 
 export const GenerateCodeInstructions = ({
   category,
-  contract_type,
   name,
-  token,
   description,
-  prompt
+  prompt,
 }: {
-  category: string,
-  contract_type: string,
-  name: string,
-  token: string,
-  description: string,
+  category: string
+  contract_type: string
+  name: string
+  token: string
+  description: string
   prompt: string
 }) => ({
   parts: [
@@ -153,18 +154,17 @@ export const GenerateCodeInstructions = ({
         - The final smart contract code optimized for gas usage, including security enhancements.
         - NatSpec documentation covering all functions and variables.
         - Suggested test cases for validating the contract’s functionality and security.
-      `
-    }
+      `,
+    },
   ],
-  role: "user"
+  role: "user",
 })
 
 export const GenerateDocumentationInstructions = () => {
-  return (
-    {
-      parts: [
-        {
-          text: `
+  return {
+    parts: [
+      {
+        text: `
            ### Instructions:
             - Generate the respose in MARKDOWN format only  
             
@@ -205,20 +205,18 @@ export const GenerateDocumentationInstructions = () => {
               - Interacting with the Contract
               -Deployment
               
-        `
-}
-      ],
-      role: "user"
-    }
-  )
+        `,
+      },
+    ],
+    role: "user",
+  }
 }
 
 export const GenerateTestInstructions = () => {
-  return (
-    {
-      parts: [
-        {
-          text: `
+  return {
+    parts: [
+      {
+        text: `
           You are a highly skilled Solidity developer tasked with creating comprehensive unit tests for a given Solidity smart contract. The contract will be provided, and your job is to write the corresponding tests to ensure its functionality, security, and robustness.
           - This is not a conversation, so please do not ask questions or prompt for additional information.
           - NEVER INCLUDE ANY MARKDOWN IN THE RESPONSE - THIS MEANS CODEBLOCKS AS WELL.
@@ -255,10 +253,9 @@ export const GenerateTestInstructions = () => {
           The tests must be written in  TypeScript  using a framework like Hardhat or Truffle, or in Solidity itself if applicable.
           Ensure code quality by avoiding repetitive code and making use of utility functions where necessary.
               
-        `
-}
-      ],
-      role: "user"
-    }
-  )
+        `,
+      },
+    ],
+    role: "user",
+  }
 }

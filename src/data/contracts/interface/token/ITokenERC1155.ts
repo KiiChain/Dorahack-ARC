@@ -282,12 +282,18 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "ERC1155 Standard", url: "https://eips.ethereum.org/EIPS/eip-1155" },
-  { title: "OpenZeppelin ERC1155 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc1155" },
-  { title: "ERC1155: Fungible & Non-Fungible Tokens", url: "https://medium.com/coinmonks/erc-1155-fungible-non-fungible-tokens-321252c10227" },
-  { title: "ERC1155 Implementation Tutorial", url: "https://www.youtube.com/watch?v=oJ32uQm_t84" },
-  { title: "ERC1155 vs. ERC721", url: "https://www.coindesk.com/learn/2021/05/11/erc-721-vs-erc-1155-what-are-the-differences/" }
-],
+    { title: "ERC1155 Standard", url: "https://eips.ethereum.org/EIPS/eip-1155" },
+    { title: "OpenZeppelin ERC1155 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc1155" },
+    {
+      title: "ERC1155: Fungible & Non-Fungible Tokens",
+      url: "https://medium.com/coinmonks/erc-1155-fungible-non-fungible-tokens-321252c10227",
+    },
+    { title: "ERC1155 Implementation Tutorial", url: "https://www.youtube.com/watch?v=oJ32uQm_t84" },
+    {
+      title: "ERC1155 vs. ERC721",
+      url: "https://www.coindesk.com/learn/2021/05/11/erc-721-vs-erc-1155-what-are-the-differences/",
+    },
+  ],
 }
 
 export default definition

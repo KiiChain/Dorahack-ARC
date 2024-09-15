@@ -164,15 +164,21 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "ERC20 Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
-  { title: "OpenZeppelin ERC20 Implementation", url: "https://docs.openzeppelin.com/contracts/4.x/api/token/ERC20" },
-  { title: "Solidity by Example - ERC20 Token", url: "https://solidity-by-example.org/erc20/" },
-  { title: "CryptoZombies - Token Contract", url: "https://cryptozombies.io/en/lessons/token-contract/" },
-  { title: "Building a Token with Solidity", url: "https://www.youtube.com/watch?v=l8H0pN0X3x0" },
-  { title: "Understanding ERC20 Tokens", url: "https://medium.com/coinmonks/understanding-erc20-tokens-in-ethereum-dapps-b6655a4f064c" },
-  { title: "Create Your Own ERC20 Token with Truffle and Ganache", url: "https://medium.com/coinmonks/create-your-own-erc20-token-with-truffle-and-ganache-a470a4e62000" },
-  { title: "ERC20 Token Smart Contract Tutorial", url: "https://www.youtube.com/watch?v=a5h-9t4iG6s" }
-],
+    { title: "ERC20 Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
+    { title: "OpenZeppelin ERC20 Implementation", url: "https://docs.openzeppelin.com/contracts/4.x/api/token/ERC20" },
+    { title: "Solidity by Example - ERC20 Token", url: "https://solidity-by-example.org/erc20/" },
+    { title: "CryptoZombies - Token Contract", url: "https://cryptozombies.io/en/lessons/token-contract/" },
+    { title: "Building a Token with Solidity", url: "https://www.youtube.com/watch?v=l8H0pN0X3x0" },
+    {
+      title: "Understanding ERC20 Tokens",
+      url: "https://medium.com/coinmonks/understanding-erc20-tokens-in-ethereum-dapps-b6655a4f064c",
+    },
+    {
+      title: "Create Your Own ERC20 Token with Truffle and Ganache",
+      url: "https://medium.com/coinmonks/create-your-own-erc20-token-with-truffle-and-ganache-a470a4e62000",
+    },
+    { title: "ERC20 Token Smart Contract Tutorial", url: "https://www.youtube.com/watch?v=a5h-9t4iG6s" },
+  ],
 }
 
 export default definition

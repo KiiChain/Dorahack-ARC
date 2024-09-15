@@ -90,14 +90,14 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "IPack Documentation", url: "https://docs.ipack.io/" },
-  { title: "IPack Whitepaper", url: "https://ipack.io/whitepaper.pdf" },
-  { title: "IPack Blog", url: "https://blog.ipack.io/" },
-  { title: "IPack Github Repository", url: "https://github.com/ipack-io/ipack-contracts" },
-  { title: "IPack on Ethereum", url: "https://etherscan.io/address/..." },
-  { title: "IPack Community Forum", url: "https://forum.ipack.io/" },
-  { title: "IPack Medium", url: "https://medium.com/@ipack.io" }
-],
+    { title: "IPack Documentation", url: "https://docs.ipack.io/" },
+    { title: "IPack Whitepaper", url: "https://ipack.io/whitepaper.pdf" },
+    { title: "IPack Blog", url: "https://blog.ipack.io/" },
+    { title: "IPack Github Repository", url: "https://github.com/ipack-io/ipack-contracts" },
+    { title: "IPack on Ethereum", url: "https://etherscan.io/address/..." },
+    { title: "IPack Community Forum", url: "https://forum.ipack.io/" },
+    { title: "IPack Medium", url: "https://medium.com/@ipack.io" },
+  ],
 }
 
 export default definition

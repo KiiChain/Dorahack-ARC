@@ -96,13 +96,19 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "EditionStake Documentation (Github)", url: "https://github.com/EditionStake/editionstake-contracts/blob/main/contracts/EditionStake.sol" },
-  { title: "EditionStake on Etherscan", url: "https://etherscan.io/address/0x831149D1B18371482d07f5343E5d910D1439828D" },
-  { title: "EditionStake Medium Blog", url: "https://medium.com/@EditionStake" },
-  { title: "EditionStake Twitter", url: "https://twitter.com/EditionStake" },
-  { title: "ERC721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
-  { title: "OpenZeppelin ERC721 Contract", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" }
-],
+    {
+      title: "EditionStake Documentation (Github)",
+      url: "https://github.com/EditionStake/editionstake-contracts/blob/main/contracts/EditionStake.sol",
+    },
+    {
+      title: "EditionStake on Etherscan",
+      url: "https://etherscan.io/address/0x831149D1B18371482d07f5343E5d910D1439828D",
+    },
+    { title: "EditionStake Medium Blog", url: "https://medium.com/@EditionStake" },
+    { title: "EditionStake Twitter", url: "https://twitter.com/EditionStake" },
+    { title: "ERC721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
+    { title: "OpenZeppelin ERC721 Contract", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
+  ],
 }
 
 export default definition

@@ -412,15 +412,30 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "ERC721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
-  { title: "OpenZeppelin ERC721 Contract Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
-  { title: "Understanding ERC721: A Guide to Non-Fungible Tokens", url: "https://medium.com/crypto-news/understanding-erc721-a-guide-to-non-fungible-tokens-7118c82f2114" },
-  { title: "ERC721 Interface Documentation", url: "https://ethereum.org/en/developers/docs/standards/tokens/erc-721/" },
-  { title: "Building an ERC721 NFT Contract: A Beginner's Guide", url: "https://medium.com/coinmonks/building-an-erc721-nft-contract-a-beginners-guide-9c876373072d" },
-  { title: "Solidity by Example: ERC721 (NFT)", url: "https://solidity-by-example.org/erc721/" },
-  { title: "NFT Smart Contract Development: A Comprehensive Guide", url: "https://www.blockchain.com/developers/docs/guides/nft-smart-contract-development" },
-  { title: "NFT Smart Contracts: A Beginner's Guide to Development", url: "https://www.moralis.io/blog/nft-smart-contracts/" }
-],
+    { title: "ERC721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
+    { title: "OpenZeppelin ERC721 Contract Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
+    {
+      title: "Understanding ERC721: A Guide to Non-Fungible Tokens",
+      url: "https://medium.com/crypto-news/understanding-erc721-a-guide-to-non-fungible-tokens-7118c82f2114",
+    },
+    {
+      title: "ERC721 Interface Documentation",
+      url: "https://ethereum.org/en/developers/docs/standards/tokens/erc-721/",
+    },
+    {
+      title: "Building an ERC721 NFT Contract: A Beginner's Guide",
+      url: "https://medium.com/coinmonks/building-an-erc721-nft-contract-a-beginners-guide-9c876373072d",
+    },
+    { title: "Solidity by Example: ERC721 (NFT)", url: "https://solidity-by-example.org/erc721/" },
+    {
+      title: "NFT Smart Contract Development: A Comprehensive Guide",
+      url: "https://www.blockchain.com/developers/docs/guides/nft-smart-contract-development",
+    },
+    {
+      title: "NFT Smart Contracts: A Beginner's Guide to Development",
+      url: "https://www.moralis.io/blog/nft-smart-contracts/",
+    },
+  ],
 }
 
 export default definition

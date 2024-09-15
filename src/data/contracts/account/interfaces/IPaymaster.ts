@@ -89,14 +89,29 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "IPaymaster Interface on Etherscan", url: "https://etherscan.io/address/0x0000000000000000000000000000000000000000#code" },
-  { title: "EIP-2938: Paymaster API", url: "https://eips.ethereum.org/EIPS/eip-2938" },
-  { title: "EIP-4337: Account Abstraction", url: "https://eips.ethereum.org/EIPS/eip-4337" },
-  { title: "Account Abstraction with Paymasters: A Beginner's Guide", url: "https://blog.openzeppelin.com/account-abstraction-with-paymasters-a-beginners-guide/" },
-  { title: "Building a Paymaster: Implementing the IPaymaster Interface", url: "https://blog.openzeppelin.com/building-a-paymaster-implementing-the-ipaymaster-interface/" },
-  { title: "Paymaster Example on Github", url: "https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts/paymaster" },
-  { title: "EIP-2938: Paymaster API Discussion on Ethereum Magicians", url: "https://ethereum.stackexchange.com/questions/116835/eip-2938-paymaster-api-explanation" }
-],
+    {
+      title: "IPaymaster Interface on Etherscan",
+      url: "https://etherscan.io/address/0x0000000000000000000000000000000000000000#code",
+    },
+    { title: "EIP-2938: Paymaster API", url: "https://eips.ethereum.org/EIPS/eip-2938" },
+    { title: "EIP-4337: Account Abstraction", url: "https://eips.ethereum.org/EIPS/eip-4337" },
+    {
+      title: "Account Abstraction with Paymasters: A Beginner's Guide",
+      url: "https://blog.openzeppelin.com/account-abstraction-with-paymasters-a-beginners-guide/",
+    },
+    {
+      title: "Building a Paymaster: Implementing the IPaymaster Interface",
+      url: "https://blog.openzeppelin.com/building-a-paymaster-implementing-the-ipaymaster-interface/",
+    },
+    {
+      title: "Paymaster Example on Github",
+      url: "https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts/paymaster",
+    },
+    {
+      title: "EIP-2938: Paymaster API Discussion on Ethereum Magicians",
+      url: "https://ethereum.stackexchange.com/questions/116835/eip-2938-paymaster-api-explanation",
+    },
+  ],
 }
 
 export default definition

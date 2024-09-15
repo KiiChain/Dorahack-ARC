@@ -1,6 +1,5 @@
 "use client"
 
-
 import HomeLandingView from "./landing.page"
 
 const HomeView = () => {

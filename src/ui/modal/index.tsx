@@ -4,16 +4,15 @@ import React, { useEffect, useRef, useState } from "react"
 import { useRouter } from "next/navigation"
 
 import { useCompletion } from "ai/react"
-import { CopyBlock, dracula } from "react-code-blocks"
 
 import { Directory, File } from "@/interface/custom/folder-tree/folder-tree"
 import { Content } from "@google/generative-ai"
 
+import CodeBlockWithViewMore from "@/components/code-block-vmore"
 import { GenerateCustomizationInstructions } from "@/utils/prompt"
 
 import Modal2 from "../modal2"
 import { PlaceholdersAndVanishInput } from "../search-input"
-import CodeBlockWithViewMore from "@/components/code-block-vmore"
 
 const placeholders = ["customize the code", "ask me anything", "ask me to change any part"]
 

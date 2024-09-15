@@ -38,12 +38,18 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "IAccountFactoryCore Interface Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/api/contracts/access/IAccountFactoryCore.html" },
-  { title: "Account Abstraction - EIP-4337", url: "https://eips.ethereum.org/EIPS/eip-4337" },
-  { title: "Account Abstraction: Design and Implementation", url: "https://eprint.iacr.org/2023/1079.pdf" },
-  { title: "Account Abstraction - Ethereum.org", url: "https://ethereum.org/en/developers/docs/accounts/account-abstraction/" },
-  { title: "Account Abstraction - StarkWare", url: "https://starkware.co/account-abstraction/" }
-],
+    {
+      title: "IAccountFactoryCore Interface Documentation",
+      url: "https://docs.openzeppelin.com/contracts/4.x/api/contracts/access/IAccountFactoryCore.html",
+    },
+    { title: "Account Abstraction - EIP-4337", url: "https://eips.ethereum.org/EIPS/eip-4337" },
+    { title: "Account Abstraction: Design and Implementation", url: "https://eprint.iacr.org/2023/1079.pdf" },
+    {
+      title: "Account Abstraction - Ethereum.org",
+      url: "https://ethereum.org/en/developers/docs/accounts/account-abstraction/",
+    },
+    { title: "Account Abstraction - StarkWare", url: "https://starkware.co/account-abstraction/" },
+  ],
 }
 
 export default definition

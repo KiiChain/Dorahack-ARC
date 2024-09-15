@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server"
 
-import { existsSync, read, readFileSync } from "fs"
+import { existsSync, readFileSync } from "fs"
 import path from "path"
 import * as solc from "solc"
 

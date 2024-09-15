@@ -105,12 +105,15 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "ITokenStake Interface Documentation (OpenZeppelin)", url: "https://docs.openzeppelin.com/contracts/4.x/api/token/ERC20/ITokenStake" },
-  { title: "Staking Explained", url: "https://ethereum.org/en/developers/docs/dapps/staking/" },
-  { title: "ERC20 Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "OpenZeppelin Documentation", url: "https://docs.openzeppelin.com/" }
-],
+    {
+      title: "ITokenStake Interface Documentation (OpenZeppelin)",
+      url: "https://docs.openzeppelin.com/contracts/4.x/api/token/ERC20/ITokenStake",
+    },
+    { title: "Staking Explained", url: "https://ethereum.org/en/developers/docs/dapps/staking/" },
+    { title: "ERC20 Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "OpenZeppelin Documentation", url: "https://docs.openzeppelin.com/" },
+  ],
 }
 
 export default definition

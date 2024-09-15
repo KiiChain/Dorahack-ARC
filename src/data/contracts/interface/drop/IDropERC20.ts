@@ -103,14 +103,17 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "ERC20 Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
-  { title: "OpenZeppelin ERC20 Contract", url: "https://docs.openzeppelin.com/contracts/4.x/api/token/ERC20" },
-  { title: "Understanding Smart Contracts", url: "https://ethereum.org/en/developers/docs/smart-contracts/" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "Ethereum.org - Smart Contracts", url: "https://ethereum.org/en/developers/docs/smart-contracts/" },
-  { title: "CryptoZombies - Learn Solidity", url: "https://cryptozombies.io/" },
-  { title: "Remix IDE - Solidity Compiler and Runtime Environment", url: "https://remix-ide.readthedocs.io/en/latest/" }
-],
+    { title: "ERC20 Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
+    { title: "OpenZeppelin ERC20 Contract", url: "https://docs.openzeppelin.com/contracts/4.x/api/token/ERC20" },
+    { title: "Understanding Smart Contracts", url: "https://ethereum.org/en/developers/docs/smart-contracts/" },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "Ethereum.org - Smart Contracts", url: "https://ethereum.org/en/developers/docs/smart-contracts/" },
+    { title: "CryptoZombies - Learn Solidity", url: "https://cryptozombies.io/" },
+    {
+      title: "Remix IDE - Solidity Compiler and Runtime Environment",
+      url: "https://remix-ide.readthedocs.io/en/latest/",
+    },
+  ],
 }
 
 export default definition

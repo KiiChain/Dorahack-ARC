@@ -91,12 +91,12 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "OpenZeppelin Account Management", url: "https://docs.openzeppelin.com/contracts/4.x/access-control" },
-  { title: "OpenZeppelin Ownable", url: "https://docs.openzeppelin.com/contracts/4.x/access-control#ownable" },
-  { title: "OpenZeppelin Roles", url: "https://docs.openzeppelin.com/contracts/4.x/access-control#roles" },
-  { title: "ERC20 Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
-  { title: "EIP-725: Account Abstraction", url: "https://eips.ethereum.org/EIPS/eip-725" }
-],
+    { title: "OpenZeppelin Account Management", url: "https://docs.openzeppelin.com/contracts/4.x/access-control" },
+    { title: "OpenZeppelin Ownable", url: "https://docs.openzeppelin.com/contracts/4.x/access-control#ownable" },
+    { title: "OpenZeppelin Roles", url: "https://docs.openzeppelin.com/contracts/4.x/access-control#roles" },
+    { title: "ERC20 Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
+    { title: "EIP-725: Account Abstraction", url: "https://eips.ethereum.org/EIPS/eip-725" },
+  ],
 }
 
 export default definition

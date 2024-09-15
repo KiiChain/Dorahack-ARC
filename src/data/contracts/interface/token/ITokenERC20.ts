@@ -150,14 +150,26 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "ERC20 Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
-  { title: "OpenZeppelin ERC20 Contract Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/api/token/ERC20" },
-  { title: "Building a Simple ERC20 Token in Solidity", url: "https://www.youtube.com/watch?v=L_Q8_kZcJ6k" },
-  { title: "How to Create an ERC20 Token on Ethereum", url: "https://medium.com/@CryptoZombies/how-to-create-an-erc20-token-on-ethereum-4f02915b110d" },
-  { title: "ERC20 Token Smart Contracts Explained", url: "https://www.youtube.com/watch?v=s09Vj8l_X1I" },
-  { title: "Understanding and Creating ERC20 Tokens", url: "https://blog.openzeppelin.com/erc20-token-smart-contracts-explained/" },
-  { title: "ERC20 Token Smart Contract Tutorial", url: "https://www.dappuniversity.com/articles/erc20-token-smart-contract-tutorial" }
-],
+    { title: "ERC20 Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
+    {
+      title: "OpenZeppelin ERC20 Contract Documentation",
+      url: "https://docs.openzeppelin.com/contracts/4.x/api/token/ERC20",
+    },
+    { title: "Building a Simple ERC20 Token in Solidity", url: "https://www.youtube.com/watch?v=L_Q8_kZcJ6k" },
+    {
+      title: "How to Create an ERC20 Token on Ethereum",
+      url: "https://medium.com/@CryptoZombies/how-to-create-an-erc20-token-on-ethereum-4f02915b110d",
+    },
+    { title: "ERC20 Token Smart Contracts Explained", url: "https://www.youtube.com/watch?v=s09Vj8l_X1I" },
+    {
+      title: "Understanding and Creating ERC20 Tokens",
+      url: "https://blog.openzeppelin.com/erc20-token-smart-contracts-explained/",
+    },
+    {
+      title: "ERC20 Token Smart Contract Tutorial",
+      url: "https://www.dappuniversity.com/articles/erc20-token-smart-contract-tutorial",
+    },
+  ],
 }
 
 export default definition

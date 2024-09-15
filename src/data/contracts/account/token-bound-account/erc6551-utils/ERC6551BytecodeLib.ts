@@ -114,17 +114,44 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "ERC-6551: Account Abstraction for Smart Contracts", url: "https://eips.ethereum.org/EIPS/eip-6551" },
-  { title: "ERC-6551: Account Abstraction for Smart Contracts (EIP-6551)", url: "https://ethereum.org/en/developers/docs/standards/erc-6551/" },
-  { title: "ERC-6551: Account Abstraction for Smart Contracts (EIP-6551) - EthHub", url: "https://ethhub.dev/blog/erc-6551-account-abstraction-for-smart-contracts/" },
-  { title: "ERC-6551: Account Abstraction for Smart Contracts | Blocknative", url: "https://blocknative.com/blog/erc-6551-account-abstraction/" },
-  { title: "ERC-6551: Account Abstraction for Smart Contracts - ConsenSys", url: "https://www.consensys.net/blog/ethereum-development/erc-6551-account-abstraction-for-smart-contracts/" },
-  { title: "ERC-6551: Account Abstraction for Smart Contracts - Polygon", url: "https://polygon.technology/blog/erc-6551-account-abstraction-for-smart-contracts/" },
-  { title: "ERC-6551: Account Abstraction for Smart Contracts - Alchemy", url: "https://www.alchemy.com/blog/erc-6551-account-abstraction/" },
-  { title: "ERC-6551: Account Abstraction for Smart Contracts - Chainlink", url: "https://blog.chain.link/erc-6551-account-abstraction-for-smart-contracts/" },
-  { title: "ERC-6551: Account Abstraction for Smart Contracts - OpenZeppelin", url: "https://docs.openzeppelin.com/contracts/4.x/account-abstraction/erc-6551" },
-  { title: "ERC-6551: Account Abstraction for Smart Contracts - StarkWare", url: "https://starkware.co/blog/erc-6551-account-abstraction-for-smart-contracts/" }
-],
+    { title: "ERC-6551: Account Abstraction for Smart Contracts", url: "https://eips.ethereum.org/EIPS/eip-6551" },
+    {
+      title: "ERC-6551: Account Abstraction for Smart Contracts (EIP-6551)",
+      url: "https://ethereum.org/en/developers/docs/standards/erc-6551/",
+    },
+    {
+      title: "ERC-6551: Account Abstraction for Smart Contracts (EIP-6551) - EthHub",
+      url: "https://ethhub.dev/blog/erc-6551-account-abstraction-for-smart-contracts/",
+    },
+    {
+      title: "ERC-6551: Account Abstraction for Smart Contracts | Blocknative",
+      url: "https://blocknative.com/blog/erc-6551-account-abstraction/",
+    },
+    {
+      title: "ERC-6551: Account Abstraction for Smart Contracts - ConsenSys",
+      url: "https://www.consensys.net/blog/ethereum-development/erc-6551-account-abstraction-for-smart-contracts/",
+    },
+    {
+      title: "ERC-6551: Account Abstraction for Smart Contracts - Polygon",
+      url: "https://polygon.technology/blog/erc-6551-account-abstraction-for-smart-contracts/",
+    },
+    {
+      title: "ERC-6551: Account Abstraction for Smart Contracts - Alchemy",
+      url: "https://www.alchemy.com/blog/erc-6551-account-abstraction/",
+    },
+    {
+      title: "ERC-6551: Account Abstraction for Smart Contracts - Chainlink",
+      url: "https://blog.chain.link/erc-6551-account-abstraction-for-smart-contracts/",
+    },
+    {
+      title: "ERC-6551: Account Abstraction for Smart Contracts - OpenZeppelin",
+      url: "https://docs.openzeppelin.com/contracts/4.x/account-abstraction/erc-6551",
+    },
+    {
+      title: "ERC-6551: Account Abstraction for Smart Contracts - StarkWare",
+      url: "https://starkware.co/blog/erc-6551-account-abstraction-for-smart-contracts/",
+    },
+  ],
 }
 
 export default definition

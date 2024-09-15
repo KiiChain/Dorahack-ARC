@@ -108,13 +108,25 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "OpenZeppelin Access Control Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/access-control" },
-  { title: "OpenZeppelin ERC165 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/introspection" },
-  { title: "Ethereum Docs - Role-Based Access Control", url: "https://ethereum.org/en/developers/docs/standards/tokens/erc-165/" },
-  { title: "Solidity Documentation - Access Control", url: "https://docs.soliditylang.org/en/v0.8.17/contracts.html#access-control" },
-  { title: "Permission Override Pattern", url: "https://blog.openzeppelin.com/permission-override-pattern/" },
-  { title: "Permission Override Contract Implementation", url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/AccessControl.sol" }
-],
+    {
+      title: "OpenZeppelin Access Control Documentation",
+      url: "https://docs.openzeppelin.com/contracts/4.x/access-control",
+    },
+    { title: "OpenZeppelin ERC165 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/introspection" },
+    {
+      title: "Ethereum Docs - Role-Based Access Control",
+      url: "https://ethereum.org/en/developers/docs/standards/tokens/erc-165/",
+    },
+    {
+      title: "Solidity Documentation - Access Control",
+      url: "https://docs.soliditylang.org/en/v0.8.17/contracts.html#access-control",
+    },
+    { title: "Permission Override Pattern", url: "https://blog.openzeppelin.com/permission-override-pattern/" },
+    {
+      title: "Permission Override Contract Implementation",
+      url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/AccessControl.sol",
+    },
+  ],
 }
 
 export default definition

@@ -274,16 +274,22 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "TieredDrop Contract on Etherscan", url: "https://etherscan.io/address/<contract_address>" },
-  { title: "TieredDrop Contract Source Code on GitHub", url: "https://github.com/your-organization/tiered-drop-contract" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "OpenZeppelin Contracts", url: "https://docs.openzeppelin.com/contracts/4.x/" },
-  { title: "ERC721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
-  { title: "ERC20 Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
-  { title: "Web3.js Documentation", url: "https://web3js.readthedocs.io/en/v1.x/" },
-  { title: "Ethereum Development Resources", url: "https://ethereum.org/en/developers/" },
-  { title: "Tiered Drops: A Guide to Building Inclusive and Equitable NFT Drops", url: "https://nft-drops.com/tiered-drops/" }
-],
+    { title: "TieredDrop Contract on Etherscan", url: "https://etherscan.io/address/<contract_address>" },
+    {
+      title: "TieredDrop Contract Source Code on GitHub",
+      url: "https://github.com/your-organization/tiered-drop-contract",
+    },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "OpenZeppelin Contracts", url: "https://docs.openzeppelin.com/contracts/4.x/" },
+    { title: "ERC721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
+    { title: "ERC20 Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
+    { title: "Web3.js Documentation", url: "https://web3js.readthedocs.io/en/v1.x/" },
+    { title: "Ethereum Development Resources", url: "https://ethereum.org/en/developers/" },
+    {
+      title: "Tiered Drops: A Guide to Building Inclusive and Equitable NFT Drops",
+      url: "https://nft-drops.com/tiered-drops/",
+    },
+  ],
 }
 
 export default definition

@@ -206,17 +206,20 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "OpenZeppelin ERC721 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
-  { title: "ERC721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
-  { title: "OpenSea Blog: Understanding ERC721", url: "https://blog.opensea.io/understanding-erc721-tokens/" },
-  { title: "Ethereum.org: ERC721 Non-Fungible Tokens", url: "https://ethereum.org/en/developers/docs/standards/tokens/erc-721/" },
-  { title: "CryptoZombies: Learn to Code Smart Contracts", url: "https://cryptozombies.io/" },
-  { title: "Solidity by Example: ERC721", url: "https://solidity-by-example.org/erc721/" },
-  { title: "Building a Simple ERC721 NFT Contract with Hardhat", url: "https://www.youtube.com/watch?v=j4767r-Xv60" },
-  { title: "Create Your First NFT with Solidity and Hardhat", url: "https://www.youtube.com/watch?v=xP71_W9u_7E" },
-  { title: "OpenEdition: ERC721 Smart Contract (Github)", url: "https://github.com/OpenEdition/ERC721" },
-  { title: "OpenEdition Documentation", url: "https://docs.openedition.org/" }
-],
+    { title: "OpenZeppelin ERC721 Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
+    { title: "ERC721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
+    { title: "OpenSea Blog: Understanding ERC721", url: "https://blog.opensea.io/understanding-erc721-tokens/" },
+    {
+      title: "Ethereum.org: ERC721 Non-Fungible Tokens",
+      url: "https://ethereum.org/en/developers/docs/standards/tokens/erc-721/",
+    },
+    { title: "CryptoZombies: Learn to Code Smart Contracts", url: "https://cryptozombies.io/" },
+    { title: "Solidity by Example: ERC721", url: "https://solidity-by-example.org/erc721/" },
+    { title: "Building a Simple ERC721 NFT Contract with Hardhat", url: "https://www.youtube.com/watch?v=j4767r-Xv60" },
+    { title: "Create Your First NFT with Solidity and Hardhat", url: "https://www.youtube.com/watch?v=xP71_W9u_7E" },
+    { title: "OpenEdition: ERC721 Smart Contract (Github)", url: "https://github.com/OpenEdition/ERC721" },
+    { title: "OpenEdition Documentation", url: "https://docs.openedition.org/" },
+  ],
 }
 
 export default definition

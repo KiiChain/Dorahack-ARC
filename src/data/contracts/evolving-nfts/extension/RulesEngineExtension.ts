@@ -121,11 +121,20 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "Chainlink Documentation: Chainlink Keepers", url: "https://docs.chain.link/docs/keepers/introduction" },
-  { title: "Chainlink Blog: How to Build a Decentralized Rules Engine with Chainlink Keepers", url: "https://blog.chain.link/build-a-decentralized-rules-engine-with-chainlink-keepers/" },
-  { title: "OpenZeppelin Documentation:  Chainlink Keepers Integration", url: "https://docs.openzeppelin.com/contracts/4.x/examples-chainlink-keepers" },
-  { title: "Solidity Documentation:  Solidity Contract Development", url: "https://docs.soliditylang.org/en/v0.8.17/" }
-],
+    { title: "Chainlink Documentation: Chainlink Keepers", url: "https://docs.chain.link/docs/keepers/introduction" },
+    {
+      title: "Chainlink Blog: How to Build a Decentralized Rules Engine with Chainlink Keepers",
+      url: "https://blog.chain.link/build-a-decentralized-rules-engine-with-chainlink-keepers/",
+    },
+    {
+      title: "OpenZeppelin Documentation:  Chainlink Keepers Integration",
+      url: "https://docs.openzeppelin.com/contracts/4.x/examples-chainlink-keepers",
+    },
+    {
+      title: "Solidity Documentation:  Solidity Contract Development",
+      url: "https://docs.soliditylang.org/en/v0.8.17/",
+    },
+  ],
 }
 
 export default definition

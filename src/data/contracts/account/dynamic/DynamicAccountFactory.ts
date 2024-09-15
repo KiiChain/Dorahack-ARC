@@ -136,12 +136,21 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "DynamicAccountFactory Contract on Etherscan", url: "https://etherscan.io/address/<CONTRACT_ADDRESS>" },
-  { title: "OpenZeppelin Factory Contract Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/api/utils/cryptography#DynamicAccountFactory" },
-  { title: "Creating and Using Dynamic Accounts", url: "https://blog.openzeppelin.com/dynamic-accounts/" },
-  { title: "Dynamic Account Factory Explained", url: "https://medium.com/ethereum-dev/dynamic-account-factory-explained-55635096a8a9" },
-  { title: "Dynamic Account Factory Example", url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/cryptography/DynamicAccountFactory.sol" }
-],
+    { title: "DynamicAccountFactory Contract on Etherscan", url: "https://etherscan.io/address/<CONTRACT_ADDRESS>" },
+    {
+      title: "OpenZeppelin Factory Contract Documentation",
+      url: "https://docs.openzeppelin.com/contracts/4.x/api/utils/cryptography#DynamicAccountFactory",
+    },
+    { title: "Creating and Using Dynamic Accounts", url: "https://blog.openzeppelin.com/dynamic-accounts/" },
+    {
+      title: "Dynamic Account Factory Explained",
+      url: "https://medium.com/ethereum-dev/dynamic-account-factory-explained-55635096a8a9",
+    },
+    {
+      title: "Dynamic Account Factory Example",
+      url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/cryptography/DynamicAccountFactory.sol",
+    },
+  ],
 }
 
 export default definition

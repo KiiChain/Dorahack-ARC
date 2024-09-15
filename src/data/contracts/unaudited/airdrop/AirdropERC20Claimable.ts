@@ -137,17 +137,26 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "Airdrop Smart Contract Tutorial", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
-  { title: "ERC20 Token Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
-  { title: "OpenZeppelin ERC20 Contract", url: "https://docs.openzeppelin.com/contracts/4.x/erc20" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "How to Create an Airdrop Smart Contract", url: "https://medium.com/ethereum-dev/how-to-create-an-airdrop-smart-contract-121321718b43" },
-  { title: "Airdrop Contract Example", url: "https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts/token/ERC20/extensions" },
-  { title: "Understanding Smart Contract Security", url: "https://consensys.net/blog/smart-contract-security/" },
-  { title: "Gas Optimization for Smart Contracts", url: "https://ethereum.org/en/developers/docs/gas/" },
-  { title: "Best Practices for Building Smart Contracts", url: "https://blog.openzeppelin.com/best-practices-for-building-smart-contracts/" },
-  { title: "Airdrop Contract Audit", url: "https://www.certik.com/audits" }
-],
+    { title: "Airdrop Smart Contract Tutorial", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
+    { title: "ERC20 Token Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
+    { title: "OpenZeppelin ERC20 Contract", url: "https://docs.openzeppelin.com/contracts/4.x/erc20" },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    {
+      title: "How to Create an Airdrop Smart Contract",
+      url: "https://medium.com/ethereum-dev/how-to-create-an-airdrop-smart-contract-121321718b43",
+    },
+    {
+      title: "Airdrop Contract Example",
+      url: "https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts/token/ERC20/extensions",
+    },
+    { title: "Understanding Smart Contract Security", url: "https://consensys.net/blog/smart-contract-security/" },
+    { title: "Gas Optimization for Smart Contracts", url: "https://ethereum.org/en/developers/docs/gas/" },
+    {
+      title: "Best Practices for Building Smart Contracts",
+      url: "https://blog.openzeppelin.com/best-practices-for-building-smart-contracts/",
+    },
+    { title: "Airdrop Contract Audit", url: "https://www.certik.com/audits" },
+  ],
 }
 
 export default definition

@@ -139,17 +139,23 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "ERC-721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
-  { title: "OpenZeppelin ERC721 Contract Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
-  { title: "ERC721 Tutorial - Building Your First NFT Collection", url: "https://www.youtube.com/watch?v=x41A53zW-8w" },
-  { title: "Understanding ERC-721 Tokens (NFTs)", url: "https://blog.openzeppelin.com/understanding-erc-721-tokens-nfts/" },
-  { title: "NFT Development with Solidity", url: "https://www.youtube.com/watch?v=4rM0y4e1Y2E" },
-  { title: "NFT Marketplace Development", url: "https://www.youtube.com/watch?v=4rM0y4e1Y2E" },
-  { title: "Creating an NFT Marketplace with Solidity", url: "https://www.youtube.com/watch?v=4rM0y4e1Y2E" },
-  { title: "NFT Smart Contracts: A Deep Dive", url: "https://www.youtube.com/watch?v=4rM0y4e1Y2E" },
-  { title: "Building NFT Smart Contracts with Solidity", url: "https://www.youtube.com/watch?v=4rM0y4e1Y2E" },
-  { title: "Solidity NFT Development", url: "https://www.youtube.com/watch?v=4rM0y4e1Y2E" }
-],
+    { title: "ERC-721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
+    { title: "OpenZeppelin ERC721 Contract Documentation", url: "https://docs.openzeppelin.com/contracts/4.x/erc721" },
+    {
+      title: "ERC721 Tutorial - Building Your First NFT Collection",
+      url: "https://www.youtube.com/watch?v=x41A53zW-8w",
+    },
+    {
+      title: "Understanding ERC-721 Tokens (NFTs)",
+      url: "https://blog.openzeppelin.com/understanding-erc-721-tokens-nfts/",
+    },
+    { title: "NFT Development with Solidity", url: "https://www.youtube.com/watch?v=4rM0y4e1Y2E" },
+    { title: "NFT Marketplace Development", url: "https://www.youtube.com/watch?v=4rM0y4e1Y2E" },
+    { title: "Creating an NFT Marketplace with Solidity", url: "https://www.youtube.com/watch?v=4rM0y4e1Y2E" },
+    { title: "NFT Smart Contracts: A Deep Dive", url: "https://www.youtube.com/watch?v=4rM0y4e1Y2E" },
+    { title: "Building NFT Smart Contracts with Solidity", url: "https://www.youtube.com/watch?v=4rM0y4e1Y2E" },
+    { title: "Solidity NFT Development", url: "https://www.youtube.com/watch?v=4rM0y4e1Y2E" },
+  ],
 }
 
 export default definition

@@ -1,20 +1,6 @@
 import React from "react"
 
-import Link from "next/link"
-
-interface TemplateViewProps {
-  contractName: string
-  description: string
-}
-
-const TemplateView: React.FC<TemplateViewProps> = ({ contractName, description }) => {
-  const templates = [
-    {
-      name: "Template 1",
-      description: "This is template 1",
-    },
-  ]
-
+const TemplateView = () => {
   return (
     <main className="min-h-screen px-10 py-10">
       {/* Welcome */}

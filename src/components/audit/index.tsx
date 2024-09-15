@@ -1,12 +1,15 @@
 "use client"
-import { File } from "@/interface/custom/folder-tree/folder-tree"
-import { Button } from "@/ui/button"
-import { GenerateAuditInstructions } from "@/utils/prompt"
-import { Content } from "@google/generative-ai"
+import React, { CSSProperties, useState } from "react"
+
 import { useCompletion } from "ai/react"
 import axios from "axios"
-import React, { CSSProperties, useState } from "react"
 import SyncLoader from "react-spinners/SyncLoader"
+
+import { File } from "@/interface/custom/folder-tree/folder-tree"
+import { Content } from "@google/generative-ai"
+
+import { Button } from "@/ui/button"
+import { GenerateAuditInstructions } from "@/utils/prompt"
 // Loader styles
 const override: CSSProperties = {
   display: "block",
@@ -26,8 +29,8 @@ const Audit = ({ selectedFile }: { selectedFile: File | undefined }) => {
   })
 
   const [text, setText] = useState<resp>()
-  let [loading, setLoading] = useState(false)
-  let [color, setColor] = useState("#ffffff")
+  const [loading, setLoading] = useState(false)
+  const [color] = useState("#ffffff")
 
   // Function to generate the vulnerability report
   const checkVulnerability = () => {
@@ -49,7 +52,7 @@ const Audit = ({ selectedFile }: { selectedFile: File | undefined }) => {
       .then((newCompletion) => {
         const aiResponse = newCompletion || "There was an error with the AI response. Please try again."
         const cleanedResponse = aiResponse.replace(/```(\w+)?/g, "") // Remove code block formatting
-        let parsedResponse = JSON.parse(cleanedResponse) // Parse JSON
+        const parsedResponse = JSON.parse(cleanedResponse) // Parse JSON
         console.log("Cleaned response:", parsedResponse)
         setText(parsedResponse) // Store parsed JSON in state
       })

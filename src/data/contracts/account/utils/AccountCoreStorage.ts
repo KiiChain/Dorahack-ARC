@@ -210,13 +210,19 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "AccountCoreStorage Contract Documentation", url: "https://github.com/account-core/account-core-contracts/blob/main/contracts/AccountCoreStorage.sol" },
-  { title: "AccountCoreStorage Contract Source Code", url: "https://github.com/account-core/account-core-contracts/blob/main/contracts/AccountCoreStorage.sol" },
-  { title: "AccountCore GitHub Repository", url: "https://github.com/account-core/account-core-contracts" },
-  { title: "AccountCore Documentation", url: "https://account-core.gitbook.io/account-core-documentation/" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "Ethereum Documentation", url: "https://ethereum.org/en/developers/docs/" }
-],
+    {
+      title: "AccountCoreStorage Contract Documentation",
+      url: "https://github.com/account-core/account-core-contracts/blob/main/contracts/AccountCoreStorage.sol",
+    },
+    {
+      title: "AccountCoreStorage Contract Source Code",
+      url: "https://github.com/account-core/account-core-contracts/blob/main/contracts/AccountCoreStorage.sol",
+    },
+    { title: "AccountCore GitHub Repository", url: "https://github.com/account-core/account-core-contracts" },
+    { title: "AccountCore Documentation", url: "https://account-core.gitbook.io/account-core-documentation/" },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "Ethereum Documentation", url: "https://ethereum.org/en/developers/docs/" },
+  ],
 }
 
 export default definition

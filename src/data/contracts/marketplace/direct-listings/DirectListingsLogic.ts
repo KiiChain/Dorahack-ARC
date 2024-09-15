@@ -118,10 +118,16 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "DirectListings.com - NFT Marketplace", url: "https://directlistings.com/" },
-  { title: "Direct Listings on Ethereum", url: "https://medium.com/@DirectListings/direct-listings-on-ethereum-9e0b72e7e6a9" },
-  { title: "DirectListings - An NFT Marketplace Built on Ethereum", url: "https://www.youtube.com/watch?v=5_Q9q4Q_fYk" }
-],
+    { title: "DirectListings.com - NFT Marketplace", url: "https://directlistings.com/" },
+    {
+      title: "Direct Listings on Ethereum",
+      url: "https://medium.com/@DirectListings/direct-listings-on-ethereum-9e0b72e7e6a9",
+    },
+    {
+      title: "DirectListings - An NFT Marketplace Built on Ethereum",
+      url: "https://www.youtube.com/watch?v=5_Q9q4Q_fYk",
+    },
+  ],
 }
 
 export default definition

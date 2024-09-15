@@ -192,12 +192,18 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "SenderCreator Contract Documentation (GitHub)", url: "https://github.com/your-repository/sendercreator/blob/main/contracts/SenderCreator.sol" },
-  { title: "Solidity Documentation (Official)", url: "https://docs.soliditylang.org/" },
-  { title: "Ethereum Smart Contract Development Tutorials", url: "https://ethereum.org/en/developers/docs/smart-contracts/" },
-  { title: "OpenZeppelin Documentation (for common smart contract patterns)", url: "https://docs.openzeppelin.com/" },
-  { title: "Ethereum Stack Exchange (for Q&A)", url: "https://ethereum.stackexchange.com/" }
-],
+    {
+      title: "SenderCreator Contract Documentation (GitHub)",
+      url: "https://github.com/your-repository/sendercreator/blob/main/contracts/SenderCreator.sol",
+    },
+    { title: "Solidity Documentation (Official)", url: "https://docs.soliditylang.org/" },
+    {
+      title: "Ethereum Smart Contract Development Tutorials",
+      url: "https://ethereum.org/en/developers/docs/smart-contracts/",
+    },
+    { title: "OpenZeppelin Documentation (for common smart contract patterns)", url: "https://docs.openzeppelin.com/" },
+    { title: "Ethereum Stack Exchange (for Q&A)", url: "https://ethereum.stackexchange.com/" },
+  ],
 }
 
 export default definition

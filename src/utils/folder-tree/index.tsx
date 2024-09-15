@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 
 import { Directory, File as CustomFile, FileTreeProps, SubTreeProps } from "@/interface/custom/folder-tree/folder-tree"
-import { motion } from "framer-motion"
 
 import { cn } from "@/lib/utils"
 import { FileIcon, sortDir, sortFile } from "@/ui/file-tree/file-utils"
@@ -52,7 +51,6 @@ const SubTree = (props: SubTreeProps) => {
 const FileDiv = ({
   file,
   icon,
-  selectedFile,
   onClick,
   onDelete,
   onRename,

@@ -1,7 +1,8 @@
 "use client"
-import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react"
 //import { FaChevronDown as ChevronDownIcon } from "react-icons/fa"
 import { IconType } from "react-icons/lib"
+
+import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react"
 
 interface DropdownItem {
   heading: string
@@ -20,13 +21,13 @@ export default function Dropdown({ menuLabel, menuItems }: DropdownProps) {
   return (
     <div className="text-right">
       <Menu>
-        <MenuButton className="inline-flex items-center gap-2 rounded-md bg-[#1c1c1c]  px-3 py-1.5 text-sm/6 font-semibold text-white focus:outline-none">
+        <MenuButton className="inline-flex items-center gap-2 rounded-md bg-[#1c1c1c] px-3 py-1.5 text-sm/6 font-semibold text-white focus:outline-none">
           {menuLabel}
         </MenuButton>
 
         <MenuItems
           transition
-          className="absolute z-50 w-80 origin-top-right rounded-lg border border-white/5 bg-[#1c1c1c]  p-1 text-sm/6 text-white shadow-lg focus:outline-none"
+          className="absolute z-50 w-80 origin-top-right rounded-lg border border-white/5 bg-[#1c1c1c] p-1 text-sm/6 text-white shadow-lg focus:outline-none"
         >
           {menuItems.map((item, index) => (
             <MenuItem key={index}>

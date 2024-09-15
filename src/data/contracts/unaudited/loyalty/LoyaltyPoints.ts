@@ -129,13 +129,22 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "Loyalty Points System: A Complete Guide", url: "https://www.loyaltyprogram.com/loyalty-points-system-complete-guide/" },
-  { title: "Loyalty Program Best Practices", url: "https://www.forbes.com/sites/forbesagencycouncil/2022/06/01/loyalty-program-best-practices-for-success/" },
-  { title: "Building a Loyalty Program with Blockchain Technology", url: "https://medium.com/hackernoon/building-a-loyalty-program-with-blockchain-technology-18892373f817" },
-  { title: "Solidity Programming Language", url: "https://docs.soliditylang.org/" },
-  { title: "OpenZeppelin Smart Contract Security", url: "https://docs.openzeppelin.com/audits/" },
-  { title: "Ethereum Documentation", url: "https://ethereum.org/en/developers/docs/" }
-],
+    {
+      title: "Loyalty Points System: A Complete Guide",
+      url: "https://www.loyaltyprogram.com/loyalty-points-system-complete-guide/",
+    },
+    {
+      title: "Loyalty Program Best Practices",
+      url: "https://www.forbes.com/sites/forbesagencycouncil/2022/06/01/loyalty-program-best-practices-for-success/",
+    },
+    {
+      title: "Building a Loyalty Program with Blockchain Technology",
+      url: "https://medium.com/hackernoon/building-a-loyalty-program-with-blockchain-technology-18892373f817",
+    },
+    { title: "Solidity Programming Language", url: "https://docs.soliditylang.org/" },
+    { title: "OpenZeppelin Smart Contract Security", url: "https://docs.openzeppelin.com/audits/" },
+    { title: "Ethereum Documentation", url: "https://ethereum.org/en/developers/docs/" },
+  ],
 }
 
 export default definition

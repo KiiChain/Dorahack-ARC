@@ -114,14 +114,14 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "IEditionStake Smart Contract Documentation (GitHub)", url: "https://github.com/0xProject/IEditionStake" },
-  { title: "IEditionStake Contract on Etherscan", url: "https://etherscan.io/address/CONTRACT_ADDRESS" },
-  { title: "0x Project Website", url: "https://0x.org/" },
-  { title: "0x Project Documentation", url: "https://docs.0x.org/" },
-  { title: "ERC721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
-  { title: "ERC1155 Standard", url: "https://eips.ethereum.org/EIPS/eip-1155" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" }
-],
+    { title: "IEditionStake Smart Contract Documentation (GitHub)", url: "https://github.com/0xProject/IEditionStake" },
+    { title: "IEditionStake Contract on Etherscan", url: "https://etherscan.io/address/CONTRACT_ADDRESS" },
+    { title: "0x Project Website", url: "https://0x.org/" },
+    { title: "0x Project Documentation", url: "https://docs.0x.org/" },
+    { title: "ERC721 Standard", url: "https://eips.ethereum.org/EIPS/eip-721" },
+    { title: "ERC1155 Standard", url: "https://eips.ethereum.org/EIPS/eip-1155" },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+  ],
 }
 
 export default definition

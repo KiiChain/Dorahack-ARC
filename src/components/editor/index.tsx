@@ -3,15 +3,24 @@ import React, { useCallback, useEffect, useRef, useState } from "react"
 
 import { File } from "@/interface/custom/folder-tree/folder-tree"
 import Editor, { useMonaco } from "@monaco-editor/react"
+
 import { CircularSpinner } from "@/ui/circular-spinner"
 const cacheSize = 10,
   refreshInterval = 500
 // useCompletion Hook
 import { useCompletion } from "ai/react"
+
+import { Content } from "@google/generative-ai"
+
 import { CompletionFormatter } from "@/utils/formatter"
 import { GenerateInstructions } from "@/utils/prompt"
-import { Content } from "@google/generative-ai"
-export const MonacoEditor = ({ selectedFile,handleFileUpdate }: { selectedFile: File; handleFileUpdate: (updatedFile: File) => void }) => {
+export const MonacoEditor = ({
+  selectedFile,
+  handleFileUpdate,
+}: {
+  selectedFile: File
+  handleFileUpdate: (updatedFile: File) => void
+}) => {
   const code = selectedFile.content
   let language = selectedFile.name.split(".").pop()
 
@@ -134,14 +143,16 @@ export const MonacoEditor = ({ selectedFile,handleFileUpdate }: { selectedFile: 
   }, [debouncedSuggestions, refreshInterval])
 
   // Use the editor change event to trigger fetching of suggestions
-  const handleEditorChange = useCallback((e:string|undefined) => {
-    console.log(e)
-    const x=selectedFile
-    x.content=e??""
-    handleFileUpdate(x)
-    startOrResetFetching()
-  }, [startOrResetFetching])
-
+  const handleEditorChange = useCallback(
+    (e: string | undefined) => {
+      console.log(e)
+      const x = selectedFile
+      x.content = e ?? ""
+      handleFileUpdate(x)
+      startOrResetFetching()
+    },
+    [startOrResetFetching]
+  )
 
   // useEffect(() => {
   //   if (monaco && editorRef.current && errors.length > 0) {
@@ -200,7 +211,7 @@ export const MonacoEditor = ({ selectedFile,handleFileUpdate }: { selectedFile: 
   }, [monaco, completion, stop, cachedSuggestions, language])
 
   return (
-    <div className="m-0 w-full text-[16px]  h-full">
+    <div className="m-0 h-full w-full text-[16px]">
       <Editor
         // height="80vh"
         language={language}
@@ -213,7 +224,7 @@ export const MonacoEditor = ({ selectedFile,handleFileUpdate }: { selectedFile: 
           formatOnPaste: true,
           trimAutoWhitespace: true,
         }}
-        onChange={(val)=>handleEditorChange(val)}
+        onChange={(val) => handleEditorChange(val)}
         onMount={(editor) => {
           editorRef.current = editor
         }}

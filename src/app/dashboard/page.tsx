@@ -2,9 +2,10 @@
 
 import React, { useEffect, useState } from "react"
 
+import { useRouter } from "next/navigation"
+
 import axios from "axios"
 import { ConnectKitButton } from "connectkit"
-import { useRouter } from "next/navigation"
 import { ReactSearchAutocomplete } from "react-search-autocomplete"
 import { toast } from "sonner"
 import { useAccount } from "wagmi"
@@ -108,7 +109,7 @@ const DashboardPage = () => {
           {/* User */}
           <div className="relative -translate-x-[80px]">
             <ConnectKitButton.Custom>
-              {({ isConnected, address, truncatedAddress, show }) => {
+              {({ address, truncatedAddress, show }) => {
                 return (
                   <div className="flex items-center space-x-4">
                     <Chads

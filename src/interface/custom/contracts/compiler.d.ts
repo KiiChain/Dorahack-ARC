@@ -36,7 +36,7 @@ interface ICompilerOutput {
     errorCode: string
     formattedMessage: string
     message: string
-    severity: 'error' | 'warning'
+    severity: "error" | "warning"
     sourceLocation: {
       end: number
       file: string

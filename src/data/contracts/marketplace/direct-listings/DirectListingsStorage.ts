@@ -122,14 +122,20 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "DirectListingsStorage Contract on Etherscan", url: "https://etherscan.io/address/<CONTRACT_ADDRESS>" },
-  { title: "DirectListingsStorage Contract Source Code on Github", url: "https://github.com/<REPOSITORY>/blob/master/contracts/DirectListingsStorage.sol" },
-  { title: "DirectListings.com Documentation", url: "https://docs.directlistings.com/contracts/directlistingsstorage" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "Ethereum Developer Documentation", url: "https://ethereum.org/en/developers/" },
-  { title: "OpenZeppelin Documentation", url: "https://docs.openzeppelin.com/" },
-  { title: "Ethereum Stack Exchange", url: "https://ethereum.stackexchange.com/" }
-],
+    { title: "DirectListingsStorage Contract on Etherscan", url: "https://etherscan.io/address/<CONTRACT_ADDRESS>" },
+    {
+      title: "DirectListingsStorage Contract Source Code on Github",
+      url: "https://github.com/<REPOSITORY>/blob/master/contracts/DirectListingsStorage.sol",
+    },
+    {
+      title: "DirectListings.com Documentation",
+      url: "https://docs.directlistings.com/contracts/directlistingsstorage",
+    },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    { title: "Ethereum Developer Documentation", url: "https://ethereum.org/en/developers/" },
+    { title: "OpenZeppelin Documentation", url: "https://docs.openzeppelin.com/" },
+    { title: "Ethereum Stack Exchange", url: "https://ethereum.stackexchange.com/" },
+  ],
 }
 
 export default definition

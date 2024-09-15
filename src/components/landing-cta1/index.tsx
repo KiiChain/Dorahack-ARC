@@ -3,16 +3,17 @@ import React from "react"
 import Image from "next/image"
 // import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 import Link from "next/link"
-import { TbBrandYoutubeFilled } from "react-icons/tb"
+
 // import { useEffect, useRef } from "react";
 import { motion } from "framer-motion"
-import Compile from "@/assets/images/compile.png"
-import Vulnerability from "@/assets/images/vulnerability.png"
-import Download from "@/assets/images/download.png"
-import Opt from "@/assets/images/optimizations.png"
-import Alt from "@/assets/images/IDE.png"
+import { TbBrandYoutubeFilled } from "react-icons/tb"
 
+import Compile from "@/assets/images/compile.png"
+import Download from "@/assets/images/download.png"
+import Alt from "@/assets/images/IDE.png"
 import IDE from "@/assets/images/IDE.png"
+import Opt from "@/assets/images/optimizations.png"
+import Vulnerability from "@/assets/images/vulnerability.png"
 import { cn } from "@/lib/utils"
 
 export function FeaturesSectionDemo() {

@@ -108,16 +108,16 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "Airdrop Smart Contract Tutorial", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
-  { title: "Building an Airdrop Smart Contract on Ethereum", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
-  { title: "How to Create an Airdrop Smart Contract", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
-  { title: "Airdrop Smart Contract Best Practices", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
-  { title: "Understanding Airdrop Smart Contract Security", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
-  { title: "Airdrop Smart Contract Code Examples", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
-  { title: "Airdrop Smart Contract Audit", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
-  { title: "Airdrop Smart Contract Development Tools", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
-  { title: "Airdrop Smart Contract Gas Optimization", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" }
-],
+    { title: "Airdrop Smart Contract Tutorial", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
+    { title: "Building an Airdrop Smart Contract on Ethereum", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
+    { title: "How to Create an Airdrop Smart Contract", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
+    { title: "Airdrop Smart Contract Best Practices", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
+    { title: "Understanding Airdrop Smart Contract Security", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
+    { title: "Airdrop Smart Contract Code Examples", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
+    { title: "Airdrop Smart Contract Audit", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
+    { title: "Airdrop Smart Contract Development Tools", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
+    { title: "Airdrop Smart Contract Gas Optimization", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
+  ],
 }
 
 export default definition

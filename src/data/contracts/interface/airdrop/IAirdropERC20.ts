@@ -61,14 +61,20 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "ERC20 Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
-  { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
-  { title: "OpenZeppelin ERC20 Contract", url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol" },
-  { title: "Airdrop Tutorial", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
-  { title: "Smart Contract Security Best Practices", url: "https://consensys.net/blog/smart-contract-security-best-practices/" },
-  { title: "Hardhat Tutorial", url: "https://hardhat.org/tutorial/" },
-  { title: "Truffle Tutorial", url: "https://truffleframework.com/docs/truffle/getting-started/" }
-],
+    { title: "ERC20 Standard", url: "https://eips.ethereum.org/EIPS/eip-20" },
+    { title: "Solidity Documentation", url: "https://docs.soliditylang.org/" },
+    {
+      title: "OpenZeppelin ERC20 Contract",
+      url: "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol",
+    },
+    { title: "Airdrop Tutorial", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
+    {
+      title: "Smart Contract Security Best Practices",
+      url: "https://consensys.net/blog/smart-contract-security-best-practices/",
+    },
+    { title: "Hardhat Tutorial", url: "https://hardhat.org/tutorial/" },
+    { title: "Truffle Tutorial", url: "https://truffleframework.com/docs/truffle/getting-started/" },
+  ],
 }
 
 export default definition

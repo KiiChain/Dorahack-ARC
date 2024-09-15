@@ -403,13 +403,16 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "CoreRouter Documentation", url: "https://docs.uniswap.org/protocol/reference/core/router" },
-  { title: "Uniswap V3 Core Contract", url: "https://github.com/Uniswap/v3-core/blob/main/contracts/UniswapV3Core.sol" },
-  { title: "Uniswap V3 Whitepaper", url: "https://uniswap.org/whitepaper.pdf" },
-  { title: "Uniswap V3 Docs", url: "https://docs.uniswap.org/protocol/V3/" },
-  { title: "Uniswap V3 SDK", url: "https://uniswap.org/docs/v3/sdk" },
-  { title: "Uniswap V3 Community Forum", url: "https://community.uniswap.org/" }
-],
+    { title: "CoreRouter Documentation", url: "https://docs.uniswap.org/protocol/reference/core/router" },
+    {
+      title: "Uniswap V3 Core Contract",
+      url: "https://github.com/Uniswap/v3-core/blob/main/contracts/UniswapV3Core.sol",
+    },
+    { title: "Uniswap V3 Whitepaper", url: "https://uniswap.org/whitepaper.pdf" },
+    { title: "Uniswap V3 Docs", url: "https://docs.uniswap.org/protocol/V3/" },
+    { title: "Uniswap V3 SDK", url: "https://uniswap.org/docs/v3/sdk" },
+    { title: "Uniswap V3 Community Forum", url: "https://community.uniswap.org/" },
+  ],
 }
 
 export default definition

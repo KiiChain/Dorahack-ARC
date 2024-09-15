@@ -210,16 +210,37 @@ const definition: IContractDefinition = {
   license: "MIT",
 
   resources: [
-  { title: "ERC-6551: Account Abstraction for Smart Contracts", url: "https://eips.ethereum.org/EIPS/eip-6551" },
-  { title: "ERC-6551 Account Abstraction: A New Era for Smart Contracts", url: "https://www.youtube.com/watch?v=z4jI7hQ6x6Q" },
-  { title: "ERC-6551: Account Abstraction for Smart Contracts", url: "https://blog.openzeppelin.com/erc-6551-account-abstraction/" },
-  { title: "ERC-6551: Account Abstraction for Smart Contracts", url: "https://www.ethereum.org/en/developers/docs/standards/erc-6551/" },
-  { title: "Account Abstraction and the Future of Ethereum", url: "https://www.coindesk.com/tech/2023/02/09/account-abstraction-and-the-future-of-ethereum/" },
-  { title: "ERC-6551: Account Abstraction for Smart Contracts", url: "https://ethereum.org/en/developers/docs/standards/erc-6551/" },
-  { title: "ERC-6551: A Deep Dive into Account Abstraction", url: "https://medium.com/ethereum-foundation/erc-6551-a-deep-dive-into-account-abstraction-4b4785463466" },
-  { title: "Account Abstraction: A Guide to ERC-6551", url: "https://blog.alchemy.com/account-abstraction-a-guide-to-erc-6551/" },
-  { title: "Building a Simple ERC-6551 Account", url: "https://www.youtube.com/watch?v=pJ-h2Qz178w" }
-],
+    { title: "ERC-6551: Account Abstraction for Smart Contracts", url: "https://eips.ethereum.org/EIPS/eip-6551" },
+    {
+      title: "ERC-6551 Account Abstraction: A New Era for Smart Contracts",
+      url: "https://www.youtube.com/watch?v=z4jI7hQ6x6Q",
+    },
+    {
+      title: "ERC-6551: Account Abstraction for Smart Contracts",
+      url: "https://blog.openzeppelin.com/erc-6551-account-abstraction/",
+    },
+    {
+      title: "ERC-6551: Account Abstraction for Smart Contracts",
+      url: "https://www.ethereum.org/en/developers/docs/standards/erc-6551/",
+    },
+    {
+      title: "Account Abstraction and the Future of Ethereum",
+      url: "https://www.coindesk.com/tech/2023/02/09/account-abstraction-and-the-future-of-ethereum/",
+    },
+    {
+      title: "ERC-6551: Account Abstraction for Smart Contracts",
+      url: "https://ethereum.org/en/developers/docs/standards/erc-6551/",
+    },
+    {
+      title: "ERC-6551: A Deep Dive into Account Abstraction",
+      url: "https://medium.com/ethereum-foundation/erc-6551-a-deep-dive-into-account-abstraction-4b4785463466",
+    },
+    {
+      title: "Account Abstraction: A Guide to ERC-6551",
+      url: "https://blog.alchemy.com/account-abstraction-a-guide-to-erc-6551/",
+    },
+    { title: "Building a Simple ERC-6551 Account", url: "https://www.youtube.com/watch?v=pJ-h2Qz178w" },
+  ],
 }
 
 export default definition
