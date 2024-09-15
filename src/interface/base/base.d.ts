@@ -12,7 +12,7 @@ declare type IErrorBoundary = {
   reset?: () => void
 }
 
-declare type IProvider<div = Record> = P & IChildren
+declare type IProvider<P = Record> = P & IChildren
 
 declare type FCC<div = Record> = FunctionComponent<div & { children?: ReactNode }>
 

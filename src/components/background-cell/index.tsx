@@ -71,43 +71,71 @@ const Pattern = ({ className, cellClassName }: { className?: string; cellClassNa
           className="relative z-20 flex flex-col border-b"
         >
           {row.map((column, colIdx) => {
-            const controls = useAnimation()
-            console.log(column)
-            useEffect(() => {
-              if (clickedCell) {
-                const distance = Math.sqrt(Math.pow(clickedCell[0] - rowIdx, 2) + Math.pow(clickedCell[1] - colIdx, 2))
-                controls.start({
-                  opacity: [0, 1 - distance * 0.1, 0],
-                  transition: { duration: distance * 0.2 },
-                })
-              }
-            }, [clickedCell])
-
             return (
-              <div
-                key={`matrix-col-${colIdx}`}
-                className={cn("border-b border-l border-neutral-600 bg-transparent", cellClassName)}
-                onClick={() => setClickedCell([rowIdx, colIdx])}
-              >
-                <motion.div
-                  initial={{
-                    opacity: 0,
-                  }}
-                  whileHover={{
-                    opacity: [0, 1, 0.5],
-                  }}
-                  transition={{
-                    duration: 0.5,
-                    ease: "backOut",
-                  }}
-                  animate={controls}
-                  className="h-12 w-12 bg-[rgba(14,165,233,0.3)]" //  rgba(14, 165, 233, 0.15) for a more subtle effect
-                ></motion.div>
-              </div>
+              <PatternCell
+                key={`matrix-cell-${colIdx}`}
+                column={column}
+                rowIdx={rowIdx}
+                colIdx={colIdx}
+                clickedCell={clickedCell}
+                className={cellClassName}
+                setClickedCell={setClickedCell}
+              />
             )
           })}
         </div>
       ))}
+    </div>
+  )
+}
+
+const PatternCell = ({
+  column,
+  rowIdx,
+  colIdx,
+  clickedCell,
+  setClickedCell,
+  className: cellClassName,
+}: {
+  column: number[]
+  rowIdx: number
+  colIdx: number
+  clickedCell: ITemporaryVariable
+  setClickedCell: React.Dispatch<React.SetStateAction<ITemporaryVariable>>
+  className?: string
+}) => {
+  const controls = useAnimation()
+  console.log(column)
+  useEffect(() => {
+    if (clickedCell) {
+      const distance = Math.sqrt(Math.pow(clickedCell[0] - rowIdx, 2) + Math.pow(clickedCell[1] - colIdx, 2))
+      controls.start({
+        opacity: [0, 1 - distance * 0.1, 0],
+        transition: { duration: distance * 0.2 },
+      })
+    }
+  }, [clickedCell])
+
+  return (
+    <div
+      key={`matrix-col-${colIdx}`}
+      className={cn("border-b border-l border-neutral-600 bg-transparent", cellClassName)}
+      onClick={() => setClickedCell([rowIdx, colIdx])}
+    >
+      <motion.div
+        initial={{
+          opacity: 0,
+        }}
+        whileHover={{
+          opacity: [0, 1, 0.5],
+        }}
+        transition={{
+          duration: 0.5,
+          ease: "backOut",
+        }}
+        animate={controls}
+        className="h-12 w-12 bg-[rgba(14,165,233,0.3)]" //  rgba(14, 165, 233, 0.15) for a more subtle effect
+      ></motion.div>
     </div>
   )
 }

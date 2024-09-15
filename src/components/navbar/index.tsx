@@ -14,7 +14,7 @@ interface NavbarProps {
   textColor?: string
 }
 
-const Navbar: React.FC<NavbarProps> = ({}) => {
+const Navbar: React.FC<NavbarProps> = () => {
   return (
     // <nav className={`absolute top-0 z-10 w-full bg-transparent text-white`}>
     //   <div className="mx-auto w-11/12 px-4">

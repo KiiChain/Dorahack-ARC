@@ -48,10 +48,11 @@ const AiChatPage = () => {
           {completion && (
             <div className="text-white">
               <ReactMarkdown
-                children={completion}
                 remarkPlugins={[remarkGfm]}
                 className="text-white"
-              />
+              >
+                {completion}
+              </ReactMarkdown>
             </div>
           )}
           {isLoading && <p className="text-gray-500">AI is thinking...</p>}

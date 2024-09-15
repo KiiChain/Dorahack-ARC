@@ -101,6 +101,7 @@ const GettingStarted = () => {
         code = cleanedResponse
 
         const newProject = init
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         const newdir: Directory = {}
         newdir.depth = 1

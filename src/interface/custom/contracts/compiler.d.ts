@@ -5,18 +5,18 @@ interface ICompilerOutput {
         abi: Abi[] // viem.Abi
         evm: {
           bytecode: {
-            functionDebugData: {}
+            functionDebugData: Record<string, unknown>
             generatedSources: never[]
-            linkReferences: {}
+            linkReferences: Record<string, unknown>
             object: string
             opcodes: string
             sourceMap: string
           }
           deployedBytecode: {
-            functionDebugData: {}
+            functionDebugData: Record<string, unknown>
             generatedSources: never[]
-            immutableReferences: {}
-            linkReferences: {}
+            immutableReferences: Record<string, unknown>
+            linkReferences: Record<string, unknown>
             object: string
             opcodes: string
             sourceMap: string

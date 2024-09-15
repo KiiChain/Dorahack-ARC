@@ -25,6 +25,7 @@ export const CSSTabs = ({ tabs, selectedTabIndex, setSelectedTab }: Props): JSX.
 
   const navRef = useRef<HTMLDivElement>(null)
   const navRect = navRef.current?.getBoundingClientRect()
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   const selectedRect = buttonRefs[selectedTabIndex]?.getBoundingClientRect()
 
@@ -92,6 +93,8 @@ export const CSSTabs = ({ tabs, selectedTabIndex, setSelectedTab }: Props): JSX.
               )}
               // className=" hover:text-black"
               // variant="outline"
+
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore
               ref={(el) => {
                 buttonRefs[i] = el
