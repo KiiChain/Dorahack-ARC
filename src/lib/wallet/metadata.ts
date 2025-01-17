@@ -75,14 +75,14 @@ const metadata: WalletMetadata[] = [
 ]
 
 export const kiichainMetadata: Web3ChainData = {
-  chainId: "0x75BCD15", // 123454321 in hex
-  chainName: "Kiichain Testnet",
+  chainId: "0x538", // 123454321 in hex
+  chainName: "Kiichain Oro",
   nativeCurrency: {
     name: "Kiichain",
     symbol: "kii", // Symbol of the native currency
     decimals: 18,
   },
-  rpcUrls: ["https://a.sentry.testnet.kiivalidator.com:8645"],
+  rpcUrls: ["https://json-rpc.uno.sentry.testnet.v3.kiivalidator.com"],
   blockExplorerUrls: ["https://app.kiichain.io/kiichain"],
 }
 
