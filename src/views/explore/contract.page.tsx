@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/ui/button"
 import { Grid } from "@/ui/explore-grid-design"
 import { CustomizeModal } from "@/ui/modal"
+import { useTheme } from "@/providers/theme"
 
 interface Category {
   identifier: string
@@ -22,7 +23,7 @@ interface Category {
 
 export const ContractCard = ({ contract, className }: { contract: IContracts; className?: string }) => {
   const router = useRouter()
-
+  const { theme } = useTheme()
   const [open, setOpen] = useState(false)
   const [content, setContent] = useState("")
   const onClick = () => {
@@ -60,38 +61,72 @@ export const ContractCard = ({ contract, className }: { contract: IContracts; cl
         onClick={() => router.push(`${contract.identifier}/overview`)}
         className={cn(className)}
       >
-        <article className="hover:bg-muted raise-on-hover group/contract relative flex min-h-[220px] flex-col rounded-lg border-[0.1px] border-gray-500 p-4">
-          <div className="pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-t from-neutral-100 to-transparent opacity-0 transition duration-200 group-hover/contract:opacity-100 dark:from-neutral-800" />
+        <article
+          className="raise-on-hover group/contract relative flex min-h-[220px] flex-col rounded-lg p-4"
+          style={{ backgroundColor: theme.boxColor, borderColor: theme.borderColor }}
+        >
+          <div
+            className="pointer-events-none absolute inset-0 h-full w-full opacity-0 transition duration-200 group-hover/contract:opacity-100"
+            style={{ background: `linear-gradient(to top, ${theme.bgColor}, transparent)` }}
+          />
 
           <div className="flex justify-between">
             <div className="flex items-center gap-1.5">
-              <span className="z-1 relative flex items-center gap-1 text-sm font-medium text-accent-4 hover:underline">
+              <span
+                className="z-1 relative flex items-center gap-1 text-sm font-medium hover:underline"
+                style={{ color: theme.tertiaryTextColor }}
+              >
                 Flags
               </span>
-              <div className="size-1 rounded-full bg-gray-500/75"></div>
-              <div className="text-secondary-foreground text-sm font-medium">v{contract.version}</div>
+              <div
+                className="size-1 rounded-full"
+                style={{ backgroundColor: theme.circleColor }}
+              ></div>
+              <div
+                className="text-sm font-medium"
+                style={{ color: theme.secondaryTextColor }}
+              >
+                v{contract.version}
+              </div>
             </div>
           </div>
 
           <div className="h-3.5"></div>
-          <h3 className="text-lg font-semibold tracking-tight">{contract.name}</h3>
-          <div className="text-secondary-foreground mt-1 line-clamp-3 text-sm leading-5">{contract.description}</div>
+          <h3
+            className="text-lg font-semibold tracking-tight"
+            style={{ color: theme.primaryTextColor }}
+          >
+            {contract.name}
+          </h3>
+          <div
+            className="mt-1 line-clamp-3 text-sm leading-5"
+            style={{ color: theme.secondaryTextColor }}
+          >
+            {contract.description}
+          </div>
           <div className="relative mt-auto flex justify-between gap-2 pt-3">
             <Button
               onClick={(e) => {
                 e.stopPropagation()
-                // setOpen(true)
                 onClick()
               }}
               variant="outline"
               className="text-sm"
-              // className="ring-offset-background focus-visible:ring-ring text-primary-foreground relative z-10 inline-flex h-auto items-center justify-center gap-1.5 whitespace-nowrap rounded-md bg-primary px-2.5 py-1.5 text-xs font-medium transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+              style={{
+                backgroundColor: theme.boxColor,
+                color: theme.primaryTextColor,
+                borderColor: theme.borderColor,
+              }}
             >
               Customize
             </Button>
             <Link
               href={`/${contract.identifier}/overview`}
-              className="ring-offset-background focus-visible:ring-ring text-primary-foreground relative z-10 inline-flex h-auto items-center justify-center gap-1.5 whitespace-nowrap rounded-md bg-primary px-2.5 py-1.5 text-xs font-medium transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+              className="relative z-10 inline-flex h-auto items-center justify-center gap-1.5 whitespace-nowrap rounded-md px-2.5 py-1.5 text-xs font-medium transition-colors"
+              style={{
+                backgroundColor: theme.accentColor,
+                color: theme.primaryTextColor,
+              }}
             >
               Deploy
             </Link>
@@ -103,6 +138,8 @@ export const ContractCard = ({ contract, className }: { contract: IContracts; cl
 }
 
 const CategorySection = ({ category }: { category: Category }) => {
+  const { theme } = useTheme()
+
   return (
     <section
       key={category.identifier}
@@ -110,12 +147,18 @@ const CategorySection = ({ category }: { category: Category }) => {
     >
       <div className="flex items-center justify-between gap-4">
         <header className="flex flex-col gap-1.5">
-          <h2 className="text-2xl font-semibold tracking-tight">{category.name}</h2>
-          <div className="text-secondary-foreground">{category.description}</div>
+          <h2
+            className="text-2xl font-semibold tracking-tight"
+            style={{ color: theme.primaryTextColor }}
+          >
+            {category.name}
+          </h2>
+          <div style={{ color: theme.secondaryTextColor }}>{category.description}</div>
         </header>
         <Link
           href={`/explore/${category.identifier}`}
-          className="text-link-foreground hover:text-foreground flex shrink-0 items-center gap-1 text-base"
+          className="hover:text-foreground flex shrink-0 items-center gap-1 text-base"
+          style={{ color: theme.tertiaryTextColor }}
         >
           View all
         </Link>
@@ -134,8 +177,13 @@ const CategorySection = ({ category }: { category: Category }) => {
 }
 
 const ExplorePageView = () => {
+  const { theme } = useTheme()
+
   return (
-    <div className="relative mx-auto max-w-7xl px-16 py-20">
+    <div
+      className="relative mx-auto max-w-7xl px-16 py-20"
+      style={{ backgroundColor: theme.bgColor }}
+    >
       <Grid
         size={20}
         className="right-1/2"
@@ -145,8 +193,16 @@ const ExplorePageView = () => {
         className="left-1/2"
       />
 
-      <h1 className="mb-3 mt-32 text-7xl font-bold tracking-tighter">Explore</h1>
-      <div className="text-secondary-foreground max-w-screen-md text-lg">
+      <h1
+        className="mb-3 mt-32 text-7xl font-bold tracking-tighter"
+        style={{ color: theme.primaryTextColor }}
+      >
+        Explore
+      </h1>
+      <div
+        className="max-w-screen-md text-lg"
+        style={{ color: theme.secondaryTextColor }}
+      >
         The best place for web3 developers to explore smart contracts from world-class web3 protocols &amp; engineers —
         all deployable with one click.
       </div>

@@ -9,6 +9,7 @@ import { ConnectKitButton } from "connectkit"
 import { ReactSearchAutocomplete } from "react-search-autocomplete"
 import { toast } from "sonner"
 import { useAccount } from "wagmi"
+import { useTheme } from "@/providers/theme"
 
 import { searchModule } from "@/data"
 
@@ -48,6 +49,7 @@ interface IContract {
 
 const DashboardPage = () => {
   const router = useRouter()
+  const { theme } = useTheme()
   const { address, isConnected } = useAccount()
 
   const [isLoading, setIsLoading] = useState(true)
@@ -86,132 +88,188 @@ const DashboardPage = () => {
   }, [])
 
   return (
-    <>
+    <article
+      className="relative mx-auto flex min-h-screen max-w-7xl flex-col gap-8 px-4 py-8 lg:px-8"
+      style={{ backgroundColor: theme.bgColor }}
+    >
+      {/* Header Section */}
       {isConnected && (
-        <div className="flex w-screen justify-between pt-5">
-          {/* Searchbar */}
+        <header
+          className="flex items-center justify-between rounded-xl p-4"
+          style={{ backgroundColor: theme.boxColor }}
+        >
           <div className="relative w-[420px]">
-            <div className="absolute z-20 w-[420px]">
-              <ReactSearchAutocomplete
-                placeholder="Search anything"
-                showNoResultsText={"Hmm... Couldn't find anything on that!"}
-                items={searchModule}
-                styling={{
-                  borderRadius: "8px",
-                  backgroundColor: "#2C3235",
-                  color: "#FBFBFB",
-                  hoverBackgroundColor: "#1E2224",
-                }}
-              />
-            </div>
+            <ReactSearchAutocomplete
+              placeholder="Search anything"
+              showNoResultsText={"Hmm... Couldn't find anything on that!"}
+              items={searchModule}
+              styling={{
+                backgroundColor: theme.bgColor,
+                color: theme.primaryTextColor,
+                hoverBackgroundColor: theme.bgColor,
+              }}
+            />
           </div>
 
-          {/* User */}
-          <div className="relative -translate-x-[80px]">
-            <ConnectKitButton.Custom>
-              {({ address, truncatedAddress, show }) => {
-                return (
-                  <div className="flex items-center space-x-4">
-                    <Chads
-                      className="w-12 rounded"
-                      seed={address ?? "guest"}
-                    />
-                    <div className="flex flex-col items-start justify-start">
-                      <span className="w-full text-start text-sm text-neutral-100">{truncatedAddress}</span>
-                      <button
-                        onClick={show}
-                        className="w-full text-start text-xs text-blue-500 hover:underline"
-                      >
-                        Manage Account
-                      </button>
-                    </div>
-                  </div>
-                )
-              }}
-            </ConnectKitButton.Custom>
-          </div>
-        </div>
-      )}
-      <div className="flex min-h-screen flex-col py-5 pb-20 text-neutral-100">
-        <div className="grid grid-cols-4">
-          {/* User not signed in */}
-          <div className="col-span-3 flex w-full flex-col">
-            {!isConnected ? (
-              <div className="flex w-full flex-col items-center justify-center">
-                <h1 className="text-4xl font-semibold">Welcome to KiiChain</h1>
-                <p className="mt-4 text-lg">Sign in to get started</p>
-              </div>
-            ) : (
-              <div className="flex w-full flex-col items-center justify-center space-y-10">
-                <Contracts contracts={contracts} />
-                <Transactions
-                  transactions={transactions}
-                  isLoading={isLoading}
+          <ConnectKitButton.Custom>
+            {({ address, truncatedAddress, show }) => (
+              <div
+                className="flex items-center gap-4 rounded-lg p-3"
+                style={{ backgroundColor: theme.bgColor }}
+              >
+                <Chads
+                  className="h-10 w-10 rounded-full"
+                  seed={address ?? "guest"}
                 />
+                <div className="flex flex-col">
+                  <span style={{ color: theme.primaryTextColor }}>{truncatedAddress}</span>
+                  <button
+                    onClick={show}
+                    style={{ color: theme.tertiaryTextColor }}
+                    className="text-start text-xs hover:underline"
+                  >
+                    Manage Account
+                  </button>
+                </div>
               </div>
             )}
-          </div>
-          <div className="px-5">
-            <h2 className="mb-4 text-xl font-semibold">More</h2>
-            <div className="space-y-4">
-              {[
-                {
-                  title: "Explore Prebuilt Contracts",
-                  description:
-                    "Browse through a wide variety of prebuilt and audited smart contracts and interact with them",
-                  gradient: "from-blue-500 to-purple-600",
-                  link: "/explore",
-                },
-                {
-                  title: "Open Integrated IDE",
-                  description:
-                    "Launch the integrated development environment to start coding and deploying your smart contracts directly from your browser",
-                  gradient: "from-green-500 to-teal-600",
-                  link: "/ide",
-                },
-                {
-                  title: "Learning Resources",
-                  description:
-                    "Access a variety of tutorials, guides and other educational materials to help you get started with KiiChain",
-                  gradient: "from-yellow-500 to-orange-600",
-                  link: "/learning",
-                },
-                {
-                  title: "Comprehensive Documentation",
-                  description:
-                    "Find detailed and thorough documentation for KiiChain, covering all its features and functionalities",
-                  gradient: "from-red-500 to-pink-600",
-                  link: "/docs",
-                },
-                {
-                  title: "Explore our AI",
-                  description: "Explore our fine tuned AI to help you with your smart contract development",
-                  gradient: "from-purple-500 to-indigo-600",
-                  link: "/ai",
-                },
-              ].map((option, index) => (
-                <div
-                  onClick={() => {
-                    router.push(option.link)
+          </ConnectKitButton.Custom>
+        </header>
+      )}
+
+      {/* Main Content */}
+      <main className="flex-1">
+        {!isConnected ? (
+          <div
+            className="flex h-[60vh] flex-col items-center justify-center rounded-xl backdrop-blur"
+            style={{ backgroundColor: theme.boxColor }}
+          >
+            <h1
+              className="text-5xl font-bold"
+              style={{ color: theme.primaryTextColor }}
+            >
+              Welcome to KiiChain
+            </h1>
+            <p
+              className="mt-4 text-lg"
+              style={{ color: theme.secondaryTextColor }}
+            >
+              Connect your wallet to get started
+            </p>
+            <ConnectKitButton.Custom>
+              {({ show }) => (
+                <Button
+                  onClick={show}
+                  className="mt-8 px-8 py-2"
+                  style={{
+                    backgroundColor: theme.accentColor,
+                    color: theme.primaryTextColor,
                   }}
-                  key={index}
-                  className="group relative transform cursor-pointer rounded-lg bg-zinc-700 p-4 shadow-md transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:bg-zinc-600"
-                  style={{ height: "120px" }}
                 >
-                  <div
-                    className={`absolute inset-0 rounded-lg bg-gradient-to-r ${option.gradient} opacity-0 transition duration-300 ease-in-out group-hover:opacity-100`}
-                  ></div>
-                  <div className="relative z-10 flex h-full flex-col justify-center">
-                    <h3 className="text-lg font-semibold text-neutral-100 group-hover:text-white">{option.title}</h3>
-                    <p className="text-sm text-neutral-400 group-hover:text-light-3/75">{option.description}</p>
-                  </div>
+                  Connect Wallet
+                </Button>
+              )}
+            </ConnectKitButton.Custom>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
+            {/* Left Section: Contracts & Transactions */}
+            <div className="lg:col-span-3">
+              <div className="space-y-8">
+                <section
+                  className="rounded-xl p-6"
+                  style={{ backgroundColor: theme.boxColor }}
+                >
+                  <Contracts contracts={contracts} />
+                </section>
+                <section
+                  className="rounded-xl p-6"
+                  style={{ backgroundColor: theme.boxColor }}
+                >
+                  <Transactions
+                    transactions={transactions}
+                    isLoading={isLoading}
+                  />
+                </section>
+              </div>
+            </div>
+
+            {/* Right Section: Quick Actions */}
+            <div className="lg:col-span-1">
+              <div
+                className="sticky top-24 rounded-xl p-6"
+                style={{ backgroundColor: theme.bgColor }}
+              >
+                <h2
+                  className="mb-4 text-xl font-semibold"
+                  style={{ color: theme.primaryTextColor }}
+                >
+                  Quick Actions
+                </h2>
+                <div className="space-y-3">
+                  {[
+                    {
+                      title: "Explore Prebuilt Contracts",
+                      description: "Browse through audited smart contracts",
+                      gradient: theme.accentColor,
+                      link: "/explore",
+                    },
+                    {
+                      title: "Open IDE",
+                      description: "Start coding in the browser",
+                      gradient: theme.tertiaryTextColor,
+                      link: "/ide",
+                    },
+                    {
+                      title: "Learning Resources",
+                      description: "Access tutorials and guides",
+                      gradient: theme.quaternaryTextColor,
+                      link: "/learning",
+                    },
+                    {
+                      title: "Documentation",
+                      description: "Read detailed documentation",
+                      gradient: theme.accentColor,
+                      link: "/docs",
+                    },
+                    {
+                      title: "AI Assistant",
+                      description: "Get help from our AI",
+                      gradient: theme.tertiaryTextColor,
+                      link: "/ai",
+                    },
+                  ].map((option, index) => (
+                    <button
+                      key={index}
+                      onClick={() => router.push(option.link)}
+                      className="group relative w-full overflow-hidden rounded-lg p-4 text-left transition-all hover:scale-[1.02]"
+                      style={{ backgroundColor: theme.boxColor }}
+                    >
+                      <div
+                        className="absolute inset-0 opacity-0 transition-opacity group-hover:opacity-10"
+                        style={{ backgroundColor: option.gradient }}
+                      />
+                      <h3
+                        style={{ color: theme.primaryTextColor }}
+                        className="text-sm font-medium"
+                      >
+                        {option.title}
+                      </h3>
+                      <p
+                        style={{ color: theme.secondaryTextColor }}
+                        className="mt-1 text-xs"
+                      >
+                        {option.description}
+                      </p>
+                    </button>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </>
+        )}
+      </main>
+    </article>
   )
 }
 

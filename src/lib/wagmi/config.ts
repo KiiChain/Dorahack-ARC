@@ -1,17 +1,14 @@
-import { getDefaultConfig } from "connectkit"
 import { createConfig, http } from "wagmi"
+import { injected } from "wagmi/connectors"
 
 import { KiiChain } from "@/kiichain"
 
-const config = createConfig(
-  getDefaultConfig({
-    chains: [KiiChain],
-    transports: {
-      [KiiChain.id]: http(),
-    },
-    appName: "Arc",
-    walletConnectProjectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID as string,
-  })
-)
+const config = createConfig({
+  chains: [KiiChain],
+  connectors: [injected()],
+  transports: {
+    [KiiChain.id]: http(),
+  },
+})
 
 export default config
