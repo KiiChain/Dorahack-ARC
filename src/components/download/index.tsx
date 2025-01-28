@@ -1,6 +1,7 @@
 "use client"
 
 import React, { CSSProperties, useState } from "react"
+import { useTheme } from "@/providers/theme"
 
 import { FaHardHat } from "react-icons/fa"
 import { IoMdClipboard } from "react-icons/io"
@@ -10,7 +11,9 @@ import { Directory } from "@/interface/custom/folder-tree/folder-tree"
 
 import { Button } from "@/ui/button"
 import { copyToClipboard } from "@/utils"
+
 const Download = ({ contracts, rootDir }: { contracts: ISources; rootDir: Directory }) => {
+  const { theme } = useTheme()
   const [isLoading, setIsLoading] = useState(false)
 
   const sendContract = async (framework: string) => {
@@ -62,24 +65,28 @@ const Download = ({ contracts, rootDir }: { contracts: ISources; rootDir: Direct
         <Button
           className="flex w-full items-center gap-2 whitespace-nowrap bg-[#3c3c3c] px-2 py-1 !outline-none transition-all"
           onClick={() => copyToClipboard(JSON.stringify(rootDir, null, 2))}
+          style={{ backgroundColor: theme.bgColor }}
         >
           Copy To Clipboard <IoMdClipboard className="ml-auto" />
         </Button>
         <Button
           className="flex w-full items-center gap-2 whitespace-nowrap bg-[#3c3c3c] px-2 py-1 !outline-none transition-all"
           onClick={() => sendContract("hardhat")}
+          style={{ backgroundColor: theme.bgColor }}
         >
           Hardhat <FaHardHat className="ml-auto" />
         </Button>
         <Button
           className="flex w-full items-center gap-2 whitespace-nowrap bg-[#3c3c3c] px-2 py-1 !outline-none transition-all"
           onClick={() => sendContract("foundry")}
+          style={{ backgroundColor: theme.bgColor }}
         >
           Foundry
         </Button>
         <Button
           className="flex w-full items-center gap-2 whitespace-nowrap bg-[#3c3c3c] px-2 py-1 !outline-none transition-all"
           onClick={() => sendContract("standalone")}
+          style={{ backgroundColor: theme.bgColor }}
         >
           Standalone
         </Button>

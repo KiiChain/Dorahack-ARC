@@ -1,5 +1,6 @@
 "use client"
 import React, { CSSProperties, useState } from "react"
+import { useTheme } from "@/providers/theme"
 
 import { useCompletion } from "ai/react"
 import axios from "axios"
@@ -24,6 +25,7 @@ type resp = [
 ]
 
 const Audit = ({ selectedFile }: { selectedFile: File | undefined }) => {
+  const { theme } = useTheme()
   const { complete } = useCompletion({
     api: "/api/audit",
   })
@@ -107,7 +109,7 @@ const Audit = ({ selectedFile }: { selectedFile: File | undefined }) => {
       />
       {text && !loading && (
         <Button
-          className="flex w-full items-center gap-2 bg-[#3c3c3c] px-4 py-2 text-center text-white transition-all"
+          className="flex w-full items-center gap-2 px-4 py-2 text-center text-white transition-all"
           onClick={downloadPDF}
         >
           Download PDF
@@ -115,8 +117,9 @@ const Audit = ({ selectedFile }: { selectedFile: File | undefined }) => {
       )}
       {!loading && !text && (
         <Button
-          className="flex w-full items-center gap-2 bg-[#3c3c3c] px-4 py-2 text-center text-white transition-all"
+          className="flex w-full items-center gap-2 px-4 py-2 text-center text-white transition-all"
           onClick={checkVulnerability}
+          style={{ backgroundColor: theme.boxColor }}
         >
           Generate Vulnerability Report
         </Button>

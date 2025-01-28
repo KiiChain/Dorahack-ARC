@@ -8,7 +8,7 @@ const NoFileSelected = () => {
 
   return (
     <div
-      className="h-full w-full p-10 md:p-11"
+      className="h-full w-full p-10 pt-10 md:p-11"
       style={{ backgroundColor: theme.bgColor }}
     >
       <div className="mt-5">

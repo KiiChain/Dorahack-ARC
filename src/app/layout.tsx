@@ -37,17 +37,22 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang="en">
       <body className="min-h-screen font-satoshi text-light-0">
         <Provider>
-          <Toaster
-            position="top-center"
-            invert
-          />
-          <FloatingNav navItems={navItems} />
-          <Navbar
-            links={links}
-            logoText="Arc"
-            textColor="white"
-          />
-          {children}
+          <div
+            className="min-h-screen"
+            style={{ backgroundColor: "#05000F" }}
+          >
+            <Toaster
+              position="top-center"
+              invert
+            />
+            <FloatingNav navItems={navItems} />
+            <Navbar
+              links={links}
+              logoText="Arc"
+              textColor="white"
+            />
+            {children}
+          </div>
         </Provider>
       </body>
     </html>

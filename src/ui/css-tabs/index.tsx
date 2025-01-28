@@ -1,7 +1,10 @@
+"use client"
+
 import React from "react"
 import { CSSProperties, FocusEvent, PointerEvent, useEffect, useRef, useState } from "react"
 
 import classNames from "classnames"
+import { useTheme } from "@/providers/theme"
 
 import { Button } from "../button"
 
@@ -14,6 +17,7 @@ type Props = {
 }
 
 export const CSSTabs = ({ tabs, selectedTabIndex, setSelectedTab }: Props): JSX.Element => {
+  const { theme } = useTheme()
   const [buttonRefs, setButtonRefs] = useState<Array<HTMLButtonElement | null>>([])
 
   useEffect(() => {
@@ -80,8 +84,9 @@ export const CSSTabs = ({ tabs, selectedTabIndex, setSelectedTab }: Props): JSX.
   return (
     <nav
       ref={navRef}
-      className="no-scrollbar relative z-0 col-span-12 row-span-1 flex flex-shrink-0 items-center justify-center overflow-x-scroll rounded-lg bg-[#1e1e1e] py-2 md:gap-14 lg:gap-20"
+      className="no-scrollbar relative z-0 col-span-12 row-span-1 flex flex-shrink-0 items-center justify-center overflow-x-scroll rounded-lg py-2 md:gap-14 lg:gap-20"
       onPointerLeave={onLeaveTabs}
+      style={{ backgroundColor: theme.boxColor }}
     >
       {tabs.map((item, i) => {
         if (!React.isValidElement(item)) {
@@ -91,6 +96,7 @@ export const CSSTabs = ({ tabs, selectedTabIndex, setSelectedTab }: Props): JSX.
               className={classNames(
                 "text-md relative z-20 flex h-8 cursor-pointer select-none items-center rounded-md bg-[#1c1c1c] px-4 text-sm font-bold transition-colors hover:text-black"
               )}
+              style={{ backgroundColor: theme.bgColor }}
               // className=" hover:text-black"
               // variant="outline"
 
