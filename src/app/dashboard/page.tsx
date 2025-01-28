@@ -12,6 +12,7 @@ import { useAccount } from "wagmi"
 import { useTheme } from "@/providers/theme"
 
 import { searchModule } from "@/data"
+import { quickActions } from "@/data/quick-actions"
 
 import { Chads } from "@/components"
 import { Button } from "@/ui/button"
@@ -207,38 +208,7 @@ const DashboardPage = () => {
                   Quick Actions
                 </h2>
                 <div className="space-y-3">
-                  {[
-                    {
-                      title: "Explore Prebuilt Contracts",
-                      description: "Browse through audited smart contracts",
-                      gradient: theme.accentColor,
-                      link: "/explore",
-                    },
-                    {
-                      title: "Open IDE",
-                      description: "Start coding in the browser",
-                      gradient: theme.tertiaryTextColor,
-                      link: "/ide",
-                    },
-                    {
-                      title: "Learning Resources",
-                      description: "Access tutorials and guides",
-                      gradient: theme.quaternaryTextColor,
-                      link: "/learning",
-                    },
-                    {
-                      title: "Documentation",
-                      description: "Read detailed documentation",
-                      gradient: theme.accentColor,
-                      link: "/docs",
-                    },
-                    {
-                      title: "AI Assistant",
-                      description: "Get help from our AI",
-                      gradient: theme.tertiaryTextColor,
-                      link: "/ai",
-                    },
-                  ].map((option, index) => (
+                  {quickActions.map((option, index) => (
                     <button
                       key={index}
                       onClick={() => router.push(option.link)}
@@ -247,7 +217,7 @@ const DashboardPage = () => {
                     >
                       <div
                         className="absolute inset-0 opacity-0 transition-opacity group-hover:opacity-10"
-                        style={{ backgroundColor: option.gradient }}
+                        style={{ backgroundColor: theme[option.gradient as keyof typeof theme] }}
                       />
                       <h3
                         style={{ color: theme.primaryTextColor }}

@@ -5,7 +5,6 @@ import { GoogleGenerativeAI } from "@google/generative-ai"
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "")
 
 export async function POST(req: Request) {
-  // Agregar un log para debug
   console.log("API Key present:", !!process.env.GEMINI_API_KEY)
 
   const { messages } = await req.json()
