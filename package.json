@@ -44,7 +44,7 @@
     "marked": "^14.1.2",
     "minidenticons": "^4.2.1",
     "monaco-editor": "^0.51.0",
-    "next": "14.2.7",
+    "next": "14.1.0",
     "pdf-lib": "^1.17.1",
     "react": "^18.3.1",
     "react-code-blocks": "^0.1.6",
@@ -62,8 +62,8 @@
     "sonner": "^1.5.0",
     "tailwind-merge": "^2.5.2",
     "vaul": "^0.9.1",
-    "viem": "2.x",
-    "wagmi": "^2.12.9",
+    "viem": "^2.7.9",
+    "wagmi": "^2.5.7",
     "zod": "^3.23.8"
   },
   "devDependencies": {

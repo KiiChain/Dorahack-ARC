@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useEffect, useState } from "react"
+import { useTheme } from "@/providers/theme"
 
 import axios from "axios"
 import { ConnectKitButton } from "connectkit"
@@ -26,6 +27,7 @@ interface IPresent {
 }
 
 const CompilePage = ({ sources }: { sources: ISources }) => {
+  const { theme } = useTheme()
   const [output, setOutput] = useState<Array<IPresent>>([])
   const [error, setError] = useState<string | null>(null)
 
@@ -85,7 +87,8 @@ const CompilePage = ({ sources }: { sources: ISources }) => {
     <div className="flex flex-col gap-4">
       <Button
         onClick={compileContract}
-        className="w-full whitespace-nowrap bg-[#3c3c3c] px-2 py-1 !outline-none"
+        className="mt-4 w-full whitespace-nowrap py-1 !outline-none"
+        style={{ backgroundColor: theme.boxColor }}
       >
         Compile
       </Button>

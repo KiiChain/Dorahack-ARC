@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react"
 
 import dynamic from "next/dynamic"
 import { useSearchParams } from "next/navigation"
+import { useTheme } from "@/providers/theme"
 
 import { Directory, File } from "@/interface/custom/folder-tree/folder-tree"
 
@@ -33,6 +34,7 @@ const SidebarBody = dynamic(() => import("@/components/ide-sidebar").then((mod) 
 const FileManager = dynamic(() => import("@/components/file-manager").then((mod) => mod.FileManager))
 
 const IDE = () => {
+  const { theme } = useTheme()
   const { rootDir, selectedFile, setRootDir, setSelectedFile, activeFiles, setActiveFiles, handleFileUpdate } = useIDE()
   const searchparams = useSearchParams()
   const y = searchparams.get("content")
@@ -59,8 +61,14 @@ const IDE = () => {
     if (activeFiles && activeFiles.length == 0) setSelectedFile(undefined)
   }, [activeFiles])
   return (
-    <div className="col-span-12 row-span-12 h-full w-full rounded-lg border border-neutral-800 p-2">
-      <div className="grid h-full w-full grid-cols-12 grid-rows-12 gap-1 rounded-lg">
+    <div
+      className="col-span-12 row-span-12 h-full w-full rounded-lg p-2"
+      style={{ backgroundColor: theme.bgColor }}
+    >
+      <div
+        className="grid h-full w-full grid-cols-12 grid-rows-12 gap-1 rounded-lg"
+        style={{ backgroundColor: theme.bgColor }}
+      >
         {rootDir ? (
           <CSSTabs
             tabs={[
@@ -95,8 +103,14 @@ const IDE = () => {
         <div className="col-span-12 row-span-11 flex h-full gap-1">
           {rootDir ? (
             <>
-              <SidebarBody className="justify-between gap-10">
-                <div className="no-scroll mt-8 flex h-full flex-1 flex-col gap-2 overflow-y-auto overflow-x-scroll">
+              <SidebarBody
+                className="justify-between gap-10"
+                style={{ backgroundColor: theme.bgColor }}
+              >
+                <div
+                  className="no-scroll mt-8 flex h-full flex-1 flex-col gap-2 overflow-y-auto overflow-x-scroll"
+                  style={{ backgroundColor: theme.boxColor }}
+                >
                   {activeTab == 0 ? (
                     <FileManager
                       rootDir={rootDir}
@@ -132,16 +146,27 @@ const IDE = () => {
                   ) : null}
                 </div>
               </SidebarBody>
-              <div className="w-full rounded-lg md:w-4/5">
+              <div
+                className="w-full rounded-lg md:w-4/5"
+                style={{ backgroundColor: theme.boxColor }}
+              >
                 <div className="h-full min-h-8 overflow-y-scroll rounded-lg">
-                  <div className="no-scroll flex overflow-x-scroll bg-[#171616] p-1">
+                  <div
+                    className="no-scroll flex overflow-x-scroll p-1"
+                    style={{ backgroundColor: theme.bgColor }}
+                  >
                     {activeFiles?.map((file) => (
                       <div
                         key={file.id}
                         className={cn(
-                          "relative flex cursor-pointer items-center gap-2 rounded-md border border-neutral-950 px-3 py-1 text-sm font-semibold text-white focus:outline-none",
+                          "relative flex cursor-pointer items-center gap-2 rounded-md px-3 py-1 text-sm font-semibold focus:outline-none",
                           file.id === selectedFile?.id && "bg-[#3c3c3c]"
                         )}
+                        style={{
+                          backgroundColor: file.id === selectedFile?.id ? theme.bgColor : theme.boxColor,
+                          color: theme.primaryTextColor,
+                          borderColor: theme.borderColor,
+                        }}
                         onClick={() => {
                           handleTabSelect(file)
                         }}
@@ -154,7 +179,8 @@ const IDE = () => {
                             e.stopPropagation()
                             handleTabClose(file)
                           }}
-                          className="ml-2 text-gray-400 hover:text-gray-200"
+                          className="ml-2 hover:text-gray-200"
+                          style={{ color: theme.secondaryTextColor }}
                         >
                           ✕
                         </button>

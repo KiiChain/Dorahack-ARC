@@ -1,14 +1,14 @@
 import { defineChain } from "viem"
 
 const kiichain = defineChain({
-  id: 123454321,
-  name: "Kiichain Testnet",
-  nativeCurrency: { name: "Ether", symbol: "kii", decimals: 18 },
+  id: 1336,
+  name: "KiiChain Testnet Oro",
+  nativeCurrency: { name: "KII", symbol: "ukii", decimals: 18 },
   rpcUrls: {
-    default: { http: ["https://a.sentry.testnet.kiivalidator.com:8645"] },
+    default: { http: ["https://json-rpc.uno.sentry.testnet.v3.kiivalidator.com/"] },
   },
   blockExplorers: {
-    default: { name: "Kii Explorer", url: "https://app.kiichain.io/kiichain" },
+    default: { name: "Testnet Oro Explorer", url: "https://app.kiichain.io/kiichain" },
   },
   contracts: {},
 })

@@ -1,14 +1,14 @@
 "use client"
 
 import React, { useState } from "react"
-
+import { useRouter } from "next/navigation"
 import { useCompletion } from "ai/react"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
-
 import { PlaceholdersAndVanishInput } from "@/ui/search-input"
 
 const AiChatPage = () => {
+  const router = useRouter()
   const { completion, complete, isLoading } = useCompletion()
   const [input, setInput] = useState("")
 
@@ -42,7 +42,15 @@ const AiChatPage = () => {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center p-4">
-      <div className="w-full max-w-2xl rounded-lg bg-dark-2 p-6 shadow-md">
+      <div className="relative w-full max-w-2xl rounded-lg bg-dark-2 p-6 shadow-md">
+        <button
+          onClick={() => router.push("/dashboard")}
+          className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-neutral-800 text-neutral-400 transition-colors hover:bg-neutral-700 hover:text-white"
+          aria-label="Close"
+        >
+          ✕
+        </button>
+
         <h1 className="mb-6 text-center text-3xl font-bold">Arc Assistant</h1>
         <div className="mb-6 h-96 overflow-y-auto rounded-lg bg-light-2/25 p-4 text-white">
           {completion && (

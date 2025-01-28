@@ -1,5 +1,6 @@
 "use client"
 import React, { CSSProperties, useState } from "react"
+import { useTheme } from "@/providers/theme"
 
 import { useCompletion } from "ai/react"
 import SyncLoader from "react-spinners/SyncLoader"
@@ -27,6 +28,7 @@ const Plugin = ({
   rootDir: Directory
   setRootDir: React.Dispatch<React.SetStateAction<Directory | undefined>>
 }) => {
+  const { theme } = useTheme()
   const { complete } = useCompletion({
     api: "/api/audit",
   })
@@ -161,6 +163,7 @@ const Plugin = ({
           <Button
             className="flex w-full items-center gap-2 rounded-md bg-[#3c3c3c] px-4 py-2 text-center text-white transition-all"
             onClick={GenerateDocs}
+            style={{ backgroundColor: theme.boxColor }}
           >
             Generate Documentation
           </Button>
@@ -178,6 +181,7 @@ const Plugin = ({
           <Button
             className="mt-8 flex w-full items-center gap-2 rounded-md bg-[#3c3c3c] px-4 py-2 text-center text-white transition-all"
             onClick={GenerateTests}
+            style={{ backgroundColor: theme.boxColor }}
           >
             Generate Test
           </Button>

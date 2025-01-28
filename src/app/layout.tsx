@@ -24,41 +24,35 @@ export const metadata: Metadata = {
     yahoo: "",
   },
 }
-const links: { label: string; href: string }[] = [
-  {
-    label: "Home",
-    href: "/dashboard",
-  },
-  {
-    label: "About Us",
-    href: "/about",
-  },
+
+const links = [
   {
     label: "IDE",
     href: "/ide",
   },
 ]
 
-const RootLayout = ({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) => {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-secondary px-2.5 font-satoshi text-light-0 sm:px-5">
+      <body className="min-h-screen font-satoshi text-light-0">
         <Provider>
-          <Toaster
-            position="top-center"
-            invert
-          />
-          <FloatingNav navItems={navItems} />
-          <Navbar
-            links={links}
-            logoText="Arc"
-            textColor="white"
-          />
-          <>{children}</>
+          <div
+            className="min-h-screen"
+            style={{ backgroundColor: "#05000F" }}
+          >
+            <Toaster
+              position="top-center"
+              invert
+            />
+            <FloatingNav navItems={navItems} />
+            <Navbar
+              links={links}
+              logoText="Arc"
+              textColor="white"
+            />
+            {children}
+          </div>
         </Provider>
       </body>
     </html>

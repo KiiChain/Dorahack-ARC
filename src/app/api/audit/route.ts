@@ -2,23 +2,28 @@ import { GoogleGenerativeAIStream, StreamingTextResponse } from "ai"
 
 import { GoogleGenerativeAI } from "@google/generative-ai"
 
-export const runtime = "edge"
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "")
 
 export async function POST(req: Request) {
-  const { messages } = await req.json()
-  // Ask Google Generative AI for a streaming completion given the prompt
-  //   const content = Array.isArray(messages)
-  //   ? messages.map((msg) => ({ text: msg }))
-  //   : [{ text: messages }];
-  // console.log("cnt ",content)
-  const response = await genAI.getGenerativeModel({ model: "gemini-pro" }).generateContentStream({
-    contents: messages,
-  })
-  const stream = GoogleGenerativeAIStream(response)
-  // {
-  // contents: [{ role: 'user', parts: [{ text: prompt }] }],
-  //   }
+  console.log("API Key present:", !!process.env.GEMINI_API_KEY)
 
-  return new StreamingTextResponse(stream)
+  const { messages } = await req.json()
+
+  try {
+    const response = await genAI.getGenerativeModel({ model: "gemini-pro" }).generateContentStream({
+      contents: messages,
+      generationConfig: {
+        maxOutputTokens: 2048,
+      },
+    })
+
+    const stream = GoogleGenerativeAIStream(response)
+    return new StreamingTextResponse(stream)
+  } catch (error) {
+    console.error("Error details:", error)
+    return new Response(JSON.stringify({ error: "Failed to generate response" }), {
+      status: 500,
+      headers: { "content-type": "application/json" },
+    })
+  }
 }
